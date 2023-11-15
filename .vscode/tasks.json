@@ -7,9 +7,13 @@
             "args": [
                 "${workspaceFolder}/main",
                 "-f",
-                "${workspaceFolder}/lib/src/'*'/'*'.c",
+                "${workspaceFolder}/lib/src/'*'.c",
                 "-F",
                 "lib/include",
+                "-F",
+                "lib/sfd/src",
+                "-f",
+                "lib/sfd/src/sfd.c",
                 "-S",
                 "-lS"
             ],
@@ -25,16 +29,21 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
-                "lib/src/*/*.c",
+                "lib/src/*.c",
+                "lib/sfd/src/sfd.c",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
+                "-Ilib/include",
+                "-Ilib/sfd/src",
                 "-Werror",
                 "-Wall",
                 "-Wpedantic",
                 "-Wextra",
                 "`sdl2-config --cflags --libs`",
                 "-lSDL2_gfx",
-                "-lSDL2_image"
+                "-lSDL2_image",
+                "-lSDL2_ttf",
+                "-lSDL2_mixer"
             ],
             "options": {
                 "cwd": "${fileDirname}"
