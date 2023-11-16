@@ -35,12 +35,11 @@ PipeGrid PipeGrid_CreateCopy(PipeGrid source) {
     for (int i = 0; i < source.y; i++) {
         for (int j = 0; j < source.x; j++)
         {
-            new.matrix[i][j] = Pipe_Init();
+            Elem_Init(new.matrix[i][j].tenyleges);
             Elem_Copy(new.matrix[i][j].tenyleges, source.matrix[i][j].tenyleges);
         }
     }
         
-
     return new;
 }
 

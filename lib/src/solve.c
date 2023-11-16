@@ -164,59 +164,64 @@ SolvedPipeGrid * SolvedPipeGrid_Append(SolvedPipeGrid * start, Pipe * pipe, int 
 }
 
 SolvedPipeGrid * PipeGrid_Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point exit) {
-    if (!Solve(pipegrid, entry, exit)) return NULL;
+    PipeGrid copy = PipeGrid_CreateCopy(pipegrid);
+    bool solve = Solve(copy, entry, exit);
+    if (!solve) {
+        PipeGrid_Destroy(&copy);
+        return NULL;
+    } 
     SolvedPipeGrid * start = SolvedPipeGrid_Append(NULL, &pipegrid.matrix[entry.y][entry.x], entry.x, entry.y);
     SolvedPipeGrid * current = start;
 
-    pipegrid.matrix[entry.y][entry.x].tenyleges[1][0] = Rossz;
+    copy.matrix[entry.y][entry.x].tenyleges[1][0] = Rossz;
 
     while (current->x != exit.x || current->y != exit.y) {
-        pipegrid.matrix[current->y][current->x].tenyleges[1][1] = Rossz;
+        copy.matrix[current->y][current->x].tenyleges[1][1] = Rossz;
         Elem c;
-        Elem_Copy(c, pipegrid.matrix[current->y][current->x].tenyleges);
+        Elem_Copy(c, copy.matrix[current->y][current->x].tenyleges);
         bool is_crossed = c[0][1] != Levego && c[1][0] != Levego && c[1][2] != Levego && c[2][1] != Levego;
 
         if (is_crossed) {
-            if (current->y > 0 && c[2][1] == Rossz && c[0][1] == Jo && pipegrid.matrix[current->y - 1][current->x].tenyleges[2][1] == Jo) {
-                pipegrid.matrix[current->y][current->x].tenyleges[0][1] = Rossz;
-                pipegrid.matrix[current->y - 1][current->x].tenyleges[2][1] = Rossz;
+            if (current->y > 0 && c[2][1] == Rossz && c[0][1] == Jo && copy.matrix[current->y - 1][current->x].tenyleges[2][1] == Jo) {
+                copy.matrix[current->y][current->x].tenyleges[0][1] = Rossz;
+                copy.matrix[current->y - 1][current->x].tenyleges[2][1] = Rossz;
                 current = SolvedPipeGrid_Append(current, &pipegrid.matrix[current->y - 1][current->x], current->x, current->y - 1);
             }
-            else if (current->y < pipegrid.y - 1 && c[0][1] == Rossz && c[2][1] == Jo && pipegrid.matrix[current->y + 1][current->x].tenyleges[0][1] == Jo) {
-                pipegrid.matrix[current->y][current->x].tenyleges[2][1] = Rossz;
-                pipegrid.matrix[current->y + 1][current->x].tenyleges[0][1] = Rossz;
+            else if (current->y < copy.y - 1 && c[0][1] == Rossz && c[2][1] == Jo && copy.matrix[current->y + 1][current->x].tenyleges[0][1] == Jo) {
+                copy.matrix[current->y][current->x].tenyleges[2][1] = Rossz;
+                copy.matrix[current->y + 1][current->x].tenyleges[0][1] = Rossz;
                 current = SolvedPipeGrid_Append(current, &pipegrid.matrix[current->y + 1][current->x], current->x, current->y + 1);
             }
-            else if (current->x > 0 && c[1][2] == Rossz && c[1][0] == Jo && pipegrid.matrix[current->y][current->x - 1].tenyleges[1][2] == Jo) {
-                pipegrid.matrix[current->y][current->x].tenyleges[1][0] = Rossz;
-                pipegrid.matrix[current->y][current->x - 1].tenyleges[1][2] = Rossz;
+            else if (current->x > 0 && c[1][2] == Rossz && c[1][0] == Jo && copy.matrix[current->y][current->x - 1].tenyleges[1][2] == Jo) {
+                copy.matrix[current->y][current->x].tenyleges[1][0] = Rossz;
+                copy.matrix[current->y][current->x - 1].tenyleges[1][2] = Rossz;
                 current = SolvedPipeGrid_Append(current, &pipegrid.matrix[current->y][current->x - 1], current->x - 1, current->y);
             }
-            else if (current->x < pipegrid.x - 1 && c[1][0] == Rossz && c[1][2] == Jo && pipegrid.matrix[current->y][current->x + 1].tenyleges[1][0] == Jo) {
-                pipegrid.matrix[current->y][current->x].tenyleges[1][2] = Rossz;
-                pipegrid.matrix[current->y][current->x + 1].tenyleges[1][0] = Rossz;
+            else if (current->x < copy.x - 1 && c[1][0] == Rossz && c[1][2] == Jo && copy.matrix[current->y][current->x + 1].tenyleges[1][0] == Jo) {
+                copy.matrix[current->y][current->x].tenyleges[1][2] = Rossz;
+                copy.matrix[current->y][current->x + 1].tenyleges[1][0] = Rossz;
                 current = SolvedPipeGrid_Append(current, &pipegrid.matrix[current->y][current->x+1], current->x + 1, current->y);
             }
         }
         else {
-            if (current->y > 0 && c[0][1] == Jo && pipegrid.matrix[current->y - 1][current->x].tenyleges[2][1] == Jo) {
-                pipegrid.matrix[current->y][current->x].tenyleges[0][1] = Rossz;
-                pipegrid.matrix[current->y - 1][current->x].tenyleges[2][1] = Rossz;
+            if (current->y > 0 && c[0][1] == Jo && copy.matrix[current->y - 1][current->x].tenyleges[2][1] == Jo) {
+                copy.matrix[current->y][current->x].tenyleges[0][1] = Rossz;
+                copy.matrix[current->y - 1][current->x].tenyleges[2][1] = Rossz;
                 current = SolvedPipeGrid_Append(current, &pipegrid.matrix[current->y - 1][current->x], current->x, current->y - 1);
             }
-            else if (current->y < pipegrid.y - 1 && c[2][1] == Jo && pipegrid.matrix[current->y + 1][current->x].tenyleges[0][1] == Jo) {
-                pipegrid.matrix[current->y][current->x].tenyleges[2][1] = Rossz;
-                pipegrid.matrix[current->y + 1][current->x].tenyleges[0][1] = Rossz;
+            else if (current->y < copy.y - 1 && c[2][1] == Jo && copy.matrix[current->y + 1][current->x].tenyleges[0][1] == Jo) {
+                copy.matrix[current->y][current->x].tenyleges[2][1] = Rossz;
+                copy.matrix[current->y + 1][current->x].tenyleges[0][1] = Rossz;
                 current = SolvedPipeGrid_Append(current, &pipegrid.matrix[current->y+1][current->x], current->x, current->y + 1);
             }
-            else if (current->x > 0 && c[1][0] == Jo && pipegrid.matrix[current->y][current->x - 1].tenyleges[1][2] == Jo) {
-                pipegrid.matrix[current->y][current->x].tenyleges[1][0] = Rossz;
-                pipegrid.matrix[current->y][current->x - 1].tenyleges[1][2] = Rossz;
+            else if (current->x > 0 && c[1][0] == Jo && copy.matrix[current->y][current->x - 1].tenyleges[1][2] == Jo) {
+                copy.matrix[current->y][current->x].tenyleges[1][0] = Rossz;
+                copy.matrix[current->y][current->x - 1].tenyleges[1][2] = Rossz;
                 current = SolvedPipeGrid_Append(current, &pipegrid.matrix[current->y][current->x-1], current->x - 1, current->y);
             }
-            else if (current->x < pipegrid.x - 1 && c[1][2] == Jo && pipegrid.matrix[current->y][current->x + 1].tenyleges[1][0] == Jo) {
-                pipegrid.matrix[current->y][current->x].tenyleges[1][2] = Rossz;
-                pipegrid.matrix[current->y][current->x + 1].tenyleges[1][0] = Rossz;
+            else if (current->x < copy.x - 1 && c[1][2] == Jo && copy.matrix[current->y][current->x + 1].tenyleges[1][0] == Jo) {
+                copy.matrix[current->y][current->x].tenyleges[1][2] = Rossz;
+                copy.matrix[current->y][current->x + 1].tenyleges[1][0] = Rossz;
                 current = SolvedPipeGrid_Append(current, &pipegrid.matrix[current->y][current->x+1], current->x + 1, current->y);
             }
         }
@@ -226,6 +231,7 @@ SolvedPipeGrid * PipeGrid_Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point ex
 
     current = SolvedPipeGrid_Append(current, &pipegrid.matrix[exit.y][exit.x], exit.x, exit.y);
 
+    PipeGrid_Destroy(&copy);
     return start;
 }
 
