@@ -34,6 +34,12 @@ typedef struct PipeGrid {
     int x, y;
 } PipeGrid;
 
+typedef struct SolvedPipeGrid {
+    Pipe * pipe;
+    int x, y;
+    struct SolvedPipeGrid * next;
+} SolvedPipeGrid;
+
 void Elem_Init(Elem elem);
 void Elem_Copy(Elem hova, Elem honnan);
 void Elem_RotatePos(Elem elem);
@@ -43,14 +49,20 @@ Pipe Pipe_Init(void);
 void Pipe_CreateFromElem(Pipe * pipe, Window window, SDL_Texture * pipe_texture, SDL_Rect base_location);
 void Pipe_Rotate(Pipe * pipe, int irany);
 void Pipe_Render(Pipe pipe, Window window);
+void Pipe_UpdateLayer(Pipe pipe, Window window, SDL_Texture * pipe_texture);
 void Pipe_Destroy(Pipe * pipe);
 
 PipeGrid PipeGrid_Init(void);
 void PipeGrid_Create(PipeGrid * pipegrid, int x, int y);
+PipeGrid PipeGrid_CreateCopy(PipeGrid source);
 void PipeGrid_GenerateGrid(PipeGrid * pipegrid, SDL_Point entry, SDL_Point exit);
 void PipeGrid_Shuffle(PipeGrid pipegrid);
 void PipeGrid_Feldolgoz(PipeGrid pipegrid, Window window, SDL_Texture * pipe_texture, SDL_Rect base_location);
 void PipeGrid_Render(PipeGrid pipegrid, Window window);
 void PipeGrid_Destroy(PipeGrid * pipegrid);
+
+SolvedPipeGrid * PipeGrid_Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point exit);
+SolvedPipeGrid * SolvedPipeGrid_RemoveFirst(SolvedPipeGrid * start);
+void SolvedPipeGrid_Destroy(SolvedPipeGrid * start);
 
 #endif

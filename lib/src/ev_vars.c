@@ -16,7 +16,7 @@ EventloopVariables EventloopVariables_Init(void) {
 void Delta_Update(EventloopVariables * ev_vars) {
     ev_vars->prevTime = ev_vars->currTime;
     ev_vars->currTime = SDL_GetPerformanceCounter();
-    ev_vars->deltaT = (double)((ev_vars->currTime - ev_vars->prevTime) / (double)SDL_GetPerformanceFrequency());
+    ev_vars->deltaT = ((ev_vars->currTime - ev_vars->prevTime) / (double)SDL_GetPerformanceFrequency());
 }
 
 bool CursorInRect(EventloopVariables ev_vars, SDL_Rect bound) {

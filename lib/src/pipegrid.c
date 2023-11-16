@@ -4,7 +4,6 @@
 
 PipeGrid PipeGrid_Init(void) {
     return (PipeGrid){NULL, 0, 0};
-
 }
 
 void PipeGrid_Create(PipeGrid * pipegrid, int x, int y) {
@@ -29,6 +28,21 @@ void PipeGrid_Destroy(PipeGrid * pipegrid) {
     free(pipegrid->matrix);
 }
 
+PipeGrid PipeGrid_CreateCopy(PipeGrid source) {
+    PipeGrid new = PipeGrid_Init();
+    PipeGrid_Create(&new, source.x, source.y);
+    
+    for (int i = 0; i < source.y; i++) {
+        for (int j = 0; j < source.x; j++)
+        {
+            new.matrix[i][j] = Pipe_Init();
+            Elem_Copy(new.matrix[i][j].tenyleges, source.matrix[i][j].tenyleges);
+        }
+    }
+        
+
+    return new;
+}
 
 
 typedef enum Irany {fel, le, jobbra, balra} Irany;
@@ -180,3 +194,4 @@ void PipeGrid_Render(PipeGrid pipegrid, Window window) {
         for (int j = 0; j < pipegrid.x; j++)
             Pipe_Render(pipegrid.matrix[i][j], window);
 }
+

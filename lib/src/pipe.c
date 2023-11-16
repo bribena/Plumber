@@ -88,6 +88,8 @@ void Pipe_Render(Pipe pipe, Window window) {
 
 void Pipe_UpdateLayer(Pipe pipe, Window window, SDL_Texture * pipe_texture) {
     SDL_SetRenderTarget(window.renderer, pipe.rendered.layer);
+    SDL_SetRenderDrawColor(window.renderer, 0, 0, 0, 0);
+    SDL_RenderClear(window.renderer);
     SDL_RenderCopyEx(window.renderer, pipe_texture, &pipe.texture_loc, NULL, pipe.szog, NULL, SDL_FLIP_NONE);
     SDL_SetRenderTarget(window.renderer, NULL);
 }
