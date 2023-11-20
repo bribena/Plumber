@@ -15,7 +15,6 @@ bool Load_Texture(SDL_Texture ** texture, SDL_Renderer * renderer, const char * 
 bool Load_Music(Mix_Music ** music, char * path) {
     SDL_RWops * ops = SDL_RWFromFile(path, "r");
     *music = Mix_LoadMUSType_RW(ops, MUS_MP3, 1);
-    SDL_Log(SDL_GetError());
     return true;
 }
 
