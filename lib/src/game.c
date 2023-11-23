@@ -847,58 +847,72 @@ bool Game(GameStruct game_struct, PipeGrid * betoltott, int entry_y, int exit_y)
     return ev_vars.event.type != SDL_QUIT && (win || !solved || state_error);
 }
 
-bool Win(GameStruct game_struct, Layer state, PipeGrid copy, int entry_y, int exit_y) {
-    SDL_SetRenderTarget(game_struct.window.renderer, NULL);
-    SDL_RenderClear(game_struct.window.renderer);
-    
+bool Win(GameStruct game_struct, Layer state, PipeGrid copy, int entry_y, int exit_y) {    
     Layer win = Layer_Init();
-    Layer_Create(&win, game_struct.window, NULL);
-    SDL_SetRenderTarget(game_struct.window.renderer, win.layer);
-
-    SDL_RenderCopy(game_struct.window.renderer, state.layer, NULL, NULL);
-
-    SDL_SetRenderDrawBlendMode(game_struct.window.renderer, SDL_BLENDMODE_BLEND);
-    SDL_SetRenderDrawColor(game_struct.window.renderer, 0, 0, 0, 200);
-    SDL_RenderFillRect(game_struct.window.renderer, NULL);
+    Layer congrats = Layer_Init();
+    Layer line1 = Layer_Init();
+    Layer line2 = Layer_Init();
+    Layer menu_btn = Layer_Init();
+    Layer jatek_btn = Layer_Init();
+    Layer mentes_btn = Layer_Init();
 
     SDL_Rect pr = {400, 275, 800, 450};
-    SDL_SetRenderDrawColor(game_struct.window.renderer, 192, 154, 107, 255);
-    SDL_RenderFillRect(game_struct.window.renderer, &pr);
-    SDL_SetRenderDrawColor(game_struct.window.renderer, 0, 0, 0, 255);
-    SDL_RenderDrawRect(game_struct.window.renderer, &pr);
 
-    Layer congrats = Layer_Init();
-    Layer_Create(&congrats, game_struct.window, &(SDL_Rect){500, 275, 600, 150});
-    Layer_RenderFont(&congrats, game_struct.window, game_struct.fonts.bold, "Gratulálok!", (SDL_Color){0,0,0,255});
-    SDL_RenderCopy(game_struct.window.renderer, congrats.layer, NULL, &congrats.location);
+    bool error =
+        /* Már meguntam a külön válogatást, bocsesz */
+        /* Alapkép */
+        !Layer_Create(&win, game_struct.window, NULL) ||
+        SDL_SetRenderTarget(game_struct.window.renderer, win.layer) < 0 ||
+        SDL_RenderCopy(game_struct.window.renderer, state.layer, NULL, NULL) < 0 ||
+        /* Egy kis váltogatás, illetve "lefedés" */
+        SDL_SetRenderDrawBlendMode(game_struct.window.renderer, SDL_BLENDMODE_BLEND) < 0 ||
+        SDL_SetRenderDrawColor(game_struct.window.renderer, 0, 0, 0, 200) < 0 ||
+        SDL_RenderFillRect(game_struct.window.renderer, NULL) < 0 ||
+        /* Még egy kis váltogatás és a "felugró ablak" */
+        SDL_SetRenderDrawColor(game_struct.window.renderer, 192, 154, 107, 255) < 0 ||
+        SDL_RenderFillRect(game_struct.window.renderer, &pr) < 0 ||
+        /* Váltogatás és a "Gratulálok" szöveg */
+        SDL_SetRenderDrawColor(game_struct.window.renderer, 0, 0, 0, 255) < 0 ||
+        SDL_RenderDrawRect(game_struct.window.renderer, &pr) < 0 ||
+        !Layer_Create(&congrats, game_struct.window, &(SDL_Rect){500, 275, 600, 150}) ||
+        !Layer_RenderFont(&congrats, game_struct.window, game_struct.fonts.bold, "Gratulálok!", (SDL_Color){0,0,0,255}) ||
+        SDL_RenderCopy(game_struct.window.renderer, congrats.layer, NULL, &congrats.location) < 0 ||
+        /* 1. sor szöveg */   
+        !Layer_Create(&line1, game_struct.window, &(SDL_Rect){410, 425, 780, 80}) ||
+        !Layer_RenderFont(&line1, game_struct.window, game_struct.fonts.bold, "Szeretnél menteni, új játékot", (SDL_Color){0,0,0,255}) ||
+        SDL_RenderCopy(game_struct.window.renderer, line1.layer, NULL, &line1.location) < 0 ||
+        /* 2. sor szöveg */
+        !Layer_Create(&line2, game_struct.window, &(SDL_Rect){410, 525, 780, 80}) ||
+        !Layer_RenderFont(&line2, game_struct.window, game_struct.fonts.bold, "kezdeni vagy a menübe lépni?", (SDL_Color){0,0,0,255}) ||
+        SDL_RenderCopy(game_struct.window.renderer, line2.layer, NULL, &line2.location) < 0 ||
+        /* Menü gomb */
+        !Layer_Create(&menu_btn, game_struct.window, &(SDL_Rect){450, 640, 100, 50}) ||
+        !Layer_RenderFont(&menu_btn, game_struct.window, game_struct.fonts.bold, "Menü", (SDL_Color){80,80,80,255}) ||
+        !ButtonRender(game_struct.window.renderer, menu_btn, 10, 30, (SDL_Color){1, 168, 180, 255}) ||
+        /* Játék gomb */
+        !Layer_Create(&jatek_btn, game_struct.window, &(SDL_Rect){725, 640, 130, 50}) ||
+        !Layer_RenderFont(&jatek_btn, game_struct.window, game_struct.fonts.bold, "Új játék", (SDL_Color){80,80,80,255}) ||
+        !ButtonRender(game_struct.window.renderer, jatek_btn, 10, 30, (SDL_Color){81, 229, 239, 255}) ||
+        /* Mentés gomb */
+        !Layer_Create(&mentes_btn, game_struct.window, &(SDL_Rect){1030, 640, 110, 50}) ||
+        !Layer_RenderFont(&mentes_btn, game_struct.window, game_struct.fonts.bold, "Mentés", (SDL_Color){80,80,80,255}) ||
+        !ButtonRender(game_struct.window.renderer, mentes_btn, 10, 30, (SDL_Color){2, 216, 233, 255}) ||
+        /* Megjelenítés */
+        SDL_SetRenderTarget(game_struct.window.renderer, NULL) < 0 ||
+        SDL_RenderCopy(game_struct.window.renderer, win.layer, NULL, NULL) < 0;
 
-    Layer line1 = Layer_Init();
-    Layer_Create(&line1, game_struct.window, &(SDL_Rect){410, 425, 780, 80});
-    Layer_RenderFont(&line1, game_struct.window, game_struct.fonts.bold, "Szeretnél menteni, új játékot", (SDL_Color){0,0,0,255});
-    SDL_RenderCopy(game_struct.window.renderer, line1.layer, NULL, &line1.location);
+    if (error) {
+        SDL_LogError(SDL_LOG_CATEGORY_RENDER, "Nem sikerült a nyerés képernyő renderelése: %s", SDL_GetError());
+        Layer_Destroy(&mentes_btn);
+        Layer_Destroy(&jatek_btn);
+        Layer_Destroy(&menu_btn);
+        Layer_Destroy(&line2);
+        Layer_Destroy(&line1);
+        Layer_Destroy(&congrats);
+        Layer_Destroy(&win);
+        return true;
+    }
 
-    Layer line2 = Layer_Init();
-    Layer_Create(&line2, game_struct.window, &(SDL_Rect){410, 525, 780, 80});
-    Layer_RenderFont(&line2, game_struct.window, game_struct.fonts.bold, "kezdeni vagy a menübe lépni?", (SDL_Color){0,0,0,255});
-    SDL_RenderCopy(game_struct.window.renderer, line2.layer, NULL, &line2.location);
-
-    Layer menu_btn = Layer_Init();
-    Layer_Create(&menu_btn, game_struct.window, &(SDL_Rect){450, 640, 100, 50});
-    Layer_RenderFont(&menu_btn, game_struct.window, game_struct.fonts.bold, "Menü", (SDL_Color){80,80,80,255});
-    ButtonRender(game_struct.window.renderer, menu_btn, 10, 30, (SDL_Color){1, 168, 180, 255});
-    
-    Layer jatek_btn = Layer_Init();
-    Layer_Create(&jatek_btn, game_struct.window, &(SDL_Rect){725, 640, 130, 50});
-    Layer_RenderFont(&jatek_btn, game_struct.window, game_struct.fonts.bold, "Új játék", (SDL_Color){80,80,80,255});
-    ButtonRender(game_struct.window.renderer, jatek_btn, 10, 30, (SDL_Color){81, 229, 239, 255});
-
-    Layer mentes_btn = Layer_Init();
-    Layer_Create(&mentes_btn, game_struct.window, &(SDL_Rect){1030, 640, 110, 50});
-    Layer_RenderFont(&mentes_btn, game_struct.window, game_struct.fonts.bold, "Mentés", (SDL_Color){80,80,80,255});
-    ButtonRender(game_struct.window.renderer, mentes_btn, 10, 30, (SDL_Color){2, 216, 233, 255});
-
-    SDL_SetRenderTarget(game_struct.window.renderer, NULL);
-    SDL_RenderCopy(game_struct.window.renderer, win.layer, NULL, NULL);
     SDL_RenderPresent(game_struct.window.renderer);
 
     SDL_Event event;
@@ -932,12 +946,7 @@ bool Win(GameStruct game_struct, Layer state, PipeGrid copy, int entry_y, int ex
             }
 
             if (SDL_PointInRect(&currCursor, &mentes_btn.location) && SDL_PointInRect(&prevCursor, &mentes_btn.location)) {
-                sfd_Options ops = {
-                    .title="Pálya mentése",
-                    .filter_name="Palya fajl",
-                    .filter="*.plm",
-                };
-                const char * path = sfd_save_dialog(&ops);
+                const char * path = MentoAblak();
                 if (path != NULL) {
                     PipeGrid_Save(copy, entry_y, exit_y, path);
                 }
