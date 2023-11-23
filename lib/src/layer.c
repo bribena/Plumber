@@ -22,6 +22,7 @@ bool Layer_RenderFont(Layer * layer, Window window, TTF_Font * font, char * text
     SDL_Surface * surface = TTF_RenderUTF8_Blended(font, text, foreground);
     SDL_DestroyTexture(layer->layer);
     layer->layer = SDL_CreateTextureFromSurface(window.renderer, surface);
+    SDL_FreeSurface(surface);
     return true;
 }
 
