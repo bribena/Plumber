@@ -84,15 +84,15 @@ void Delta_Update(EventloopVariables * ev_vars);
 bool CursorInRect(EventloopVariables ev_vars, SDL_Rect bound);
 
 Wheel Wheel_Init(void);
-void Wheel_Create(Wheel * wheel, Window window, SDL_Rect location, SDL_Texture * wheel_texture);
-void Wheel_Update(Wheel wheel, Window window, SDL_Texture * wheel_texture);
+bool Wheel_Create(Wheel * wheel, Window window, SDL_Rect location, SDL_Texture * wheel_texture);
+bool Wheel_Update(Wheel wheel, Window window, SDL_Texture * wheel_texture);
 void Wheel_Destroy(Wheel * wheel);
 
 AnimationQueue * AnimationQueue_Init(void);
-void AnimationQueue_AppendWheelRotate(AnimationQueue * start, Wheel * wheel, double target_angle, double animation_speed);
-void AnimationQueue_AppendPipeRotate(AnimationQueue * start, Pipe * pipe, double target_angle, double animation_speed);
-void AnimationQueue_AppendLongFill(AnimationQueue * start, SDL_Rect render_location, SDL_Texture * filled_texture, double animation_speed, AnimationDirection direction);
-void AnimationQueue_AppendPipeFill(AnimationQueue * start, SDL_Renderer * renderer, Pipe * pipe, SDL_Texture * filled_texture, double animation_speed, AnimationDirection direction);
+bool AnimationQueue_AppendWheelRotate(AnimationQueue * start, Wheel * wheel, double target_angle, double animation_speed);
+bool AnimationQueue_AppendPipeRotate(AnimationQueue * start, Pipe * pipe, double target_angle, double animation_speed);
+bool AnimationQueue_AppendLongFill(AnimationQueue * start, SDL_Rect render_location, SDL_Texture * filled_texture, double animation_speed, AnimationDirection direction);
+bool AnimationQueue_AppendPipeFill(AnimationQueue * start, SDL_Renderer * renderer, Pipe * pipe, SDL_Texture * filled_texture, double animation_speed, AnimationDirection direction);
 AnimationQueue * AnimationQueue_RemoveElement(AnimationQueue * start, AnimationQueue * element);
 void AnimationQueue_Destroy(AnimationQueue * start);
 

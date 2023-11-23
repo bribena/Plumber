@@ -8,17 +8,23 @@ int main(int argc, char *argv[]) {
     (void)argc, (void)argv;
     srand(time(0));
 
-    InitializeSDL();
+    if (!InitializeSDL()) return 1;
 
     GameStruct game_struct = GameStruct_Init();
-    GameStruct_Create(&game_struct);
+    if (!GameStruct_Create(&game_struct)) {
+        QuitSDL();
+        return 2;
+    }
 
-    Mix_PlayMusic(game_struct.assets.bgm, -1);
-    Mix_VolumeMusic(70);
-    Menu(game_struct);
+    StartMusic(game_struct.assets);
+    
+    int ret = 0;
+    if (!Menu(game_struct))
+        ret = 3;
 
     Mix_FadeOutMusic(500);
     GameStruct_Destroy(&game_struct);
     QuitSDL();
-    return 0;
+
+    return ret;
 }

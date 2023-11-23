@@ -8,22 +8,32 @@ Fonts Fonts_Init(void) {
 
 bool Load_Font(TTF_Font ** font, char * path) {
     SDL_RWops * ops = SDL_RWFromFile(path, "r");
+    if (ops == NULL) {
+        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Sikertelen fájl megnyitás: %s", SDL_GetError());
+        return false;
+    }
+
     *font = TTF_OpenFontRW(ops, 1, DEFAULT_FONT_SIZE);
-    // SDL_Log(SDL_GetError());
+    if (*font == NULL) {
+        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Sikertelen font betöltés: %s", TTF_GetError());
+        return false;
+    }
+
     return true;
 }
 
 bool Fonts_Load(Fonts * fonts) {
-    Load_Font(&fonts->normal, "assets/fonts/RedHatDisplay-Bold.ttf");
-    Load_Font(&fonts->italic, "assets/fonts/RedHatDisplay-BoldItalic.ttf");
-    Load_Font(&fonts->bold, "assets/fonts/RedHatDisplay-Black.ttf");
-    Load_Font(&fonts->bold_italic, "assets/fonts/RedHatDisplay-BlackItalic.ttf");
+    // Load_Font(&fonts->normal, "assets/fonts/RedHatDisplay-Bold.ttf");
+    // Load_Font(&fonts->italic, "assets/fonts/RedHatDisplay-BoldItalic.ttf");
+    // Load_Font(&fonts->bold_italic, "assets/fonts/RedHatDisplay-BlackItalic.ttf");
+    
+    if (!Load_Font(&fonts->bold, "assets/fonts/RedHatDisplay-Black.ttf")) return false;
     return true;
 }
 
 void Fonts_Destroy(Fonts * fonts) {
     TTF_CloseFont(fonts->bold);
-    TTF_CloseFont(fonts->bold_italic);
-    TTF_CloseFont(fonts->italic);
-    TTF_CloseFont(fonts->normal);
+    // TTF_CloseFont(fonts->bold_italic);
+    // TTF_CloseFont(fonts->italic);
+    // TTF_CloseFont(fonts->normal);
 }

@@ -11,7 +11,11 @@ Pipe Pipe_Init(void) {
     return pipe;
 }
 
-void Pipe_CreateFromElem(Pipe * pipe, Window window, SDL_Texture * pipe_texture, SDL_Rect location) {
+bool Pipe_CreateFromElem(Pipe * pipe, Window window, SDL_Texture * pipe_texture, SDL_Rect location) {
+    if (!Layer_Create(&pipe->rendered, window, &location) ||
+        SDL_SetRenderTarget(window.renderer, pipe->rendered.layer) < 0)
+        return false;
+
     int c = 0;
     for (int i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
@@ -65,9 +69,7 @@ void Pipe_CreateFromElem(Pipe * pipe, Window window, SDL_Texture * pipe_texture,
             break;
     }
 
-    Layer_Create(&pipe->rendered, window, &location);
-    SDL_SetRenderTarget(window.renderer, pipe->rendered.layer);
-    SDL_RenderCopyEx(window.renderer, pipe_texture, &pipe->texture_loc, NULL, pipe->szog, NULL, SDL_FLIP_NONE);
+    return SDL_RenderCopyEx(window.renderer, pipe_texture, &pipe->texture_loc, NULL, pipe->szog, NULL, SDL_FLIP_NONE) == 0;
 }
 
 void Pipe_Rotate(Pipe * pipe, int irany) {
@@ -82,14 +84,16 @@ void Pipe_Destroy(Pipe * pipe) {
 }
 
 
-void Pipe_Render(Pipe pipe, Window window) {
-    SDL_RenderCopy(window.renderer, pipe.rendered.layer, NULL, &pipe.rendered.location);
+bool Pipe_Render(Pipe pipe, Window window) {
+    return SDL_RenderCopy(window.renderer, pipe.rendered.layer, NULL, &pipe.rendered.location) == 0;
 }
 
-void Pipe_UpdateLayer(Pipe pipe, Window window, SDL_Texture * pipe_texture) {
-    SDL_SetRenderTarget(window.renderer, pipe.rendered.layer);
-    SDL_SetRenderDrawColor(window.renderer, 0, 0, 0, 0);
-    SDL_RenderClear(window.renderer);
-    SDL_RenderCopyEx(window.renderer, pipe_texture, &pipe.texture_loc, NULL, pipe.szog, NULL, SDL_FLIP_NONE);
-    SDL_SetRenderTarget(window.renderer, NULL);
+bool Pipe_UpdateLayer(Pipe pipe, Window window, SDL_Texture * pipe_texture) {
+    bool ret =
+        SDL_SetRenderTarget(window.renderer, pipe.rendered.layer) < 0 ||
+        SDL_SetRenderDrawColor(window.renderer, 0, 0, 0, 0) < 0 ||
+        SDL_RenderClear(window.renderer) < 0 ||
+        SDL_RenderCopyEx(window.renderer, pipe_texture, &pipe.texture_loc, NULL, pipe.szog, NULL, SDL_FLIP_NONE) < 0 ||
+        SDL_SetRenderTarget(window.renderer, NULL) < 0;
+    return !ret;
 }

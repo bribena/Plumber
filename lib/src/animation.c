@@ -3,6 +3,7 @@
 
 AnimationQueue * AnimationQueue_Init(void) {
     AnimationQueue * new = (AnimationQueue*)malloc(sizeof(AnimationQueue));
+    if (new == NULL) return NULL;
     new->active = false;
     new->next = NULL;
     new->rendered_angle = 0;
@@ -13,6 +14,7 @@ AnimationQueue * AnimationQueue_Init(void) {
 
 AnimationQueue * AnimationQueue_NewRotate(double * angle, double target_angle, double animation_speed) {
     AnimationQueue * new = AnimationQueue_Init();
+    if (new == NULL) return NULL;
     new->active = true;
     new->type = AnimationType_Rotate;
     new->angle = angle;
@@ -21,36 +23,43 @@ AnimationQueue * AnimationQueue_NewRotate(double * angle, double target_angle, d
     return new;
 }
 
-void AnimationQueue_AppendWheelRotate(AnimationQueue * start, Wheel * wheel, double target_angle, double animation_speed) {
+bool AnimationQueue_AppendWheelRotate(AnimationQueue * start, Wheel * wheel, double target_angle, double animation_speed) {
     AnimationQueue * current = start;
     while (current->next != NULL)
         current = current->next;
     
     current->next = AnimationQueue_NewRotate(&wheel->szog, target_angle, animation_speed);
+    if (current->next == NULL) return false;
     current = current->next;
 
     current->is_pipe = false;
     current->wheel = wheel;
+
+    return true;
 }
 
-void AnimationQueue_AppendPipeRotate(AnimationQueue * start, Pipe * pipe, double target_angle, double animation_speed) {
+bool AnimationQueue_AppendPipeRotate(AnimationQueue * start, Pipe * pipe, double target_angle, double animation_speed) {
     AnimationQueue * current = start;
     while (current->next != NULL)
         current = current->next;
     
     current->next = AnimationQueue_NewRotate(&pipe->szog, target_angle, animation_speed);
+    if (current->next == NULL) return false;
     current = current->next;
 
     current->is_pipe = true;
     current->pipe = pipe;
+
+    return true;
 }
 
-void AnimationQueue_AppendLongFill(AnimationQueue * start, SDL_Rect render_location, SDL_Texture * filled_texture, double animation_speed, AnimationDirection direction) {
+bool AnimationQueue_AppendLongFill(AnimationQueue * start, SDL_Rect render_location, SDL_Texture * filled_texture, double animation_speed, AnimationDirection direction) {
     AnimationQueue * current = start;
     while (current->next != NULL)
         current = current->next;
     
     current->next = AnimationQueue_Init();
+    if (current->next == NULL) return false;
     current = current->next;
 
     current->active = true;
@@ -82,14 +91,16 @@ void AnimationQueue_AppendLongFill(AnimationQueue * start, SDL_Rect render_locat
     current->filled_texture = filled_texture;
     current->animation_speed = animation_speed;
     current->direction = direction;
+    return true;
 }
 
-void AnimationQueue_AppendPipeFill(AnimationQueue * start, SDL_Renderer * renderer, Pipe * pipe, SDL_Texture * filled_texture, double animation_speed, AnimationDirection direction) {
+bool AnimationQueue_AppendPipeFill(AnimationQueue * start, SDL_Renderer * renderer, Pipe * pipe, SDL_Texture * filled_texture, double animation_speed, AnimationDirection direction) {
     AnimationQueue * current = start;
     while (current->next != NULL)
         current = current->next;
     
     current->next = AnimationQueue_Init();
+    if (current->next == NULL) return false;
     current = current->next;
 
     current->active = true;
@@ -99,10 +110,15 @@ void AnimationQueue_AppendPipeFill(AnimationQueue * start, SDL_Renderer * render
     current->animation_speed = animation_speed;
     current->direction = direction;
 
-    SDL_SetRenderTarget(renderer, pipe->rendered.layer);
-    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
-    SDL_RenderCopyEx(renderer, filled_texture, &pipe->texture_loc, NULL, pipe->szog, NULL, SDL_FLIP_NONE);
-    SDL_SetRenderTarget(renderer, NULL);
+    bool failure =
+        SDL_SetRenderTarget(renderer, pipe->rendered.layer) < 0 ||
+        SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND) < 0 ||
+        SDL_RenderCopyEx(renderer, filled_texture, &pipe->texture_loc, NULL, pipe->szog, NULL, SDL_FLIP_NONE) < 0 ||
+        SDL_SetRenderTarget(renderer, NULL) < 0;
+    if (failure) {
+        free(current);
+        return false;
+    }
 
     current->filled_texture = pipe->rendered.layer;
 
@@ -141,6 +157,7 @@ void AnimationQueue_AppendPipeFill(AnimationQueue * start, SDL_Renderer * render
             current->render_location.h = 0;
             break;
     }
+    return true;
 }
 
 AnimationQueue * AnimationQueue_RemoveElement(AnimationQueue * start, AnimationQueue * element) {

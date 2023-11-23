@@ -13,19 +13,33 @@ bool Layer_Create(Layer * layer, Window window, SDL_Rect * location) {
     else
         l = *location;
     layer->layer = SDL_CreateTexture(window.renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, l.w, l.h);
-    SDL_SetTextureBlendMode(layer->layer, SDL_BLENDMODE_BLEND);
+    if (layer->layer == NULL) {
+        SDL_LogError(SDL_LOG_CATEGORY_RENDER, "Nem sikerült a textúra létrehozása: %s", SDL_GetError());
+        return false;
+    }
+    if (SDL_SetTextureBlendMode(layer->layer, SDL_BLENDMODE_BLEND) < 0)
+        SDL_LogWarn(SDL_LOG_CATEGORY_RENDER, "Nem sikerült egy textúra BlendMode beállítás: %s", SDL_GetError());
     layer->location = l;
     return true;
 }
 
 bool Layer_RenderFont(Layer * layer, Window window, TTF_Font * font, char * text, SDL_Color foreground) {
     SDL_Surface * surface = TTF_RenderUTF8_Blended(font, text, foreground);
+    if (surface == NULL) {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Nem sikerült a felirat létrehozása: %s", SDL_GetError());
+        return false;
+    }
     SDL_DestroyTexture(layer->layer);
     layer->layer = SDL_CreateTextureFromSurface(window.renderer, surface);
+    if (layer->layer == NULL) 
+        SDL_LogError(SDL_LOG_CATEGORY_RENDER, "Nem sikerült a Surface konverzió: %s", SDL_GetError());
     SDL_FreeSurface(surface);
-    return true;
+    return layer->layer != NULL;
 }
 
 void Layer_Destroy(Layer * layer) {
+    if (layer->layer == NULL) return;
     SDL_DestroyTexture(layer->layer);
+    layer->layer = NULL;
+    layer->location = (SDL_Rect){0,0,0,0};
 }

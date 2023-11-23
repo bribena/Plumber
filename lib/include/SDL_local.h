@@ -10,6 +10,8 @@
 #include <stdbool.h>
 
 #define DEFAULT_FONT_SIZE 200
+#define MIX_VOLUME 70
+
 
 typedef struct Window {
     SDL_Window * window;
@@ -39,6 +41,7 @@ typedef struct Layer {
 
 
 bool InitializeSDL(void);
+void StartMusic(Assets assets);
 void QuitSDL(void);
 
 Window Window_Init(void);
@@ -46,7 +49,7 @@ bool Window_Create(Window * window, char * title, int width, int height);
 void Window_Destroy(Window * window);
 
 Assets Assets_Init(void);
-bool Assets_Load(Assets * assets, SDL_Renderer * renderer);
+bool Assets_Load(Assets * assets, Window window);
 void Assets_Destroy(Assets * assets);
 
 Fonts Fonts_Init(void);

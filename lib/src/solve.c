@@ -144,6 +144,7 @@ bool Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point exit) {
 SolvedPipeGrid * SolvedPipeGrid_Append(SolvedPipeGrid * start, Pipe * pipe, int x, int y) {
     if (start == NULL) {
         start = (SolvedPipeGrid*)malloc(sizeof(SolvedPipeGrid));
+        if (start == NULL) return NULL;
         start->pipe = pipe;
         start->x = x;
         start->y = y;
@@ -155,6 +156,7 @@ SolvedPipeGrid * SolvedPipeGrid_Append(SolvedPipeGrid * start, Pipe * pipe, int 
     while (current->next != NULL)
         current = current->next;
     current->next = (SolvedPipeGrid*)malloc(sizeof(SolvedPipeGrid));
+    if (current->next == NULL) return start;
     current->next->pipe = pipe;
     current->next->x = x;
     current->next->y = y;
@@ -165,12 +167,17 @@ SolvedPipeGrid * SolvedPipeGrid_Append(SolvedPipeGrid * start, Pipe * pipe, int 
 
 SolvedPipeGrid * PipeGrid_Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point exit) {
     PipeGrid copy = PipeGrid_CreateCopy(pipegrid);
+    if (copy.matrix == NULL) return NULL;
     bool solve = Solve(copy, entry, exit);
     if (!solve) {
         PipeGrid_Destroy(&copy);
         return NULL;
     } 
     SolvedPipeGrid * start = SolvedPipeGrid_Append(NULL, &pipegrid.matrix[entry.y][entry.x], entry.x, entry.y);
+    if (start == NULL) {
+        PipeGrid_Destroy(&copy);
+        return NULL;
+    }
     SolvedPipeGrid * current = start;
 
     copy.matrix[entry.y][entry.x].tenyleges[1][0] = Rossz;
@@ -227,9 +234,19 @@ SolvedPipeGrid * PipeGrid_Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point ex
         }
 
         current = current->next;
+        if (current == NULL) {
+            SolvedPipeGrid_Destroy(start);
+            PipeGrid_Destroy(&copy);
+            return NULL;
+        }
     }
 
     current = SolvedPipeGrid_Append(current, &pipegrid.matrix[exit.y][exit.x], exit.x, exit.y);
+
+    if (current->next == NULL) {
+        SolvedPipeGrid_Destroy(start);
+        start = NULL;
+    }
 
     PipeGrid_Destroy(&copy);
     return start;
