@@ -5,7 +5,7 @@
 
 #include "SDL_local.h"
 #include "pipe.h"
-#include "sfd.h"
+#include "osdialog.h"
 
 #define DEFAULT_WINDOW_WIDTH 1600
 #define DEFAULT_WINDOW_HEIGHT 900

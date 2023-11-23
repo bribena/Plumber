@@ -2,11 +2,11 @@
 #ifndef SDL_LOCAL_H
 #define SDL_LOCAL_H
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
-#include <SDL2/SDL2_gfxPrimitives.h>
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
+#include <SDL_mixer.h>
+#include <SDL2_gfxPrimitives.h>
 #include <stdbool.h>
 
 #define DEFAULT_FONT_SIZE 200

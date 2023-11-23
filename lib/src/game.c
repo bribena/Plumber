@@ -1,6 +1,7 @@
 #include "game.h"
 #include <errno.h>
-#include "debugmalloc.h"
+/* A fájlbeolvasós müttymürütty miatt muszáj kivennem, mert beriaszt a jogos free-ekre */
+// #include "debugmalloc.h"
 
 
 bool ButtonRender(SDL_Renderer * renderer, Layer layer, int padding, int rounding, SDL_Color color) {
@@ -11,36 +12,17 @@ bool ButtonRender(SDL_Renderer * renderer, Layer layer, int padding, int roundin
     return success;
 }
 
-const char * BetoltoAblak(void) {
-    sfd_Options ops = {
-        .title="Pálya betöltése",
-        .filter_name="Palya fajl",
-        .filter="*.plm",
-    };
-    const char * path = sfd_open_dialog(&ops);
-    const char * sfd_error = sfd_get_error();
-
-    if (sfd_error != NULL) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "sfd_error: %s", sfd_error);
-        return NULL;
-    }
-
+char * BetoltoAblak(void) {
+    osdialog_filters * filter = osdialog_filters_parse("Pálya fájl:plm");
+    char * path = osdialog_file(OSDIALOG_OPEN, ".", NULL, filter);
+    osdialog_filters_free(filter);
     return path;
 }
 
-const char * MentoAblak(void) {
-    sfd_Options ops = {
-        .title="Pálya mentése",
-        .filter_name="Palya fajl",
-        .filter="*.plm",
-    };
-    const char * path = sfd_save_dialog(&ops);
-    const char * sfd_error = sfd_get_error();
-
-    if (sfd_error != NULL) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "sfd_error: %s", sfd_error);
-        return NULL;
-    }
+char * MentoAblak(void) {
+    osdialog_filters * filter = osdialog_filters_parse("Pálya fájl:plm");
+    char * path = osdialog_file(OSDIALOG_SAVE, ".", NULL, filter);
+    osdialog_filters_free(filter);
     return path;
 }
 
@@ -204,7 +186,7 @@ bool Menu(GameStruct game_struct) {
     SDL_Event event;
     bool clicked = false;
     bool game = false;
-    SDL_Point prevCursor;
+    SDL_Point prevCursor = {0, 0};
 
     PipeGrid pg = PipeGrid_Init();
     int entry_y = 0;
@@ -231,9 +213,11 @@ bool Menu(GameStruct game_struct) {
             game = SDL_PointInRect(&currCursor, &jatek_btn.location) && SDL_PointInRect(&prevCursor, &jatek_btn.location);
 
             if (SDL_PointInRect(&currCursor, &betolt_btn.location) && SDL_PointInRect(&prevCursor, &betolt_btn.location)) {
-                const char * path = BetoltoAblak();
-                if (path != NULL)
+                char * path = BetoltoAblak();
+                if (path != NULL) {
                     game = PipeGrid_Load(path, &pg, &entry_y, &exit_y);
+                    free(path);
+                }
             }
             
             if (SDL_PointInRect(&currCursor, &kilep_btn.location) && SDL_PointInRect(&prevCursor, &kilep_btn.location)) break;
@@ -635,10 +619,11 @@ bool Game(GameStruct game_struct, PipeGrid * betoltott, int entry_y, int exit_y)
                 }
 
                 if (!freeze && CursorInRect(ev_vars, mentes_btn.location)) {
-                    const char * path = MentoAblak();
+                    char * path = MentoAblak();
                     if (path != NULL) {
                         if (!PipeGrid_Save(pipegrid, entry_y, exit_y, path))
                             SDL_Log("Sikertelen mentés.");
+                        free(path);
                     }
                 }
 
@@ -916,7 +901,7 @@ bool Win(GameStruct game_struct, Layer state, PipeGrid copy, int entry_y, int ex
     SDL_RenderPresent(game_struct.window.renderer);
 
     SDL_Event event;
-    SDL_Point prevCursor;
+    SDL_Point prevCursor = {0, 0};
     bool clicked = false;
     bool menu = false;
 
@@ -946,9 +931,10 @@ bool Win(GameStruct game_struct, Layer state, PipeGrid copy, int entry_y, int ex
             }
 
             if (SDL_PointInRect(&currCursor, &mentes_btn.location) && SDL_PointInRect(&prevCursor, &mentes_btn.location)) {
-                const char * path = MentoAblak();
+                char * path = MentoAblak();
                 if (path != NULL) {
                     PipeGrid_Save(copy, entry_y, exit_y, path);
+                    free(path);
                 }
             }
 

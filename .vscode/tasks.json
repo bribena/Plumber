@@ -11,11 +11,15 @@
                 "-F",
                 "lib/include",
                 "-F",
-                "lib/sfd/src",
+                "lib/osdialog",
                 "-f",
-                "lib/sfd/src/sfd.c",
+                "lib/osdialog/osdialog.c",
+                "-f",
+                "lib/osdialog/osdialog_gtk2.c",
                 "-S",
-                "-lS"
+                "-lS",
+                "-O3",
+                "-fsan"
             ],
             "problemMatcher": [
                 "$armcc5"
