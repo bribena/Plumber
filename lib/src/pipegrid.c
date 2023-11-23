@@ -6,25 +6,35 @@ PipeGrid PipeGrid_Init(void) {
     return (PipeGrid){NULL, 0, 0};
 }
 
-void PipeGrid_Create(PipeGrid * pipegrid, int x, int y) {
+bool PipeGrid_Create(PipeGrid * pipegrid, int x, int y) {
+    pipegrid->matrix = (Pipe**)malloc(sizeof(Pipe*) * y);
+    if (pipegrid->matrix == NULL) return false;
+
+    Pipe * tmp = (Pipe*)malloc(sizeof(Pipe) * x * y);
+    if (tmp == NULL) {
+        free(pipegrid->matrix);
+        pipegrid->matrix = NULL;
+        return false;
+    }
+
+    for (int i = 0; i < y; i++){
+        pipegrid->matrix[i] = tmp + i * x;
+        for (int j = 0; j < x; j++)
+            pipegrid->matrix[i][j] = Pipe_Init();
+    }
+
     pipegrid->x = x;
     pipegrid->y = y;
 
-    pipegrid->matrix = (Pipe**)malloc(sizeof(Pipe*) * y);
-    for (int i = 0; i < y; i++){
-        pipegrid->matrix[i] = (Pipe*)malloc(sizeof(Pipe) * x);
-        for (int j = 0; j < x; j++)
-            pipegrid->matrix[i][j] = Pipe_Init();
-    }       
+    return true;     
 }
 
 void PipeGrid_Destroy(PipeGrid * pipegrid) {
-    for (int i = 0; i < pipegrid->y; i++) {
+    for (int i = 0; i < pipegrid->y; i++)
         for (int j = 0; j < pipegrid->x; j++)
             Pipe_Destroy(&pipegrid->matrix[i][j]);
-        free(pipegrid->matrix[i]);
-    }
-
+    
+    free(pipegrid->matrix[0]);
     free(pipegrid->matrix);
 }
 
@@ -32,8 +42,8 @@ PipeGrid PipeGrid_CreateCopy(PipeGrid source) {
     PipeGrid new = PipeGrid_Init();
     PipeGrid_Create(&new, source.x, source.y);
     
-    for (int i = 0; i < source.y; i++) {
-        for (int j = 0; j < source.x; j++)
+    for (int i = 0; i < new.y; i++) {
+        for (int j = 0; j < new.x; j++)
         {
             Elem_Init(new.matrix[i][j].tenyleges);
             Elem_Copy(new.matrix[i][j].tenyleges, source.matrix[i][j].tenyleges);
@@ -179,18 +189,28 @@ void PipeGrid_Shuffle(PipeGrid pipegrid) {
                 Pipe_Rotate(&pipegrid.matrix[i][j], 1);
 }
 
-void PipeGrid_Feldolgoz(PipeGrid pipegrid, Window window, SDL_Texture * pipe_texture, SDL_Rect base_location) {
+bool PipeGrid_Feldolgoz(PipeGrid pipegrid, Window window, SDL_Texture * pipe_texture, SDL_Rect base_location) {
     for (int i = 0; i < pipegrid.y; i++) {
         for (int j = 0; j < pipegrid.x; j++) {
             SDL_Rect location = {base_location.x + j * DEFAULT_PIPE_SIZE, base_location.y + i * DEFAULT_PIPE_SIZE, DEFAULT_PIPE_SIZE, DEFAULT_PIPE_SIZE};
-            Pipe_CreateFromElem(&pipegrid.matrix[i][j], window, pipe_texture, location);
+            if (!Pipe_CreateFromElem(&pipegrid.matrix[i][j], window, pipe_texture, location)) {
+                SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Feldolgozási hiba: %s", SDL_GetError());
+                return false;
+            }
         }
     }
+    return true;
 }
 
-void PipeGrid_Render(PipeGrid pipegrid, Window window) {
-    for (int i = 0; i < pipegrid.y; i++)
-        for (int j = 0; j < pipegrid.x; j++)
-            Pipe_Render(pipegrid.matrix[i][j], window);
+bool PipeGrid_Render(PipeGrid pipegrid, Window window) {
+    for (int i = 0; i < pipegrid.y; i++) {
+        for (int j = 0; j < pipegrid.x; j++) {
+            if (!Pipe_Render(pipegrid.matrix[i][j], window)) {
+                SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Renderelési hiba: %s", SDL_GetError());
+                return false;
+            }
+        }
+    }
+    return true;
 }
 

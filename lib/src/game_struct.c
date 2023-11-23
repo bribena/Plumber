@@ -6,9 +6,17 @@ GameStruct GameStruct_Init(void) {
 }
 
 bool GameStruct_Create(GameStruct * game_struct) {
-    Window_Create(&game_struct->window, "Plumber", DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT);
-    Assets_Load(&game_struct->assets, game_struct->window.renderer);
-    Fonts_Load(&game_struct->fonts);
+    if (!Window_Create(&game_struct->window, "Plumber", DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT)) return false;
+    if (!Assets_Load(&game_struct->assets, game_struct->window)) {
+        Window_Destroy(&game_struct->window);
+        return false;
+    }
+
+    if (!Fonts_Load(&game_struct->fonts)) {
+        Assets_Destroy(&game_struct->assets);
+        Window_Destroy(&game_struct->window);
+        return false;
+    }
 
     return true;
 }

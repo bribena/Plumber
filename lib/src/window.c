@@ -7,12 +7,20 @@ Window Window_Init(void) {
 }
 bool Window_Create(Window * window, char * title, int width, int height) {
     window->window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI);
+    if (window->window == NULL) {
+        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Sikertelen ablak létrehozás: %s", SDL_GetError());
+        return false;
+    }
+
     window->renderer = SDL_CreateRenderer(window->window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC | SDL_RENDERER_TARGETTEXTURE);
+    if (window->renderer == NULL) {
+        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Sikertelen renderer létrehozás: %s", SDL_GetError());
+        SDL_DestroyWindow(window->window);
+        return false;
+    }
+
     window->width = width;
     window->height = height;
-
-    SDL_SetRenderDrawColor(window->renderer, 0, 0, 0, 255);
-    SDL_SetRenderDrawBlendMode(window->renderer, SDL_BLENDMODE_BLEND);
 
     return true;
 }
