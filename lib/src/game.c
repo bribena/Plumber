@@ -20,9 +20,21 @@ char * BetoltoAblak(void) {
 }
 
 char * MentoAblak(void) {
-    osdialog_filters * filter = osdialog_filters_parse("Pálya fájl:plm");
+    osdialog_filters * filter = osdialog_filters_parse("Pálya fájl (*.plm):plm");
     char * path = osdialog_file(OSDIALOG_SAVE, ".", NULL, filter);
     osdialog_filters_free(filter);
+    if (path != NULL && strcmp(path, "") != 0 && strcmp(path + strlen(path) - 4, ".plm") != 0) {
+        char * ret = (char*)malloc((strlen(path) + 5) * sizeof(char));
+        if (ret == NULL) {
+        free(path);
+        return NULL;
+        }
+        strcpy(ret, path);
+        free(path);
+        strcat(ret, ".plm");
+        return ret;
+    }
+
     return path;
 }
 
@@ -933,7 +945,8 @@ bool Win(GameStruct game_struct, Layer state, PipeGrid copy, int entry_y, int ex
             if (SDL_PointInRect(&currCursor, &mentes_btn.location) && SDL_PointInRect(&prevCursor, &mentes_btn.location)) {
                 char * path = MentoAblak();
                 if (path != NULL) {
-                    PipeGrid_Save(copy, entry_y, exit_y, path);
+                    if (!PipeGrid_Save(copy, entry_y, exit_y, path))
+                        SDL_Log("Sikertelen mentés.");
                     free(path);
                 }
             }

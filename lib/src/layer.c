@@ -1,3 +1,8 @@
+/**
+ * @file layer.c
+ * @brief Az SDL_local.h-ban deklarált Layer struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.
+*/
+
 #include "SDL_local.h"
 #include "debugmalloc.h"
 
@@ -6,7 +11,7 @@ Layer Layer_Init(void) {
     return (Layer){NULL, (SDL_Rect){0,0,0,0}};
 }
 
-bool Layer_Create(Layer * layer, Window window, SDL_Rect * location) {
+bool Layer_Create(Layer * layer, Window window, const SDL_Rect * location) {
     SDL_Rect l;
     if (location == NULL)
         l = (SDL_Rect){0, 0, window.width, window.height};
@@ -23,7 +28,7 @@ bool Layer_Create(Layer * layer, Window window, SDL_Rect * location) {
     return true;
 }
 
-bool Layer_RenderFont(Layer * layer, Window window, TTF_Font * font, char * text, SDL_Color foreground) {
+bool Layer_RenderFont(Layer * layer, Window window, TTF_Font * font, const char * text, SDL_Color foreground) {
     SDL_Surface * surface = TTF_RenderUTF8_Blended(font, text, foreground);
     if (surface == NULL) {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Nem sikerült a felirat létrehozása: %s", SDL_GetError());

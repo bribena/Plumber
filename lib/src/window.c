@@ -1,3 +1,8 @@
+/**
+ * @file window.c
+ * @brief Az SDL_local.h-ban deklarált Window struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.
+*/
+
 #include "SDL_local.h"
 #include "debugmalloc.h"
 
@@ -5,7 +10,7 @@
 Window Window_Init(void) {
     return (Window){NULL, NULL, 0, 0};
 }
-bool Window_Create(Window * window, char * title, int width, int height) {
+bool Window_Create(Window * window, const char * title, int width, int height) {
     window->window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI);
     if (window->window == NULL) {
         SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Sikertelen ablak létrehozás: %s", SDL_GetError());

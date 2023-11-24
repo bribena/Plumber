@@ -1,3 +1,8 @@
+/**
+ * @file assets.c
+ * @brief Az SDL_local.h-ban deklarált Assets struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.
+*/
+
 #include "SDL_local.h"
 #include "debugmalloc.h"
 
@@ -6,7 +11,7 @@ Assets Assets_Init(void) {
 }
 
 
-bool Load_Texture(SDL_Texture ** texture, SDL_Renderer * renderer, const char * path) {
+static bool Load_Texture(SDL_Texture ** texture, SDL_Renderer * renderer, const char * path) {
     SDL_RWops * ops = SDL_RWFromFile(path, "r");
     if (ops == NULL) {
         SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Sikertelen fájl megnyitás: %s", SDL_GetError());
@@ -20,7 +25,7 @@ bool Load_Texture(SDL_Texture ** texture, SDL_Renderer * renderer, const char * 
     }
     return true;
 }
-bool Load_Music(Mix_Music ** music, char * path) {
+static bool Load_Music(Mix_Music ** music, char * path) {
     SDL_RWops * ops = SDL_RWFromFile(path, "r");
     if (ops == NULL) {
         SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Sikertelen fájl megnyitás: %s", SDL_GetError());
