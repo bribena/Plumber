@@ -1,7 +1,7 @@
 /**
  * @file layer.c
  * @brief Az SDL_local.h-ban deklarált Layer struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.
-*/
+ */
 
 #include "SDL_local.h"
 #include "debugmalloc.h"

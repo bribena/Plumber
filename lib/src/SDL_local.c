@@ -1,7 +1,7 @@
 /**
  * @file SDL_local.c
  * @brief Az SDL_local.h-ban deklarált, struktúrákhoz nem köthető függvények kódjait tartalmazza a fájl.
-*/
+ */
 
 #include "SDL_local.h"
 #include "debugmalloc.h"

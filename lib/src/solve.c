@@ -1,10 +1,17 @@
+/**
+ * @file solve.c
+ * @brief A pipe.h-ban deklarált SolvedPipeGrid struktúrához és a PipeGrid megoldásához kapcsolódó függvények kódjait
+ * tartalmazza a fájl.
+ */
+
 #include "pipe.h"
 #include "debugmalloc.h"
 
 
-typedef enum Irany {fel, le, jobbra, balra} Irany;
 
-bool LabyrinthSolver(PipeGrid pipegrid, SDL_Point current) {
+static bool LabyrinthSolver(PipeGrid pipegrid, SDL_Point current) {
+    typedef enum Irany {fel, le, jobbra, balra} Irany;
+
     Elem c;
     Elem_Copy(c, pipegrid.matrix[current.y][current.x].tenyleges);
     bool is_crossed = c[0][1] != Levego && c[1][0] != Levego && c[1][2] != Levego && c[2][1] != Levego;
@@ -129,7 +136,7 @@ bool LabyrinthSolver(PipeGrid pipegrid, SDL_Point current) {
     return false;
 }
 
-bool Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point exit) {
+static bool Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point exit) {
     if (pipegrid.matrix[exit.y][exit.x].tenyleges[1][2] == Levego || pipegrid.matrix[entry.y][entry.x].tenyleges[1][0] == Levego) return false;
     pipegrid.matrix[entry.y][entry.x].tenyleges[1][0] = Ismeretlen;
     pipegrid.matrix[exit.y][exit.x].tenyleges[1][2] = Jo;
@@ -141,7 +148,7 @@ bool Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point exit) {
 }
 
 
-SolvedPipeGrid * SolvedPipeGrid_Append(SolvedPipeGrid * start, Pipe * pipe, int x, int y) {
+static SolvedPipeGrid * SolvedPipeGrid_Append(SolvedPipeGrid * start, Pipe * pipe, int x, int y) {
     if (start == NULL) {
         start = (SolvedPipeGrid*)malloc(sizeof(SolvedPipeGrid));
         if (start == NULL) return NULL;

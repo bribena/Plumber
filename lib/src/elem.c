@@ -1,3 +1,8 @@
+/**
+ * @file elem.c
+ * @brief A pipe.h-ban deklarált Elem struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.
+ */
+
 #include "pipe.h"
 #include "debugmalloc.h"
 

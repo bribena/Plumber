@@ -1,3 +1,8 @@
+/**
+ * @file pipe.c
+ * @brief A pipe.h-ban deklarált Pipe struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.
+ */
+
 #include "pipe.h"
 #include "debugmalloc.h"
 

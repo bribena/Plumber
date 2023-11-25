@@ -1,3 +1,8 @@
+/**
+ * @file pipegrid.c
+ * @brief A pipe.h-ban deklarált PipeGrid struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.
+ */
+
 #include "pipe.h"
 #include "debugmalloc.h"
 
@@ -40,7 +45,8 @@ void PipeGrid_Destroy(PipeGrid * pipegrid) {
 
 PipeGrid PipeGrid_CreateCopy(PipeGrid source) {
     PipeGrid new = PipeGrid_Init();
-    PipeGrid_Create(&new, source.x, source.y);
+    if (!PipeGrid_Create(&new, source.x, source.y))
+        return new;
     
     for (int i = 0; i < new.y; i++) {
         for (int j = 0; j < new.x; j++)
@@ -54,9 +60,9 @@ PipeGrid PipeGrid_CreateCopy(PipeGrid source) {
 }
 
 
-typedef enum Irany {fel, le, jobbra, balra} Irany;
+static void LabyrinthGenerator(PipeGrid * pipegrid, SDL_Point current) {
+    typedef enum Irany {fel, le, jobbra, balra} Irany;
 
-void LabyrinthGenerator(PipeGrid * pipegrid, SDL_Point current) {
     Irany iranyok[4] = {fel, le, jobbra, balra};
 
     int c = 0;

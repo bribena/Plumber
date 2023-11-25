@@ -14,14 +14,14 @@
  *          hogy ne kelljen mindent külön-külön kirajzolni.
  * 
  * A struktúrák használata többnyire az alábbi módon történik:
- *     @code{.c}
- *     Struktúra név = Struktúra_Init(); // Az init egy üres elemet ad vissza, nem foglal magának memóriát
- *     Struktúra_LétrehozóFüggvény(&struktúra, paraméterek); // Lásd lentebb
- *     
- *     // Használat
- *     
- *     Struktúra_Destroy(&struktúra); // Mindegyik struktúra tartalmaz dinamikusan foglalt elemet, ezért ezeket fel kell szabadítani
- *     @endcode
+ * @code{.c}
+ * Struktúra név = Struktúra_Init(); // Az init egy üres elemet ad vissza, nem foglal magának memóriát
+ * Struktúra_LétrehozóFüggvény(&struktúra, paraméterek); // Lásd lentebb
+ * 
+ * // Használat
+ *
+ * Struktúra_Destroy(&struktúra); // Mindegyik struktúra tartalmaz dinamikusan foglalt elemet, ezért ezeket fel kell szabadítani
+ * @endcode
  * 
  * Függvények:
  * -----------
@@ -30,54 +30,54 @@
  * 
  * Az SDL modult a main() függvényben kell inicializálni, majd használat után lezárni.
  * 
- * 
- * Példa kód:
+ * Példakód:
  * ----------
- *     @code{.c}
- *     #include "SDL_local.h"
- *     
- *     int main(int argc, char * argv[]) {
- *         (void)argc, (void)argv; // Csak a fordító ne kapjon warningot, az SDL-nek kell ez a két paraméter
- *         InitializeSDL(); // SDL Inicializálása
+ * @code{.c}
+ * #include "SDL_local.h"
+ * 
+ * int main(int argc, char * argv[]) {
+ *     (void)argc, (void)argv; // Csak a fordító ne kapjon warningot, az SDL-nek kell ez a két paraméter
+ *     InitializeSDL(); // SDL Inicializálása
+ *             
+ *     Window ablak = Window_Init(); // Ablak inicializálása
+ *     Window_Create(&ablak, "Példa", 800, 600); // Ablak létrehozása
+ *     Assets assets = Assets_Init(); // Assets inicializálása
+ *     Assets_Load(&assets, ablak); // Assets betöltése
+ *     Fonts fonts = Fonts_Init(); // Betűtípusok inicializálása
+ *     Fonts_Load(&fonts); // Betűtípusok betöltése
+ *             
+ *     Layer background = Layer_Init(); // Háttér réteg inicializálása
+ *     Layer_Create(&background, ablak, NULL); // Háttér réteg létrehozása
+ *     SDL_SetRenderTarget(ablak.renderer, background.layer); // A háttér rétegét változtatjuk
+ *     SDL_RenderCopy(ablak.renderer, assets.background, NULL, NULL); // Háttérkép renderelése
+ *             
+ *     Layer text = Layer_Init(); // Szöveg réteg inicializálása
+ *     Layer_Create(&text, ablak, (SDL_Rect){200, 200, 100, 400}); // Szöveg réteg létrehozása
+ *     Layer_RenderFont(&text, ablak, fonts.bold, "Hello World!", (SDL_Color){255, 255, 255, 255}); // Szöveg létrehozása
+ *     SDL_RenderCopy(ablak.renderer, text.layer, NULL, &text.location); // Szöveg renderelése
+ *     Layer_Destroy(&text); // Használat utáni felszabadítás
  *         
- *         Window ablak = Window_Init(); // Ablak inicializálása
- *         Window_Create(&ablak, "Példa", 800, 600); // Ablak létrehozása
- *         Assets assets = Assets_Init(); // Assets inicializálása
- *         Assets_Load(&assets, ablak); // Assets betöltése
- *         Fonts fonts = Fonts_Init(); // Betűtípusok inicializálása
- *         Fonts_Load(&fonts); // Betűtípusok betöltése
- *         
- *         Layer background = Layer_Init(); // Háttér réteg inicializálása
- *         Layer_Create(&background, ablak, NULL); // Háttér réteg létrehozása
- *         SDL_SetRenderTarget(ablak.renderer, background.layer); // A háttér rétegét változtatjuk
- *         SDL_RenderCopy(ablak.renderer, assets.background, NULL, NULL); // Háttérkép renderelése
- *         
- *         Layer text = Layer_Init(); // Szöveg réteg inicializálása
- *         Layer_Create(&text, ablak, (SDL_Rect){200, 200, 100, 400}); // Szöveg réteg létrehozása
- *         Layer_RenderFont(&text, ablak, fonts.bold, "Hello World!", (SDL_Color){255, 255, 255, 255}); // Szöveg létrehozása
- *         SDL_RenderCopy(ablak.renderer, text.layer, NULL, &text.location); // Szöveg renderelése
- *         Layer_Destroy(&text); // Használat utáni felszabadítás
- *         
- *         SDL_SetRenderTarget(ablak.renderer, NULL); // Renderer target visszaállítása
- *         SDL_RenderCopy(ablak.renderer, background.layer, NULL, NULL); // A háttér réteg renderelése az ablakra
- *         SDL_RenderPresent(ablak.renderer); // Renderelés megjelenítése
- *         SDL_Delay(2000); // 2 másodpercig megjelenítés
- *         
- *         // ...
- *         
- *         // Használat utáni felszabadítás és kilépés
- *         Layer_Destroy(&background);
- *         Fonts_Destroy(&fonts);
- *         Assets_Destroy(&assets);
- *         Window_Destroy(&ablak);
- *         QuitSDL();
- *         return 0;
- *     }
+ *     SDL_SetRenderTarget(ablak.renderer, NULL); // Renderer target visszaállítása
+ *     SDL_RenderCopy(ablak.renderer, background.layer, NULL, NULL); // A háttér réteg renderelése az ablakra
+ *     SDL_RenderPresent(ablak.renderer); // Renderelés megjelenítése
+ *     SDL_Delay(2000); // 2 másodpercig megjelenítés
+ *        
+ *     // ...
+ *       
+ *     // Használat utáni felszabadítás és kilépés
+ *     Layer_Destroy(&background);
+ *     Fonts_Destroy(&fonts);
+ *     Assets_Destroy(&assets);
+ *     Window_Destroy(&ablak);
+ *     QuitSDL();
+ *     return 0;
+ * }
  *     @endcode
  * 
  * A fenti példakód megnyit egy ablakot 2 másodpercig, betölti a háttérképet, majd ráírja a "Hello world!"-öt.
  *
  *  Megjegyzések:
+ * --------------
  *  - Minden innen származó struktúrát használat után fel kell szabadítani.
  *  - A Layer, mivel SDL_Texture*-t tárol, kompatibilis az SDL függvényekkel.
  *  - A Layer-ek az SDL_SetRenderTarget() használatához lett kitalálva, ennek a "layer" elemét kell átadni,
@@ -95,6 +95,8 @@
  *  - assets.c
  *  - fonts.c
  * 
+ * @pre Az InitializeSDL() használata szükséges a modul használatához.
+ * @post A QuitSDL() használata szükséges a modul használata után.
  * @bug Az SDL használata miatt memóriaszivárgások előfordulhatnak.
 */
 
@@ -118,8 +120,8 @@
 #define DEFAULT_FONT_SIZE 200
 /**
  * @brief Alapértelmezett hangerő
- * @details A zene hangereje (0-128). A játékon belül nem állítható, ezért, hogy ne legyen túl hangos a zene,
- * muszáj volt lentebb venni a hangerejét. Tetszés szerint lehet állítani.
+ * @details A zene hangereje (0-128). A játékon belül nem állítható, viszont, hogy ne legyen túl hangos a zene,
+ * muszáj volt lentebb állítani a hangerejét. Tetszés szerint lehet állítani.
 */
 #define MIX_VOLUME 70
 
@@ -224,8 +226,9 @@ typedef struct Layer {
 /**
  * @brief Az SDL inicializáló függvénye
  * @details Az SDL-t és a hozzá kapcsolódó modulokat inicializálja. Ha használni akarjuk az SDL-t, akkor ezt a függvényt
- * meg kell hívni. A használat után a QuitSDL() függvényt kell meghívni, hogy leállítsuk a különböző modulokat.
+ * meg kell hívni.
  * Az előforduló hibákat a függvény kiírja a konzolra.
+ * @post A használat után a QuitSDL() függvényt kell meghívni, hogy leállítsuk a különböző modulokat.
  * @return true, hiba esetén false
  */
 bool InitializeSDL(void);
@@ -233,8 +236,8 @@ bool InitializeSDL(void);
  * @brief Elindítja a háttérzenét és végtelenül ismétli
  * @details SDL_mixer függvényekkel indítja el a háttérzenét.
  * Ezután az SDL_mixer függvényekkel kezelhető az Assets bgm eleme.
- * Bár a QuitSDL() leállítja a zenét, mégis érdemes manuálisan leállítani, kilépés előtt.
  * Az előforduló hibákat a függvény kiírja a konzolra.
+ * @post Bár a QuitSDL() leállítja a zenét, mégis érdemes manuálisan leállítani, kilépés előtt.
  * @param assets Az assets mappa tartalmát tároló struktúra. A bgm eleme kell.
  */
 void StartMusic(Assets assets);
@@ -252,10 +255,10 @@ Window Window_Init(void);
 /**
  * @brief Feltölt egy inicializált Window struktúrát.
  * @details Létrehoz egy SDL_Window*-ot és egy SDL_Renderer*-t, majd a window paraméterben eltárolja ezeket.
- * A Window_Create() által létrehozott Window struktúrákat használat után a Window_Destroy()-al kell felszabadítani.
- * TILOS egy, már létrehozott, Window struktúrát átadni, mert memóriaszivárgás lehet belőle.
  * Az előforduló hibákat a függvény kiírja a konzolra.
  * Hiba esetén nem ajánlott használni a struktúrát.
+ * @post A Window_Create() által létrehozott Window struktúrákat használat után a Window_Destroy()-al kell felszabadítani.
+ * @warning TILOS egy, már létrehozott, Window struktúrát átadni, mert memóriaszivárgás lehet belőle.
  * @param window Egy inicializált Window struktúra.
  * @param title Az ablak neve
  * @param width Az ablak szélessége (pixelben)
@@ -278,10 +281,10 @@ Assets Assets_Init(void);
 /**
  * @brief Feltölt egy inicializált Assets struktúrát.
  * @details Betölti az assets mappa tartalmát a megfelelő változókba.
- * Az Assets_Load() által létrehozott Assets struktúrákat használat után az Assets_Destroy()-al kell felszabadítani.
  * Az előforduló hibákat a függvény kiírja a konzolra.
  * Hiba esetén nem ajánlott használni a struktúrát.
- * Az Assets struktúrát csak egyszer kell létrehozni, de ha valamiért mégegyszer kell az Assets_Load(), TILOS egy,
+ * @post Az Assets_Load() által létrehozott Assets struktúrákat használat után az Assets_Destroy()-al kell felszabadítani.
+ * @warning Az Assets struktúrát csak egyszer kell létrehozni, de ha valamiért mégegyszer kell az Assets_Load(), TILOS egy,
  * már létrehozott, Assets struktúrát átadni, mert memóriaszivárgás lehet belőle.
  * @param assets Egy inicializált Assets struktúra.
  * @param window Az renderert tartalmazó Window struktúra.
@@ -303,11 +306,11 @@ Fonts Fonts_Init(void);
 /**
  * @brief Feltölt egy inicializált Fonts struktúrát.
  * @details Betölti a betűtípusokat az assets/fonts mappából a megfelelő változókba.
- * Az Fonts_Load() által létrehozott Fonts struktúrákat használat után az Fonts_Destroy()-al kell felszabadítani.
  * Az előforduló hibákat a függvény kiírja a konzolra.
  * Hiba esetén nem ajánlott használni a struktúrát.
  * A betöltött betűtípusokat a Layer_RenderFont() függvénnyel lehet használni.
- * A Fonts struktúrát csak egyszer kell létrohozni, de ha valamiért mégegyszer kell az Fonts_Load(), TILOS egy,
+ * @post Az Fonts_Load() által létrehozott Fonts struktúrákat használat után az Fonts_Destroy()-al kell felszabadítani.
+ * @warning A Fonts struktúrát csak egyszer kell létrohozni, de ha valamiért mégegyszer kell az Fonts_Load(), TILOS egy,
  * már létrehozott, Fonts struktúrát átadni, mert memóriaszivárgás lehet belőle.
  * @param fonts Egy inicializált Fonts struktúra.
  * @return true, hiba esetén false
@@ -328,10 +331,10 @@ Layer Layer_Init(void);
 /**
  * @brief Feltölt egy inicializált Layer struktúrát.
  * @details Létrehoz egy SDL_Texture*-t SDL_TEXTUREACCESS_TARGET-tel, majd a Layer struktúra layer elemében eltárolja ezt.
- * A Layer_Create() által létrehozott Layer struktúrákat használat után a Layer_Destroy()-al kell felszabadítani.
- * TILOS egy, már létrehozott, Layer struktúrát átadni, mert memóriaszivárgás lehet belőle.
  * Az előforduló hibákat a függvény kiírja a konzolra.
  * Hiba esetén nem ajánlott használni a struktúrát.
+ * @post A Layer_Create() által létrehozott Layer struktúrákat használat után a Layer_Destroy()-al kell felszabadítani.
+ * @warning TILOS egy, már létrehozott, Layer struktúrát átadni, mert memóriaszivárgás lehet belőle.
  * @param layer Egy inicializált Layer struktúra.
  * @param window A renderert tartalmazó Window struktúra.
  * @param location A réteg helye és mérete a "szülőjéhez" relatívan. Ha NULL, akkor a Window méretét veszi fel! 
@@ -343,9 +346,9 @@ bool Layer_Create(Layer * layer, Window window, const SDL_Rect * location);
  * @details Egy SDL_Surface*-en létrehoz egy szöveget, majd SDL_CreateTextureFromSurface()-el átalakítja SDL_Texture*-ré.
  * Egy Layer_Create() által létrehozott Layer-t kell átadni, viszont valójában ebből csak a location kell. Emiatt
  * technikailag bármilyen Layer-re lehet használni, de a Layer_Create()-el létrehozott Layer-eket célszerű használni.
- * Használat után a Layer_Destroy()-al kell felszabadítani a léterhozott struktúrát.
  * Az előforduló hibákat a függvény kiírja a konzolra.
  * Hiba esetén nem ajánlott használni a struktúrát.
+ * @post Használat után a Layer_Destroy()-al kell felszabadítani a léterhozott struktúrát.
  * @warning A függvény nagyon egyszerű, ezért a szöveg szélességét nem számítja ki, ezért előre meg kell adni. Ebből adódik,
  * hogy próbálgatással lehet csak viszonylag megfelelő arányokat beállítani.
  * @param layer Egy Layer_Create()-el létrehozott Layer struktúra.
