@@ -13,7 +13,7 @@ Először klónozza a repositoryt:
 git clone https://github.com/bribena/Plumber.git
 ``````
 
-A program az SDL, az SDL_image, az SDL_mixer, az SDL_ttf, az SDL_gfxPrimitives, az osdialog és a C moduljaira épül.
+A program az SDL, az SDL_image, az SDL_mixer, az SDL_ttf, az SDL2_gfxPrimitives, az osdialog és a C moduljaira épül.
 
 Linuxon a GCC, Windowson a MinGW segítségével fordítható a program.
 
@@ -35,11 +35,11 @@ Lehetőleg a disztribúció csomagkezelőjével szerezze be ezeket az SDL modulo
 
 Windowshoz a megadott oldalakon találhatóak előre buildelt fájlok. Ezeket töltse le (mindegyiknél a MinGW-vel kompatibilis zipfájlt). A zipfájlokat az alábbi módon csomagolja ki:
 
-- A dll fájlok (bin mappa tartalma, kivétel SDL_gfxPrimitives) kerüljenek a projekt gyökérmappájába
-- A header fájlok (include mappa tartalma, kivétel SDL_gfxPrimitives) kerüljenek a projekt lib/include mappájába
+- A dll fájlok (bin mappa tartalma, kivétel SDL2_gfxPrimitives) kerüljenek a projekt gyökérmappájába
+- A header fájlok (include mappa tartalma, kivétel SDL2_gfxPrimitives) kerüljenek a projekt lib/include mappájába
 - A lib mappa pedig mappástul a projekt lib mappájába
 
-Az SDL_gfxPrimitives esetén a megfelelő fájlok (.dll, .h, .a/.o) megtalálhatóak a zipjében. Ezeket a fentiek szerint helyezze el a projekt megfelelő mappáiban.
+Az SDL2_gfxPrimitives esetén a zipben lévő .c fájlok a projekt lib/src mappájába, a .h fájlok pedig a projekt lib/include mappájába kerüljenek.
 
 ### osdialog telepítése
 
