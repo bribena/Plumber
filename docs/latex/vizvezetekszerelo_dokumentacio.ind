@@ -1,0 +1,491 @@
+\begin{theindex}
+
+  \item {animation.c}
+    \subitem {AnimationQueue\_AppendLongFill}, \hyperpage{53}
+    \subitem {AnimationQueue\_AppendPipeFill}, \hyperpage{53}
+    \subitem {AnimationQueue\_AppendPipeRotate}, \hyperpage{54}
+    \subitem {AnimationQueue\_AppendWheelRotate}, \hyperpage{54}
+    \subitem {AnimationQueue\_Destroy}, \hyperpage{55}
+    \subitem {AnimationQueue\_Init}, \hyperpage{55}
+    \subitem {AnimationQueue\_RemoveElement}, \hyperpage{55}
+  \item {AnimationDirection}
+    \subitem {game.h}, \hyperpage{15}
+  \item {AnimationDirection\_ToDown}
+    \subitem {game.h}, \hyperpage{16}
+  \item {AnimationDirection\_ToLeft}
+    \subitem {game.h}, \hyperpage{16}
+  \item {AnimationDirection\_ToRight}
+    \subitem {game.h}, \hyperpage{16}
+  \item {AnimationDirection\_ToUp}
+    \subitem {game.h}, \hyperpage{16}
+  \item {AnimationQueue}, \hyperpage{13}
+  \item {AnimationQueue\_AppendLongFill}
+    \subitem {animation.c}, \hyperpage{53}
+    \subitem {game.h}, \hyperpage{16}
+  \item {AnimationQueue\_AppendPipeFill}
+    \subitem {animation.c}, \hyperpage{53}
+    \subitem {game.h}, \hyperpage{17}
+  \item {AnimationQueue\_AppendPipeRotate}
+    \subitem {animation.c}, \hyperpage{54}
+    \subitem {game.h}, \hyperpage{17}
+  \item {AnimationQueue\_AppendWheelRotate}
+    \subitem {animation.c}, \hyperpage{54}
+    \subitem {game.h}, \hyperpage{18}
+  \item {AnimationQueue\_Destroy}
+    \subitem {animation.c}, \hyperpage{55}
+    \subitem {game.h}, \hyperpage{18}
+  \item {AnimationQueue\_Init}
+    \subitem {animation.c}, \hyperpage{55}
+    \subitem {game.h}, \hyperpage{18}
+  \item {AnimationQueue\_RemoveElement}
+    \subitem {animation.c}, \hyperpage{55}
+    \subitem {game.h}, \hyperpage{19}
+  \item {AnimationType}
+    \subitem {game.h}, \hyperpage{16}
+  \item {AnimationType\_Fill}
+    \subitem {game.h}, \hyperpage{16}
+  \item {AnimationType\_None}
+    \subitem {game.h}, \hyperpage{16}
+  \item {AnimationType\_Rotate}
+    \subitem {game.h}, \hyperpage{16}
+  \item {Assets}, \hyperpage{44}
+  \item {assets.c}
+    \subitem {Assets\_Destroy}, \hyperpage{56}
+    \subitem {Assets\_Init}, \hyperpage{57}
+    \subitem {Assets\_Load}, \hyperpage{57}
+  \item {Assets\_Destroy}
+    \subitem {assets.c}, \hyperpage{56}
+    \subitem {SDL\_local.h}, \hyperpage{45}
+  \item {Assets\_Init}
+    \subitem {assets.c}, \hyperpage{57}
+    \subitem {SDL\_local.h}, \hyperpage{45}
+  \item {Assets\_Load}
+    \subitem {assets.c}, \hyperpage{57}
+    \subitem {SDL\_local.h}, \hyperpage{46}
+
+  \indexspace
+
+  \item {Cso}
+    \subitem {pipe.h}, \hyperpage{30}
+  \item {CursorInRect}
+    \subitem {ev\_vars.c}, \hyperpage{60}
+    \subitem {game.h}, \hyperpage{19}
+
+  \indexspace
+
+  \item {DEFAULT\_FONT\_SIZE}
+    \subitem {SDL\_local.h}, \hyperpage{45}
+  \item {DEFAULT\_PIPE\_SIZE}
+    \subitem {pipe.h}, \hyperpage{30}
+  \item {DEFAULT\_WINDOW\_HEIGHT}
+    \subitem {game.h}, \hyperpage{14}
+  \item {DEFAULT\_WINDOW\_WIDTH}
+    \subitem {game.h}, \hyperpage{14}
+  \item {Delta\_Update}
+    \subitem {ev\_vars.c}, \hyperpage{60}
+    \subitem {game.h}, \hyperpage{20}
+
+  \indexspace
+
+  \item {Elem}
+    \subitem {pipe.h}, \hyperpage{30}
+  \item {elem.c}
+    \subitem {Elem\_Copy}, \hyperpage{58}
+    \subitem {Elem\_Init}, \hyperpage{58}
+    \subitem {Elem\_RotateNeg}, \hyperpage{59}
+    \subitem {Elem\_RotatePos}, \hyperpage{59}
+  \item {Elem\_Copy}
+    \subitem {elem.c}, \hyperpage{58}
+    \subitem {pipe.h}, \hyperpage{31}
+  \item {Elem\_Init}
+    \subitem {elem.c}, \hyperpage{58}
+    \subitem {pipe.h}, \hyperpage{31}
+  \item {Elem\_RotateNeg}
+    \subitem {elem.c}, \hyperpage{59}
+    \subitem {pipe.h}, \hyperpage{32}
+  \item {Elem\_RotatePos}
+    \subitem {elem.c}, \hyperpage{59}
+    \subitem {pipe.h}, \hyperpage{32}
+  \item {ElemiResz}
+    \subitem {pipe.h}, \hyperpage{30}
+  \item {ev\_vars.c}
+    \subitem {CursorInRect}, \hyperpage{60}
+    \subitem {Delta\_Update}, \hyperpage{60}
+    \subitem {EventloopVariables\_Init}, \hyperpage{61}
+  \item {EventloopVariables}, \hyperpage{13}
+  \item {EventloopVariables\_Init}
+    \subitem {ev\_vars.c}, \hyperpage{61}
+    \subitem {game.h}, \hyperpage{20}
+
+  \indexspace
+
+  \item {Fonts}, \hyperpage{44}
+  \item {fonts.c}
+    \subitem {Fonts\_Destroy}, \hyperpage{61}
+    \subitem {Fonts\_Init}, \hyperpage{62}
+    \subitem {Fonts\_Load}, \hyperpage{62}
+  \item {Fonts\_Destroy}
+    \subitem {fonts.c}, \hyperpage{61}
+    \subitem {SDL\_local.h}, \hyperpage{46}
+  \item {Fonts\_Init}
+    \subitem {fonts.c}, \hyperpage{62}
+    \subitem {SDL\_local.h}, \hyperpage{46}
+  \item {Fonts\_Load}
+    \subitem {fonts.c}, \hyperpage{62}
+    \subitem {SDL\_local.h}, \hyperpage{47}
+
+  \indexspace
+
+  \item {Game}
+    \subitem {game.c}, \hyperpage{63}
+    \subitem {game.h}, \hyperpage{20}
+  \item {game.c}
+    \subitem {Game}, \hyperpage{63}
+    \subitem {Menu}, \hyperpage{64}
+    \subitem {Win}, \hyperpage{64}
+  \item {game.h}
+    \subitem {AnimationDirection}, \hyperpage{15}
+    \subitem {AnimationDirection\_ToDown}, \hyperpage{16}
+    \subitem {AnimationDirection\_ToLeft}, \hyperpage{16}
+    \subitem {AnimationDirection\_ToRight}, \hyperpage{16}
+    \subitem {AnimationDirection\_ToUp}, \hyperpage{16}
+    \subitem {AnimationQueue\_AppendLongFill}, \hyperpage{16}
+    \subitem {AnimationQueue\_AppendPipeFill}, \hyperpage{17}
+    \subitem {AnimationQueue\_AppendPipeRotate}, \hyperpage{17}
+    \subitem {AnimationQueue\_AppendWheelRotate}, \hyperpage{18}
+    \subitem {AnimationQueue\_Destroy}, \hyperpage{18}
+    \subitem {AnimationQueue\_Init}, \hyperpage{18}
+    \subitem {AnimationQueue\_RemoveElement}, \hyperpage{19}
+    \subitem {AnimationType}, \hyperpage{16}
+    \subitem {AnimationType\_Fill}, \hyperpage{16}
+    \subitem {AnimationType\_None}, \hyperpage{16}
+    \subitem {AnimationType\_Rotate}, \hyperpage{16}
+    \subitem {CursorInRect}, \hyperpage{19}
+    \subitem {DEFAULT\_WINDOW\_HEIGHT}, \hyperpage{14}
+    \subitem {DEFAULT\_WINDOW\_WIDTH}, \hyperpage{14}
+    \subitem {Delta\_Update}, \hyperpage{20}
+    \subitem {EventloopVariables\_Init}, \hyperpage{20}
+    \subitem {Game}, \hyperpage{20}
+    \subitem {GameStruct\_Create}, \hyperpage{21}
+    \subitem {GameStruct\_Destroy}, \hyperpage{21}
+    \subitem {GameStruct\_Init}, \hyperpage{22}
+    \subitem {LONG\_PIPE\_FILL\_SPEED}, \hyperpage{14}
+    \subitem {Menu}, \hyperpage{22}
+    \subitem {MIN\_X\_SIZE}, \hyperpage{14}
+    \subitem {MIN\_Y\_SIZE}, \hyperpage{15}
+    \subitem {PIPE\_FILL\_SPEED}, \hyperpage{15}
+    \subitem {PIPE\_ROTATE\_SPEED}, \hyperpage{15}
+    \subitem {Wheel\_Create}, \hyperpage{22}
+    \subitem {Wheel\_Destroy}, \hyperpage{23}
+    \subitem {Wheel\_Init}, \hyperpage{23}
+    \subitem {WHEEL\_ROTATE\_SPEED}, \hyperpage{15}
+    \subitem {WHEEL\_SIZE\_MULTIPLIER}, \hyperpage{15}
+    \subitem {Wheel\_Update}, \hyperpage{23}
+    \subitem {Win}, \hyperpage{24}
+  \item {game\_struct.c}
+    \subitem {GameStruct\_Create}, \hyperpage{65}
+    \subitem {GameStruct\_Destroy}, \hyperpage{66}
+    \subitem {GameStruct\_Init}, \hyperpage{66}
+  \item {GameStruct}, \hyperpage{12}
+  \item {GameStruct\_Create}
+    \subitem {game.h}, \hyperpage{21}
+    \subitem {game\_struct.c}, \hyperpage{65}
+  \item {GameStruct\_Destroy}
+    \subitem {game.h}, \hyperpage{21}
+    \subitem {game\_struct.c}, \hyperpage{66}
+  \item {GameStruct\_Init}
+    \subitem {game.h}, \hyperpage{22}
+    \subitem {game\_struct.c}, \hyperpage{66}
+
+  \indexspace
+
+  \item {Hiba lista}, \hyperpage{5}
+
+  \indexspace
+
+  \item {InitializeSDL}
+    \subitem {SDL\_local.c}, \hyperpage{76}
+    \subitem {SDL\_local.h}, \hyperpage{47}
+  \item {Ismeretlen}
+    \subitem {pipe.h}, \hyperpage{30}
+
+  \indexspace
+
+  \item {Jo}
+    \subitem {pipe.h}, \hyperpage{30}
+
+  \indexspace
+
+  \item {Layer}, \hyperpage{44}
+  \item {layer.c}
+    \subitem {Layer\_Create}, \hyperpage{67}
+    \subitem {Layer\_Destroy}, \hyperpage{67}
+    \subitem {Layer\_Init}, \hyperpage{68}
+    \subitem {Layer\_RenderFont}, \hyperpage{68}
+  \item {Layer\_Create}
+    \subitem {layer.c}, \hyperpage{67}
+    \subitem {SDL\_local.h}, \hyperpage{48}
+  \item {Layer\_Destroy}
+    \subitem {layer.c}, \hyperpage{67}
+    \subitem {SDL\_local.h}, \hyperpage{48}
+  \item {Layer\_Init}
+    \subitem {layer.c}, \hyperpage{68}
+    \subitem {SDL\_local.h}, \hyperpage{49}
+  \item {Layer\_RenderFont}
+    \subitem {layer.c}, \hyperpage{68}
+    \subitem {SDL\_local.h}, \hyperpage{49}
+  \item {Levego}
+    \subitem {pipe.h}, \hyperpage{30}
+  \item {lib/include/game.h}, \hyperpage{9}, \hyperpage{25}
+  \item {lib/include/pipe.h}, \hyperpage{26}, \hyperpage{39}
+  \item {lib/include/SDL\_local.h}, \hyperpage{40}, \hyperpage{51}
+  \item {lib/src/animation.c}, \hyperpage{52}
+  \item {lib/src/assets.c}, \hyperpage{56}
+  \item {lib/src/elem.c}, \hyperpage{57}
+  \item {lib/src/ev\_vars.c}, \hyperpage{59}
+  \item {lib/src/fonts.c}, \hyperpage{61}
+  \item {lib/src/game.c}, \hyperpage{62}
+  \item {lib/src/game\_struct.c}, \hyperpage{65}
+  \item {lib/src/layer.c}, \hyperpage{66}
+  \item {lib/src/pipe.c}, \hyperpage{69}
+  \item {lib/src/pipegrid.c}, \hyperpage{72}
+  \item {lib/src/SDL\_local.c}, \hyperpage{76}
+  \item {lib/src/solve.c}, \hyperpage{77}
+  \item {lib/src/wheel.c}, \hyperpage{79}
+  \item {lib/src/window.c}, \hyperpage{81}
+  \item {LONG\_PIPE\_FILL\_SPEED}
+    \subitem {game.h}, \hyperpage{14}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.c}, \hyperpage{83}
+  \item {main.c}, \hyperpage{82}
+    \subitem {main}, \hyperpage{83}
+  \item {Menu}
+    \subitem {game.c}, \hyperpage{64}
+    \subitem {game.h}, \hyperpage{22}
+  \item {MIN\_X\_SIZE}
+    \subitem {game.h}, \hyperpage{14}
+  \item {MIN\_Y\_SIZE}
+    \subitem {game.h}, \hyperpage{15}
+  \item {MIX\_VOLUME}
+    \subitem {SDL\_local.h}, \hyperpage{45}
+
+  \indexspace
+
+  \item {Pipe}, \hyperpage{29}
+  \item {pipe.c}
+    \subitem {Pipe\_CreateFromElem}, \hyperpage{69}
+    \subitem {Pipe\_Destroy}, \hyperpage{70}
+    \subitem {Pipe\_Init}, \hyperpage{70}
+    \subitem {Pipe\_Render}, \hyperpage{70}
+    \subitem {Pipe\_Rotate}, \hyperpage{71}
+    \subitem {Pipe\_UpdateLayer}, \hyperpage{71}
+  \item {pipe.h}
+    \subitem {Cso}, \hyperpage{30}
+    \subitem {DEFAULT\_PIPE\_SIZE}, \hyperpage{30}
+    \subitem {Elem}, \hyperpage{30}
+    \subitem {Elem\_Copy}, \hyperpage{31}
+    \subitem {Elem\_Init}, \hyperpage{31}
+    \subitem {Elem\_RotateNeg}, \hyperpage{32}
+    \subitem {Elem\_RotatePos}, \hyperpage{32}
+    \subitem {ElemiResz}, \hyperpage{30}
+    \subitem {Ismeretlen}, \hyperpage{30}
+    \subitem {Jo}, \hyperpage{30}
+    \subitem {Levego}, \hyperpage{30}
+    \subitem {Pipe\_CreateFromElem}, \hyperpage{32}
+    \subitem {Pipe\_Destroy}, \hyperpage{33}
+    \subitem {Pipe\_Init}, \hyperpage{33}
+    \subitem {Pipe\_Render}, \hyperpage{33}
+    \subitem {Pipe\_Rotate}, \hyperpage{34}
+    \subitem {Pipe\_UpdateLayer}, \hyperpage{34}
+    \subitem {PipeGrid\_Create}, \hyperpage{35}
+    \subitem {PipeGrid\_CreateCopy}, \hyperpage{35}
+    \subitem {PipeGrid\_Destroy}, \hyperpage{36}
+    \subitem {PipeGrid\_Feldolgoz}, \hyperpage{36}
+    \subitem {PipeGrid\_GenerateGrid}, \hyperpage{37}
+    \subitem {PipeGrid\_Init}, \hyperpage{37}
+    \subitem {PipeGrid\_Render}, \hyperpage{37}
+    \subitem {PipeGrid\_Shuffle}, \hyperpage{38}
+    \subitem {PipeGrid\_Solve}, \hyperpage{38}
+    \subitem {PipeType}, \hyperpage{31}
+    \subitem {PipeType\_Crossing}, \hyperpage{31}
+    \subitem {PipeType\_Curved}, \hyperpage{31}
+    \subitem {PipeType\_None}, \hyperpage{31}
+    \subitem {PipeType\_Straight}, \hyperpage{31}
+    \subitem {PipeType\_Tshaped}, \hyperpage{31}
+    \subitem {Rossz}, \hyperpage{30}
+    \subitem {SolvedPipeGrid\_Destroy}, \hyperpage{39}
+    \subitem {SolvedPipeGrid\_RemoveFirst}, \hyperpage{39}
+  \item {Pipe\_CreateFromElem}
+    \subitem {pipe.c}, \hyperpage{69}
+    \subitem {pipe.h}, \hyperpage{32}
+  \item {Pipe\_Destroy}
+    \subitem {pipe.c}, \hyperpage{70}
+    \subitem {pipe.h}, \hyperpage{33}
+  \item {PIPE\_FILL\_SPEED}
+    \subitem {game.h}, \hyperpage{15}
+  \item {Pipe\_Init}
+    \subitem {pipe.c}, \hyperpage{70}
+    \subitem {pipe.h}, \hyperpage{33}
+  \item {Pipe\_Render}
+    \subitem {pipe.c}, \hyperpage{70}
+    \subitem {pipe.h}, \hyperpage{33}
+  \item {Pipe\_Rotate}
+    \subitem {pipe.c}, \hyperpage{71}
+    \subitem {pipe.h}, \hyperpage{34}
+  \item {PIPE\_ROTATE\_SPEED}
+    \subitem {game.h}, \hyperpage{15}
+  \item {Pipe\_UpdateLayer}
+    \subitem {pipe.c}, \hyperpage{71}
+    \subitem {pipe.h}, \hyperpage{34}
+  \item {PipeGrid}, \hyperpage{29}
+  \item {pipegrid.c}
+    \subitem {PipeGrid\_Create}, \hyperpage{72}
+    \subitem {PipeGrid\_CreateCopy}, \hyperpage{73}
+    \subitem {PipeGrid\_Destroy}, \hyperpage{73}
+    \subitem {PipeGrid\_Feldolgoz}, \hyperpage{74}
+    \subitem {PipeGrid\_GenerateGrid}, \hyperpage{74}
+    \subitem {PipeGrid\_Init}, \hyperpage{75}
+    \subitem {PipeGrid\_Render}, \hyperpage{75}
+    \subitem {PipeGrid\_Shuffle}, \hyperpage{75}
+  \item {PipeGrid\_Create}
+    \subitem {pipe.h}, \hyperpage{35}
+    \subitem {pipegrid.c}, \hyperpage{72}
+  \item {PipeGrid\_CreateCopy}
+    \subitem {pipe.h}, \hyperpage{35}
+    \subitem {pipegrid.c}, \hyperpage{73}
+  \item {PipeGrid\_Destroy}
+    \subitem {pipe.h}, \hyperpage{36}
+    \subitem {pipegrid.c}, \hyperpage{73}
+  \item {PipeGrid\_Feldolgoz}
+    \subitem {pipe.h}, \hyperpage{36}
+    \subitem {pipegrid.c}, \hyperpage{74}
+  \item {PipeGrid\_GenerateGrid}
+    \subitem {pipe.h}, \hyperpage{37}
+    \subitem {pipegrid.c}, \hyperpage{74}
+  \item {PipeGrid\_Init}
+    \subitem {pipe.h}, \hyperpage{37}
+    \subitem {pipegrid.c}, \hyperpage{75}
+  \item {PipeGrid\_Render}
+    \subitem {pipe.h}, \hyperpage{37}
+    \subitem {pipegrid.c}, \hyperpage{75}
+  \item {PipeGrid\_Shuffle}
+    \subitem {pipe.h}, \hyperpage{38}
+    \subitem {pipegrid.c}, \hyperpage{75}
+  \item {PipeGrid\_Solve}
+    \subitem {pipe.h}, \hyperpage{38}
+    \subitem {solve.c}, \hyperpage{78}
+  \item {PipeType}
+    \subitem {pipe.h}, \hyperpage{31}
+  \item {PipeType\_Crossing}
+    \subitem {pipe.h}, \hyperpage{31}
+  \item {PipeType\_Curved}
+    \subitem {pipe.h}, \hyperpage{31}
+  \item {PipeType\_None}
+    \subitem {pipe.h}, \hyperpage{31}
+  \item {PipeType\_Straight}
+    \subitem {pipe.h}, \hyperpage{31}
+  \item {PipeType\_Tshaped}
+    \subitem {pipe.h}, \hyperpage{31}
+
+  \indexspace
+
+  \item {QuitSDL}
+    \subitem {SDL\_local.c}, \hyperpage{76}
+    \subitem {SDL\_local.h}, \hyperpage{50}
+
+  \indexspace
+
+  \item {readme.md}, \hyperpage{83}
+  \item {Rossz}
+    \subitem {pipe.h}, \hyperpage{30}
+
+  \indexspace
+
+  \item {SDL\_local.c}
+    \subitem {InitializeSDL}, \hyperpage{76}
+    \subitem {QuitSDL}, \hyperpage{76}
+    \subitem {StartMusic}, \hyperpage{77}
+  \item {SDL\_local.h}
+    \subitem {Assets\_Destroy}, \hyperpage{45}
+    \subitem {Assets\_Init}, \hyperpage{45}
+    \subitem {Assets\_Load}, \hyperpage{46}
+    \subitem {DEFAULT\_FONT\_SIZE}, \hyperpage{45}
+    \subitem {Fonts\_Destroy}, \hyperpage{46}
+    \subitem {Fonts\_Init}, \hyperpage{46}
+    \subitem {Fonts\_Load}, \hyperpage{47}
+    \subitem {InitializeSDL}, \hyperpage{47}
+    \subitem {Layer\_Create}, \hyperpage{48}
+    \subitem {Layer\_Destroy}, \hyperpage{48}
+    \subitem {Layer\_Init}, \hyperpage{49}
+    \subitem {Layer\_RenderFont}, \hyperpage{49}
+    \subitem {MIX\_VOLUME}, \hyperpage{45}
+    \subitem {QuitSDL}, \hyperpage{50}
+    \subitem {StartMusic}, \hyperpage{50}
+    \subitem {Window\_Create}, \hyperpage{50}
+    \subitem {Window\_Destroy}, \hyperpage{51}
+    \subitem {Window\_Init}, \hyperpage{51}
+  \item {solve.c}
+    \subitem {PipeGrid\_Solve}, \hyperpage{78}
+    \subitem {SolvedPipeGrid\_Destroy}, \hyperpage{78}
+    \subitem {SolvedPipeGrid\_RemoveFirst}, \hyperpage{78}
+  \item {SolvedPipeGrid}, \hyperpage{29}
+  \item {SolvedPipeGrid\_Destroy}
+    \subitem {pipe.h}, \hyperpage{39}
+    \subitem {solve.c}, \hyperpage{78}
+  \item {SolvedPipeGrid\_RemoveFirst}
+    \subitem {pipe.h}, \hyperpage{39}
+    \subitem {solve.c}, \hyperpage{78}
+  \item {StartMusic}
+    \subitem {SDL\_local.c}, \hyperpage{77}
+    \subitem {SDL\_local.h}, \hyperpage{50}
+
+  \indexspace
+
+  \item {Vízvezetékszerelő/Plumber}, \hyperpage{1}
+
+  \indexspace
+
+  \item {Wheel}, \hyperpage{13}
+  \item {wheel.c}
+    \subitem {Wheel\_Create}, \hyperpage{79}
+    \subitem {Wheel\_Destroy}, \hyperpage{80}
+    \subitem {Wheel\_Init}, \hyperpage{80}
+    \subitem {Wheel\_Update}, \hyperpage{80}
+  \item {Wheel\_Create}
+    \subitem {game.h}, \hyperpage{22}
+    \subitem {wheel.c}, \hyperpage{79}
+  \item {Wheel\_Destroy}
+    \subitem {game.h}, \hyperpage{23}
+    \subitem {wheel.c}, \hyperpage{80}
+  \item {Wheel\_Init}
+    \subitem {game.h}, \hyperpage{23}
+    \subitem {wheel.c}, \hyperpage{80}
+  \item {WHEEL\_ROTATE\_SPEED}
+    \subitem {game.h}, \hyperpage{15}
+  \item {WHEEL\_SIZE\_MULTIPLIER}
+    \subitem {game.h}, \hyperpage{15}
+  \item {Wheel\_Update}
+    \subitem {game.h}, \hyperpage{23}
+    \subitem {wheel.c}, \hyperpage{80}
+  \item {Win}
+    \subitem {game.c}, \hyperpage{64}
+    \subitem {game.h}, \hyperpage{24}
+  \item {Window}, \hyperpage{43}
+  \item {window.c}
+    \subitem {Window\_Create}, \hyperpage{81}
+    \subitem {Window\_Destroy}, \hyperpage{82}
+    \subitem {Window\_Init}, \hyperpage{82}
+  \item {Window\_Create}
+    \subitem {SDL\_local.h}, \hyperpage{50}
+    \subitem {window.c}, \hyperpage{81}
+  \item {Window\_Destroy}
+    \subitem {SDL\_local.h}, \hyperpage{51}
+    \subitem {window.c}, \hyperpage{82}
+  \item {Window\_Init}
+    \subitem {SDL\_local.h}, \hyperpage{51}
+    \subitem {window.c}, \hyperpage{82}
+
+\end{theindex}

@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vízvezetékszerelő: lib/src/game.c fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vízvezetékszerelő
+   </div>
+   <div id="projectbrief">Egy vízvezetékszerelő játék, C-ben írva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Keresés');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_a065c5f60305fee3569f887679366939.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Függvények</a>  </div>
+  <div class="headertitle"><div class="title">game.c fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A <a class="el" href="game_8h.html" title="A játék headerje.">game.h</a>-ban deklarált, a játék állapotához tartozó függvények kódjait tartalmazó fájl.  
+<a href="#details">Részletek...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="game_8h_source.html">game.h</a>&quot;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &quot;debugmalloc.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:a1b99b54c59508d3d3141e7b49f56ca64" id="r_a1b99b54c59508d3d3141e7b49f56ca64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b99b54c59508d3d3141e7b49f56ca64">Menu</a> (<a class="el" href="game_8h.html#structGameStruct">GameStruct</a> game_struct)</td></tr>
+<tr class="memdesc:a1b99b54c59508d3d3141e7b49f56ca64"><td class="mdescLeft">&#160;</td><td class="mdescRight">A játékmenü függvénye.  <br /></td></tr>
+<tr class="separator:a1b99b54c59508d3d3141e7b49f56ca64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c862a10cd086d1667b0564f41cf7fd" id="r_a93c862a10cd086d1667b0564f41cf7fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93c862a10cd086d1667b0564f41cf7fd">Game</a> (<a class="el" href="game_8h.html#structGameStruct">GameStruct</a> game_struct, <a class="el" href="pipe_8h.html#structPipeGrid">PipeGrid</a> *betoltott, int entry_y, int exit_y)</td></tr>
+<tr class="memdesc:a93c862a10cd086d1667b0564f41cf7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A játék függvénye.  <br /></td></tr>
+<tr class="separator:a93c862a10cd086d1667b0564f41cf7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b05c35e760e1a2a04bbf56bfa8222c" id="r_aa1b05c35e760e1a2a04bbf56bfa8222c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1b05c35e760e1a2a04bbf56bfa8222c">Win</a> (<a class="el" href="game_8h.html#structGameStruct">GameStruct</a> game_struct, <a class="el" href="SDL__local_8h.html#structLayer">Layer</a> state, <a class="el" href="pipe_8h.html#structPipeGrid">PipeGrid</a> copy, int entry_y, int exit_y)</td></tr>
+<tr class="memdesc:aa1b05c35e760e1a2a04bbf56bfa8222c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A nyert kép függvénye.  <br /></td></tr>
+<tr class="separator:aa1b05c35e760e1a2a04bbf56bfa8222c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p>A <a class="el" href="game_8h.html" title="A játék headerje.">game.h</a>-ban deklarált, a játék állapotához tartozó függvények kódjait tartalmazó fájl. </p>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000004">Hiba</a></b></dt><dd>Az osdialog modullal problémája van a debugmalloc.h-nak. Az osdialog dokumentációja tisztán leírja, hogy a visszaadott stringeit fel kell szabadítani használat után. Viszont, ha fel akarnám szabadítani ezt, a debugmalloc.h hibát ad vissza. Ezt úgy lehet kijavítani, hogy az osdialog.h-ban include-oljuk a debugmalloc.h-t vagy innen kivesszük a debugmalloc.h-t. </dd></dl>
+</div><h2 class="groupheader">Függvények dokumentációja</h2>
+<a id="a93c862a10cd086d1667b0564f41cf7fd" name="a93c862a10cd086d1667b0564f41cf7fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c862a10cd086d1667b0564f41cf7fd">&#9670;&#160;</a></span>Game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game_8h.html#structGameStruct">GameStruct</a>&#160;</td>
+          <td class="paramname"><em>game_struct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pipe_8h.html#structPipeGrid">PipeGrid</a> *&#160;</td>
+          <td class="paramname"><em>betoltott</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>entry_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>exit_y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A játék függvénye. </p>
+<p>Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. </p><dl class="section note"><dt>Megjegyzés</dt><dd>A <a class="el" href="game_8h.html#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a> függvény már képes meghívni, magában ne hívjuk meg, mert nem garantált a működése. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game_struct</td><td>A létrehozott <a class="el" href="game_8h.html#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a>. </td></tr>
+    <tr><td class="paramname">betoltott</td><td>Ha betöltés volt a <a class="el" href="game_8h.html#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a>-ben választva, akkor a betöltött <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a>. </td></tr>
+    <tr><td class="paramname">entry_y</td><td>Ha betöltés volt a <a class="el" href="game_8h.html#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a>-ben választva, akkor a betöltött <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> bejáratánk sora. </td></tr>
+    <tr><td class="paramname">exit_y</td><td>Ha betöltés volt a <a class="el" href="game_8h.html#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a>-ben választva, akkor a betöltött <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> kijáratának sora. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, ha a <a class="el" href="game_8h.html#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a>-be lépünk vissza, false, ha új játék kezdődik, kilépés történt, illetve néhány súlyosabb hiba esetén </dd></dl>
+
+</div>
+</div>
+<a id="a1b99b54c59508d3d3141e7b49f56ca64" name="a1b99b54c59508d3d3141e7b49f56ca64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b99b54c59508d3d3141e7b49f56ca64">&#9670;&#160;</a></span>Menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Menu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game_8h.html#structGameStruct">GameStruct</a>&#160;</td>
+          <td class="paramname"><em>game_struct</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A játékmenü függvénye. </p>
+<p>Az SDL és a <a class="el" href="game_8h.html#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> inicializálása/létrehozása után meg lehet hívni. Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game_struct</td><td>A létrehozott <a class="el" href="game_8h.html#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, súlyos hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="aa1b05c35e760e1a2a04bbf56bfa8222c" name="aa1b05c35e760e1a2a04bbf56bfa8222c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b05c35e760e1a2a04bbf56bfa8222c">&#9670;&#160;</a></span>Win()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Win </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game_8h.html#structGameStruct">GameStruct</a>&#160;</td>
+          <td class="paramname"><em>game_struct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structLayer">Layer</a>&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pipe_8h.html#structPipeGrid">PipeGrid</a>&#160;</td>
+          <td class="paramname"><em>copy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>entry_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>exit_y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A nyert kép függvénye. </p>
+<p>Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. </p><dl class="section note"><dt>Megjegyzés</dt><dd>A <a class="el" href="game_8h.html#a93c862a10cd086d1667b0564f41cf7fd" title="A játék függvénye.">Game()</a> függvény már képes meghívni, magában ne hívjuk meg, mert nem garantált a működése. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game_struct</td><td>A létrehozott <a class="el" href="game_8h.html#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a>. </td></tr>
+    <tr><td class="paramname">state</td><td>A <a class="el" href="game_8h.html#a93c862a10cd086d1667b0564f41cf7fd" title="A játék függvénye.">Game()</a> függvény aktuális renderelt képe. </td></tr>
+    <tr><td class="paramname">copy</td><td>A <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> pálya betöltéskori másolata. </td></tr>
+    <tr><td class="paramname">entry_y</td><td>A <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> bejáratának sora. </td></tr>
+    <tr><td class="paramname">exit_y</td><td>A <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> kijáratának sora. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, ha a <a class="el" href="game_8h.html#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a>-be lépünk vissza, false, ha új játék kezdődik, kilépés történt, illetve néhány súlyosabb hiba esetén </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

@@ -1,0 +1,80 @@
+\doxysection{lib/src/assets.c fájlreferencia}
+\hypertarget{assets_8c}{}\label{assets_8c}\index{lib/src/assets.c@{lib/src/assets.c}}
+
+
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban deklarált \doxylink{SDL__local_8h_structAssets}{Assets} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}SDL\+\_\+local.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} \mbox{\hyperlink{assets_8c_acd2e9fa745363b10368a7ee162f01a46}{Assets\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{SDL__local_8h_structAssets}{Assets} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{assets_8c_a2267406d575d2ebd8d9be1f6eb31c683}{Assets\+\_\+\+Load}} (\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} \texorpdfstring{$\ast$}{*}assets, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window)
+\begin{DoxyCompactList}\small\item\em Feltölt egy inicializált \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{assets_8c_ab2869d2ddc5af55a9b2366509dfc213f}{Assets\+\_\+\+Destroy}} (\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} \texorpdfstring{$\ast$}{*}assets)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban deklarált \doxylink{SDL__local_8h_structAssets}{Assets} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{assets_8c_ab2869d2ddc5af55a9b2366509dfc213f}\label{assets_8c_ab2869d2ddc5af55a9b2366509dfc213f} 
+\index{assets.c@{assets.c}!Assets\_Destroy@{Assets\_Destroy}}
+\index{Assets\_Destroy@{Assets\_Destroy}!assets.c@{assets.c}}
+\doxysubsubsection{\texorpdfstring{Assets\_Destroy()}{Assets\_Destroy()}}
+{\footnotesize\ttfamily void Assets\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} \texorpdfstring{$\ast$}{*}}]{assets }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát. 
+
+Az átadott \doxylink{SDL__local_8h_a2267406d575d2ebd8d9be1f6eb31c683}{Assets\+\_\+\+Load()} által létrehozott struktúrát szabadítja fel. 
+\begin{DoxyParams}{Paraméterek}
+{\em assets} & A felszabadítandó \doxylink{SDL__local_8h_structAssets}{Assets} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{assets_8c_acd2e9fa745363b10368a7ee162f01a46}\label{assets_8c_acd2e9fa745363b10368a7ee162f01a46} 
+\index{assets.c@{assets.c}!Assets\_Init@{Assets\_Init}}
+\index{Assets\_Init@{Assets\_Init}!assets.c@{assets.c}}
+\doxysubsubsection{\texorpdfstring{Assets\_Init()}{Assets\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} Assets\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{SDL__local_8h_structAssets}{Assets} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{SDL__local_8h_structAssets}{Assets} struktúra. 
+\end{DoxyReturn}
+\Hypertarget{assets_8c_a2267406d575d2ebd8d9be1f6eb31c683}\label{assets_8c_a2267406d575d2ebd8d9be1f6eb31c683} 
+\index{assets.c@{assets.c}!Assets\_Load@{Assets\_Load}}
+\index{Assets\_Load@{Assets\_Load}!assets.c@{assets.c}}
+\doxysubsubsection{\texorpdfstring{Assets\_Load()}{Assets\_Load()}}
+{\footnotesize\ttfamily bool Assets\+\_\+\+Load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} \texorpdfstring{$\ast$}{*}}]{assets,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window }\end{DoxyParamCaption})}
+
+
+
+Feltölt egy inicializált \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát. 
+
+Betölti az assets mappa tartalmát a megfelelő változókba. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. \begin{DoxyPostcond}{Utófeltétel}
+Az \doxylink{SDL__local_8h_a2267406d575d2ebd8d9be1f6eb31c683}{Assets\+\_\+\+Load()} által létrehozott \doxylink{SDL__local_8h_structAssets}{Assets} struktúrákat használat után az \doxylink{SDL__local_8h_ab2869d2ddc5af55a9b2366509dfc213f}{Assets\+\_\+\+Destroy()}-\/al kell felszabadítani. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+Az \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát csak egyszer kell létrehozni, de ha valamiért mégegyszer kell az \doxylink{SDL__local_8h_a2267406d575d2ebd8d9be1f6eb31c683}{Assets\+\_\+\+Load()}, TILOS egy, már létrehozott, \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em assets} & Egy inicializált \doxylink{SDL__local_8h_structAssets}{Assets} struktúra pointere. \\
+\hline
+{\em window} & Az renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}

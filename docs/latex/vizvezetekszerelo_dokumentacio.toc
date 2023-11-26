@@ -1,0 +1,243 @@
+\select@language {magyar} \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\select@language {magyar} \contentsline {chapter}{\numberline {1}Vízvezetékszerelő/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Plumber}{1}{chapter.1}%
+\select@language {magyar} \contentsline {section}{\numberline {1.1}Telepítés}{1}{section.1.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.1.1}SDL telepítése}{1}{subsection.1.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {1.1.1.1}Linux}{1}{subsubsection.1.1.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {1.1.1.2}Windows}{2}{subsubsection.1.1.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.1.2}osdialog telepítése}{2}{subsection.1.1.2}%
+\select@language {magyar} \contentsline {section}{\numberline {1.2}Fordítás}{2}{section.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.2.1}Linux}{2}{subsection.1.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.2.2}Windows}{2}{subsection.1.2.2}%
+\select@language {magyar} \contentsline {section}{\numberline {1.3}A játék menete}{3}{section.1.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.3.1}A generált fájlok struktúrája (.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}plm)}{3}{subsection.1.3.1}%
+\select@language {magyar} \contentsline {section}{\numberline {1.4}Hibák}{3}{section.1.4}%
+\select@language {magyar} \contentsline {chapter}{\numberline {2}Hiba lista}{5}{chapter.2}%
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Fájlmutató}{7}{chapter.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3.1}Fájllista}{7}{section.3.1}%
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Fájlok dokumentációja}{9}{chapter.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.1}lib/include/game.h fájlreferencia}{9}{section.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.1}Részletes leírás}{11}{subsection.4.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.1}Struktúrák, enumok\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{11}{subsubsection.4.1.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.2}Függvények\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{11}{subsubsection.4.1.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.3}Példakód\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{11}{subsubsection.4.1.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.4}Megjegyzések\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{12}{subsubsection.4.1.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.1.5}Kapcsolódó kódfájlok\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{12}{subsubsection.4.1.1.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.2}Adatszerkezetek dokumentációja}{12}{subsection.4.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.2.1}struct Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Struct}{12}{subsubsection.4.1.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.2.2}struct Eventloop\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Variables}{13}{subsubsection.4.1.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.2.3}struct Wheel}{13}{subsubsection.4.1.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.2.4}struct Animation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Queue}{13}{subsubsection.4.1.2.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.3}Makródefiníciók dokumentációja}{14}{subsection.4.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.3.1}DEFAULT\_WINDOW\_HEIGHT}{14}{subsubsection.4.1.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.3.2}DEFAULT\_WINDOW\_WIDTH}{14}{subsubsection.4.1.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.3.3}LONG\_PIPE\_FILL\_SPEED}{14}{subsubsection.4.1.3.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.3.4}MIN\_X\_SIZE}{15}{subsubsection.4.1.3.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.3.5}MIN\_Y\_SIZE}{15}{subsubsection.4.1.3.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.3.6}PIPE\_FILL\_SPEED}{15}{subsubsection.4.1.3.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.3.7}PIPE\_ROTATE\_SPEED}{15}{subsubsection.4.1.3.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.3.8}WHEEL\_ROTATE\_SPEED}{15}{subsubsection.4.1.3.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.3.9}WHEEL\_SIZE\_MULTIPLIER}{15}{subsubsection.4.1.3.9}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.4}Enumerációk dokumentációja}{15}{subsection.4.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.4.1}AnimationDirection}{15}{subsubsection.4.1.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.4.2}AnimationType}{16}{subsubsection.4.1.4.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1.5}Függvények dokumentációja}{16}{subsection.4.1.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.1}AnimationQueue\_AppendLongFill()}{16}{subsubsection.4.1.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.2}AnimationQueue\_AppendPipeFill()}{17}{subsubsection.4.1.5.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.3}AnimationQueue\_AppendPipeRotate()}{17}{subsubsection.4.1.5.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.4}AnimationQueue\_AppendWheelRotate()}{18}{subsubsection.4.1.5.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.5}AnimationQueue\_Destroy()}{18}{subsubsection.4.1.5.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.6}AnimationQueue\_Init()}{18}{subsubsection.4.1.5.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.7}AnimationQueue\_RemoveElement()}{19}{subsubsection.4.1.5.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.8}CursorInRect()}{19}{subsubsection.4.1.5.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.9}Delta\_Update()}{20}{subsubsection.4.1.5.9}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.10}EventloopVariables\_Init()}{20}{subsubsection.4.1.5.10}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.11}Game()}{20}{subsubsection.4.1.5.11}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.12}GameStruct\_Create()}{21}{subsubsection.4.1.5.12}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.13}GameStruct\_Destroy()}{21}{subsubsection.4.1.5.13}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.14}GameStruct\_Init()}{22}{subsubsection.4.1.5.14}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.15}Menu()}{22}{subsubsection.4.1.5.15}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.16}Wheel\_Create()}{22}{subsubsection.4.1.5.16}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.17}Wheel\_Destroy()}{23}{subsubsection.4.1.5.17}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.18}Wheel\_Init()}{23}{subsubsection.4.1.5.18}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.19}Wheel\_Update()}{24}{subsubsection.4.1.5.19}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.1.5.20}Win()}{24}{subsubsection.4.1.5.20}%
+\select@language {magyar} \contentsline {section}{\numberline {4.2}game.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{25}{section.4.2}%
+\select@language {magyar} \contentsline {section}{\numberline {4.3}lib/include/pipe.h fájlreferencia}{26}{section.4.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.3.1}Részletes leírás}{28}{subsection.4.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.1}Struktúrák, enumok\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{28}{subsubsection.4.3.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.2}Függvények\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{28}{subsubsection.4.3.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.3}Példakód\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{28}{subsubsection.4.3.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.4}Megjegyzések\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{29}{subsubsection.4.3.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.1.5}Kapcsolódó kódfájlok\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{29}{subsubsection.4.3.1.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.3.2}Adatszerkezetek dokumentációja}{29}{subsection.4.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.2.1}struct Pipe}{29}{subsubsection.4.3.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.2.2}struct Pipe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid}{29}{subsubsection.4.3.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.2.3}struct Solved\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Pipe\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Grid}{30}{subsubsection.4.3.2.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.3.3}Makródefiníciók dokumentációja}{30}{subsection.4.3.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.3.1}DEFAULT\_PIPE\_SIZE}{30}{subsubsection.4.3.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.3.4}Típusdefiníciók dokumentációja}{30}{subsection.4.3.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.4.1}Elem}{30}{subsubsection.4.3.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.3.5}Enumerációk dokumentációja}{30}{subsection.4.3.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.5.1}ElemiResz}{30}{subsubsection.4.3.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.5.2}PipeType}{31}{subsubsection.4.3.5.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.3.6}Függvények dokumentációja}{31}{subsection.4.3.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.1}Elem\_Copy()}{31}{subsubsection.4.3.6.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.2}Elem\_Init()}{31}{subsubsection.4.3.6.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.3}Elem\_RotateNeg()}{32}{subsubsection.4.3.6.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.4}Elem\_RotatePos()}{32}{subsubsection.4.3.6.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.5}Pipe\_CreateFromElem()}{32}{subsubsection.4.3.6.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.6}Pipe\_Destroy()}{33}{subsubsection.4.3.6.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.7}Pipe\_Init()}{33}{subsubsection.4.3.6.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.8}Pipe\_Render()}{34}{subsubsection.4.3.6.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.9}Pipe\_Rotate()}{34}{subsubsection.4.3.6.9}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.10}Pipe\_UpdateLayer()}{34}{subsubsection.4.3.6.10}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.11}PipeGrid\_Create()}{35}{subsubsection.4.3.6.11}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.12}PipeGrid\_CreateCopy()}{35}{subsubsection.4.3.6.12}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.13}PipeGrid\_Destroy()}{36}{subsubsection.4.3.6.13}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.14}PipeGrid\_Feldolgoz()}{36}{subsubsection.4.3.6.14}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.15}PipeGrid\_GenerateGrid()}{37}{subsubsection.4.3.6.15}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.16}PipeGrid\_Init()}{37}{subsubsection.4.3.6.16}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.17}PipeGrid\_Render()}{38}{subsubsection.4.3.6.17}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.18}PipeGrid\_Shuffle()}{38}{subsubsection.4.3.6.18}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.19}PipeGrid\_Solve()}{38}{subsubsection.4.3.6.19}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.20}SolvedPipeGrid\_Destroy()}{39}{subsubsection.4.3.6.20}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.3.6.21}SolvedPipeGrid\_RemoveFirst()}{39}{subsubsection.4.3.6.21}%
+\select@language {magyar} \contentsline {section}{\numberline {4.4}pipe.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{39}{section.4.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.5}lib/include/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SDL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}local.h fájlreferencia}{40}{section.4.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.5.1}Részletes leírás}{42}{subsection.4.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.1.1}Struktúrák\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{42}{subsubsection.4.5.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.1.2}Függvények\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{42}{subsubsection.4.5.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.1.3}Példakód\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{42}{subsubsection.4.5.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.1.4}Megjegyzések\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{43}{subsubsection.4.5.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.1.5}Kapcsolódó kódfájlok\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}:}{43}{subsubsection.4.5.1.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.5.2}Adatszerkezetek dokumentációja}{43}{subsection.4.5.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.2.1}struct Window}{43}{subsubsection.4.5.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.2.2}struct Assets}{44}{subsubsection.4.5.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.2.3}struct Fonts}{44}{subsubsection.4.5.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.2.4}struct Layer}{44}{subsubsection.4.5.2.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.5.3}Makródefiníciók dokumentációja}{45}{subsection.4.5.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.3.1}DEFAULT\_FONT\_SIZE}{45}{subsubsection.4.5.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.3.2}MIX\_VOLUME}{45}{subsubsection.4.5.3.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.5.4}Függvények dokumentációja}{45}{subsection.4.5.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.1}Assets\_Destroy()}{45}{subsubsection.4.5.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.2}Assets\_Init()}{45}{subsubsection.4.5.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.3}Assets\_Load()}{46}{subsubsection.4.5.4.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.4}Fonts\_Destroy()}{46}{subsubsection.4.5.4.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.5}Fonts\_Init()}{47}{subsubsection.4.5.4.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.6}Fonts\_Load()}{47}{subsubsection.4.5.4.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.7}InitializeSDL()}{47}{subsubsection.4.5.4.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.8}Layer\_Create()}{48}{subsubsection.4.5.4.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.9}Layer\_Destroy()}{48}{subsubsection.4.5.4.9}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.10}Layer\_Init()}{49}{subsubsection.4.5.4.10}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.11}Layer\_RenderFont()}{49}{subsubsection.4.5.4.11}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.12}QuitSDL()}{50}{subsubsection.4.5.4.12}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.13}StartMusic()}{50}{subsubsection.4.5.4.13}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.14}Window\_Create()}{50}{subsubsection.4.5.4.14}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.15}Window\_Destroy()}{51}{subsubsection.4.5.4.15}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.5.4.16}Window\_Init()}{51}{subsubsection.4.5.4.16}%
+\select@language {magyar} \contentsline {section}{\numberline {4.6}SDL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}local.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{51}{section.4.6}%
+\select@language {magyar} \contentsline {section}{\numberline {4.7}lib/src/animation.c fájlreferencia}{52}{section.4.7}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.7.1}Részletes leírás}{53}{subsection.4.7.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.7.2}Függvények dokumentációja}{53}{subsection.4.7.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.1}AnimationQueue\_AppendLongFill()}{53}{subsubsection.4.7.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.2}AnimationQueue\_AppendPipeFill()}{53}{subsubsection.4.7.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.3}AnimationQueue\_AppendPipeRotate()}{54}{subsubsection.4.7.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.4}AnimationQueue\_AppendWheelRotate()}{54}{subsubsection.4.7.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.5}AnimationQueue\_Destroy()}{55}{subsubsection.4.7.2.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.6}AnimationQueue\_Init()}{55}{subsubsection.4.7.2.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.7.2.7}AnimationQueue\_RemoveElement()}{56}{subsubsection.4.7.2.7}%
+\select@language {magyar} \contentsline {section}{\numberline {4.8}lib/src/assets.c fájlreferencia}{56}{section.4.8}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.8.1}Részletes leírás}{56}{subsection.4.8.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.8.2}Függvények dokumentációja}{56}{subsection.4.8.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.8.2.1}Assets\_Destroy()}{56}{subsubsection.4.8.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.8.2.2}Assets\_Init()}{57}{subsubsection.4.8.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.8.2.3}Assets\_Load()}{57}{subsubsection.4.8.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4.9}lib/src/elem.c fájlreferencia}{57}{section.4.9}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.9.1}Részletes leírás}{58}{subsection.4.9.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.9.2}Függvények dokumentációja}{58}{subsection.4.9.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.9.2.1}Elem\_Copy()}{58}{subsubsection.4.9.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.9.2.2}Elem\_Init()}{58}{subsubsection.4.9.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.9.2.3}Elem\_RotateNeg()}{59}{subsubsection.4.9.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.9.2.4}Elem\_RotatePos()}{59}{subsubsection.4.9.2.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.10}lib/src/ev\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}vars.c fájlreferencia}{59}{section.4.10}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.10.1}Részletes leírás}{60}{subsection.4.10.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.10.2}Függvények dokumentációja}{60}{subsection.4.10.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.10.2.1}CursorInRect()}{60}{subsubsection.4.10.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.10.2.2}Delta\_Update()}{60}{subsubsection.4.10.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.10.2.3}EventloopVariables\_Init()}{61}{subsubsection.4.10.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4.11}lib/src/fonts.c fájlreferencia}{61}{section.4.11}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.11.1}Részletes leírás}{61}{subsection.4.11.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.11.2}Függvények dokumentációja}{61}{subsection.4.11.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.11.2.1}Fonts\_Destroy()}{61}{subsubsection.4.11.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.11.2.2}Fonts\_Init()}{62}{subsubsection.4.11.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.11.2.3}Fonts\_Load()}{62}{subsubsection.4.11.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4.12}lib/src/game.c fájlreferencia}{62}{section.4.12}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.12.1}Részletes leírás}{63}{subsection.4.12.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.12.2}Függvények dokumentációja}{63}{subsection.4.12.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.2.1}Game()}{63}{subsubsection.4.12.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.2.2}Menu()}{64}{subsubsection.4.12.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.12.2.3}Win()}{64}{subsubsection.4.12.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4.13}lib/src/game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}struct.c fájlreferencia}{65}{section.4.13}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.13.1}Részletes leírás}{65}{subsection.4.13.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.13.2}Függvények dokumentációja}{65}{subsection.4.13.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.13.2.1}GameStruct\_Create()}{65}{subsubsection.4.13.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.13.2.2}GameStruct\_Destroy()}{66}{subsubsection.4.13.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.13.2.3}GameStruct\_Init()}{66}{subsubsection.4.13.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4.14}lib/src/layer.c fájlreferencia}{66}{section.4.14}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.14.1}Részletes leírás}{67}{subsection.4.14.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.14.2}Függvények dokumentációja}{67}{subsection.4.14.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.14.2.1}Layer\_Create()}{67}{subsubsection.4.14.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.14.2.2}Layer\_Destroy()}{67}{subsubsection.4.14.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.14.2.3}Layer\_Init()}{68}{subsubsection.4.14.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.14.2.4}Layer\_RenderFont()}{68}{subsubsection.4.14.2.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.15}lib/src/pipe.c fájlreferencia}{69}{section.4.15}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.15.1}Részletes leírás}{69}{subsection.4.15.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.15.2}Függvények dokumentációja}{69}{subsection.4.15.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.15.2.1}Pipe\_CreateFromElem()}{69}{subsubsection.4.15.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.15.2.2}Pipe\_Destroy()}{70}{subsubsection.4.15.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.15.2.3}Pipe\_Init()}{70}{subsubsection.4.15.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.15.2.4}Pipe\_Render()}{70}{subsubsection.4.15.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.15.2.5}Pipe\_Rotate()}{71}{subsubsection.4.15.2.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.15.2.6}Pipe\_UpdateLayer()}{71}{subsubsection.4.15.2.6}%
+\select@language {magyar} \contentsline {section}{\numberline {4.16}lib/src/pipegrid.c fájlreferencia}{72}{section.4.16}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.16.1}Részletes leírás}{72}{subsection.4.16.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.16.2}Függvények dokumentációja}{72}{subsection.4.16.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.16.2.1}PipeGrid\_Create()}{72}{subsubsection.4.16.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.16.2.2}PipeGrid\_CreateCopy()}{73}{subsubsection.4.16.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.16.2.3}PipeGrid\_Destroy()}{73}{subsubsection.4.16.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.16.2.4}PipeGrid\_Feldolgoz()}{74}{subsubsection.4.16.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.16.2.5}PipeGrid\_GenerateGrid()}{74}{subsubsection.4.16.2.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.16.2.6}PipeGrid\_Init()}{75}{subsubsection.4.16.2.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.16.2.7}PipeGrid\_Render()}{75}{subsubsection.4.16.2.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.16.2.8}PipeGrid\_Shuffle()}{75}{subsubsection.4.16.2.8}%
+\select@language {magyar} \contentsline {section}{\numberline {4.17}lib/src/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}SDL\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}local.c fájlreferencia}{76}{section.4.17}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.17.1}Részletes leírás}{76}{subsection.4.17.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.17.2}Függvények dokumentációja}{76}{subsection.4.17.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.17.2.1}InitializeSDL()}{76}{subsubsection.4.17.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.17.2.2}QuitSDL()}{77}{subsubsection.4.17.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.17.2.3}StartMusic()}{77}{subsubsection.4.17.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4.18}lib/src/solve.c fájlreferencia}{77}{section.4.18}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.18.1}Részletes leírás}{77}{subsection.4.18.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.18.2}Függvények dokumentációja}{78}{subsection.4.18.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.18.2.1}PipeGrid\_Solve()}{78}{subsubsection.4.18.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.18.2.2}SolvedPipeGrid\_Destroy()}{78}{subsubsection.4.18.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.18.2.3}SolvedPipeGrid\_RemoveFirst()}{78}{subsubsection.4.18.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4.19}lib/src/wheel.c fájlreferencia}{79}{section.4.19}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.19.1}Részletes leírás}{79}{subsection.4.19.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.19.2}Függvények dokumentációja}{79}{subsection.4.19.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.19.2.1}Wheel\_Create()}{79}{subsubsection.4.19.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.19.2.2}Wheel\_Destroy()}{80}{subsubsection.4.19.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.19.2.3}Wheel\_Init()}{80}{subsubsection.4.19.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.19.2.4}Wheel\_Update()}{80}{subsubsection.4.19.2.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.20}lib/src/window.c fájlreferencia}{81}{section.4.20}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.20.1}Részletes leírás}{81}{subsection.4.20.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.20.2}Függvények dokumentációja}{81}{subsection.4.20.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.20.2.1}Window\_Create()}{81}{subsubsection.4.20.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.20.2.2}Window\_Destroy()}{82}{subsubsection.4.20.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.20.2.3}Window\_Init()}{82}{subsubsection.4.20.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4.21}main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}c fájlreferencia}{82}{section.4.21}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.21.1}Részletes leírás}{83}{subsection.4.21.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.21.2}Függvények dokumentációja}{83}{subsection.4.21.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.21.2.1}main()}{83}{subsubsection.4.21.2.1}%
+\select@language {magyar} \contentsline {section}{\numberline {4.22}readme.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}md fájlreferencia}{83}{section.4.22}%
+\select@language {magyar} \contentsline {chapter}{T\'argymutat\'o}{85}{section*.28}%

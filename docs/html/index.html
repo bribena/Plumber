@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vízvezetékszerelő: Vízvezetékszerelő/Plumber</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vízvezetékszerelő
+   </div>
+   <div id="projectbrief">Egy vízvezetékszerelő játék, C-ben írva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Keresés');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Vízvezetékszerelő/Plumber </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_readme"></a>A vízvezetékszerelő egy játék, amit a Programozás alapjai 1 tárgy nagy házijához készítettem.</p>
+<p>GitHubon itt található meg: <a href="https://github.com/bribena/Plumber">https://github.com/bribena/Plumber</a></p>
+<h1><a class="anchor" id="autotoc_md16"></a>
+Telepítés</h1>
+<p>Először klónozza a repositoryt:</p>
+<div class="fragment"><div class="line">git clone https://github.com/bribena/Plumber.git</div>
+</div><!-- fragment --><p>A program az SDL, az SDL_image, az SDL_mixer, az SDL_ttf, az SDL_gfxPrimitives, az osdialog és a C moduljaira épül.</p>
+<p>Linuxon a GCC, Windowson a MinGW segítségével fordítható a program.</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+SDL telepítése</h2>
+<p>A különböző SDL modulok forrásainak linkjei:</p><ul>
+<li>SDL: <a href="https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5">https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5</a></li>
+<li>SDL_image: <a href="https://github.com/libsdl-org/SDL_image/releases">https://github.com/libsdl-org/SDL_image/releases</a></li>
+<li>SDL_ttf: <a href="https://github.com/libsdl-org/SDL_ttf/releases">https://github.com/libsdl-org/SDL_ttf/releases</a></li>
+<li>SDL_mixer: <a href="https://github.com/libsdl-org/SDL_mixer/releases">https://github.com/libsdl-org/SDL_mixer/releases</a></li>
+<li>SDL_gfxPrimitives: <a href="https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/">https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/</a></li>
+</ul>
+<p>Az SDL telepítési lépései: <a href="https://wiki.libsdl.org/SDL2/Installation">https://wiki.libsdl.org/SDL2/Installation</a></p>
+<h3><a class="anchor" id="autotoc_md18"></a>
+Linux</h3>
+<p>Lehetőleg a disztribúció csomagkezelőjével szerezze be ezeket az SDL modulokat. Ha ott nem elérhető, akkor a megfelelő repository telepítési utasításait kövesse.</p>
+<h3><a class="anchor" id="autotoc_md19"></a>
+Windows</h3>
+<p>Windowshoz a megadott oldalakon találhatóak előre buildelt fájlok. Ezeket töltse le (mindegyiknél a MinGW-vel kompatibilis zipfájlt). A zipfájlokat az alábbi módon csomagolja ki:</p>
+<ul>
+<li>A dll fájlok (bin mappa tartalma, kivétel SDL_gfxPrimitives) kerüljenek a projekt gyökérmappájába</li>
+<li>A header fájlok (include mappa tartalma, kivétel SDL_gfxPrimitives) kerüljenek a projekt lib/include mappájába</li>
+<li>A lib mappa pedig mappástul a projekt lib mappájába</li>
+</ul>
+<p>Az SDL_gfxPrimitives esetén a megfelelő fájlok (.dll, .h, .a/.o) megtalálhatóak a zipjében. Ezeket a fentiek szerint helyezze el a projekt megfelelő mappáiban.</p>
+<h2><a class="anchor" id="autotoc_md20"></a>
+osdialog telepítése</h2>
+<p>GitHub: <a href="https://github.com/AndrewBelt/osdialog">https://github.com/AndrewBelt/osdialog</a></p>
+<p>Mindkét rendszeren a repositoryt klónozza a projekt lib mappájába.</p>
+<p>Linuxon az osdialog a GTK 2.0-t használja, ezt is szerezze be a disztribúciójának a csomagkezelőjével.</p>
+<p>Megjegyzés: az osdialog a debugmalloc miatt hibát dobhat. Erre két javítás van:</p>
+<ol type="1">
+<li>Az osdialog.h-ban az include-ok alá írja be, hogy <code>#include "debugmalloc.h"</code></li>
+<li>A projekt fájlaiból ki kell venni az <code>#include "debugmalloc.h"</code> sorokat.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md21"></a>
+Fordítás</h1>
+<h2><a class="anchor" id="autotoc_md22"></a>
+Linux</h2>
+<p>A <code>build.sh</code> futtatásával létrejön a <code>plumber</code> bináris fájl, amennyiben az SDL modulok rendszerszinten elérhetőek. Egyéb esetben manuálisan kell fordítani a programot a megfelelő helyek megadásával.</p>
+<p>A <code>build.sh</code> gcc-vel fordítja le a kódot.</p>
+<h2><a class="anchor" id="autotoc_md23"></a>
+Windows</h2>
+<p>A <code>build.bat</code> futtatásával létrejön a <code>plumber.exe</code> bináris fájl, amennyiben megfelelően vannak elhelyezve a külső modulok fájlai. Egyéb esetben manuálisan kell fordítani a programot a megfelelő helyek megadásával.</p>
+<p>A <code>build.bat</code> x86_64-w64-mingw32-gcc-vel fordítja a kódot.</p>
+<h1><a class="anchor" id="autotoc_md24"></a>
+A játék menete</h1>
+<p>A játék induláskor a főmenübe dobja a játékost. Innen 3 opció tárul elé:</p>
+<ul>
+<li>Játék: Létrehoz egy véletlenszerű pályát, amit ki lehet játszani.</li>
+<li>Pálya betöltése: Egy, a program által generált .plm fájlt tölt be. Néhány mintafájl található a projekt testfiles mappájában. Ezután elindítja a játékot.</li>
+<li>Kilépés</li>
+</ul>
+<p>A pályán belül 1-1 csőre kattintva el lehet forgatni azt (bal kattintással az óra haladási irányával megegegyezően, jobb kattintással pedig ellentétesen). A játék célja, hogy a bemenettől (hosszú cső a bal oldalon) a kimenetig (hosszú cső a jobb oldalon) a pályán levő csövekkel a játékos elvezesse a vizet. A vizet elindítani csak helyes megoldás esetén lehet a bemeneten található csappal, bal kattintással. Helyes megoldásnak egy a bemenettől a kimenetig vezető csőpálya számít. Az egyes csövekből nincsen "kifolyás", azaz ha már egy irányba tudja tovább tölteni a vizet, akkor a megoldás szempontjából megfelelő.</p>
+<p>Egy különleges elem van, az "egymáson átmenő", ami két különböző irányba menő egyenesnek felel meg.</p>
+<p>A játék közben bármikor kimenthető a pálya <em>aktuális</em> állapota.</p>
+<p>Győzelemkor a pálya <em>kezdésekor előforduló</em> állapota menthető ki. Azaz, ha a Pálya betöltésével lett elkezdve a játék, akkor a betöltött állapotot lehet kimenteni, játék esetén pedig a legenerált pályát.</p>
+<p>A kimentett fájl nevében ne legyen szóköz, ékezet és speciális karakter.</p>
+<p>Futás után visszaadott kódok: 0: Nem történt hiba 1: Nem sikerült az SDL inicializálása 2: Nem sikerült az ablakot létrehozni/a fájlokat betölteni 3: A játék futása során hiba történt</p>
+<h2><a class="anchor" id="autotoc_md25"></a>
+A generált fájlok struktúrája (.plm)</h2>
+<p>A fájl első sora 4 adatot tartalmaz, ebben a sorrendben:</p>
+<ul>
+<li>Az egy sorban található csövek számát</li>
+<li>Az egy oszlopban található csövek számát</li>
+<li>A pálya bemenetének sora</li>
+<li>A pálya kimenetének sora</li>
+</ul>
+<p>Ezután 3x3-as blokkokban tartalmazza a pályán szereplő csöveket szöveges formátumban.</p>
+<p>Bármilyen fájl, ami ennek a struktúrának nem felel meg, hibás fájlnak számít.</p>
+<h1><a class="anchor" id="autotoc_md26"></a>
+Hibák</h1>
+<p>A programmal kapcsolatos hibák a programozói dokumentációban megtalálhatóak (a projekt docs mappájában). Ezeken kívül a hibák nagy részét kiírja a konzolra a program, ha előfordulnak. Ekkor vagy összeomlik a program, vagy az adott funkció nélküll fut tovább.</p>
+<p>Készítette: Bihari Bence </p>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

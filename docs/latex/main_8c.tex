@@ -1,0 +1,49 @@
+\doxysection{main.\+c fájlreferencia}
+\hypertarget{main_8c}{}\label{main_8c}\index{main.c@{main.c}}
+
+
+A main függvényt tartalmazó fájl.  
+
+
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em A main függvény. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A main függvényt tartalmazó fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char \texorpdfstring{$\ast$}{*}}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+A main függvény. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em argc} & Parancssori argumentumok száma (nem használt) \\
+\hline
+{\em argv} & Parancsori argumentumok (nem használt) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+
+\begin{DoxyItemize}
+\item 0\+: Ha sikeresen lefutott a program
+\item 1\+: Ha nem sikerült inicializálni az SDL-\/t
+\item 2\+: Ha nem sikerült létrehozni a játékhoz szükséges változókat
+\item 3\+: Ha a játék futása során történt hiba 
+\end{DoxyItemize}
+\end{DoxyReturn}

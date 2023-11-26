@@ -1,0 +1,18 @@
+\chapter{Hiba lista}
+\hypertarget{bug}{}\label{bug}\index{Hiba lista@{Hiba lista}}
+
+\begin{DoxyRefList}
+\item[Fájl \doxylink{game_8c}{game.c} ]\label{bug__bug000004}%
+\Hypertarget{bug__bug000004}%
+Az osdialog modullal problémája van a debugmalloc.\+h-\/nak. Az osdialog dokumentációja tisztán leírja, hogy a visszaadott stringeit fel kell szabadítani használat után. Viszont, ha fel akarnám szabadítani ezt, a debugmalloc.\+h hibát ad vissza. Ezt úgy lehet kijavítani, hogy az osdialog.\+h-\/ban include-\/oljuk a debugmalloc.\+h-\/t vagy innen kivesszük a debugmalloc.\+h-\/t.  
+\item[Fájl \doxylink{game_8h}{game.h} ]\label{bug__bug000001}%
+\Hypertarget{bug__bug000001}%
+A modul egy osdialog nevű modullal hoz létre rendszerfüggő dialógusablakokat. Ez a GTK2-\/re épül Linux alatt, ami memóriaszivárgást okoz. Windows alatt az Address Sanitizert nem teszteltem, ott nem tudom, hogy mi a helyzet. Egy lehetséges megoldás, hogy az osdialog-\/ot mással helyettesítjük, de emiatt a \doxylink{game_8c}{game.\+c}-\/ben változtatásokat kell hozni.  
+\item[Fájl \doxylink{SDL__local_8h}{SDL\+\_\+local.h} ]\label{bug__bug000002}%
+\Hypertarget{bug__bug000002}%
+Az SDL használata miatt memóriaszivárgások előfordulhatnak.
+
+\label{bug__bug000003}%
+\Hypertarget{bug__bug000003}%
+Ha a konzolra valamilyen lib\+GL error kerül akkor textúra hibák léphetnek fel. Nem tudom, hogy mi okkozza ezt, de csak grafikus hibát okoz. 
+\end{DoxyRefList}

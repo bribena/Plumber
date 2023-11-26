@@ -1,0 +1,79 @@
+\doxysection{pipe.\+h}
+\hypertarget{pipe_8h_source}{}\label{pipe_8h_source}\index{lib/include/pipe.h@{lib/include/pipe.h}}
+\mbox{\hyperlink{pipe_8h}{Ugrás a fájl dokumentációjához.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{/*\ pipe.h\ eleje\ */}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#ifndef\ PIPE\_H}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ PIPE\_H}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SDL__local_8h}{SDL\_local.h}}"{}}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ DEFAULT\_PIPE\_SIZE\ 50}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232c}{ElemiResz}}\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc}{Levego}}\ =\ \textcolor{charliteral}{'X'},}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23}{Cso}}\ =\ \textcolor{charliteral}{'O'},}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9}{Ismeretlen}}\ =\ \textcolor{charliteral}{'?'},}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc}{Rossz}}\ =\ \textcolor{charliteral}{'.'},}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0}{Jo}}\ =\ \textcolor{charliteral}{'*'}}
+\DoxyCodeLine{00119\ \}\ \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232c}{ElemiResz}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69}{PipeType}}\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5}{PipeType\_None}},}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123}{PipeType\_Straight}},}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe}{PipeType\_Curved}},}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b}{PipeType\_Tshaped}},}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006}{PipeType\_Crossing}}}
+\DoxyCodeLine{00147\ \}\ \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69}{PipeType}};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232c}{ElemiResz}}\ \mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}[3][3];}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00162\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}\ \mbox{\hyperlink{pipe_8h_a06e78e7416e3963c14e56e2fafb4ce91}{tenyleges}};}
+\DoxyCodeLine{00170\ \ \ \ \ SDL\_Rect\ \mbox{\hyperlink{pipe_8h_ad4b22d52ae07689fcb1fcbf1d13f2ffc}{texture\_loc}};}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}}\ \mbox{\hyperlink{pipe_8h_a8428eb27e8d47fb0d2eb3f930e893620}{rendered}};}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69}{PipeType}}\ \mbox{\hyperlink{pipe_8h_a3130316ff5b964915a98f7cd0b4984db}{type}};}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{pipe_8h_a5f3c609ac8d5da6e2e9f62bdf27e5b9e}{szog}};}
+\DoxyCodeLine{00183\ \}\ \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00191\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}\ **\mbox{\hyperlink{pipe_8h_a521bb018b625dbd0815df275eb2c55e2}{matrix}};}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pipe_8h_ad36fc50d016d25e6d5a774c824c336e4}{x}},\ \mbox{\hyperlink{pipe_8h_a3591dfe4b7ab3fbb84cb0ded955ff1af}{y}};}
+\DoxyCodeLine{00205\ \}\ \mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00213\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{SolvedPipeGrid}}\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}\ *\ \mbox{\hyperlink{pipe_8h_aecfa1d22c70a35b254f4c0fb5eff0d5b}{pipe}};}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pipe_8h_a948ed5bfec27326e16786ae8a867fd94}{x}},\ \mbox{\hyperlink{pipe_8h_adfee3b344c149b0bd329a5d6fc8b6f00}{y}};}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{SolvedPipeGrid}}\ *\ \mbox{\hyperlink{pipe_8h_a83f19165c0b7ea6eda8e271be1cd3b25}{next}};}
+\DoxyCodeLine{00231\ \}\ \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{SolvedPipeGrid}};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00239\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_a9b4194b89ec44334514b17b0309deca8}{Elem\_Init}}(\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}\ elem);}
+\DoxyCodeLine{00248\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_a93b6bc573aa97700d92155c1872aa636}{Elem\_Copy}}(\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}\ hova,\ \mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}\ honnan);}
+\DoxyCodeLine{00254\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_a2b0d66c6555de1641ccba86e3b2bbfb1}{Elem\_RotatePos}}(\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}\ elem);}
+\DoxyCodeLine{00260\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_aab552e10b0d8bd8f6b2cd96bc38edc96}{Elem\_RotateNeg}}(\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}\ elem);}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00266\ \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}\ \mbox{\hyperlink{pipe_8h_af5c71e4298c33eeb1eff0a9d4b9df420}{Pipe\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00282\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pipe_8h_a44323a670aaceb7645ad404cf8a8f783}{Pipe\_CreateFromElem}}(\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}\ *\ \mbox{\hyperlink{pipe_8h_aecfa1d22c70a35b254f4c0fb5eff0d5b}{pipe}},\ \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}\ window,\ SDL\_Texture\ *\ pipe\_texture,\ SDL\_Rect\ base\_location);}
+\DoxyCodeLine{00290\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_a216a3e3667f262ced88364393750fc0c}{Pipe\_Rotate}}(\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}\ *\ \mbox{\hyperlink{pipe_8h_aecfa1d22c70a35b254f4c0fb5eff0d5b}{pipe}},\ \textcolor{keywordtype}{int}\ irany);}
+\DoxyCodeLine{00300\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pipe_8h_a89e9baf97ad38cbde0098fe638819fbe}{Pipe\_Render}}(\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}\ \mbox{\hyperlink{pipe_8h_aecfa1d22c70a35b254f4c0fb5eff0d5b}{pipe}},\ \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}\ window);}
+\DoxyCodeLine{00310\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pipe_8h_adc666f7a0c915b9ffbc07bf0ee99921b}{Pipe\_UpdateLayer}}(\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}\ \mbox{\hyperlink{pipe_8h_aecfa1d22c70a35b254f4c0fb5eff0d5b}{pipe}},\ \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}\ window,\ SDL\_Texture\ *\ pipe\_texture);}
+\DoxyCodeLine{00317\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_ad8e7c55fe9bad5b60e5c20b63f68cc5c}{Pipe\_Destroy}}(\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}\ *\ \mbox{\hyperlink{pipe_8h_aecfa1d22c70a35b254f4c0fb5eff0d5b}{pipe}});}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00323\ \mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ \mbox{\hyperlink{pipe_8h_a0d9859a40de0cd53258fcb88e8bbcaff}{PipeGrid\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00337\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pipe_8h_a374a382292ea4ef400156d3e1960b2d7}{PipeGrid\_Create}}(\mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ *\ pipegrid,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pipe_8h_a948ed5bfec27326e16786ae8a867fd94}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pipe_8h_adfee3b344c149b0bd329a5d6fc8b6f00}{y}});}
+\DoxyCodeLine{00346\ \mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ \mbox{\hyperlink{pipe_8h_a65ed505ed2d56a3aeda3aed0a46f02d1}{PipeGrid\_CreateCopy}}(\mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ source);}
+\DoxyCodeLine{00359\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}{PipeGrid\_GenerateGrid}}(\mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ *\ pipegrid,\ SDL\_Point\ entry,\ SDL\_Point\ exit);}
+\DoxyCodeLine{00365\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_a1e4a8bc5269d22c3e6fec9acd8bf3e83}{PipeGrid\_Shuffle}}(\mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ pipegrid);}
+\DoxyCodeLine{00382\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pipe_8h_ab1aff8a4b7cc5465aede4b2e6bbc1463}{PipeGrid\_Feldolgoz}}(\mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ pipegrid,\ \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}\ window,\ SDL\_Texture\ *\ pipe\_texture,\ SDL\_Rect\ base\_location);}
+\DoxyCodeLine{00390\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{pipe_8h_af129c9d4c21a5a3ceea790a85f5d2305}{PipeGrid\_Render}}(\mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ pipegrid,\ \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}\ window);}
+\DoxyCodeLine{00396\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_aeaa7e81af912deb3e9782cb9523321b3}{PipeGrid\_Destroy}}(\mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ *\ pipegrid);}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00407\ \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{SolvedPipeGrid}}\ *\ \mbox{\hyperlink{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423}{PipeGrid\_Solve}}(\mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ pipegrid,\ SDL\_Point\ entry,\ SDL\_Point\ exit);}
+\DoxyCodeLine{00413\ \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{SolvedPipeGrid}}\ *\ \mbox{\hyperlink{pipe_8h_a29554057a457d47ee2015a6d5b9d9cef}{SolvedPipeGrid\_RemoveFirst}}(\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{SolvedPipeGrid}}\ *\ start);}
+\DoxyCodeLine{00418\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pipe_8h_a5b9f26edab225f3523287fc05a1eedf7}{SolvedPipeGrid\_Destroy}}(\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{SolvedPipeGrid}}\ *\ start);}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00421\ \textcolor{comment}{/*\ pipe.h\ vége\ */}}
+
+\end{DoxyCode}

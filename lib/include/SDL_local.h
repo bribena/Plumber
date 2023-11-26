@@ -98,6 +98,9 @@
  * @pre Az InitializeSDL() használata szükséges a modul használatához.
  * @post A QuitSDL() használata szükséges a modul használata után.
  * @bug Az SDL használata miatt memóriaszivárgások előfordulhatnak.
+ * 
+ * @bug Ha a konzolra valamilyen libGL error kerül akkor textúra hibák léphetnek fel. 
+ * Nem tudom, hogy mi okkozza ezt, de csak grafikus hibát okoz.
 */
 
 /* SDL_local.h eleje */

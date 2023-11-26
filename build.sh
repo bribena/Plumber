@@ -1,0 +1,1 @@
+gcc -Ilib/include `sdl2-config --cflags --libs` -Ilib/osdialog `pkg-config --cflags --libs gtk+-2.0` -lSDL2_image -lSDL2_gfx -lSDL2_ttf -lSDL2_mixer lib/src/*.c lib/osdialog/osdialog.c lib/osdialog/osdialog_gtk2.c main.c -o plumber

@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vízvezetékszerelő: lib/include/SDL_local.h Forrásfájl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vízvezetékszerelő
+   </div>
+   <div id="projectbrief">Egy vízvezetékszerelő játék, C-ben írva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Keresés');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_5a30104352ef4255dc24354b02eb2d20.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">SDL_local.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="SDL__local_8h.html">Ugrás a fájl dokumentációjához.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">/* SDL_local.h eleje */</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#ifndef SDL_LOCAL_H</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#define SDL_LOCAL_H</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#include &lt;SDL_image.h&gt;</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#include &lt;SDL_ttf.h&gt;</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#include &lt;SDL_mixer.h&gt;</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#include &lt;SDL2_gfxPrimitives.h&gt;</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#acde9ec8712f62632c6a8fcacfe6800c4">  123</a></span><span class="preprocessor">#define DEFAULT_FONT_SIZE 200</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#aa23492e65df724043f75d16cbc52dd55">  129</a></span><span class="preprocessor">#define MIX_VOLUME 70</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="};">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="SDL__local_8h.html">  136</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#ae39a7755a5a6ab74bcbdbe3e2e206820">  140</a></span>    SDL_Window * <a class="code hl_variable" href="SDL__local_8h.html#ae39a7755a5a6ab74bcbdbe3e2e206820">window</a>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#a2b52309ef359b6392454a3bb57398b5d">  144</a></span>    SDL_Renderer * <a class="code hl_variable" href="SDL__local_8h.html#a2b52309ef359b6392454a3bb57398b5d">renderer</a>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#a3edd33669f7e5c3252d2eab59f88789d">  153</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="SDL__local_8h.html#aabb1be747c3ff96fe5a8f881d6b137fd">width</a>, <a class="code hl_variable" href="SDL__local_8h.html#a3edd33669f7e5c3252d2eab59f88789d">height</a>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>} <a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a>;</div>
+</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="};">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="SDL__local_8h.html">  162</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="SDL__local_8h.html#structAssets">Assets</a> {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#ac3c083ed926b016bdac5c583796f9dc6">  166</a></span>    SDL_Texture * <a class="code hl_variable" href="SDL__local_8h.html#ac3c083ed926b016bdac5c583796f9dc6">background</a>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#a04f96215086a34cf683b8bae82fcac29">  170</a></span>    SDL_Texture * <a class="code hl_variable" href="SDL__local_8h.html#a04f96215086a34cf683b8bae82fcac29">pipes_empty</a>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#acaeb67a6dbfea58a4ebd8fe14dfa9504">  174</a></span>    SDL_Texture * <a class="code hl_variable" href="SDL__local_8h.html#acaeb67a6dbfea58a4ebd8fe14dfa9504">pipes_full</a>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#a5dc98ad1681b4f8abacd9147acf4eaba">  178</a></span>    SDL_Texture * <a class="code hl_variable" href="SDL__local_8h.html#a5dc98ad1681b4f8abacd9147acf4eaba">wheel</a>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#a5f7f26e437c41ced09d4b5ad410d8461">  182</a></span>    Mix_Music * <a class="code hl_variable" href="SDL__local_8h.html#a5f7f26e437c41ced09d4b5ad410d8461">bgm</a>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>} <a class="code hl_struct" href="SDL__local_8h.html#structAssets">Assets</a>;</div>
+</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="foldopen" id="foldopen00191" data-start="{" data-end="};">
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="SDL__local_8h.html">  191</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="SDL__local_8h.html#structFonts">Fonts</a> {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#ac4ced5cb053a1e0b1093de76e0f3e1b2">  195</a></span>    TTF_Font * <a class="code hl_variable" href="SDL__local_8h.html#ac4ced5cb053a1e0b1093de76e0f3e1b2">normal</a>;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#aa36fe5beed3c060f88710a4d5f3a549d">  199</a></span>    TTF_Font * <a class="code hl_variable" href="SDL__local_8h.html#aa36fe5beed3c060f88710a4d5f3a549d">italic</a>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#a0bd32be3581f25fa1606ba3b0c02d4e3">  203</a></span>    TTF_Font * <a class="code hl_variable" href="SDL__local_8h.html#a0bd32be3581f25fa1606ba3b0c02d4e3">bold</a>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#a3d3f69f14697e6aa217cf210d89eaab6">  207</a></span>    TTF_Font * <a class="code hl_variable" href="SDL__local_8h.html#a3d3f69f14697e6aa217cf210d89eaab6">bold_italic</a>;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>} <a class="code hl_struct" href="SDL__local_8h.html#structFonts">Fonts</a>;</div>
+</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="foldopen" id="foldopen00218" data-start="{" data-end="};">
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="SDL__local_8h.html">  218</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="SDL__local_8h.html#structLayer">Layer</a> {</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#a58556ff73806c51333d95bf95c741f1d">  222</a></span>    SDL_Texture * <a class="code hl_variable" href="SDL__local_8h.html#a58556ff73806c51333d95bf95c741f1d">layer</a>;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="SDL__local_8h.html#aa479c2c9a98f85a5c867754cdb655ecc">  226</a></span>    SDL_Rect <a class="code hl_variable" href="SDL__local_8h.html#aa479c2c9a98f85a5c867754cdb655ecc">location</a>;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>} <a class="code hl_struct" href="SDL__local_8h.html#structLayer">Layer</a>;</div>
+</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="keywordtype">bool</span> <a class="code hl_function" href="SDL__local_8h.html#ac123123dd113ec5077bfd1af17d2f459">InitializeSDL</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="keywordtype">void</span> <a class="code hl_function" href="SDL__local_8h.html#a9920ee88c07373643b2dbb45eadf54bb">StartMusic</a>(<a class="code hl_struct" href="SDL__local_8h.html#structAssets">Assets</a> assets);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="keywordtype">void</span> <a class="code hl_function" href="SDL__local_8h.html#a5105dab6519a26f47f91e5f2051f2ac5">QuitSDL</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> <a class="code hl_function" href="SDL__local_8h.html#a4f9d6211ac0d42ba33776668c0f511a0">Window_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="keywordtype">bool</span> <a class="code hl_function" href="SDL__local_8h.html#ae31e99f90eae8c04eeaeaea96d7fe83c">Window_Create</a>(<a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> * window, <span class="keyword">const</span> <span class="keywordtype">char</span> * title, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="keywordtype">void</span> <a class="code hl_function" href="SDL__local_8h.html#a57f2d4c1cc5eb035f40f99128358b997">Window_Destroy</a>(<a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> * window);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><a class="code hl_struct" href="SDL__local_8h.html#structAssets">Assets</a> <a class="code hl_function" href="SDL__local_8h.html#acd2e9fa745363b10368a7ee162f01a46">Assets_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="keywordtype">bool</span> <a class="code hl_function" href="SDL__local_8h.html#a2267406d575d2ebd8d9be1f6eb31c683">Assets_Load</a>(<a class="code hl_struct" href="SDL__local_8h.html#structAssets">Assets</a> * assets, <a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> window);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="keywordtype">void</span> <a class="code hl_function" href="SDL__local_8h.html#ab2869d2ddc5af55a9b2366509dfc213f">Assets_Destroy</a>(<a class="code hl_struct" href="SDL__local_8h.html#structAssets">Assets</a> * assets);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><a class="code hl_struct" href="SDL__local_8h.html#structFonts">Fonts</a> <a class="code hl_function" href="SDL__local_8h.html#a9e077512e4445cd21a6df83d166aa617">Fonts_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="keywordtype">bool</span> <a class="code hl_function" href="SDL__local_8h.html#a373aed1b9a2286a2760a6149623ab10c">Fonts_Load</a>(<a class="code hl_struct" href="SDL__local_8h.html#structFonts">Fonts</a> * fonts);</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="keywordtype">void</span> <a class="code hl_function" href="SDL__local_8h.html#a667bccf00d3c880cdcfcf9a940389b8d">Fonts_Destroy</a>(<a class="code hl_struct" href="SDL__local_8h.html#structFonts">Fonts</a> * fonts);</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><a class="code hl_struct" href="SDL__local_8h.html#structLayer">Layer</a> <a class="code hl_function" href="SDL__local_8h.html#a70597b0011ea90ef5bffb9e9fa22d57b">Layer_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="keywordtype">bool</span> <a class="code hl_function" href="SDL__local_8h.html#ae2efd55b51af1d6c9755e626045ac06d">Layer_Create</a>(<a class="code hl_struct" href="SDL__local_8h.html#structLayer">Layer</a> * layer, <a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> window, <span class="keyword">const</span> SDL_Rect * location);</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="keywordtype">bool</span> <a class="code hl_function" href="SDL__local_8h.html#aba03cebb4e558f46025ee6aa429c4da9">Layer_RenderFont</a>(<a class="code hl_struct" href="SDL__local_8h.html#structLayer">Layer</a> * layer, <a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> window, TTF_Font * font, <span class="keyword">const</span> <span class="keywordtype">char</span> * text, SDL_Color foreground);</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span><span class="keywordtype">void</span> <a class="code hl_function" href="SDL__local_8h.html#a69d5ca53df6b8dbf438054fcdc2010cf">Layer_Destroy</a>(<a class="code hl_struct" href="SDL__local_8h.html#structLayer">Layer</a> * layer);</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span><span class="comment">/* SDL_local.h vége */</span></div>
+<div class="ttc" id="aSDL__local_8h_html_a04f96215086a34cf683b8bae82fcac29"><div class="ttname"><a href="SDL__local_8h.html#a04f96215086a34cf683b8bae82fcac29">Assets::pipes_empty</a></div><div class="ttdeci">SDL_Texture * pipes_empty</div><div class="ttdef"><b>Definition</b> SDL_local.h:170</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a0bd32be3581f25fa1606ba3b0c02d4e3"><div class="ttname"><a href="SDL__local_8h.html#a0bd32be3581f25fa1606ba3b0c02d4e3">Fonts::bold</a></div><div class="ttdeci">TTF_Font * bold</div><div class="ttdef"><b>Definition</b> SDL_local.h:203</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a2267406d575d2ebd8d9be1f6eb31c683"><div class="ttname"><a href="SDL__local_8h.html#a2267406d575d2ebd8d9be1f6eb31c683">Assets_Load</a></div><div class="ttdeci">bool Assets_Load(Assets *assets, Window window)</div><div class="ttdoc">Feltölt egy inicializált Assets struktúrát.</div><div class="ttdef"><b>Definition</b> assets.c:43</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a2b52309ef359b6392454a3bb57398b5d"><div class="ttname"><a href="SDL__local_8h.html#a2b52309ef359b6392454a3bb57398b5d">Window::renderer</a></div><div class="ttdeci">SDL_Renderer * renderer</div><div class="ttdef"><b>Definition</b> SDL_local.h:144</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a373aed1b9a2286a2760a6149623ab10c"><div class="ttname"><a href="SDL__local_8h.html#a373aed1b9a2286a2760a6149623ab10c">Fonts_Load</a></div><div class="ttdeci">bool Fonts_Load(Fonts *fonts)</div><div class="ttdoc">Feltölt egy inicializált Fonts struktúrát.</div><div class="ttdef"><b>Definition</b> fonts.c:30</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a3d3f69f14697e6aa217cf210d89eaab6"><div class="ttname"><a href="SDL__local_8h.html#a3d3f69f14697e6aa217cf210d89eaab6">Fonts::bold_italic</a></div><div class="ttdeci">TTF_Font * bold_italic</div><div class="ttdef"><b>Definition</b> SDL_local.h:207</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a3edd33669f7e5c3252d2eab59f88789d"><div class="ttname"><a href="SDL__local_8h.html#a3edd33669f7e5c3252d2eab59f88789d">Window::height</a></div><div class="ttdeci">int height</div><div class="ttdef"><b>Definition</b> SDL_local.h:153</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a4f9d6211ac0d42ba33776668c0f511a0"><div class="ttname"><a href="SDL__local_8h.html#a4f9d6211ac0d42ba33776668c0f511a0">Window_Init</a></div><div class="ttdeci">Window Window_Init(void)</div><div class="ttdoc">Window struktúra inicializálása (kinullázása)</div><div class="ttdef"><b>Definition</b> window.c:10</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a5105dab6519a26f47f91e5f2051f2ac5"><div class="ttname"><a href="SDL__local_8h.html#a5105dab6519a26f47f91e5f2051f2ac5">QuitSDL</a></div><div class="ttdeci">void QuitSDL(void)</div><div class="ttdoc">Leállítja az SDL-lel kapcsolatos modulokat.</div><div class="ttdef"><b>Definition</b> SDL_local.c:42</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a57f2d4c1cc5eb035f40f99128358b997"><div class="ttname"><a href="SDL__local_8h.html#a57f2d4c1cc5eb035f40f99128358b997">Window_Destroy</a></div><div class="ttdeci">void Window_Destroy(Window *window)</div><div class="ttdoc">Felszabadít egy Window struktúrát.</div><div class="ttdef"><b>Definition</b> window.c:32</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a58556ff73806c51333d95bf95c741f1d"><div class="ttname"><a href="SDL__local_8h.html#a58556ff73806c51333d95bf95c741f1d">Layer::layer</a></div><div class="ttdeci">SDL_Texture * layer</div><div class="ttdef"><b>Definition</b> SDL_local.h:222</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a5dc98ad1681b4f8abacd9147acf4eaba"><div class="ttname"><a href="SDL__local_8h.html#a5dc98ad1681b4f8abacd9147acf4eaba">Assets::wheel</a></div><div class="ttdeci">SDL_Texture * wheel</div><div class="ttdef"><b>Definition</b> SDL_local.h:178</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a5f7f26e437c41ced09d4b5ad410d8461"><div class="ttname"><a href="SDL__local_8h.html#a5f7f26e437c41ced09d4b5ad410d8461">Assets::bgm</a></div><div class="ttdeci">Mix_Music * bgm</div><div class="ttdef"><b>Definition</b> SDL_local.h:182</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a667bccf00d3c880cdcfcf9a940389b8d"><div class="ttname"><a href="SDL__local_8h.html#a667bccf00d3c880cdcfcf9a940389b8d">Fonts_Destroy</a></div><div class="ttdeci">void Fonts_Destroy(Fonts *fonts)</div><div class="ttdoc">Felszabadít egy Fonts struktúrát.</div><div class="ttdef"><b>Definition</b> fonts.c:39</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a69d5ca53df6b8dbf438054fcdc2010cf"><div class="ttname"><a href="SDL__local_8h.html#a69d5ca53df6b8dbf438054fcdc2010cf">Layer_Destroy</a></div><div class="ttdeci">void Layer_Destroy(Layer *layer)</div><div class="ttdoc">Felszabadít egy Layer struktúrát.</div><div class="ttdef"><b>Definition</b> layer.c:45</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a70597b0011ea90ef5bffb9e9fa22d57b"><div class="ttname"><a href="SDL__local_8h.html#a70597b0011ea90ef5bffb9e9fa22d57b">Layer_Init</a></div><div class="ttdeci">Layer Layer_Init(void)</div><div class="ttdoc">Layer struktúra inicializálása (kinullázása)</div><div class="ttdef"><b>Definition</b> layer.c:10</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a9920ee88c07373643b2dbb45eadf54bb"><div class="ttname"><a href="SDL__local_8h.html#a9920ee88c07373643b2dbb45eadf54bb">StartMusic</a></div><div class="ttdeci">void StartMusic(Assets assets)</div><div class="ttdoc">Elindítja a háttérzenét és végtelenül ismétli.</div><div class="ttdef"><b>Definition</b> SDL_local.c:35</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a9e077512e4445cd21a6df83d166aa617"><div class="ttname"><a href="SDL__local_8h.html#a9e077512e4445cd21a6df83d166aa617">Fonts_Init</a></div><div class="ttdeci">Fonts Fonts_Init(void)</div><div class="ttdoc">Fonts struktúra inicializálása (kinullázása)</div><div class="ttdef"><b>Definition</b> fonts.c:10</div></div>
+<div class="ttc" id="aSDL__local_8h_html_aa36fe5beed3c060f88710a4d5f3a549d"><div class="ttname"><a href="SDL__local_8h.html#aa36fe5beed3c060f88710a4d5f3a549d">Fonts::italic</a></div><div class="ttdeci">TTF_Font * italic</div><div class="ttdef"><b>Definition</b> SDL_local.h:199</div></div>
+<div class="ttc" id="aSDL__local_8h_html_aa479c2c9a98f85a5c867754cdb655ecc"><div class="ttname"><a href="SDL__local_8h.html#aa479c2c9a98f85a5c867754cdb655ecc">Layer::location</a></div><div class="ttdeci">SDL_Rect location</div><div class="ttdef"><b>Definition</b> SDL_local.h:226</div></div>
+<div class="ttc" id="aSDL__local_8h_html_aabb1be747c3ff96fe5a8f881d6b137fd"><div class="ttname"><a href="SDL__local_8h.html#aabb1be747c3ff96fe5a8f881d6b137fd">Window::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition</b> SDL_local.h:153</div></div>
+<div class="ttc" id="aSDL__local_8h_html_ab2869d2ddc5af55a9b2366509dfc213f"><div class="ttname"><a href="SDL__local_8h.html#ab2869d2ddc5af55a9b2366509dfc213f">Assets_Destroy</a></div><div class="ttdeci">void Assets_Destroy(Assets *assets)</div><div class="ttdoc">Felszabadít egy Assets struktúrát.</div><div class="ttdef"><b>Definition</b> assets.c:84</div></div>
+<div class="ttc" id="aSDL__local_8h_html_aba03cebb4e558f46025ee6aa429c4da9"><div class="ttname"><a href="SDL__local_8h.html#aba03cebb4e558f46025ee6aa429c4da9">Layer_RenderFont</a></div><div class="ttdeci">bool Layer_RenderFont(Layer *layer, Window window, TTF_Font *font, const char *text, SDL_Color foreground)</div><div class="ttdoc">Létrehoz egy szöveget tartalmazó Layer-t.</div><div class="ttdef"><b>Definition</b> layer.c:31</div></div>
+<div class="ttc" id="aSDL__local_8h_html_ac123123dd113ec5077bfd1af17d2f459"><div class="ttname"><a href="SDL__local_8h.html#ac123123dd113ec5077bfd1af17d2f459">InitializeSDL</a></div><div class="ttdeci">bool InitializeSDL(void)</div><div class="ttdoc">Az SDL inicializáló függvénye.</div><div class="ttdef"><b>Definition</b> SDL_local.c:9</div></div>
+<div class="ttc" id="aSDL__local_8h_html_ac3c083ed926b016bdac5c583796f9dc6"><div class="ttname"><a href="SDL__local_8h.html#ac3c083ed926b016bdac5c583796f9dc6">Assets::background</a></div><div class="ttdeci">SDL_Texture * background</div><div class="ttdef"><b>Definition</b> SDL_local.h:166</div></div>
+<div class="ttc" id="aSDL__local_8h_html_ac4ced5cb053a1e0b1093de76e0f3e1b2"><div class="ttname"><a href="SDL__local_8h.html#ac4ced5cb053a1e0b1093de76e0f3e1b2">Fonts::normal</a></div><div class="ttdeci">TTF_Font * normal</div><div class="ttdef"><b>Definition</b> SDL_local.h:195</div></div>
+<div class="ttc" id="aSDL__local_8h_html_acaeb67a6dbfea58a4ebd8fe14dfa9504"><div class="ttname"><a href="SDL__local_8h.html#acaeb67a6dbfea58a4ebd8fe14dfa9504">Assets::pipes_full</a></div><div class="ttdeci">SDL_Texture * pipes_full</div><div class="ttdef"><b>Definition</b> SDL_local.h:174</div></div>
+<div class="ttc" id="aSDL__local_8h_html_acd2e9fa745363b10368a7ee162f01a46"><div class="ttname"><a href="SDL__local_8h.html#acd2e9fa745363b10368a7ee162f01a46">Assets_Init</a></div><div class="ttdeci">Assets Assets_Init(void)</div><div class="ttdoc">Assets struktúra inicializálása (kinullázása)</div><div class="ttdef"><b>Definition</b> assets.c:9</div></div>
+<div class="ttc" id="aSDL__local_8h_html_ae2efd55b51af1d6c9755e626045ac06d"><div class="ttname"><a href="SDL__local_8h.html#ae2efd55b51af1d6c9755e626045ac06d">Layer_Create</a></div><div class="ttdeci">bool Layer_Create(Layer *layer, Window window, const SDL_Rect *location)</div><div class="ttdoc">Feltölt egy inicializált Layer struktúrát.</div><div class="ttdef"><b>Definition</b> layer.c:14</div></div>
+<div class="ttc" id="aSDL__local_8h_html_ae31e99f90eae8c04eeaeaea96d7fe83c"><div class="ttname"><a href="SDL__local_8h.html#ae31e99f90eae8c04eeaeaea96d7fe83c">Window_Create</a></div><div class="ttdeci">bool Window_Create(Window *window, const char *title, int width, int height)</div><div class="ttdoc">Feltölt egy inicializált Window struktúrát.</div><div class="ttdef"><b>Definition</b> window.c:13</div></div>
+<div class="ttc" id="aSDL__local_8h_html_ae39a7755a5a6ab74bcbdbe3e2e206820"><div class="ttname"><a href="SDL__local_8h.html#ae39a7755a5a6ab74bcbdbe3e2e206820">Window::window</a></div><div class="ttdeci">SDL_Window * window</div><div class="ttdef"><b>Definition</b> SDL_local.h:140</div></div>
+<div class="ttc" id="aSDL__local_8h_html_structAssets"><div class="ttname"><a href="SDL__local_8h.html#structAssets">Assets</a></div><div class="ttdoc">Assets mappa fájlaihoz struktúra.</div><div class="ttdef"><b>Definition</b> SDL_local.h:162</div></div>
+<div class="ttc" id="aSDL__local_8h_html_structFonts"><div class="ttname"><a href="SDL__local_8h.html#structFonts">Fonts</a></div><div class="ttdoc">Betűtípusokhoz struktúra.</div><div class="ttdef"><b>Definition</b> SDL_local.h:191</div></div>
+<div class="ttc" id="aSDL__local_8h_html_structLayer"><div class="ttname"><a href="SDL__local_8h.html#structLayer">Layer</a></div><div class="ttdoc">Réteg struktúra.</div><div class="ttdef"><b>Definition</b> SDL_local.h:218</div></div>
+<div class="ttc" id="aSDL__local_8h_html_structWindow"><div class="ttname"><a href="SDL__local_8h.html#structWindow">Window</a></div><div class="ttdoc">Window struktúra.</div><div class="ttdef"><b>Definition</b> SDL_local.h:136</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

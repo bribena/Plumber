@@ -1,0 +1,1244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vízvezetékszerelő: lib/include/pipe.h fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vízvezetékszerelő
+   </div>
+   <div id="projectbrief">Egy vízvezetékszerelő játék, C-ben írva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Keresés');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_5a30104352ef4255dc24354b02eb2d20.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Adatszerkezetek</a> &#124;
+<a href="#define-members">Makródefiníciók</a> &#124;
+<a href="#typedef-members">Típusdefiníciók</a> &#124;
+<a href="#enum-members">Enumerációk</a> &#124;
+<a href="#func-members">Függvények</a>  </div>
+  <div class="headertitle"><div class="title">pipe.h fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A játékban használt csövekhez kapcsolódó függvényeket és adatszerkezeteket tartalmazza a fájl.  
+<a href="#details">Részletek...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="SDL__local_8h_source.html">SDL_local.h</a>&quot;</code><br />
+</div>
+<p><a href="pipe_8h_source.html">Ugrás a fájl forráskódjához.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Adatszerkezetek</h2></td></tr>
+<tr class="memitem:structPipe" id="r_structPipe"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structPipe">Pipe</a></td></tr>
+<tr class="memdesc:structPipe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Egy cső adatainak tárolására szolgáló struktúra.  <a href="#structPipe">Részletek...</a><br /></td></tr>
+<tr class="separator:structPipe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structPipeGrid" id="r_structPipeGrid"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structPipeGrid">PipeGrid</a></td></tr>
+<tr class="memdesc:structPipeGrid"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Pipe-ok mátrixát tároló struktúra.  <a href="#structPipeGrid">Részletek...</a><br /></td></tr>
+<tr class="separator:structPipeGrid"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structSolvedPipeGrid" id="r_structSolvedPipeGrid"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a></td></tr>
+<tr class="memdesc:structSolvedPipeGrid"><td class="mdescLeft">&#160;</td><td class="mdescRight">Egy <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> megoldását tároló láncolt lista.  <a href="#structSolvedPipeGrid">Részletek...</a><br /></td></tr>
+<tr class="separator:structSolvedPipeGrid"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Makródefiníciók</h2></td></tr>
+<tr class="memitem:ac5e7e1125193d2b2d3418b44c5d8d8a5" id="r_ac5e7e1125193d2b2d3418b44c5d8d8a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5e7e1125193d2b2d3418b44c5d8d8a5">DEFAULT_PIPE_SIZE</a>&#160;&#160;&#160;50</td></tr>
+<tr class="memdesc:ac5e7e1125193d2b2d3418b44c5d8d8a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A csövek alapértelmezett magassága és szélessége (pixelben)  <br /></td></tr>
+<tr class="separator:ac5e7e1125193d2b2d3418b44c5d8d8a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Típusdefiníciók</h2></td></tr>
+<tr class="memitem:a2aaf339bd900c828726996d11a07e570" id="r_a2aaf339bd900c828726996d11a07e570"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="#a0e06b722097db3b4be182a777b22232c">ElemiResz</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a>[3][3]</td></tr>
+<tr class="memdesc:a2aaf339bd900c828726996d11a07e570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Egy Elem-et reprezentáló 3x3-as mátrix.  <br /></td></tr>
+<tr class="separator:a2aaf339bd900c828726996d11a07e570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerációk</h2></td></tr>
+<tr class="memitem:a0e06b722097db3b4be182a777b22232c" id="r_a0e06b722097db3b4be182a777b22232c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e06b722097db3b4be182a777b22232c">ElemiResz</a> { <a class="el" href="#a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc">Levego</a> = 'X'
+, <a class="el" href="#a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23">Cso</a> = 'O'
+, <a class="el" href="#a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9">Ismeretlen</a> = '?'
+, <a class="el" href="#a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc">Rossz</a> = '.'
+, <a class="el" href="#a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0">Jo</a> = '*'
+ }</td></tr>
+<tr class="memdesc:a0e06b722097db3b4be182a777b22232c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Egy-egy Elem részeinek lehetséges állapotai.  <a href="#a0e06b722097db3b4be182a777b22232c">Részletek...</a><br /></td></tr>
+<tr class="separator:a0e06b722097db3b4be182a777b22232c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f0d6eb7162b131ee64066734931c69" id="r_a66f0d6eb7162b131ee64066734931c69"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66f0d6eb7162b131ee64066734931c69">PipeType</a> { <a class="el" href="#a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5">PipeType_None</a>
+, <a class="el" href="#a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123">PipeType_Straight</a>
+, <a class="el" href="#a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe">PipeType_Curved</a>
+, <a class="el" href="#a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b">PipeType_Tshaped</a>
+, <a class="el" href="#a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006">PipeType_Crossing</a>
+ }</td></tr>
+<tr class="memdesc:a66f0d6eb7162b131ee64066734931c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> típusának enumja.  <a href="#a66f0d6eb7162b131ee64066734931c69">Részletek...</a><br /></td></tr>
+<tr class="separator:a66f0d6eb7162b131ee64066734931c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:a9b4194b89ec44334514b17b0309deca8" id="r_a9b4194b89ec44334514b17b0309deca8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b4194b89ec44334514b17b0309deca8">Elem_Init</a> (<a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a> elem)</td></tr>
+<tr class="memdesc:a9b4194b89ec44334514b17b0309deca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Egy üres (csupa Levego-s) Elem-et álltít elő.  <br /></td></tr>
+<tr class="separator:a9b4194b89ec44334514b17b0309deca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b6bc573aa97700d92155c1872aa636" id="r_a93b6bc573aa97700d92155c1872aa636"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93b6bc573aa97700d92155c1872aa636">Elem_Copy</a> (<a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a> hova, <a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a> honnan)</td></tr>
+<tr class="memdesc:a93b6bc573aa97700d92155c1872aa636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Átmásol egy Elem tartalmát egy másikba.  <br /></td></tr>
+<tr class="separator:a93b6bc573aa97700d92155c1872aa636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0d66c6555de1641ccba86e3b2bbfb1" id="r_a2b0d66c6555de1641ccba86e3b2bbfb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b0d66c6555de1641ccba86e3b2bbfb1">Elem_RotatePos</a> (<a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a> elem)</td></tr>
+<tr class="memdesc:a2b0d66c6555de1641ccba86e3b2bbfb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elforgat egy Elem-et az óramutató járásával megegyező irányba.  <br /></td></tr>
+<tr class="separator:a2b0d66c6555de1641ccba86e3b2bbfb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab552e10b0d8bd8f6b2cd96bc38edc96" id="r_aab552e10b0d8bd8f6b2cd96bc38edc96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab552e10b0d8bd8f6b2cd96bc38edc96">Elem_RotateNeg</a> (<a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a> elem)</td></tr>
+<tr class="memdesc:aab552e10b0d8bd8f6b2cd96bc38edc96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elforgat egy Elem-et az óramutató járásával ellentétes irányba.  <br /></td></tr>
+<tr class="separator:aab552e10b0d8bd8f6b2cd96bc38edc96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c71e4298c33eeb1eff0a9d4b9df420" id="r_af5c71e4298c33eeb1eff0a9d4b9df420"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structPipe">Pipe</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5c71e4298c33eeb1eff0a9d4b9df420">Pipe_Init</a> (void)</td></tr>
+<tr class="memdesc:af5c71e4298c33eeb1eff0a9d4b9df420"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> struktúra inicializálása (kinullázása/alapértelmezett értékek beállítása)  <br /></td></tr>
+<tr class="separator:af5c71e4298c33eeb1eff0a9d4b9df420"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44323a670aaceb7645ad404cf8a8f783" id="r_a44323a670aaceb7645ad404cf8a8f783"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44323a670aaceb7645ad404cf8a8f783">Pipe_CreateFromElem</a> (<a class="el" href="#structPipe">Pipe</a> *pipe, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window, SDL_Texture *pipe_texture, SDL_Rect base_location)</td></tr>
+<tr class="memdesc:a44323a670aaceb7645ad404cf8a8f783"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> struktúra létrehozása a benne található Elem alapján.  <br /></td></tr>
+<tr class="separator:a44323a670aaceb7645ad404cf8a8f783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a216a3e3667f262ced88364393750fc0c" id="r_a216a3e3667f262ced88364393750fc0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a216a3e3667f262ced88364393750fc0c">Pipe_Rotate</a> (<a class="el" href="#structPipe">Pipe</a> *pipe, int irany)</td></tr>
+<tr class="memdesc:a216a3e3667f262ced88364393750fc0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elforgatja egy <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> Elem-ét.  <br /></td></tr>
+<tr class="separator:a216a3e3667f262ced88364393750fc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89e9baf97ad38cbde0098fe638819fbe" id="r_a89e9baf97ad38cbde0098fe638819fbe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89e9baf97ad38cbde0098fe638819fbe">Pipe_Render</a> (<a class="el" href="#structPipe">Pipe</a> pipe, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window)</td></tr>
+<tr class="memdesc:a89e9baf97ad38cbde0098fe638819fbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renderel egy Pipe-ot a jelenlegi RenderTarget-re.  <br /></td></tr>
+<tr class="separator:a89e9baf97ad38cbde0098fe638819fbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc666f7a0c915b9ffbc07bf0ee99921b" id="r_adc666f7a0c915b9ffbc07bf0ee99921b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc666f7a0c915b9ffbc07bf0ee99921b">Pipe_UpdateLayer</a> (<a class="el" href="#structPipe">Pipe</a> pipe, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window, SDL_Texture *pipe_texture)</td></tr>
+<tr class="memdesc:adc666f7a0c915b9ffbc07bf0ee99921b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frissíti egy <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> Layer-ét.  <br /></td></tr>
+<tr class="separator:adc666f7a0c915b9ffbc07bf0ee99921b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e7c55fe9bad5b60e5c20b63f68cc5c" id="r_ad8e7c55fe9bad5b60e5c20b63f68cc5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8e7c55fe9bad5b60e5c20b63f68cc5c">Pipe_Destroy</a> (<a class="el" href="#structPipe">Pipe</a> *pipe)</td></tr>
+<tr class="memdesc:ad8e7c55fe9bad5b60e5c20b63f68cc5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Felszabadít egy <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> struktúrát.  <br /></td></tr>
+<tr class="separator:ad8e7c55fe9bad5b60e5c20b63f68cc5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d9859a40de0cd53258fcb88e8bbcaff" id="r_a0d9859a40de0cd53258fcb88e8bbcaff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structPipeGrid">PipeGrid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d9859a40de0cd53258fcb88e8bbcaff">PipeGrid_Init</a> (void)</td></tr>
+<tr class="memdesc:a0d9859a40de0cd53258fcb88e8bbcaff"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> struktúra inicializálása (kinullázása)  <br /></td></tr>
+<tr class="separator:a0d9859a40de0cd53258fcb88e8bbcaff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a374a382292ea4ef400156d3e1960b2d7" id="r_a374a382292ea4ef400156d3e1960b2d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a374a382292ea4ef400156d3e1960b2d7">PipeGrid_Create</a> (<a class="el" href="#structPipeGrid">PipeGrid</a> *pipegrid, int x, int y)</td></tr>
+<tr class="memdesc:a374a382292ea4ef400156d3e1960b2d7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> struktúra létrehozása.  <br /></td></tr>
+<tr class="separator:a374a382292ea4ef400156d3e1960b2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ed505ed2d56a3aeda3aed0a46f02d1" id="r_a65ed505ed2d56a3aeda3aed0a46f02d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structPipeGrid">PipeGrid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65ed505ed2d56a3aeda3aed0a46f02d1">PipeGrid_CreateCopy</a> (<a class="el" href="#structPipeGrid">PipeGrid</a> source)</td></tr>
+<tr class="memdesc:a65ed505ed2d56a3aeda3aed0a46f02d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lemásol egy PipeGrid-et és visszaadja a másolatot.  <br /></td></tr>
+<tr class="separator:a65ed505ed2d56a3aeda3aed0a46f02d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bcc09f533a5dbe43a9a24dc9e1a8d4d" id="r_a4bcc09f533a5dbe43a9a24dc9e1a8d4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4bcc09f533a5dbe43a9a24dc9e1a8d4d">PipeGrid_GenerateGrid</a> (<a class="el" href="#structPipeGrid">PipeGrid</a> *pipegrid, SDL_Point entry, SDL_Point exit)</td></tr>
+<tr class="memdesc:a4bcc09f533a5dbe43a9a24dc9e1a8d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legenerál egy PipeGrid-et.  <br /></td></tr>
+<tr class="separator:a4bcc09f533a5dbe43a9a24dc9e1a8d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e4a8bc5269d22c3e6fec9acd8bf3e83" id="r_a1e4a8bc5269d22c3e6fec9acd8bf3e83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e4a8bc5269d22c3e6fec9acd8bf3e83">PipeGrid_Shuffle</a> (<a class="el" href="#structPipeGrid">PipeGrid</a> pipegrid)</td></tr>
+<tr class="memdesc:a1e4a8bc5269d22c3e6fec9acd8bf3e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Összekever egy PipeGrid-et.  <br /></td></tr>
+<tr class="separator:a1e4a8bc5269d22c3e6fec9acd8bf3e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1aff8a4b7cc5465aede4b2e6bbc1463" id="r_ab1aff8a4b7cc5465aede4b2e6bbc1463"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1aff8a4b7cc5465aede4b2e6bbc1463">PipeGrid_Feldolgoz</a> (<a class="el" href="#structPipeGrid">PipeGrid</a> pipegrid, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window, SDL_Texture *pipe_texture, SDL_Rect base_location)</td></tr>
+<tr class="memdesc:ab1aff8a4b7cc5465aede4b2e6bbc1463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Egy <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> Pipe-jainak hiányzó értékeit feltölti.  <br /></td></tr>
+<tr class="separator:ab1aff8a4b7cc5465aede4b2e6bbc1463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af129c9d4c21a5a3ceea790a85f5d2305" id="r_af129c9d4c21a5a3ceea790a85f5d2305"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af129c9d4c21a5a3ceea790a85f5d2305">PipeGrid_Render</a> (<a class="el" href="#structPipeGrid">PipeGrid</a> pipegrid, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window)</td></tr>
+<tr class="memdesc:af129c9d4c21a5a3ceea790a85f5d2305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lerenderel egy feldolgozott PipeGrid-et az aktuális RenderTarget-re.  <br /></td></tr>
+<tr class="separator:af129c9d4c21a5a3ceea790a85f5d2305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaa7e81af912deb3e9782cb9523321b3" id="r_aeaa7e81af912deb3e9782cb9523321b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeaa7e81af912deb3e9782cb9523321b3">PipeGrid_Destroy</a> (<a class="el" href="#structPipeGrid">PipeGrid</a> *pipegrid)</td></tr>
+<tr class="memdesc:aeaa7e81af912deb3e9782cb9523321b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Felszabadít egy PipeGrid-et.  <br /></td></tr>
+<tr class="separator:aeaa7e81af912deb3e9782cb9523321b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea6489ef8c5d5a47e52c0d3c8073423" id="r_a0ea6489ef8c5d5a47e52c0d3c8073423"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ea6489ef8c5d5a47e52c0d3c8073423">PipeGrid_Solve</a> (<a class="el" href="#structPipeGrid">PipeGrid</a> pipegrid, SDL_Point entry, SDL_Point exit)</td></tr>
+<tr class="memdesc:a0ea6489ef8c5d5a47e52c0d3c8073423"><td class="mdescLeft">&#160;</td><td class="mdescRight">Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza.  <br /></td></tr>
+<tr class="separator:a0ea6489ef8c5d5a47e52c0d3c8073423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29554057a457d47ee2015a6d5b9d9cef" id="r_a29554057a457d47ee2015a6d5b9d9cef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29554057a457d47ee2015a6d5b9d9cef">SolvedPipeGrid_RemoveFirst</a> (<a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a> *start)</td></tr>
+<tr class="memdesc:a29554057a457d47ee2015a6d5b9d9cef"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="#structSolvedPipeGrid" title="Egy PipeGrid megoldását tároló láncolt lista.">SolvedPipeGrid</a> láncolt lista első elemét felszabadítja és visszaadja a következő elem pointerét.  <br /></td></tr>
+<tr class="separator:a29554057a457d47ee2015a6d5b9d9cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b9f26edab225f3523287fc05a1eedf7" id="r_a5b9f26edab225f3523287fc05a1eedf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b9f26edab225f3523287fc05a1eedf7">SolvedPipeGrid_Destroy</a> (<a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a> *start)</td></tr>
+<tr class="memdesc:a5b9f26edab225f3523287fc05a1eedf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Felszabadít egy <a class="el" href="#structSolvedPipeGrid" title="Egy PipeGrid megoldását tároló láncolt lista.">SolvedPipeGrid</a> láncolt listát.  <br /></td></tr>
+<tr class="separator:a5b9f26edab225f3523287fc05a1eedf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p>A játékban használt csövekhez kapcsolódó függvényeket és adatszerkezeteket tartalmazza a fájl. </p>
+<dl class="section pre"><dt>Előfeltétel</dt><dd>Mivel az <a class="el" href="SDL__local_8h.html" title="Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.">SDL_local.h</a>-t használja, az SDL inicializálása szükséges a modul megfelelő működéséhez.</dd></dl>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Struktúrák, enumok:</h2>
+<p>3 fő struktúrát tartalmaz a fájl:</p><ul>
+<li><code><a class="el" href="#structPipe">Pipe</a></code>: Egy cső adatait tartalmazza.</li>
+<li><code><a class="el" href="#structPipeGrid">PipeGrid</a></code>: Csövek mátrixát és a mátrix szélességét és magasságát tartalmazza.</li>
+<li><code><a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a></code>: Egy <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> megoldását tartalmazza. A megfelelő csöveket és indexeiket strázsa nélküli láncolt listában tartalmazza.</li>
+</ul>
+<p>A struktúrák használata többnyire az alábbi módon történik: </p><div class="fragment"><div class="line">Struktúra név = Struktúra_Init(); <span class="comment">// Az init egy üres elemet ad vissza, nem foglal magának memóriát</span></div>
+<div class="line">Struktúra_LétrehozóFüggvény(&amp;struktúra, paraméterek); <span class="comment">// Lásd lentebb</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Használat</span></div>
+<div class="line"> </div>
+<div class="line">Struktúra_Destroy(&amp;struktúra); <span class="comment">// A struktúrákat, amik tartalmaznak dinamikusan foglalt elemeket, fel kell szabadítani</span></div>
+</div><!-- fragment --><p> Ez alól van kivétel, lásd lentebb.</p>
+<p>Maga a cső az <code><a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a></code> típusú 3x3-as mátrixban van leképezve, ami <code><a class="el" href="#a0e06b722097db3b4be182a777b22232c">ElemiResz</a></code> enumokból épül fel. Ebben van nyilvántartva maga a cső és a megoldás során az "áramlás" útvonalanák helyessége.</p>
+<p>Ezen kívül a <code><a class="el" href="#a66f0d6eb7162b131ee64066734931c69">PipeType</a></code> enum egy <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> típusát határozza meg.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Függvények:</h2>
+<p>A modul a struktúrákhoz kapcsolódó függvényeket tartalmazza.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Példakód:</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="SDL__local_8h.html">SDL_local.h</a>&quot;</span> <span class="comment">// Explicit include</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="pipe_8h.html">pipe.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> * argv[]) {</div>
+<div class="line">    (void)argc, (<span class="keywordtype">void</span>)argv; <span class="comment">// Warning elkerülése</span></div>
+<div class="line">    <a class="code hl_function" href="SDL__local_8h.html#ac123123dd113ec5077bfd1af17d2f459">InitializeSDL</a>(); <span class="comment">// SDL inicializálása</span></div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_struct" href="#structPipeGrid">PipeGrid</a> pipegrid = <a class="code hl_function" href="#a0d9859a40de0cd53258fcb88e8bbcaff">PipeGrid_Init</a>(); <span class="comment">// PipeGrid inicializálása</span></div>
+<div class="line">    <a class="code hl_function" href="#a374a382292ea4ef400156d3e1960b2d7">PipeGrid_Create</a>(&amp;pipegrid, 10, 10); <span class="comment">// 10x10-es PipeGrid létrehozása</span></div>
+<div class="line">    <a class="code hl_function" href="#a4bcc09f533a5dbe43a9a24dc9e1a8d4d">PipeGrid_GenerateGrid</a>(&amp;pipegrid, (SDL_Point){0, 0}, (SDL_Point){9, 9}); <span class="comment">// PipeGrid feltöltése</span></div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_struct" href="#structSolvedPipeGrid">SolvedPipeGrid</a> * solved = <a class="code hl_function" href="#a0ea6489ef8c5d5a47e52c0d3c8073423">PipeGrid_Solve</a>(pipegrid, (SDL_Point){0, 0}, (SDL_Point){9, 9}); <span class="comment">// PipeGrid megoldása</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Megoldás koordinátáinak kiírása</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<a class="code hl_struct" href="#structSolvedPipeGrid">SolvedPipeGrid</a> * i = solved; i != NULL; i = i-&gt;<a class="code hl_variable" href="#a83f19165c0b7ea6eda8e271be1cd3b25">next</a>)</div>
+<div class="line">        printf(<span class="stringliteral">&quot;%d, %d\n&quot;</span>, i-&gt;x, i-&gt;y);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="#a5b9f26edab225f3523287fc05a1eedf7">SolvedPipeGrid_Destroy</a>(solved); <span class="comment">// SolvedPipeGrid felszabadítása</span></div>
+<div class="line">    <a class="code hl_function" href="#aeaa7e81af912deb3e9782cb9523321b3">PipeGrid_Destroy</a>(&amp;pipegrid); <span class="comment">// PipeGrid felszabadítása</span></div>
+<div class="line">    <a class="code hl_function" href="SDL__local_8h.html#a5105dab6519a26f47f91e5f2051f2ac5">QuitSDL</a>(); <span class="comment">// SDL leállítása</span></div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aSDL__local_8h_html"><div class="ttname"><a href="SDL__local_8h.html">SDL_local.h</a></div><div class="ttdoc">Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a5105dab6519a26f47f91e5f2051f2ac5"><div class="ttname"><a href="SDL__local_8h.html#a5105dab6519a26f47f91e5f2051f2ac5">QuitSDL</a></div><div class="ttdeci">void QuitSDL(void)</div><div class="ttdoc">Leállítja az SDL-lel kapcsolatos modulokat.</div><div class="ttdef"><b>Definition</b> SDL_local.c:42</div></div>
+<div class="ttc" id="aSDL__local_8h_html_ac123123dd113ec5077bfd1af17d2f459"><div class="ttname"><a href="SDL__local_8h.html#ac123123dd113ec5077bfd1af17d2f459">InitializeSDL</a></div><div class="ttdeci">bool InitializeSDL(void)</div><div class="ttdoc">Az SDL inicializáló függvénye.</div><div class="ttdef"><b>Definition</b> SDL_local.c:9</div></div>
+<div class="ttc" id="amain_8c_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdoc">A main függvény.</div><div class="ttdef"><b>Definition</b> main.c:35</div></div>
+<div class="ttc" id="apipe_8h_html"><div class="ttname"><a href="pipe_8h.html">pipe.h</a></div><div class="ttdoc">A játékban használt csövekhez kapcsolódó függvényeket és adatszerkezeteket tartalmazza a fájl.</div></div>
+<div class="ttc" id="apipe_8h_html_a0d9859a40de0cd53258fcb88e8bbcaff"><div class="ttname"><a href="#a0d9859a40de0cd53258fcb88e8bbcaff">PipeGrid_Init</a></div><div class="ttdeci">PipeGrid PipeGrid_Init(void)</div><div class="ttdoc">PipeGrid struktúra inicializálása (kinullázása)</div><div class="ttdef"><b>Definition</b> pipegrid.c:10</div></div>
+<div class="ttc" id="apipe_8h_html_a0ea6489ef8c5d5a47e52c0d3c8073423"><div class="ttname"><a href="#a0ea6489ef8c5d5a47e52c0d3c8073423">PipeGrid_Solve</a></div><div class="ttdeci">SolvedPipeGrid * PipeGrid_Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point exit)</div><div class="ttdoc">Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza.</div><div class="ttdef"><b>Definition</b> solve.c:175</div></div>
+<div class="ttc" id="apipe_8h_html_a374a382292ea4ef400156d3e1960b2d7"><div class="ttname"><a href="#a374a382292ea4ef400156d3e1960b2d7">PipeGrid_Create</a></div><div class="ttdeci">bool PipeGrid_Create(PipeGrid *pipegrid, int x, int y)</div><div class="ttdoc">PipeGrid struktúra létrehozása.</div><div class="ttdef"><b>Definition</b> pipegrid.c:14</div></div>
+<div class="ttc" id="apipe_8h_html_a4bcc09f533a5dbe43a9a24dc9e1a8d4d"><div class="ttname"><a href="#a4bcc09f533a5dbe43a9a24dc9e1a8d4d">PipeGrid_GenerateGrid</a></div><div class="ttdeci">void PipeGrid_GenerateGrid(PipeGrid *pipegrid, SDL_Point entry, SDL_Point exit)</div><div class="ttdoc">Legenerál egy PipeGrid-et.</div><div class="ttdef"><b>Definition</b> pipegrid.c:183</div></div>
+<div class="ttc" id="apipe_8h_html_a5b9f26edab225f3523287fc05a1eedf7"><div class="ttname"><a href="#a5b9f26edab225f3523287fc05a1eedf7">SolvedPipeGrid_Destroy</a></div><div class="ttdeci">void SolvedPipeGrid_Destroy(SolvedPipeGrid *start)</div><div class="ttdoc">Felszabadít egy SolvedPipeGrid láncolt listát.</div><div class="ttdef"><b>Definition</b> solve.c:269</div></div>
+<div class="ttc" id="apipe_8h_html_a83f19165c0b7ea6eda8e271be1cd3b25"><div class="ttname"><a href="#a83f19165c0b7ea6eda8e271be1cd3b25">SolvedPipeGrid::next</a></div><div class="ttdeci">struct SolvedPipeGrid * next</div><div class="ttdef"><b>Definition</b> pipe.h:230</div></div>
+<div class="ttc" id="apipe_8h_html_aeaa7e81af912deb3e9782cb9523321b3"><div class="ttname"><a href="#aeaa7e81af912deb3e9782cb9523321b3">PipeGrid_Destroy</a></div><div class="ttdeci">void PipeGrid_Destroy(PipeGrid *pipegrid)</div><div class="ttdoc">Felszabadít egy PipeGrid-et.</div><div class="ttdef"><b>Definition</b> pipegrid.c:37</div></div>
+<div class="ttc" id="apipe_8h_html_structPipeGrid"><div class="ttname"><a href="#structPipeGrid">PipeGrid</a></div><div class="ttdoc">A Pipe-ok mátrixát tároló struktúra.</div><div class="ttdef"><b>Definition</b> pipe.h:191</div></div>
+<div class="ttc" id="apipe_8h_html_structSolvedPipeGrid"><div class="ttname"><a href="#structSolvedPipeGrid">SolvedPipeGrid</a></div><div class="ttdoc">Egy PipeGrid megoldását tároló láncolt lista.</div><div class="ttdef"><b>Definition</b> pipe.h:213</div></div>
+</div><!-- fragment --><p>A fenti példakód létrehoz egy 10x10-es PipeGrid-et, majd generál ebből egy pályát. Ezután megoldja a pályát, majd kiírja stdout-on a megfelelő csövek koordinátáit (indexeit).</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Megjegyzések:</h2>
+<ul>
+<li>Minden innen származó struktúrának a "legtetejét" kell felszabadítani. Ezalatt azt kell érteni, hogy például a <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> tartalmazza a szintén dinamikusan foglalt Pipe-ot, de a <a class="el" href="#aeaa7e81af912deb3e9782cb9523321b3" title="Felszabadít egy PipeGrid-et.">PipeGrid_Destroy()</a> a tárolt Pipe-ot is felszabadítja. Erről bővebben az adott függvény dokumentációja ír.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Kapcsolódó kódfájlok:</h2>
+<ul>
+<li><a class="el" href="elem_8c.html" title="A pipe.h-ban deklarált Elem struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.">elem.c</a></li>
+<li><a class="el" href="pipe_8c.html" title="A pipe.h-ban deklarált Pipe struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.">pipe.c</a></li>
+<li><a class="el" href="pipegrid_8c.html" title="A pipe.h-ban deklarált PipeGrid struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.">pipegrid.c</a></li>
+<li><a class="el" href="solve_8c.html" title="A pipe.h-ban deklarált SolvedPipeGrid struktúrához és a PipeGrid megoldásához kapcsolódó függvények k...">solve.c</a> </li>
+</ul>
+</div><hr/><h2 class="groupheader">Adatszerkezetek dokumentációja</h2>
+<a name="structPipe" id="structPipe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structPipe">&#9670;&#160;</a></span>Pipe</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct Pipe</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>Egy cső adatainak tárolására szolgáló struktúra. </p>
+<p>Egy cső feldolgozásához, illetve egy cső rendereléséhez szükséges összes adatot tárolja. </p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Adatmezők</th></tr>
+<tr><td class="fieldtype">
+<a id="a8428eb27e8d47fb0d2eb3f930e893620" name="a8428eb27e8d47fb0d2eb3f930e893620"></a><a class="el" href="SDL__local_8h.html#structLayer">Layer</a></td>
+<td class="fieldname">
+rendered</td>
+<td class="fielddoc">
+<p>A cső rétege. Azért kell, hogy csakis egyetlen csőt meg lehessen változtatni. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a5f3c609ac8d5da6e2e9f62bdf27e5b9e" name="a5f3c609ac8d5da6e2e9f62bdf27e5b9e"></a>double</td>
+<td class="fieldname">
+szog</td>
+<td class="fielddoc">
+<p>A cső szöge (fokban). Rendereléskor (animáláskor) használt. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a06e78e7416e3963c14e56e2fafb4ce91" name="a06e78e7416e3963c14e56e2fafb4ce91"></a><a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a></td>
+<td class="fieldname">
+tenyleges</td>
+<td class="fielddoc">
+<p>A cső <a class="el" href="#a4bcc09f533a5dbe43a9a24dc9e1a8d4d" title="Legenerál egy PipeGrid-et.">PipeGrid_GenerateGrid()</a>-ben és <a class="el" href="#a0ea6489ef8c5d5a47e52c0d3c8073423" title="Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza.">PipeGrid_Solve()</a>-ban használt alakja. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ad4b22d52ae07689fcb1fcbf1d13f2ffc" name="ad4b22d52ae07689fcb1fcbf1d13f2ffc"></a>SDL_Rect</td>
+<td class="fieldname">
+texture_loc</td>
+<td class="fielddoc">
+<p>A cső textúrájának helye az assets/img/sprites_empty.png-n belül (ez az <a class="el" href="SDL__local_8h.html#structAssets" title="Assets mappa fájlaihoz struktúra.">Assets</a> struktúra pipes_empty eleme). </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a3130316ff5b964915a98f7cd0b4984db" name="a3130316ff5b964915a98f7cd0b4984db"></a><a class="el" href="#a66f0d6eb7162b131ee64066734931c69">PipeType</a></td>
+<td class="fieldname">
+type</td>
+<td class="fielddoc">
+<p>A cső típusa. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structPipeGrid" id="structPipeGrid"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structPipeGrid">&#9670;&#160;</a></span>PipeGrid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct PipeGrid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A Pipe-ok mátrixát tároló struktúra. </p>
+<p>Egy y*x-es mátrix, amiben Pipe-ok vannak. Indexeléskor oda kell figyelni, hogy először a sor (y), majd az oszlop (x) indexét kell megadni. </p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Adatmezők</th></tr>
+<tr><td class="fieldtype">
+<a id="a521bb018b625dbd0815df275eb2c55e2" name="a521bb018b625dbd0815df275eb2c55e2"></a><a class="el" href="#structPipe">Pipe</a> **</td>
+<td class="fieldname">
+matrix</td>
+<td class="fielddoc">
+<p>A <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> mátrix. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="ad36fc50d016d25e6d5a774c824c336e4" name="ad36fc50d016d25e6d5a774c824c336e4"></a>int</td>
+<td class="fieldname">
+x</td>
+<td class="fielddoc">
+<p>Sorszélesség ("x tengely") </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a3591dfe4b7ab3fbb84cb0ded955ff1af" name="a3591dfe4b7ab3fbb84cb0ded955ff1af"></a>int</td>
+<td class="fieldname">
+y</td>
+<td class="fielddoc">
+<p>Oszlopmagasság ("y tengely") </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structSolvedPipeGrid" id="structSolvedPipeGrid"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structSolvedPipeGrid">&#9670;&#160;</a></span>SolvedPipeGrid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct SolvedPipeGrid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>Egy <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> megoldását tároló láncolt lista. </p>
+<p>Egy <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> megoldását tárolja. A megfelelő Pipe-okat és indexeiket strázsa nélküli láncolt listában tárolja. Nincsen Init() függvénye, helyette egy PipeGrid-ből hozzza létre magát. </p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Adatmezők</th></tr>
+<tr><td class="fieldtype">
+<a id="a83f19165c0b7ea6eda8e271be1cd3b25" name="a83f19165c0b7ea6eda8e271be1cd3b25"></a>struct <a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a> *</td>
+<td class="fieldname">
+next</td>
+<td class="fielddoc">
+<p>A láncolt lista következő elemére mutató pointer. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aecfa1d22c70a35b254f4c0fb5eff0d5b" name="aecfa1d22c70a35b254f4c0fb5eff0d5b"></a><a class="el" href="#structPipe">Pipe</a> *</td>
+<td class="fieldname">
+pipe</td>
+<td class="fielddoc">
+<p>Egy <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> pointere (a PipeGrid-ben). </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a948ed5bfec27326e16786ae8a867fd94" name="a948ed5bfec27326e16786ae8a867fd94"></a>int</td>
+<td class="fieldname">
+x</td>
+<td class="fielddoc">
+<p>A <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> oszlop (x) indexe a PipeGrid-ben. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="adfee3b344c149b0bd329a5d6fc8b6f00" name="adfee3b344c149b0bd329a5d6fc8b6f00"></a>int</td>
+<td class="fieldname">
+y</td>
+<td class="fielddoc">
+<p>A <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> sor (y) indexe a PipeGrid-ben. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Makródefiníciók dokumentációja</h2>
+<a id="ac5e7e1125193d2b2d3418b44c5d8d8a5" name="ac5e7e1125193d2b2d3418b44c5d8d8a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5e7e1125193d2b2d3418b44c5d8d8a5">&#9670;&#160;</a></span>DEFAULT_PIPE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEFAULT_PIPE_SIZE&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A csövek alapértelmezett magassága és szélessége (pixelben) </p>
+
+</div>
+</div>
+<h2 class="groupheader">Típusdefiníciók dokumentációja</h2>
+<a id="a2aaf339bd900c828726996d11a07e570" name="a2aaf339bd900c828726996d11a07e570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aaf339bd900c828726996d11a07e570">&#9670;&#160;</a></span>Elem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Elem</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Egy Elem-et reprezentáló 3x3-as mátrix. </p>
+<p>Egy-egy <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> egyszerűbb alakja. A <a class="el" href="#a4bcc09f533a5dbe43a9a24dc9e1a8d4d" title="Legenerál egy PipeGrid-et.">PipeGrid_GenerateGrid()</a> és a <a class="el" href="#a0ea6489ef8c5d5a47e52c0d3c8073423" title="Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza.">PipeGrid_Solve()</a> függvények egyszerűbb működéséhez szükséges. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumerációk dokumentációja</h2>
+<a id="a0e06b722097db3b4be182a777b22232c" name="a0e06b722097db3b4be182a777b22232c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e06b722097db3b4be182a777b22232c">&#9670;&#160;</a></span>ElemiResz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a0e06b722097db3b4be182a777b22232c">ElemiResz</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Egy-egy Elem részeinek lehetséges állapotai. </p>
+<p>Egy Elem generálás után Levego és Cso ElemiResz-ekből áll. A másik három állapot a <a class="el" href="#a0ea6489ef8c5d5a47e52c0d3c8073423" title="Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza.">PipeGrid_Solve()</a> függvénynél jön elő. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeráció-értékek</th></tr><tr><td class="fieldname"><a id="a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc" name="a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc"></a>Levego&#160;</td><td class="fielddoc"><p>Egy Elem-en belül a levegőt jelöli (azaz nem Cso). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23" name="a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23"></a>Cso&#160;</td><td class="fielddoc"><p>Egy Elem-en belül a csövet jelöli. Ebben mehet a víz. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9" name="a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9"></a>Ismeretlen&#160;</td><td class="fielddoc"><p>A <a class="el" href="#a0ea6489ef8c5d5a47e52c0d3c8073423" title="Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza.">PipeGrid_Solve()</a> során egy eldöntetlen útvonalnál használt. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc" name="a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc"></a>Rossz&#160;</td><td class="fielddoc"><p>A <a class="el" href="#a0ea6489ef8c5d5a47e52c0d3c8073423" title="Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza.">PipeGrid_Solve()</a> során egy rossz útvonalnál használt. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0" name="a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0"></a>Jo&#160;</td><td class="fielddoc"><p>A <a class="el" href="#a0ea6489ef8c5d5a47e52c0d3c8073423" title="Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza.">PipeGrid_Solve()</a> során egy jó útvonalnál használt. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a66f0d6eb7162b131ee64066734931c69" name="a66f0d6eb7162b131ee64066734931c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66f0d6eb7162b131ee64066734931c69">&#9670;&#160;</a></span>PipeType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a66f0d6eb7162b131ee64066734931c69">PipeType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> típusának enumja. </p>
+<p>Nincs túl sok helyen használva, viszont hasznos információt mond el egy Pipe-ról. Emellett ezek a lehetséges típusok. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeráció-értékek</th></tr><tr><td class="fieldname"><a id="a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5" name="a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5"></a>PipeType_None&#160;</td><td class="fielddoc"><p>Az feldolgozás előtti alapértelmezett érték. Egyébként nem lehetséges. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123" name="a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123"></a>PipeType_Straight&#160;</td><td class="fielddoc"><p>Egyenes cső. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe" name="a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe"></a>PipeType_Curved&#160;</td><td class="fielddoc"><p>Kanyarodó cső. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b" name="a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b"></a>PipeType_Tshaped&#160;</td><td class="fielddoc"><p>T alakú cső. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006" name="a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006"></a>PipeType_Crossing&#160;</td><td class="fielddoc"><p>Kereszteződő/Egymáson átmenő cső. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Függvények dokumentációja</h2>
+<a id="a93b6bc573aa97700d92155c1872aa636" name="a93b6bc573aa97700d92155c1872aa636"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93b6bc573aa97700d92155c1872aa636">&#9670;&#160;</a></span>Elem_Copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Elem_Copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a>&#160;</td>
+          <td class="paramname"><em>hova</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a>&#160;</td>
+          <td class="paramname"><em>honnan</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Átmásol egy Elem tartalmát egy másikba. </p>
+<p>A honnan Elem tartalmát másolja át a hova Elem-be. A hova Elem tartalmát felülírja. A honnan elem tartalmát nem változtatja, viszont a fordító warningot ad, ha const a paraméter. </p><dl class="section note"><dt>Megjegyzés</dt><dd>Ne használd. Csak azért van a header-ben, mert máshol van definiálva, mint ahol használva. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hova</td><td>A cél Elem </td></tr>
+    <tr><td class="paramname">honnan</td><td>A forrás Elem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9b4194b89ec44334514b17b0309deca8" name="a9b4194b89ec44334514b17b0309deca8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b4194b89ec44334514b17b0309deca8">&#9670;&#160;</a></span>Elem_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Elem_Init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a>&#160;</td>
+          <td class="paramname"><em>elem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Egy üres (csupa Levego-s) Elem-et álltít elő. </p>
+<p>Az átadott Elem-et feltölti Levego-vel. A C nyelv sajátossága miatt tér el a többi Init függvénytől. </p><dl class="section note"><dt>Megjegyzés</dt><dd>Ne használd. Csak azért van a header-ben, mert máshol van definiálva, mint ahol használva. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elem</td><td>Az inicializálandó Elem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aab552e10b0d8bd8f6b2cd96bc38edc96" name="aab552e10b0d8bd8f6b2cd96bc38edc96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab552e10b0d8bd8f6b2cd96bc38edc96">&#9670;&#160;</a></span>Elem_RotateNeg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Elem_RotateNeg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a>&#160;</td>
+          <td class="paramname"><em>elem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elforgat egy Elem-et az óramutató járásával ellentétes irányba. </p>
+<dl class="section note"><dt>Megjegyzés</dt><dd>Ne használd. Csak azért van a header-ben, mert máshol van definiálva, mint ahol használva. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elem</td><td>A változtatandó Elem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2b0d66c6555de1641ccba86e3b2bbfb1" name="a2b0d66c6555de1641ccba86e3b2bbfb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0d66c6555de1641ccba86e3b2bbfb1">&#9670;&#160;</a></span>Elem_RotatePos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Elem_RotatePos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a2aaf339bd900c828726996d11a07e570">Elem</a>&#160;</td>
+          <td class="paramname"><em>elem</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elforgat egy Elem-et az óramutató járásával megegyező irányba. </p>
+<dl class="section note"><dt>Megjegyzés</dt><dd>Ne használd. Csak azért van a header-ben, mert máshol van definiálva, mint ahol használva. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">elem</td><td>A változtatandó Elem </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a44323a670aaceb7645ad404cf8a8f783" name="a44323a670aaceb7645ad404cf8a8f783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44323a670aaceb7645ad404cf8a8f783">&#9670;&#160;</a></span>Pipe_CreateFromElem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Pipe_CreateFromElem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipe">Pipe</a> *&#160;</td>
+          <td class="paramname"><em>pipe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>pipe_texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>base_location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> struktúra létrehozása a benne található Elem alapján. </p>
+<p>A függvény létrehozza a <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> Layer-ét, illetve beállítja a szülőjéhez relatív helyét (lásd: <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a>), felvesz egy szöget és beállítja a PipeType-ot, illetve a textúrájának helyét. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. Hiba esetén nem ajánlott a létrejött struktúrát használni. </p><dl class="section post"><dt>Utófeltétel</dt><dd>Mivel létrehoz egy Layer-t, használat után a Pipe-ot fel kell szabadítani a <a class="el" href="#ad8e7c55fe9bad5b60e5c20b63f68cc5c" title="Felszabadít egy Pipe struktúrát.">Pipe_Destroy()</a> függvénnyel. </dd></dl>
+<dl class="section note"><dt>Megjegyzés</dt><dd>A projekten belül található Create függvényektől eltérően inkább feldolgoz, mintsem létrehoz. Emiatt is lehetőleg csak a <a class="el" href="#ab1aff8a4b7cc5465aede4b2e6bbc1463" title="Egy PipeGrid Pipe-jainak hiányzó értékeit feltölti.">PipeGrid_Feldolgoz()</a> függvényen belül maradjon használva. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipe</td><td>A feldolgozandó <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> pointere </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra </td></tr>
+    <tr><td class="paramname">pipe_texture</td><td>A csöveket tartalmazó SDL_Texture* </td></tr>
+    <tr><td class="paramname">base_location</td><td>A <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> relatív helye </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="ad8e7c55fe9bad5b60e5c20b63f68cc5c" name="ad8e7c55fe9bad5b60e5c20b63f68cc5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8e7c55fe9bad5b60e5c20b63f68cc5c">&#9670;&#160;</a></span>Pipe_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pipe_Destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipe">Pipe</a> *&#160;</td>
+          <td class="paramname"><em>pipe</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Felszabadít egy <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> struktúrát. </p>
+<p>Az átadott <a class="el" href="#a44323a670aaceb7645ad404cf8a8f783" title="Pipe struktúra létrehozása a benne található Elem alapján.">Pipe_CreateFromElem()</a> függvénnyel létrehozott Pipe-ot felszabadítja. Lényegében a struktúra Layer-ét szabadítja fel. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipe</td><td>A felaszabadítandó <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> struktúra </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af5c71e4298c33eeb1eff0a9d4b9df420" name="af5c71e4298c33eeb1eff0a9d4b9df420"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c71e4298c33eeb1eff0a9d4b9df420">&#9670;&#160;</a></span>Pipe_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structPipe">Pipe</a> Pipe_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> struktúra inicializálása (kinullázása/alapértelmezett értékek beállítása) </p>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>Egy üres <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> struktúra </dd></dl>
+
+</div>
+</div>
+<a id="a89e9baf97ad38cbde0098fe638819fbe" name="a89e9baf97ad38cbde0098fe638819fbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89e9baf97ad38cbde0098fe638819fbe">&#9670;&#160;</a></span>Pipe_Render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Pipe_Render </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipe">Pipe</a>&#160;</td>
+          <td class="paramname"><em>pipe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renderel egy Pipe-ot a jelenlegi RenderTarget-re. </p>
+<p>A <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> Layer-ét rendereli a jelenlegi RenderTarget-re. Fontos, hogy a RenderTarget a "szülője" legyen, azaz az, amihez a <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> Layer-ének helye relatív. Egyéb esetben nem garantált a helyes működés. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipe</td><td>A renderelendő <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a216a3e3667f262ced88364393750fc0c" name="a216a3e3667f262ced88364393750fc0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a216a3e3667f262ced88364393750fc0c">&#9670;&#160;</a></span>Pipe_Rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pipe_Rotate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipe">Pipe</a> *&#160;</td>
+          <td class="paramname"><em>pipe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>irany</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elforgatja egy <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> Elem-ét. </p>
+<p>Az iránynak megfelelően elforgatja a <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> Elem-ét. Ha az irány 1, az óramutató járásával megegyező irányba, ha -1, akkor az óramutató járásával ellentétes irányba. Ha a <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> típusa PipeType_Crossing, akkor nem történik semmi. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipe</td><td>A változtatandó <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> </td></tr>
+    <tr><td class="paramname">irany</td><td>A forgatás iránya (1: óramutató járásával megegyező, -1: óramutató járásával ellentétes) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc666f7a0c915b9ffbc07bf0ee99921b" name="adc666f7a0c915b9ffbc07bf0ee99921b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc666f7a0c915b9ffbc07bf0ee99921b">&#9670;&#160;</a></span>Pipe_UpdateLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Pipe_UpdateLayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipe">Pipe</a>&#160;</td>
+          <td class="paramname"><em>pipe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>pipe_texture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frissíti egy <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> Layer-ét. </p>
+<p>A <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> Layer-ét frissíti (újrarendereli) az aktuális értékei szerint. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipe</td><td>A frissítendő <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra </td></tr>
+    <tr><td class="paramname">pipe_texture</td><td>A csöveket tartalmazó SDL_Texture* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a374a382292ea4ef400156d3e1960b2d7" name="a374a382292ea4ef400156d3e1960b2d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a374a382292ea4ef400156d3e1960b2d7">&#9670;&#160;</a></span>PipeGrid_Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PipeGrid_Create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipeGrid">PipeGrid</a> *&#160;</td>
+          <td class="paramname"><em>pipegrid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> struktúra létrehozása. </p>
+<p>Létrehoz egy PipeGrid-et a megadott szélességgel és magassággal. A létrejövő mátrix elemeit a <a class="el" href="#af5c71e4298c33eeb1eff0a9d4b9df420" title="Pipe struktúra inicializálása (kinullázása/alapértelmezett értékek beállítása)">Pipe_Init()</a>-tel hozza létre. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. Hiba esetén a struktúra mátrixa NULL. </p><dl class="section post"><dt>Utófeltétel</dt><dd>Mivel létrehoz egy <a class="el" href="#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> mátrixot, használat után a PipeGrid-ot fel kell szabadítani a <a class="el" href="#aeaa7e81af912deb3e9782cb9523321b3" title="Felszabadít egy PipeGrid-et.">PipeGrid_Destroy()</a> függvénnyel. </dd></dl>
+<dl class="section warning"><dt>Figyelmeztetés</dt><dd>TILOS egy, már létrehozott, <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> struktúrát átadni, mert memóriaszivárgás lehet belőle. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipegrid</td><td>A létrehozandó <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> pointere </td></tr>
+    <tr><td class="paramname">x</td><td>A <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> szélessége </td></tr>
+    <tr><td class="paramname">y</td><td>A <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> magassága </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a65ed505ed2d56a3aeda3aed0a46f02d1" name="a65ed505ed2d56a3aeda3aed0a46f02d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ed505ed2d56a3aeda3aed0a46f02d1">&#9670;&#160;</a></span>PipeGrid_CreateCopy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structPipeGrid">PipeGrid</a> PipeGrid_CreateCopy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipeGrid">PipeGrid</a>&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lemásol egy PipeGrid-et és visszaadja a másolatot. </p>
+<p>Csak a Pipe-ok Elem-ét másolja le, ezért ha használni akarjuk a másolatot, akkor először fel kell dolgozni a <a class="el" href="#ab1aff8a4b7cc5465aede4b2e6bbc1463" title="Egy PipeGrid Pipe-jainak hiányzó értékeit feltölti.">PipeGrid_Feldolgoz()</a> függvénnyel. </p><dl class="section post"><dt>Utófeltétel</dt><dd>A másolatot a <a class="el" href="#a374a382292ea4ef400156d3e1960b2d7" title="PipeGrid struktúra létrehozása.">PipeGrid_Create()</a>-tel hozza létre, így fel kell szabadítani használat után a <a class="el" href="#aeaa7e81af912deb3e9782cb9523321b3" title="Felszabadít egy PipeGrid-et.">PipeGrid_Destroy()</a>-el. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>A forrás <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>Egy új <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a>, hiba esetén ennek a mátrixa NULL </dd></dl>
+
+</div>
+</div>
+<a id="aeaa7e81af912deb3e9782cb9523321b3" name="aeaa7e81af912deb3e9782cb9523321b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaa7e81af912deb3e9782cb9523321b3">&#9670;&#160;</a></span>PipeGrid_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PipeGrid_Destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipeGrid">PipeGrid</a> *&#160;</td>
+          <td class="paramname"><em>pipegrid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Felszabadít egy PipeGrid-et. </p>
+<p>A PipeGrid-ben lévő Pipe-okat is felszabadítja. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipegrid</td><td>A felaszabadítandó <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> pointere </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab1aff8a4b7cc5465aede4b2e6bbc1463" name="ab1aff8a4b7cc5465aede4b2e6bbc1463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1aff8a4b7cc5465aede4b2e6bbc1463">&#9670;&#160;</a></span>PipeGrid_Feldolgoz()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PipeGrid_Feldolgoz </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipeGrid">PipeGrid</a>&#160;</td>
+          <td class="paramname"><em>pipegrid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>pipe_texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>base_location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Egy <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> Pipe-jainak hiányzó értékeit feltölti. </p>
+<p>A PipeGrid-ben található Pipe-ok Elem-ei alapján feltölti a Pipe-ok hiányzó értékeit a <a class="el" href="#a44323a670aaceb7645ad404cf8a8f783" title="Pipe struktúra létrehozása a benne található Elem alapján.">Pipe_CreateFromElem()</a>-el, azaz létrehozza a Layer-ét, beállítja a szülőjéhez relatív helyét, felvesz egy szöget és beállítja a PipeType-ot, illetve a textúrájának helyét. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott a struktúra használata. </p><dl class="section pre"><dt>Előfeltétel</dt><dd>A Pipe-ok Elem-jeinek már be kell legyen állítva az értéke. Emiatt csak a "végleges" állapotban ajánlott használni, azaz a <a class="el" href="#a4bcc09f533a5dbe43a9a24dc9e1a8d4d" title="Legenerál egy PipeGrid-et.">PipeGrid_GenerateGrid()</a> és a <a class="el" href="#a1e4a8bc5269d22c3e6fec9acd8bf3e83" title="Összekever egy PipeGrid-et.">PipeGrid_Shuffle()</a> függvények után. </dd></dl>
+<dl class="section warning"><dt>Figyelmeztetés</dt><dd>TILOS egy, már feldolgozott, <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> struktúrát átadni, mert memóriaszivárgás lehet belőle. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipegrid</td><td>A feldolgozandó <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra </td></tr>
+    <tr><td class="paramname">pipe_texture</td><td>A csöveket tartalmazó SDL_Texture* </td></tr>
+    <tr><td class="paramname">base_location</td><td>A <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> megjelenítési helye </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a4bcc09f533a5dbe43a9a24dc9e1a8d4d" name="a4bcc09f533a5dbe43a9a24dc9e1a8d4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bcc09f533a5dbe43a9a24dc9e1a8d4d">&#9670;&#160;</a></span>PipeGrid_GenerateGrid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PipeGrid_GenerateGrid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipeGrid">PipeGrid</a> *&#160;</td>
+          <td class="paramname"><em>pipegrid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Point&#160;</td>
+          <td class="paramname"><em>entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Point&#160;</td>
+          <td class="paramname"><em>exit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Legenerál egy PipeGrid-et. </p>
+<p>A játékhoz az átadott PipeGrid-ben generál egy pályát. Ez egy rekurzív labirintusgeneráló algoritmussal történik, aminek a segítségével egy véletlenszerű, megoldható pályát generál. Alapul az infoc-n található algoritmus szolgált (link: <a href="https://infoc.eet.bme.hu/labirintus/">https://infoc.eet.bme.hu/labirintus/</a>), ami módosítva lett, hogy az általam használt adatszerkezetekkel működjön (Pipe-on belüli Elem). </p><dl class="section warning"><dt>Figyelmeztetés</dt><dd>A belépési és kilépési pontok szabadon megadhatóak, DE az entry lehetőleg az első oszlopban, az exit pedig az utolsóban legyen. Egyéb esetben nem garantált a helyes működés. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipegrid</td><td>A változtatandó <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> pointere </td></tr>
+    <tr><td class="paramname">entry</td><td>A belépési pont (x: oszlopindex, y: sorindex) </td></tr>
+    <tr><td class="paramname">exit</td><td>A kilépési pont (x: oszlopindex, y: sorindex) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0d9859a40de0cd53258fcb88e8bbcaff" name="a0d9859a40de0cd53258fcb88e8bbcaff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d9859a40de0cd53258fcb88e8bbcaff">&#9670;&#160;</a></span>PipeGrid_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structPipeGrid">PipeGrid</a> PipeGrid_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> struktúra inicializálása (kinullázása) </p>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>Egy üres <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> struktúra </dd></dl>
+
+</div>
+</div>
+<a id="af129c9d4c21a5a3ceea790a85f5d2305" name="af129c9d4c21a5a3ceea790a85f5d2305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af129c9d4c21a5a3ceea790a85f5d2305">&#9670;&#160;</a></span>PipeGrid_Render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PipeGrid_Render </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipeGrid">PipeGrid</a>&#160;</td>
+          <td class="paramname"><em>pipegrid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lerenderel egy feldolgozott PipeGrid-et az aktuális RenderTarget-re. </p>
+<p>Az előforduló hibákat a függvény kiírja a konzolra. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipegrid</td><td>Egy feldolgozott <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a1e4a8bc5269d22c3e6fec9acd8bf3e83" name="a1e4a8bc5269d22c3e6fec9acd8bf3e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e4a8bc5269d22c3e6fec9acd8bf3e83">&#9670;&#160;</a></span>PipeGrid_Shuffle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PipeGrid_Shuffle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipeGrid">PipeGrid</a>&#160;</td>
+          <td class="paramname"><em>pipegrid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Összekever egy PipeGrid-et. </p>
+<p>A PipeGrid-en belül lévő Pipe-ok Elem-eit véletlenszerűen elforgatja. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipegrid</td><td>Az összekeverendő <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0ea6489ef8c5d5a47e52c0d3c8073423" name="a0ea6489ef8c5d5a47e52c0d3c8073423"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea6489ef8c5d5a47e52c0d3c8073423">&#9670;&#160;</a></span>PipeGrid_Solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a> * PipeGrid_Solve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structPipeGrid">PipeGrid</a>&#160;</td>
+          <td class="paramname"><em>pipegrid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Point&#160;</td>
+          <td class="paramname"><em>entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Point&#160;</td>
+          <td class="paramname"><em>exit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza. </p>
+<p>Át kell adni a <a class="el" href="#a4bcc09f533a5dbe43a9a24dc9e1a8d4d" title="Legenerál egy PipeGrid-et.">PipeGrid_GenerateGrid()</a>-ben használt belépési és kilépési pontokat, egyébként nem fogja jól megoldani. </p><dl class="section post"><dt>Utófeltétel</dt><dd>Mivel egy láncolt listát hoz létre a függvény, használat után a <a class="el" href="#a5b9f26edab225f3523287fc05a1eedf7" title="Felszabadít egy SolvedPipeGrid láncolt listát.">SolvedPipeGrid_Destroy()</a>-al kell felszabadítani. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipegrid</td><td>A megoldandó <a class="el" href="#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> </td></tr>
+    <tr><td class="paramname">entry</td><td>A belépési pont (x: oszlopindex, y: sorindex) </td></tr>
+    <tr><td class="paramname">exit</td><td>A kilépési pont (x: oszlopindex, y: sorindex) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>A megoldás láncolt listájának első eleme, hiba vagy megoldás hiánya esetén NULL. </dd></dl>
+
+</div>
+</div>
+<a id="a5b9f26edab225f3523287fc05a1eedf7" name="a5b9f26edab225f3523287fc05a1eedf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b9f26edab225f3523287fc05a1eedf7">&#9670;&#160;</a></span>SolvedPipeGrid_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolvedPipeGrid_Destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a> *&#160;</td>
+          <td class="paramname"><em>start</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Felszabadít egy <a class="el" href="#structSolvedPipeGrid" title="Egy PipeGrid megoldását tároló láncolt lista.">SolvedPipeGrid</a> láncolt listát. </p>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>A láncolt lista első elemére mutató pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a29554057a457d47ee2015a6d5b9d9cef" name="a29554057a457d47ee2015a6d5b9d9cef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29554057a457d47ee2015a6d5b9d9cef">&#9670;&#160;</a></span>SolvedPipeGrid_RemoveFirst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a> * SolvedPipeGrid_RemoveFirst </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structSolvedPipeGrid">SolvedPipeGrid</a> *&#160;</td>
+          <td class="paramname"><em>start</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A <a class="el" href="#structSolvedPipeGrid" title="Egy PipeGrid megoldását tároló láncolt lista.">SolvedPipeGrid</a> láncolt lista első elemét felszabadítja és visszaadja a következő elem pointerét. </p>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>A láncolt lista első elemére mutató pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>A következő elemre mutató pointer (NULL, ha nincs több elem) </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

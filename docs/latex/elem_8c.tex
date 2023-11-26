@@ -1,0 +1,102 @@
+\doxysection{lib/src/elem.c fájlreferencia}
+\hypertarget{elem_8c}{}\label{elem_8c}\index{lib/src/elem.c@{lib/src/elem.c}}
+
+
+A \doxylink{pipe_8h}{pipe.\+h}-\/ban deklarált Elem struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}pipe.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{elem_8c_a9b4194b89ec44334514b17b0309deca8}{Elem\+\_\+\+Init}} (\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} elem)
+\begin{DoxyCompactList}\small\item\em Egy üres (csupa Levego-\/s) Elem-\/et álltít elő. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{elem_8c_a93b6bc573aa97700d92155c1872aa636}{Elem\+\_\+\+Copy}} (\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} hova, \mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} honnan)
+\begin{DoxyCompactList}\small\item\em Átmásol egy Elem tartalmát egy másikba. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{elem_8c_a2b0d66c6555de1641ccba86e3b2bbfb1}{Elem\+\_\+\+Rotate\+Pos}} (\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} elem)
+\begin{DoxyCompactList}\small\item\em Elforgat egy Elem-\/et az óramutató járásával megegyező irányba. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{elem_8c_aab552e10b0d8bd8f6b2cd96bc38edc96}{Elem\+\_\+\+Rotate\+Neg}} (\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} elem)
+\begin{DoxyCompactList}\small\item\em Elforgat egy Elem-\/et az óramutató járásával ellentétes irányba. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A \doxylink{pipe_8h}{pipe.\+h}-\/ban deklarált Elem struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{elem_8c_a93b6bc573aa97700d92155c1872aa636}\label{elem_8c_a93b6bc573aa97700d92155c1872aa636} 
+\index{elem.c@{elem.c}!Elem\_Copy@{Elem\_Copy}}
+\index{Elem\_Copy@{Elem\_Copy}!elem.c@{elem.c}}
+\doxysubsubsection{\texorpdfstring{Elem\_Copy()}{Elem\_Copy()}}
+{\footnotesize\ttfamily void Elem\+\_\+\+Copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}}]{hova,  }\item[{\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}}]{honnan }\end{DoxyParamCaption})}
+
+
+
+Átmásol egy Elem tartalmát egy másikba. 
+
+A honnan Elem tartalmát másolja át a hova Elem-\/be. A hova Elem tartalmát felülírja. A honnan elem tartalmát nem változtatja, viszont a fordító warningot ad, ha const a paraméter. \begin{DoxyNote}{Megjegyzés}
+Ne használd. Csak azért van a header-\/ben, mert máshol van definiálva, mint ahol használva. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em hova} & A cél Elem \\
+\hline
+{\em honnan} & A forrás Elem \\
+\hline
+\end{DoxyParams}
+\Hypertarget{elem_8c_a9b4194b89ec44334514b17b0309deca8}\label{elem_8c_a9b4194b89ec44334514b17b0309deca8} 
+\index{elem.c@{elem.c}!Elem\_Init@{Elem\_Init}}
+\index{Elem\_Init@{Elem\_Init}!elem.c@{elem.c}}
+\doxysubsubsection{\texorpdfstring{Elem\_Init()}{Elem\_Init()}}
+{\footnotesize\ttfamily void Elem\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}}]{elem }\end{DoxyParamCaption})}
+
+
+
+Egy üres (csupa Levego-\/s) Elem-\/et álltít elő. 
+
+Az átadott Elem-\/et feltölti Levego-\/vel. A C nyelv sajátossága miatt tér el a többi Init függvénytől. \begin{DoxyNote}{Megjegyzés}
+Ne használd. Csak azért van a header-\/ben, mert máshol van definiálva, mint ahol használva. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em elem} & Az inicializálandó Elem \\
+\hline
+\end{DoxyParams}
+\Hypertarget{elem_8c_aab552e10b0d8bd8f6b2cd96bc38edc96}\label{elem_8c_aab552e10b0d8bd8f6b2cd96bc38edc96} 
+\index{elem.c@{elem.c}!Elem\_RotateNeg@{Elem\_RotateNeg}}
+\index{Elem\_RotateNeg@{Elem\_RotateNeg}!elem.c@{elem.c}}
+\doxysubsubsection{\texorpdfstring{Elem\_RotateNeg()}{Elem\_RotateNeg()}}
+{\footnotesize\ttfamily void Elem\+\_\+\+Rotate\+Neg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}}]{elem }\end{DoxyParamCaption})}
+
+
+
+Elforgat egy Elem-\/et az óramutató járásával ellentétes irányba. 
+
+\begin{DoxyNote}{Megjegyzés}
+Ne használd. Csak azért van a header-\/ben, mert máshol van definiálva, mint ahol használva. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em elem} & A változtatandó Elem \\
+\hline
+\end{DoxyParams}
+\Hypertarget{elem_8c_a2b0d66c6555de1641ccba86e3b2bbfb1}\label{elem_8c_a2b0d66c6555de1641ccba86e3b2bbfb1} 
+\index{elem.c@{elem.c}!Elem\_RotatePos@{Elem\_RotatePos}}
+\index{Elem\_RotatePos@{Elem\_RotatePos}!elem.c@{elem.c}}
+\doxysubsubsection{\texorpdfstring{Elem\_RotatePos()}{Elem\_RotatePos()}}
+{\footnotesize\ttfamily void Elem\+\_\+\+Rotate\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}}]{elem }\end{DoxyParamCaption})}
+
+
+
+Elforgat egy Elem-\/et az óramutató járásával megegyező irányba. 
+
+\begin{DoxyNote}{Megjegyzés}
+Ne használd. Csak azért van a header-\/ben, mert máshol van definiálva, mint ahol használva. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em elem} & A változtatandó Elem \\
+\hline
+\end{DoxyParams}

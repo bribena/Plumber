@@ -1,0 +1,615 @@
+\doxysection{lib/include/\+SDL\+\_\+local.h fájlreferencia}
+\hypertarget{SDL__local_8h}{}\label{SDL__local_8h}\index{lib/include/SDL\_local.h@{lib/include/SDL\_local.h}}
+
+
+Ez a modul tartalmazza az SDL-\/lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.  
+
+
+{\ttfamily \#include $<$SDL.\+h$>$}\newline
+{\ttfamily \#include $<$SDL\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$SDL\+\_\+ttf.\+h$>$}\newline
+{\ttfamily \#include $<$SDL\+\_\+mixer.\+h$>$}\newline
+{\ttfamily \#include $<$SDL2\+\_\+gfx\+Primitives.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Adatszerkezetek}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}
+\begin{DoxyCompactList}\small\item\em \doxylink{SDL__local_8h_structWindow}{Window} struktúra.  \mbox{\hyperlink{SDL__local_8h_structWindow}{Részletek...}}\end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}}
+\begin{DoxyCompactList}\small\item\em \doxylink{SDL__local_8h_structAssets}{Assets} mappa fájlaihoz struktúra.  \mbox{\hyperlink{SDL__local_8h_structAssets}{Részletek...}}\end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}}
+\begin{DoxyCompactList}\small\item\em Betűtípusokhoz struktúra.  \mbox{\hyperlink{SDL__local_8h_structFonts}{Részletek...}}\end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}}
+\begin{DoxyCompactList}\small\item\em Réteg struktúra.  \mbox{\hyperlink{SDL__local_8h_structLayer}{Részletek...}}\end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Makródefiníciók}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{SDL__local_8h_acde9ec8712f62632c6a8fcacfe6800c4}{DEFAULT\+\_\+\+FONT\+\_\+\+SIZE}}~200
+\begin{DoxyCompactList}\small\item\em Alapértelmezett betűméret. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{SDL__local_8h_aa23492e65df724043f75d16cbc52dd55}{MIX\+\_\+\+VOLUME}}~70
+\begin{DoxyCompactList}\small\item\em Alapértelmezett hangerő \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{SDL__local_8h_ac123123dd113ec5077bfd1af17d2f459}{Initialize\+SDL}} (void)
+\begin{DoxyCompactList}\small\item\em Az SDL inicializáló függvénye. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SDL__local_8h_a9920ee88c07373643b2dbb45eadf54bb}{Start\+Music}} (\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} assets)
+\begin{DoxyCompactList}\small\item\em Elindítja a háttérzenét és végtelenül ismétli. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}{Quit\+SDL}} (void)
+\begin{DoxyCompactList}\small\item\em Leállítja az SDL-\/lel kapcsolatos modulokat. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} \mbox{\hyperlink{SDL__local_8h_a4f9d6211ac0d42ba33776668c0f511a0}{Window\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{SDL__local_8h_structWindow}{Window} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{SDL__local_8h_ae31e99f90eae8c04eeaeaea96d7fe83c}{Window\+\_\+\+Create}} (\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} \texorpdfstring{$\ast$}{*}window, const char \texorpdfstring{$\ast$}{*}title, int width, int height)
+\begin{DoxyCompactList}\small\item\em Feltölt egy inicializált \doxylink{SDL__local_8h_structWindow}{Window} struktúrát. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SDL__local_8h_a57f2d4c1cc5eb035f40f99128358b997}{Window\+\_\+\+Destroy}} (\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{SDL__local_8h_structWindow}{Window} struktúrát. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} \mbox{\hyperlink{SDL__local_8h_acd2e9fa745363b10368a7ee162f01a46}{Assets\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{SDL__local_8h_structAssets}{Assets} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{SDL__local_8h_a2267406d575d2ebd8d9be1f6eb31c683}{Assets\+\_\+\+Load}} (\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} \texorpdfstring{$\ast$}{*}assets, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window)
+\begin{DoxyCompactList}\small\item\em Feltölt egy inicializált \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SDL__local_8h_ab2869d2ddc5af55a9b2366509dfc213f}{Assets\+\_\+\+Destroy}} (\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} \texorpdfstring{$\ast$}{*}assets)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} \mbox{\hyperlink{SDL__local_8h_a9e077512e4445cd21a6df83d166aa617}{Fonts\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{SDL__local_8h_structFonts}{Fonts} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{SDL__local_8h_a373aed1b9a2286a2760a6149623ab10c}{Fonts\+\_\+\+Load}} (\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} \texorpdfstring{$\ast$}{*}fonts)
+\begin{DoxyCompactList}\small\item\em Feltölt egy inicializált \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SDL__local_8h_a667bccf00d3c880cdcfcf9a940389b8d}{Fonts\+\_\+\+Destroy}} (\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} \texorpdfstring{$\ast$}{*}fonts)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \mbox{\hyperlink{SDL__local_8h_a70597b0011ea90ef5bffb9e9fa22d57b}{Layer\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{SDL__local_8h_structLayer}{Layer} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create}} (\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}layer, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, const SDL\+\_\+\+Rect \texorpdfstring{$\ast$}{*}location)
+\begin{DoxyCompactList}\small\item\em Feltölt egy inicializált \doxylink{SDL__local_8h_structLayer}{Layer} struktúrát. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{SDL__local_8h_aba03cebb4e558f46025ee6aa429c4da9}{Layer\+\_\+\+Render\+Font}} (\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}layer, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*}font, const char \texorpdfstring{$\ast$}{*}text, SDL\+\_\+\+Color foreground)
+\begin{DoxyCompactList}\small\item\em Létrehoz egy szöveget tartalmazó Layer-\/t. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SDL__local_8h_a69d5ca53df6b8dbf438054fcdc2010cf}{Layer\+\_\+\+Destroy}} (\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}layer)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{SDL__local_8h_structLayer}{Layer} struktúrát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+Ez a modul tartalmazza az SDL-\/lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket. 
+
+\hypertarget{SDL__local_8h_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Struktúrák\+:}{Struktúrák:}}\label{SDL__local_8h_autotoc_md10}
+4 struktúra szerepel benne\+:
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{SDL__local_8h_structWindow}{Window}}\+: Az ablakot és a renderert tartalmazza, valamint betöltéskor a méreteket is eltárolja.
+\item {\ttfamily \doxylink{SDL__local_8h_structAssets}{Assets}}\+: Az assets mappa tartalmát tárolja. (Csak erre a projektre működik, egyébként meg kell változtatni)
+\item {\ttfamily \doxylink{SDL__local_8h_structFonts}{Fonts}}\+: A betűtípusokat tárolja. (Jelenleg csak a bold van használatban)
+\item {\ttfamily \doxylink{SDL__local_8h_structLayer}{Layer}}\+: Egy renderelési réteg. A renderelt kép tartalmának csoportosítására szolgál, hogy ne kelljen mindent külön-\/külön kirajzolni.
+\end{DoxyItemize}
+
+A struktúrák használata többnyire az alábbi módon történik\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Struktúra\ név\ =\ Struktúra\_Init();\ \textcolor{comment}{//\ Az\ init\ egy\ üres\ elemet\ ad\ vissza,\ nem\ foglal\ magának\ memóriát}}
+\DoxyCodeLine{Struktúra\_LétrehozóFüggvény(\&struktúra,\ paraméterek);\ \textcolor{comment}{//\ Lásd\ lentebb}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Használat}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Struktúra\_Destroy(\&struktúra);\ \textcolor{comment}{//\ Mindegyik\ struktúra\ tartalmaz\ dinamikusan\ foglalt\ elemet,\ ezért\ ezeket\ fel\ kell\ szabadítani}}
+
+\end{DoxyCode}
+\hypertarget{SDL__local_8h_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{Függvények\+:}{Függvények:}}\label{SDL__local_8h_autotoc_md11}
+A modul tartalmazza a struktúrákhoz kapcsolódó függvényeket. Ezek mellett tartalmazza az SDL inicializációjához és leállításához szükséges függvényeket.
+
+Az SDL modult a \doxylink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()} függvényben kell inicializálni, majd használat után lezárni.\hypertarget{SDL__local_8h_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{Példakód\+:}{Példakód:}}\label{SDL__local_8h_autotoc_md12}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SDL__local_8h}{SDL\_local.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *\ argv[])\ \{}
+\DoxyCodeLine{\ \ \ \ (void)argc,\ (\textcolor{keywordtype}{void})argv;\ \textcolor{comment}{//\ Csak\ a\ fordító\ ne\ kapjon\ warningot,\ az\ SDL-\/nek\ kell\ ez\ a\ két\ paraméter}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_ac123123dd113ec5077bfd1af17d2f459}{InitializeSDL}}();\ \textcolor{comment}{//\ SDL\ Inicializálása}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}\ ablak\ =\ \mbox{\hyperlink{SDL__local_8h_a4f9d6211ac0d42ba33776668c0f511a0}{Window\_Init}}();\ \textcolor{comment}{//\ Ablak\ inicializálása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_ae31e99f90eae8c04eeaeaea96d7fe83c}{Window\_Create}}(\&ablak,\ \textcolor{stringliteral}{"{}Példa"{}},\ 800,\ 600);\ \textcolor{comment}{//\ Ablak\ létrehozása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}}\ assets\ =\ \mbox{\hyperlink{SDL__local_8h_acd2e9fa745363b10368a7ee162f01a46}{Assets\_Init}}();\ \textcolor{comment}{//\ Assets\ inicializálása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_a2267406d575d2ebd8d9be1f6eb31c683}{Assets\_Load}}(\&assets,\ ablak);\ \textcolor{comment}{//\ Assets\ betöltése}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}}\ fonts\ =\ \mbox{\hyperlink{SDL__local_8h_a9e077512e4445cd21a6df83d166aa617}{Fonts\_Init}}();\ \textcolor{comment}{//\ Betűtípusok\ inicializálása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_a373aed1b9a2286a2760a6149623ab10c}{Fonts\_Load}}(\&fonts);\ \textcolor{comment}{//\ Betűtípusok\ betöltése}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}}\ background\ =\ \mbox{\hyperlink{SDL__local_8h_a70597b0011ea90ef5bffb9e9fa22d57b}{Layer\_Init}}();\ \textcolor{comment}{//\ Háttér\ réteg\ inicializálása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\_Create}}(\&background,\ ablak,\ NULL);\ \textcolor{comment}{//\ Háttér\ réteg\ létrehozása}}
+\DoxyCodeLine{\ \ \ \ SDL\_SetRenderTarget(ablak.\mbox{\hyperlink{SDL__local_8h_a2b52309ef359b6392454a3bb57398b5d}{renderer}},\ background.\mbox{\hyperlink{SDL__local_8h_a58556ff73806c51333d95bf95c741f1d}{layer}});\ \textcolor{comment}{//\ A\ háttér\ rétegét\ változtatjuk}}
+\DoxyCodeLine{\ \ \ \ SDL\_RenderCopy(ablak.\mbox{\hyperlink{SDL__local_8h_a2b52309ef359b6392454a3bb57398b5d}{renderer}},\ assets.\mbox{\hyperlink{SDL__local_8h_ac3c083ed926b016bdac5c583796f9dc6}{background}},\ NULL,\ NULL);\ \textcolor{comment}{//\ Háttérkép\ renderelése}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}}\ text\ =\ \mbox{\hyperlink{SDL__local_8h_a70597b0011ea90ef5bffb9e9fa22d57b}{Layer\_Init}}();\ \textcolor{comment}{//\ Szöveg\ réteg\ inicializálása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\_Create}}(\&text,\ ablak,\ (SDL\_Rect)\{200,\ 200,\ 100,\ 400\});\ \textcolor{comment}{//\ Szöveg\ réteg\ létrehozása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_aba03cebb4e558f46025ee6aa429c4da9}{Layer\_RenderFont}}(\&text,\ ablak,\ fonts.\mbox{\hyperlink{SDL__local_8h_a0bd32be3581f25fa1606ba3b0c02d4e3}{bold}},\ \textcolor{stringliteral}{"{}Hello\ World!"{}},\ (SDL\_Color)\{255,\ 255,\ 255,\ 255\});\ \textcolor{comment}{//\ Szöveg\ létrehozása}}
+\DoxyCodeLine{\ \ \ \ SDL\_RenderCopy(ablak.\mbox{\hyperlink{SDL__local_8h_a2b52309ef359b6392454a3bb57398b5d}{renderer}},\ text.\mbox{\hyperlink{SDL__local_8h_a58556ff73806c51333d95bf95c741f1d}{layer}},\ NULL,\ \&text.\mbox{\hyperlink{SDL__local_8h_aa479c2c9a98f85a5c867754cdb655ecc}{location}});\ \textcolor{comment}{//\ Szöveg\ renderelése}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_a69d5ca53df6b8dbf438054fcdc2010cf}{Layer\_Destroy}}(\&text);\ \textcolor{comment}{//\ Használat\ utáni\ felszabadítás}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ SDL\_SetRenderTarget(ablak.\mbox{\hyperlink{SDL__local_8h_a2b52309ef359b6392454a3bb57398b5d}{renderer}},\ NULL);\ \textcolor{comment}{//\ Renderer\ target\ visszaállítása}}
+\DoxyCodeLine{\ \ \ \ SDL\_RenderCopy(ablak.\mbox{\hyperlink{SDL__local_8h_a2b52309ef359b6392454a3bb57398b5d}{renderer}},\ background.\mbox{\hyperlink{SDL__local_8h_a58556ff73806c51333d95bf95c741f1d}{layer}},\ NULL,\ NULL);\ \textcolor{comment}{//\ A\ háttér\ réteg\ renderelése\ az\ ablakra}}
+\DoxyCodeLine{\ \ \ \ SDL\_RenderPresent(ablak.\mbox{\hyperlink{SDL__local_8h_a2b52309ef359b6392454a3bb57398b5d}{renderer}});\ \textcolor{comment}{//\ Renderelés\ megjelenítése}}
+\DoxyCodeLine{\ \ \ \ SDL\_Delay(2000);\ \textcolor{comment}{//\ 2\ másodpercig\ megjelenítés}}
+\DoxyCodeLine{\ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Használat\ utáni\ felszabadítás\ és\ kilépés}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_a69d5ca53df6b8dbf438054fcdc2010cf}{Layer\_Destroy}}(\&background);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_a667bccf00d3c880cdcfcf9a940389b8d}{Fonts\_Destroy}}(\&fonts);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_ab2869d2ddc5af55a9b2366509dfc213f}{Assets\_Destroy}}(\&assets);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_a57f2d4c1cc5eb035f40f99128358b997}{Window\_Destroy}}(\&ablak);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}{QuitSDL}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+A fenti példakód megnyit egy ablakot 2 másodpercig, betölti a háttérképet, majd ráírja a "{}\+Hello world!"{}-\/öt.\hypertarget{SDL__local_8h_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{Megjegyzések\+:}{Megjegyzések:}}\label{SDL__local_8h_autotoc_md13}
+
+\begin{DoxyItemize}
+\item Minden innen származó struktúrát használat után fel kell szabadítani.
+\item A \doxylink{SDL__local_8h_structLayer}{Layer}, mivel SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}-\/t tárol, kompatibilis az SDL függvényekkel.
+\item A Layer-\/ek az SDL\+\_\+\+Set\+Render\+Target() használatához lett kitalálva, ennek a "{}layer"{} elemét kell átadni, hogy változtatgassuk bármilyen SDL\+\_\+\+Render-\/es fügvénnyel. Ha az ablakra akarunk renderelni, mindenképpen vissza kell váltani az SDL\+\_\+\+Set\+Render\+Target(renderer, NULL) hívásával.
+\item A szövegek kiírása lehetséges, viszont "{}mókolós"{}. Itt egy tetszőleges szélesség lett megadva a text-\/hez, viszont ez teljesen elronthatja az arányokat. Sajnos trial and error-\/ral lehet csak megadni egy-\/egy szöveg méreteit.
+\item A zenelejátszást nem foglaltam bele a példába, ez már csak egy "{}bónusz"{} a modulban, ez is lehetséges.
+\end{DoxyItemize}\hypertarget{SDL__local_8h_autotoc_md14}{}\doxysubsubsection{\texorpdfstring{Kapcsolódó kódfájlok\+:}{Kapcsolódó kódfájlok:}}\label{SDL__local_8h_autotoc_md14}
+
+\begin{DoxyItemize}
+\item \doxylink{SDL__local_8c}{SDL\+\_\+local.\+c}
+\item \doxylink{window_8c}{window.\+c}
+\item \doxylink{layer_8c}{layer.\+c}
+\item \doxylink{assets_8c}{assets.\+c}
+\item \doxylink{fonts_8c}{fonts.\+c}
+\end{DoxyItemize}
+
+\begin{DoxyPrecond}{Előfeltétel}
+Az \doxylink{SDL__local_8h_ac123123dd113ec5077bfd1af17d2f459}{Initialize\+SDL()} használata szükséges a modul használatához. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Utófeltétel}
+A \doxylink{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}{Quit\+SDL()} használata szükséges a modul használata után. 
+\end{DoxyPostcond}
+\begin{DoxyRefDesc}{Hiba}
+\item[\mbox{\hyperlink{bug__bug000002}{Hiba}}]Az SDL használata miatt memóriaszivárgások előfordulhatnak.\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Hiba}
+\item[\mbox{\hyperlink{bug__bug000003}{Hiba}}]Ha a konzolra valamilyen lib\+GL error kerül akkor textúra hibák léphetnek fel. Nem tudom, hogy mi okkozza ezt, de csak grafikus hibát okoz. \end{DoxyRefDesc}
+
+
+\doxysubsection{Adatszerkezetek dokumentációja}
+\index{Window@{Window}}\label{structWindow}
+\Hypertarget{SDL__local_8h_structWindow}
+\doxysubsubsection{struct Window}
+\doxylink{SDL__local_8h_structWindow}{Window} struktúra. 
+
+Az ablakot és a renderert tartalmazza, valamint betöltéskor a méreteket is eltárolja. \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{SDL__local_8h_a3edd33669f7e5c3252d2eab59f88789d}\label{SDL__local_8h_a3edd33669f7e5c3252d2eab59f88789d}} 
+int&
+height&
+Ablakmagasság (pixelben) \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_a2b52309ef359b6392454a3bb57398b5d}\label{SDL__local_8h_a2b52309ef359b6392454a3bb57398b5d}} 
+SDL\_Renderer \texorpdfstring{$\ast$}{*}&
+renderer&
+A renderer pointere. \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_aabb1be747c3ff96fe5a8f881d6b137fd}\label{SDL__local_8h_aabb1be747c3ff96fe5a8f881d6b137fd}} 
+int&
+width&
+Ablakszélesség (pixelben) \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_ae39a7755a5a6ab74bcbdbe3e2e206820}\label{SDL__local_8h_ae39a7755a5a6ab74bcbdbe3e2e206820}} 
+SDL\_Window \texorpdfstring{$\ast$}{*}&
+window&
+Az ablak pointere. \\
+\hline
+
+\end{DoxyFields}
+\index{Assets@{Assets}}\label{structAssets}
+\Hypertarget{SDL__local_8h_structAssets}
+\doxysubsubsection{struct Assets}
+\doxylink{SDL__local_8h_structAssets}{Assets} mappa fájlaihoz struktúra. 
+
+Az assets mappa tartalmát megfelelő változókban tárolja. (Csak erre a projektre működik, egyébként meg kell változtatni.) Maga az \doxylink{SDL__local_8h_structAssets}{Assets} kevés helyen használt, inkább csoportosításra szolgál. \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{SDL__local_8h_ac3c083ed926b016bdac5c583796f9dc6}\label{SDL__local_8h_ac3c083ed926b016bdac5c583796f9dc6}} 
+SDL\_Texture \texorpdfstring{$\ast$}{*}&
+background&
+A háttérkép textúrája. \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_a5f7f26e437c41ced09d4b5ad410d8461}\label{SDL__local_8h_a5f7f26e437c41ced09d4b5ad410d8461}} 
+Mix\_Music \texorpdfstring{$\ast$}{*}&
+bgm&
+A háttérzene pointere. \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_a04f96215086a34cf683b8bae82fcac29}\label{SDL__local_8h_a04f96215086a34cf683b8bae82fcac29}} 
+SDL\_Texture \texorpdfstring{$\ast$}{*}&
+pipes\_empty&
+A csövek textúrája. \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_acaeb67a6dbfea58a4ebd8fe14dfa9504}\label{SDL__local_8h_acaeb67a6dbfea58a4ebd8fe14dfa9504}} 
+SDL\_Texture \texorpdfstring{$\ast$}{*}&
+pipes\_full&
+Szintén csövek textúrája, de egy Texture\+Mod és egy Alpha\+Mod van rárakva, hogy "{}vízzel teli"{} hatást adjon neki. \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_a5dc98ad1681b4f8abacd9147acf4eaba}\label{SDL__local_8h_a5dc98ad1681b4f8abacd9147acf4eaba}} 
+SDL\_Texture \texorpdfstring{$\ast$}{*}&
+wheel&
+A csap textúrája. \\
+\hline
+
+\end{DoxyFields}
+\index{Fonts@{Fonts}}\label{structFonts}
+\Hypertarget{SDL__local_8h_structFonts}
+\doxysubsubsection{struct Fonts}
+Betűtípusokhoz struktúra. 
+
+A betűtípusokat tárolja. (Jelenleg csak a bold van használatban.) Szövegeket a \doxylink{SDL__local_8h_aba03cebb4e558f46025ee6aa429c4da9}{Layer\+\_\+\+Render\+Font()}-\/tal lehet létrehozni, ahol a \doxylink{SDL__local_8h_structFonts}{Fonts} struktúra egyik elemét lehet átadni. \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{SDL__local_8h_a0bd32be3581f25fa1606ba3b0c02d4e3}\label{SDL__local_8h_a0bd32be3581f25fa1606ba3b0c02d4e3}} 
+TTF\_Font \texorpdfstring{$\ast$}{*}&
+bold&
+A félkövér betűtípus pointere. (Jelenleg csak ez van használatban) \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_a3d3f69f14697e6aa217cf210d89eaab6}\label{SDL__local_8h_a3d3f69f14697e6aa217cf210d89eaab6}} 
+TTF\_Font \texorpdfstring{$\ast$}{*}&
+bold\_italic&
+A félkövér dőlt betűtípus pointere. \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_aa36fe5beed3c060f88710a4d5f3a549d}\label{SDL__local_8h_aa36fe5beed3c060f88710a4d5f3a549d}} 
+TTF\_Font \texorpdfstring{$\ast$}{*}&
+italic&
+A dőlt betűtípus pointere. \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_ac4ced5cb053a1e0b1093de76e0f3e1b2}\label{SDL__local_8h_ac4ced5cb053a1e0b1093de76e0f3e1b2}} 
+TTF\_Font \texorpdfstring{$\ast$}{*}&
+normal&
+A normál betűtípus pointere. \\
+\hline
+
+\end{DoxyFields}
+\index{Layer@{Layer}}\label{structLayer}
+\Hypertarget{SDL__local_8h_structLayer}
+\doxysubsubsection{struct Layer}
+Réteg struktúra. 
+
+Egy renderelési réteg. A renderelt elemek csoportosítására szolgál, hogy ne kelljen mindent külön-\/külön kirajzolni. A layer eleme SDL\+\_\+\+Set\+Render\+Target()-\/tel kiválasztható, ezután az összes renderelés erre hajtódik végre. A location a szülejében elfoglalt helyét és méretét tárolja. Szülőnek a létrehozáskor használt render target-\/et kell tekinteni. \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{SDL__local_8h_a58556ff73806c51333d95bf95c741f1d}\label{SDL__local_8h_a58556ff73806c51333d95bf95c741f1d}} 
+SDL\_Texture \texorpdfstring{$\ast$}{*}&
+layer&
+A réteg textúrája. SDL\+\_\+\+Set\+Render\+Target() által változtatható. \\
+\hline
+
+\mbox{\Hypertarget{SDL__local_8h_aa479c2c9a98f85a5c867754cdb655ecc}\label{SDL__local_8h_aa479c2c9a98f85a5c867754cdb655ecc}} 
+SDL\_Rect&
+location&
+A réteg helye és mérete a "{}szülejében"{}. \\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Makródefiníciók dokumentációja}
+\Hypertarget{SDL__local_8h_acde9ec8712f62632c6a8fcacfe6800c4}\label{SDL__local_8h_acde9ec8712f62632c6a8fcacfe6800c4} 
+\index{SDL\_local.h@{SDL\_local.h}!DEFAULT\_FONT\_SIZE@{DEFAULT\_FONT\_SIZE}}
+\index{DEFAULT\_FONT\_SIZE@{DEFAULT\_FONT\_SIZE}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_FONT\_SIZE}{DEFAULT\_FONT\_SIZE}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+FONT\+\_\+\+SIZE~200}
+
+
+
+Alapértelmezett betűméret. 
+
+Az alapértelmezett "{}betűméret"{}. A jelenlegi szöveghasználat mellett inkább a betűk minősége állítható vele. Ezen az értéken megfelelő minőségűek. \Hypertarget{SDL__local_8h_aa23492e65df724043f75d16cbc52dd55}\label{SDL__local_8h_aa23492e65df724043f75d16cbc52dd55} 
+\index{SDL\_local.h@{SDL\_local.h}!MIX\_VOLUME@{MIX\_VOLUME}}
+\index{MIX\_VOLUME@{MIX\_VOLUME}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{MIX\_VOLUME}{MIX\_VOLUME}}
+{\footnotesize\ttfamily \#define MIX\+\_\+\+VOLUME~70}
+
+
+
+Alapértelmezett hangerő 
+
+A zene hangereje (0-\/128). A játékon belül nem állítható, viszont, hogy ne legyen túl hangos a zene, muszáj volt lentebb állítani a hangerejét. Tetszés szerint lehet állítani. 
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{SDL__local_8h_ab2869d2ddc5af55a9b2366509dfc213f}\label{SDL__local_8h_ab2869d2ddc5af55a9b2366509dfc213f} 
+\index{SDL\_local.h@{SDL\_local.h}!Assets\_Destroy@{Assets\_Destroy}}
+\index{Assets\_Destroy@{Assets\_Destroy}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Assets\_Destroy()}{Assets\_Destroy()}}
+{\footnotesize\ttfamily void Assets\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} \texorpdfstring{$\ast$}{*}}]{assets }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát. 
+
+Az átadott \doxylink{SDL__local_8h_a2267406d575d2ebd8d9be1f6eb31c683}{Assets\+\_\+\+Load()} által létrehozott struktúrát szabadítja fel. 
+\begin{DoxyParams}{Paraméterek}
+{\em assets} & A felszabadítandó \doxylink{SDL__local_8h_structAssets}{Assets} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SDL__local_8h_acd2e9fa745363b10368a7ee162f01a46}\label{SDL__local_8h_acd2e9fa745363b10368a7ee162f01a46} 
+\index{SDL\_local.h@{SDL\_local.h}!Assets\_Init@{Assets\_Init}}
+\index{Assets\_Init@{Assets\_Init}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Assets\_Init()}{Assets\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} Assets\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{SDL__local_8h_structAssets}{Assets} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{SDL__local_8h_structAssets}{Assets} struktúra. 
+\end{DoxyReturn}
+\Hypertarget{SDL__local_8h_a2267406d575d2ebd8d9be1f6eb31c683}\label{SDL__local_8h_a2267406d575d2ebd8d9be1f6eb31c683} 
+\index{SDL\_local.h@{SDL\_local.h}!Assets\_Load@{Assets\_Load}}
+\index{Assets\_Load@{Assets\_Load}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Assets\_Load()}{Assets\_Load()}}
+{\footnotesize\ttfamily bool Assets\+\_\+\+Load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} \texorpdfstring{$\ast$}{*}}]{assets,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window }\end{DoxyParamCaption})}
+
+
+
+Feltölt egy inicializált \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát. 
+
+Betölti az assets mappa tartalmát a megfelelő változókba. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. \begin{DoxyPostcond}{Utófeltétel}
+Az \doxylink{SDL__local_8h_a2267406d575d2ebd8d9be1f6eb31c683}{Assets\+\_\+\+Load()} által létrehozott \doxylink{SDL__local_8h_structAssets}{Assets} struktúrákat használat után az \doxylink{SDL__local_8h_ab2869d2ddc5af55a9b2366509dfc213f}{Assets\+\_\+\+Destroy()}-\/al kell felszabadítani. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+Az \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát csak egyszer kell létrehozni, de ha valamiért mégegyszer kell az \doxylink{SDL__local_8h_a2267406d575d2ebd8d9be1f6eb31c683}{Assets\+\_\+\+Load()}, TILOS egy, már létrehozott, \doxylink{SDL__local_8h_structAssets}{Assets} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em assets} & Egy inicializált \doxylink{SDL__local_8h_structAssets}{Assets} struktúra pointere. \\
+\hline
+{\em window} & Az renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{SDL__local_8h_a667bccf00d3c880cdcfcf9a940389b8d}\label{SDL__local_8h_a667bccf00d3c880cdcfcf9a940389b8d} 
+\index{SDL\_local.h@{SDL\_local.h}!Fonts\_Destroy@{Fonts\_Destroy}}
+\index{Fonts\_Destroy@{Fonts\_Destroy}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Fonts\_Destroy()}{Fonts\_Destroy()}}
+{\footnotesize\ttfamily void Fonts\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} \texorpdfstring{$\ast$}{*}}]{fonts }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát. 
+
+Az átadott \doxylink{SDL__local_8h_a373aed1b9a2286a2760a6149623ab10c}{Fonts\+\_\+\+Load()} által létrehozott struktúrát szabadítja fel. 
+\begin{DoxyParams}{Paraméterek}
+{\em fonts} & A felszabadítandó \doxylink{SDL__local_8h_structFonts}{Fonts} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SDL__local_8h_a9e077512e4445cd21a6df83d166aa617}\label{SDL__local_8h_a9e077512e4445cd21a6df83d166aa617} 
+\index{SDL\_local.h@{SDL\_local.h}!Fonts\_Init@{Fonts\_Init}}
+\index{Fonts\_Init@{Fonts\_Init}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Fonts\_Init()}{Fonts\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} Fonts\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{SDL__local_8h_structFonts}{Fonts} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{SDL__local_8h_structFonts}{Fonts} struktúra. 
+\end{DoxyReturn}
+\Hypertarget{SDL__local_8h_a373aed1b9a2286a2760a6149623ab10c}\label{SDL__local_8h_a373aed1b9a2286a2760a6149623ab10c} 
+\index{SDL\_local.h@{SDL\_local.h}!Fonts\_Load@{Fonts\_Load}}
+\index{Fonts\_Load@{Fonts\_Load}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Fonts\_Load()}{Fonts\_Load()}}
+{\footnotesize\ttfamily bool Fonts\+\_\+\+Load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} \texorpdfstring{$\ast$}{*}}]{fonts }\end{DoxyParamCaption})}
+
+
+
+Feltölt egy inicializált \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát. 
+
+Betölti a betűtípusokat az assets/fonts mappából a megfelelő változókba. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. A betöltött betűtípusokat a \doxylink{SDL__local_8h_aba03cebb4e558f46025ee6aa429c4da9}{Layer\+\_\+\+Render\+Font()} függvénnyel lehet használni. \begin{DoxyPostcond}{Utófeltétel}
+Az \doxylink{SDL__local_8h_a373aed1b9a2286a2760a6149623ab10c}{Fonts\+\_\+\+Load()} által létrehozott \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrákat használat után az \doxylink{SDL__local_8h_a667bccf00d3c880cdcfcf9a940389b8d}{Fonts\+\_\+\+Destroy()}-\/al kell felszabadítani. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+A \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát csak egyszer kell létrohozni, de ha valamiért mégegyszer kell az \doxylink{SDL__local_8h_a373aed1b9a2286a2760a6149623ab10c}{Fonts\+\_\+\+Load()}, TILOS egy, már létrehozott, \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em fonts} & Egy inicializált \doxylink{SDL__local_8h_structFonts}{Fonts} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{SDL__local_8h_ac123123dd113ec5077bfd1af17d2f459}\label{SDL__local_8h_ac123123dd113ec5077bfd1af17d2f459} 
+\index{SDL\_local.h@{SDL\_local.h}!InitializeSDL@{InitializeSDL}}
+\index{InitializeSDL@{InitializeSDL}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{InitializeSDL()}{InitializeSDL()}}
+{\footnotesize\ttfamily bool Initialize\+SDL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Az SDL inicializáló függvénye. 
+
+Az SDL-\/t és a hozzá kapcsolódó modulokat inicializálja. Ha használni akarjuk az SDL-\/t, akkor ezt a függvényt meg kell hívni. Az előforduló hibákat a függvény kiírja a konzolra. \begin{DoxyPostcond}{Utófeltétel}
+A használat után a \doxylink{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}{Quit\+SDL()} függvényt kell meghívni, hogy leállítsuk a különböző modulokat. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+Többszöri hívás kilépés nélkül összeomlást okozhat. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}\label{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d} 
+\index{SDL\_local.h@{SDL\_local.h}!Layer\_Create@{Layer\_Create}}
+\index{Layer\_Create@{Layer\_Create}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Layer\_Create()}{Layer\_Create()}}
+{\footnotesize\ttfamily bool Layer\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}}]{layer,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{const SDL\+\_\+\+Rect \texorpdfstring{$\ast$}{*}}]{location }\end{DoxyParamCaption})}
+
+
+
+Feltölt egy inicializált \doxylink{SDL__local_8h_structLayer}{Layer} struktúrát. 
+
+Létrehoz egy SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}-\/t SDL\+\_\+\+TEXTUREACCESS\+\_\+\+TARGET-\/tel, majd a \doxylink{SDL__local_8h_structLayer}{Layer} struktúra layer elemében eltárolja ezt. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. \begin{DoxyPostcond}{Utófeltétel}
+A \doxylink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create()} által létrehozott \doxylink{SDL__local_8h_structLayer}{Layer} struktúrákat használat után a \doxylink{SDL__local_8h_a69d5ca53df6b8dbf438054fcdc2010cf}{Layer\+\_\+\+Destroy()}-\/al kell felszabadítani. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy, már létrehozott, \doxylink{SDL__local_8h_structLayer}{Layer} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em layer} & Egy inicializált \doxylink{SDL__local_8h_structLayer}{Layer} struktúra pointere. \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra. \\
+\hline
+{\em location} & A réteg helye és mérete a "{}szülőjéhez"{} relatívan. Ha NULL, akkor a \doxylink{SDL__local_8h_structWindow}{Window} méretét veszi fel! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{SDL__local_8h_a69d5ca53df6b8dbf438054fcdc2010cf}\label{SDL__local_8h_a69d5ca53df6b8dbf438054fcdc2010cf} 
+\index{SDL\_local.h@{SDL\_local.h}!Layer\_Destroy@{Layer\_Destroy}}
+\index{Layer\_Destroy@{Layer\_Destroy}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Layer\_Destroy()}{Layer\_Destroy()}}
+{\footnotesize\ttfamily void Layer\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}}]{layer }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{SDL__local_8h_structLayer}{Layer} struktúrát. 
+
+Az átadott \doxylink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create()} által létrehozott struktúrát szabadítja fel. 
+\begin{DoxyParams}{Paraméterek}
+{\em layer} & A felszabadítandó \doxylink{SDL__local_8h_structLayer}{Layer} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SDL__local_8h_a70597b0011ea90ef5bffb9e9fa22d57b}\label{SDL__local_8h_a70597b0011ea90ef5bffb9e9fa22d57b} 
+\index{SDL\_local.h@{SDL\_local.h}!Layer\_Init@{Layer\_Init}}
+\index{Layer\_Init@{Layer\_Init}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Layer\_Init()}{Layer\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} Layer\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{SDL__local_8h_structLayer}{Layer} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{SDL__local_8h_structLayer}{Layer} struktúra. 
+\end{DoxyReturn}
+\Hypertarget{SDL__local_8h_aba03cebb4e558f46025ee6aa429c4da9}\label{SDL__local_8h_aba03cebb4e558f46025ee6aa429c4da9} 
+\index{SDL\_local.h@{SDL\_local.h}!Layer\_RenderFont@{Layer\_RenderFont}}
+\index{Layer\_RenderFont@{Layer\_RenderFont}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Layer\_RenderFont()}{Layer\_RenderFont()}}
+{\footnotesize\ttfamily bool Layer\+\_\+\+Render\+Font (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}}]{layer,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*}}]{font,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{SDL\+\_\+\+Color}]{foreground }\end{DoxyParamCaption})}
+
+
+
+Létrehoz egy szöveget tartalmazó Layer-\/t. 
+
+Egy SDL\+\_\+\+Surface\texorpdfstring{$\ast$}{*}-\/en létrehoz egy szöveget, majd SDL\+\_\+\+Create\+Texture\+From\+Surface()-\/el átalakítja SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}-\/ré. Egy \doxylink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create()} által létrehozott Layer-\/t kell átadni, viszont valójában ebből csak a location kell. Emiatt technikailag bármilyen Layer-\/re lehet használni, de a \doxylink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create()}-\/el létrehozott Layer-\/eket célszerű használni. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. \begin{DoxyPostcond}{Utófeltétel}
+Használat után a \doxylink{SDL__local_8h_a69d5ca53df6b8dbf438054fcdc2010cf}{Layer\+\_\+\+Destroy()}-\/al kell felszabadítani a léterhozott struktúrát. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+A függvény nagyon egyszerű, ezért a szöveg szélességét nem számítja ki, ezért előre meg kell adni. Ebből adódik, hogy próbálgatással lehet csak viszonylag megfelelő arányokat beállítani. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em layer} & Egy \doxylink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create()}-\/el létrehozott \doxylink{SDL__local_8h_structLayer}{Layer} struktúra pointere. \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra. \\
+\hline
+{\em font} & A használni kívánt betűtípus. \\
+\hline
+{\em text} & A renderelendő szöveg. \\
+\hline
+{\em foreground} & A betűk színe. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}\label{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5} 
+\index{SDL\_local.h@{SDL\_local.h}!QuitSDL@{QuitSDL}}
+\index{QuitSDL@{QuitSDL}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{QuitSDL()}{QuitSDL()}}
+{\footnotesize\ttfamily void Quit\+SDL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Leállítja az SDL-\/lel kapcsolatos modulokat. 
+
+Ha az \doxylink{SDL__local_8h_ac123123dd113ec5077bfd1af17d2f459}{Initialize\+SDL()} meg volt hívva, ezt is meg kell hívni a kilépés előtt. \Hypertarget{SDL__local_8h_a9920ee88c07373643b2dbb45eadf54bb}\label{SDL__local_8h_a9920ee88c07373643b2dbb45eadf54bb} 
+\index{SDL\_local.h@{SDL\_local.h}!StartMusic@{StartMusic}}
+\index{StartMusic@{StartMusic}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{StartMusic()}{StartMusic()}}
+{\footnotesize\ttfamily void Start\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}}}]{assets }\end{DoxyParamCaption})}
+
+
+
+Elindítja a háttérzenét és végtelenül ismétli. 
+
+SDL\+\_\+mixer függvényekkel indítja el a háttérzenét. Ezután az SDL\+\_\+mixer függvényekkel kezelhető az \doxylink{SDL__local_8h_structAssets}{Assets} bgm eleme. Az előforduló hibákat a függvény kiírja a konzolra. \begin{DoxyPostcond}{Utófeltétel}
+Bár a \doxylink{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}{Quit\+SDL()} leállítja a zenét, mégis érdemes manuálisan leállítani, kilépés előtt. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Paraméterek}
+{\em assets} & Az assets mappa tartalmát tároló struktúra. A bgm eleme kell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SDL__local_8h_ae31e99f90eae8c04eeaeaea96d7fe83c}\label{SDL__local_8h_ae31e99f90eae8c04eeaeaea96d7fe83c} 
+\index{SDL\_local.h@{SDL\_local.h}!Window\_Create@{Window\_Create}}
+\index{Window\_Create@{Window\_Create}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Window\_Create()}{Window\_Create()}}
+{\footnotesize\ttfamily bool Window\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{title,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Feltölt egy inicializált \doxylink{SDL__local_8h_structWindow}{Window} struktúrát. 
+
+Létrehoz egy SDL\+\_\+\+Window\texorpdfstring{$\ast$}{*}-\/ot és egy SDL\+\_\+\+Renderer\texorpdfstring{$\ast$}{*}-\/t, majd a window paraméterben eltárolja ezeket. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. \begin{DoxyPostcond}{Utófeltétel}
+A \doxylink{SDL__local_8h_ae31e99f90eae8c04eeaeaea96d7fe83c}{Window\+\_\+\+Create()} által létrehozott \doxylink{SDL__local_8h_structWindow}{Window} struktúrákat használat után a \doxylink{SDL__local_8h_a57f2d4c1cc5eb035f40f99128358b997}{Window\+\_\+\+Destroy()}-\/al kell felszabadítani. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy, már létrehozott, \doxylink{SDL__local_8h_structWindow}{Window} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em window} & Egy inicializált \doxylink{SDL__local_8h_structWindow}{Window} struktúra pointere. \\
+\hline
+{\em title} & Az ablak neve \\
+\hline
+{\em width} & Az ablak szélessége (pixelben) \\
+\hline
+{\em height} & Az ablak magassága (pixelben) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{SDL__local_8h_a57f2d4c1cc5eb035f40f99128358b997}\label{SDL__local_8h_a57f2d4c1cc5eb035f40f99128358b997} 
+\index{SDL\_local.h@{SDL\_local.h}!Window\_Destroy@{Window\_Destroy}}
+\index{Window\_Destroy@{Window\_Destroy}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Window\_Destroy()}{Window\_Destroy()}}
+{\footnotesize\ttfamily void Window\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{SDL__local_8h_structWindow}{Window} struktúrát. 
+
+Az átadott \doxylink{SDL__local_8h_ae31e99f90eae8c04eeaeaea96d7fe83c}{Window\+\_\+\+Create()} által létrehozott struktúrát szabadítja fel. 
+\begin{DoxyParams}{Paraméterek}
+{\em window} & A felszabadítandó \doxylink{SDL__local_8h_structWindow}{Window} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SDL__local_8h_a4f9d6211ac0d42ba33776668c0f511a0}\label{SDL__local_8h_a4f9d6211ac0d42ba33776668c0f511a0} 
+\index{SDL\_local.h@{SDL\_local.h}!Window\_Init@{Window\_Init}}
+\index{Window\_Init@{Window\_Init}!SDL\_local.h@{SDL\_local.h}}
+\doxysubsubsection{\texorpdfstring{Window\_Init()}{Window\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} Window\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{SDL__local_8h_structWindow}{Window} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{SDL__local_8h_structWindow}{Window} struktúra. 
+\end{DoxyReturn}

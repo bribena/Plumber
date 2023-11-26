@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vízvezetékszerelő: lib/src/wheel.c fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vízvezetékszerelő
+   </div>
+   <div id="projectbrief">Egy vízvezetékszerelő játék, C-ben írva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Keresés');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_a065c5f60305fee3569f887679366939.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Függvények</a>  </div>
+  <div class="headertitle"><div class="title">wheel.c fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A <a class="el" href="game_8h.html" title="A játék headerje.">game.h</a>-ban deklarált <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+<a href="#details">Részletek...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="game_8h_source.html">game.h</a>&quot;</code><br />
+<code>#include &quot;debugmalloc.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:a87736d507ec807ee7d6860ae5ce0d5e0" id="r_a87736d507ec807ee7d6860ae5ce0d5e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game_8h.html#structWheel">Wheel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87736d507ec807ee7d6860ae5ce0d5e0">Wheel_Init</a> (void)</td></tr>
+<tr class="memdesc:a87736d507ec807ee7d6860ae5ce0d5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúra inicializálása (kinullázása)  <br /></td></tr>
+<tr class="separator:a87736d507ec807ee7d6860ae5ce0d5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17fc09a1ba3479c30e3f8bdbbb38ec95" id="r_a17fc09a1ba3479c30e3f8bdbbb38ec95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17fc09a1ba3479c30e3f8bdbbb38ec95">Wheel_Create</a> (<a class="el" href="game_8h.html#structWheel">Wheel</a> *wheel, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window, SDL_Rect location, SDL_Texture *wheel_texture)</td></tr>
+<tr class="memdesc:a17fc09a1ba3479c30e3f8bdbbb38ec95"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúra létrehozása.  <br /></td></tr>
+<tr class="separator:a17fc09a1ba3479c30e3f8bdbbb38ec95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2f6e7c50ea2fadc84493a0c101dede" id="r_aea2f6e7c50ea2fadc84493a0c101dede"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea2f6e7c50ea2fadc84493a0c101dede">Wheel_Update</a> (<a class="el" href="game_8h.html#structWheel">Wheel</a> wheel, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window, SDL_Texture *wheel_texture)</td></tr>
+<tr class="memdesc:aea2f6e7c50ea2fadc84493a0c101dede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frissíti egy <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> Layer-ét.  <br /></td></tr>
+<tr class="separator:aea2f6e7c50ea2fadc84493a0c101dede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fc039eb035e3a5b55561e5b14184399" id="r_a1fc039eb035e3a5b55561e5b14184399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fc039eb035e3a5b55561e5b14184399">Wheel_Destroy</a> (<a class="el" href="game_8h.html#structWheel">Wheel</a> *wheel)</td></tr>
+<tr class="memdesc:a1fc039eb035e3a5b55561e5b14184399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Felszabadít egy <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúrát.  <br /></td></tr>
+<tr class="separator:a1fc039eb035e3a5b55561e5b14184399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p>A <a class="el" href="game_8h.html" title="A játék headerje.">game.h</a>-ban deklarált <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. </p>
+</div><h2 class="groupheader">Függvények dokumentációja</h2>
+<a id="a17fc09a1ba3479c30e3f8bdbbb38ec95" name="a17fc09a1ba3479c30e3f8bdbbb38ec95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17fc09a1ba3479c30e3f8bdbbb38ec95">&#9670;&#160;</a></span>Wheel_Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Wheel_Create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game_8h.html#structWheel">Wheel</a> *&#160;</td>
+          <td class="paramname"><em>wheel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>wheel_texture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúra létrehozása. </p>
+<p>Véletlenszerűen felvesz egy szöget és lerendereli a Layer-re a csapot. A hibákat a struktok létrehozó függvényei a konzolra kiírják, ennek csak a visszatérési értéke jelzi. Hiba esetén nem ajánlott a struktúra használata. </p><dl class="section post"><dt>Utófeltétel</dt><dd>Használat után a <a class="el" href="game_8h.html#a1fc039eb035e3a5b55561e5b14184399" title="Felszabadít egy Wheel struktúrát.">Wheel_Destroy()</a> függvénnyel fel kell szabadítani a struktúrát. </dd></dl>
+<dl class="section warning"><dt>Figyelmeztetés</dt><dd>TILOS egy már létrehozott <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúrát átadni. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wheel</td><td>Egy inicializált <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúra pointere. </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra. </td></tr>
+    <tr><td class="paramname">location</td><td>A csap szülőjéhez relatív helye </td></tr>
+    <tr><td class="paramname">wheel_texture</td><td>A csap textúrája. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a1fc039eb035e3a5b55561e5b14184399" name="a1fc039eb035e3a5b55561e5b14184399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fc039eb035e3a5b55561e5b14184399">&#9670;&#160;</a></span>Wheel_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Wheel_Destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game_8h.html#structWheel">Wheel</a> *&#160;</td>
+          <td class="paramname"><em>wheel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Felszabadít egy <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúrát. </p>
+<p>A <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> Layer-ét szabadítja fel a saját függvényével. (lásd: <a class="el" href="SDL__local_8h.html" title="Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.">SDL_local.h</a>) </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wheel</td><td>A felszabadítandó <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúra pointere. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a87736d507ec807ee7d6860ae5ce0d5e0" name="a87736d507ec807ee7d6860ae5ce0d5e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87736d507ec807ee7d6860ae5ce0d5e0">&#9670;&#160;</a></span>Wheel_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="game_8h.html#structWheel">Wheel</a> Wheel_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúra inicializálása (kinullázása) </p>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>Egy üres <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> struktúra </dd></dl>
+
+</div>
+</div>
+<a id="aea2f6e7c50ea2fadc84493a0c101dede" name="aea2f6e7c50ea2fadc84493a0c101dede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2f6e7c50ea2fadc84493a0c101dede">&#9670;&#160;</a></span>Wheel_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Wheel_Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="game_8h.html#structWheel">Wheel</a>&#160;</td>
+          <td class="paramname"><em>wheel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>wheel_texture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frissíti egy <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> Layer-ét. </p>
+<p>A <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> Layer-ét frissíti (újrarendereli) az aktuális értékei szerint. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wheel</td><td>A frissítendő <a class="el" href="game_8h.html#structWheel" title="A csap struktúrája.">Wheel</a> </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra </td></tr>
+    <tr><td class="paramname">pipe_texture</td><td>A csöveket tartalmazó SDL_Texture* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

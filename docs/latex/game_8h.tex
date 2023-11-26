@@ -1,0 +1,963 @@
+\doxysection{lib/include/game.h fájlreferencia}
+\hypertarget{game_8h}{}\label{game_8h}\index{lib/include/game.h@{lib/include/game.h}}
+
+
+A játék headerje.  
+
+
+{\ttfamily \#include "{}SDL\+\_\+local.\+h"{}}\newline
+{\ttfamily \#include "{}pipe.\+h"{}}\newline
+{\ttfamily \#include "{}osdialog.\+h"{}}\newline
+\doxysubsubsection*{Adatszerkezetek}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}}
+\begin{DoxyCompactList}\small\item\em A játékhoz szükséges struktúrákat fogja össze.  \mbox{\hyperlink{game_8h_structGameStruct}{Részletek...}}\end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}}
+\begin{DoxyCompactList}\small\item\em A játék eventloopjának a változóit fogja össze.  \mbox{\hyperlink{game_8h_structEventloopVariables}{Részletek...}}\end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{game_8h_structWheel}{Wheel}}
+\begin{DoxyCompactList}\small\item\em A csap struktúrája.  \mbox{\hyperlink{game_8h_structWheel}{Részletek...}}\end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}}
+\begin{DoxyCompactList}\small\item\em Az animációs sor struktúrája.  \mbox{\hyperlink{game_8h_structAnimationQueue}{Részletek...}}\end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Makródefiníciók}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{game_8h_a6ca4df6b9e1495a80a2929a5187cb9b9}{DEFAULT\+\_\+\+WINDOW\+\_\+\+WIDTH}}~1600
+\begin{DoxyCompactList}\small\item\em Alapértelmezett ablakszélesség. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{game_8h_a030ebc610fddb0a18d62829ab376bf85}{DEFAULT\+\_\+\+WINDOW\+\_\+\+HEIGHT}}~900
+\begin{DoxyCompactList}\small\item\em Alapértelmezett ablakmagasság. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{game_8h_a1ce30ff5253b94e8f3ba48694fbc207b}{MIN\+\_\+\+X\+\_\+\+SIZE}}~18
+\begin{DoxyCompactList}\small\item\em A játék pályáján szereplő, egy sorban lévő csövek minimális száma. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{game_8h_a9400dfeda655f60302884300255f7115}{MIN\+\_\+\+Y\+\_\+\+SIZE}}~14
+\begin{DoxyCompactList}\small\item\em A játék pályáján szereplő, egy oszlopban lévő csövek minimális száma. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{game_8h_af901e4e1eb4b35b9bc69926222e151e3}{WHEEL\+\_\+\+SIZE\+\_\+\+MULTIPLIER}}~1.\+75
+\begin{DoxyCompactList}\small\item\em A csap csövekhez viszonyított mérete. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{game_8h_aab58dbd5f932cc031e945688c796e067}{WHEEL\+\_\+\+ROTATE\+\_\+\+SPEED}}~2
+\begin{DoxyCompactList}\small\item\em A csap forgatási animációjának a sebessége. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{game_8h_a6ac5cdf96de80051ae9ea707bbdb8579}{PIPE\+\_\+\+ROTATE\+\_\+\+SPEED}}~3
+\begin{DoxyCompactList}\small\item\em A csövek forgatási animációjának a sebessége. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{game_8h_a70ffdd55dbb29415bff839f0d460cce0}{LONG\+\_\+\+PIPE\+\_\+\+FILL\+\_\+\+SPEED}}~5
+\begin{DoxyCompactList}\small\item\em A pálya előtt lévő hosszú cső feltöltési animációjának a sebessége. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{game_8h_a845c556111e6f63f6b0d43351f467b8c}{PIPE\+\_\+\+FILL\+\_\+\+SPEED}}~20
+\begin{DoxyCompactList}\small\item\em A pályán lévő csövek feltölési animációjának a sebessége. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerációk}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{game_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}} \{ \mbox{\hyperlink{game_8h_affb455e5ea72d01e065758c70f810a95a92f982c1691919b7b36f507af9be5689}{Animation\+Type\+\_\+\+None}}
+, \mbox{\hyperlink{game_8h_affb455e5ea72d01e065758c70f810a95a1e216d7234d9281f917514aafa14abb9}{Animation\+Type\+\_\+\+Rotate}}
+, \mbox{\hyperlink{game_8h_affb455e5ea72d01e065758c70f810a95aaaf0ad94f9a9b7086f493133a852aacb}{Animation\+Type\+\_\+\+Fill}}
+ \}
+\begin{DoxyCompactList}\small\item\em Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} egy elemének típusa. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}} \{ \mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6eab473734b8a57b27821580eaa957b5cf4}{Animation\+Direction\+\_\+\+To\+Right}}
+, \mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6ea200fc98bbe8d080d2cd1e9dbac4985a7}{Animation\+Direction\+\_\+\+To\+Left}}
+, \mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6eac7b32560c32469f0ace16cb8fedf2eee}{Animation\+Direction\+\_\+\+To\+Up}}
+, \mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6ea8bc66bee51242218f1c6639ac825d28b}{Animation\+Direction\+\_\+\+To\+Down}}
+ \}
+\begin{DoxyCompactList}\small\item\em Az Animation\+Queue-\/ban szereplő feltöltési animáció iránya. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} \mbox{\hyperlink{game_8h_aa04da33e6daf2c7ed058efde2aea7246}{Game\+Struct\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{game_8h_structGameStruct}{Game\+Struct} inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_a387e11d6576bc1b42e1dae0eb31d8a81}{Game\+Struct\+\_\+\+Create}} (\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} \texorpdfstring{$\ast$}{*}game\+\_\+struct)
+\begin{DoxyCompactList}\small\item\em \doxylink{game_8h_structGameStruct}{Game\+Struct} létrehozása. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a99fd927905eb43053a45dc0827478680}{Game\+Struct\+\_\+\+Destroy}} (\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} \texorpdfstring{$\ast$}{*}game\+\_\+struct)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy Game\+Struct-\/ot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}} \mbox{\hyperlink{game_8h_a9b1acba58182e72d9c5bceadc3b69570}{Eventloop\+Variables\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Az eventloop változóinak inicializálása (kinullázása) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_ac10254960c5d6975f0d32e052f3f18b3}{Delta\+\_\+\+Update}} (\mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}} \texorpdfstring{$\ast$}{*}ev\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Frissíti a deltaT elemének értékét. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_a9870d4c405121b6667c178f650896d1c}{Cursor\+In\+Rect}} (\mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}} ev\+\_\+vars, SDL\+\_\+\+Rect bound)
+\begin{DoxyCompactList}\small\item\em Megvizsgálja, hogy a kurzor a megadott SDL\+\_\+\+Rect-\/en belül van-\/e. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \mbox{\hyperlink{game_8h_a87736d507ec807ee7d6860ae5ce0d5e0}{Wheel\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em A \doxylink{game_8h_structWheel}{Wheel} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_a17fc09a1ba3479c30e3f8bdbbb38ec95}{Wheel\+\_\+\+Create}} (\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}wheel, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, SDL\+\_\+\+Rect location, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}wheel\+\_\+texture)
+\begin{DoxyCompactList}\small\item\em \doxylink{game_8h_structWheel}{Wheel} struktúra létrehozása. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_aea2f6e7c50ea2fadc84493a0c101dede}{Wheel\+\_\+\+Update}} (\mbox{\hyperlink{game_8h_structWheel}{Wheel}} wheel, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}wheel\+\_\+texture)
+\begin{DoxyCompactList}\small\item\em Frissíti egy \doxylink{game_8h_structWheel}{Wheel} Layer-\/ét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a1fc039eb035e3a5b55561e5b14184399}{Wheel\+\_\+\+Destroy}} (\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}wheel)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{game_8h_structWheel}{Wheel} struktúrát. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{game_8h_af62ed55fa7c360460eba62c9a69c0276}{Animation\+Queue\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Létrehozza egy \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsáját. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_a27569d72a725f934f39a1f2f4b3e2963}{Animation\+Queue\+\_\+\+Append\+Wheel\+Rotate}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start, \mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}wheel, double target\+\_\+angle, double animation\+\_\+speed)
+\begin{DoxyCompactList}\small\item\em Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{game_8h_structWheel}{Wheel} forgatási animációját. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_a8f715d8120fdee7afc72c866645f038a}{Animation\+Queue\+\_\+\+Append\+Pipe\+Rotate}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start, \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}pipe, double target\+\_\+angle, double animation\+\_\+speed)
+\begin{DoxyCompactList}\small\item\em Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{pipe_8h_structPipe}{Pipe} forgatási animációját. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_a40bf3b078c6259575f2f12c6d48a5e7c}{Animation\+Queue\+\_\+\+Append\+Long\+Fill}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start, SDL\+\_\+\+Rect render\+\_\+location, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}filled\+\_\+texture, double animation\+\_\+speed, \mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}} direction)
+\begin{DoxyCompactList}\small\item\em Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy hosszú cső feltöltési animációját. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_a148edd59900f9867f1832230fb0d9249}{Animation\+Queue\+\_\+\+Append\+Pipe\+Fill}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}pipe, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}filled\+\_\+texture, double animation\+\_\+speed, \mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}} direction)
+\begin{DoxyCompactList}\small\item\em Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{pipe_8h_structPipe}{Pipe} feltöltési animációját. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{game_8h_af170ca51a234abe456df7b78c85b5f09}{Animation\+Queue\+\_\+\+Remove\+Element}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start, \mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em A megadott elemet kitörli az Aniamtion\+Queue-\/ból és visszaadja az előtte lévő pointerét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a3aefb16a32d6f8afe029607d664f0daf}{Animation\+Queue\+\_\+\+Destroy}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} láncolt listát. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu}} (\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} game\+\_\+struct)
+\begin{DoxyCompactList}\small\item\em A játékmenü függvénye. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_a93c862a10cd086d1667b0564f41cf7fd}{Game}} (\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} game\+\_\+struct, \mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}betoltott, int entry\+\_\+y, int exit\+\_\+y)
+\begin{DoxyCompactList}\small\item\em A játék függvénye. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8h_aa1b05c35e760e1a2a04bbf56bfa8222c}{Win}} (\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} game\+\_\+struct, \mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} state, \mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} copy, int entry\+\_\+y, int exit\+\_\+y)
+\begin{DoxyCompactList}\small\item\em A nyert kép függvénye. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A játék headerje. 
+
+A játtékkal kapcsolatban mindent tartalmaz. Innen már csak a \doxylink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}-\/ben kell meghívogatni néhány függvényt. A header tartalmának nagy része csak a sok forrásfájl miatt szerepel itt.
+
+\begin{DoxyPrecond}{Előfeltétel}
+Mivel az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/t használja, az SDL inicializálása szükséges a modul megfelelő működéséhez.
+\end{DoxyPrecond}
+\hypertarget{game_8h_autotoc_md0}{}\doxysubsubsection{\texorpdfstring{Struktúrák, enumok\+:}{Struktúrák, enumok:}}\label{game_8h_autotoc_md0}
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{game_8h_structGameStruct}{Game\+Struct}}\+: Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban szereplő struktúrákat fogja össze.
+\item {\ttfamily \doxylink{game_8h_structEventloopVariables}{Eventloop\+Variables}}\+: A \doxylink{game_8h_a93c862a10cd086d1667b0564f41cf7fd}{Game()} függvény/kép eventloopjának a változóit fogja össze.
+\item {\ttfamily \doxylink{game_8h_structWheel}{Wheel}}\+: A csaphoz tartozó változókat fogja össze.
+\item {\ttfamily \doxylink{game_8h_structAnimationQueue}{Animation\+Queue}}\+: Az felhasználó által indított animációkhoz egy strázsás láncolt lista.
+\end{DoxyItemize}
+
+Emellett az animáláshoz 2 enumot is tartalmaz a header\+:
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{game_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}}\+: Az animáció típusa.
+\item {\ttfamily \doxylink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}}\+: Az animáció iránya.
+\end{DoxyItemize}\hypertarget{game_8h_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{Függvények\+:}{Függvények:}}\label{game_8h_autotoc_md1}
+Az itt szereplő függvények vagy a játékmenethez kapcsolódnak vagy a nevükben szereplő struktúrákhoz. A játék 3 állapota (menü, játék, nyerés kép) a saját függvényeikbe vannak szervezve.\hypertarget{game_8h_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{Példakód\+:}{Példakód:}}\label{game_8h_autotoc_md2}
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Ha\ Windows-\/on\ fordítjuk}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifdef\ \_WIN32\ }}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <time.h>}\ \textcolor{comment}{//\ rand()\ seed-\/jéhez}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game_8h}{game.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}debugmalloc.h"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Ha\ Windows-\/on\ fordítjuk,\ az\ ablak\ ezt\ a\ main\ függvényt\ hívja\ meg}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifdef\ WIN32}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ WINAPI\ wWinMain(HINSTANCE\ hInstance,\ HINSTANCE\ FreeProcInstance,\ PWSTR\ pCmdLine,\ \textcolor{keywordtype}{int}\ nCmdShow)\ \{}
+\DoxyCodeLine{\ \ \ \ (void)hInstance,\ (\textcolor{keywordtype}{void})FreeProcInstance,\ (void)pCmdLine,\ (\textcolor{keywordtype}{void})nCmdShow;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}(0,\ NULL);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ A\ main\ függvény}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])\ \{}
+\DoxyCodeLine{\ \ \ \ (void)argc,\ (\textcolor{keywordtype}{void})argv;\ \textcolor{comment}{//\ Warning\ elkerülése}}
+\DoxyCodeLine{\ \ \ \ srand(time(0));\ \textcolor{comment}{//\ Random\ seed}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{SDL__local_8h_ac123123dd113ec5077bfd1af17d2f459}{InitializeSDL}}())\ \textcolor{keywordflow}{return}\ 1;\ \textcolor{comment}{//\ SDL\ inicializálása}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{game_8h_structGameStruct}{GameStruct}}\ game\_struct\ =\ \mbox{\hyperlink{game_8h_aa04da33e6daf2c7ed058efde2aea7246}{GameStruct\_Init}}();\ \textcolor{comment}{//\ SDL\_local.h\ változóinak\ inicializálása}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{game_8h_a387e11d6576bc1b42e1dae0eb31d8a81}{GameStruct\_Create}}(\&game\_struct))\ \{\ \textcolor{comment}{//\ SDL\_local.h\ változóinak\ létrehozása}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}{QuitSDL}}();\ \textcolor{comment}{//\ Hiba\ esetén\ kilépés}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 2;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_a9920ee88c07373643b2dbb45eadf54bb}{StartMusic}}(game\_struct.\mbox{\hyperlink{game_8h_af99c856f0e36b473b4c82797977e2f09}{assets}});\ \textcolor{comment}{//\ Zene\ indítása}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ ret\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu}}(game\_struct))\ \textcolor{comment}{//\ Menübe\ lépés}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ret\ =\ 3;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Kilépés\ előtti\ felszabadítás}}
+\DoxyCodeLine{\ \ \ \ Mix\_FadeOutMusic(500);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{game_8h_a99fd927905eb43053a45dc0827478680}{GameStruct\_Destroy}}(\&game\_struct);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}{QuitSDL}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+\hypertarget{game_8h_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Megjegyzések\+:}{Megjegyzések:}}\label{game_8h_autotoc_md3}
+
+\begin{DoxyItemize}
+\item A projekt \doxylink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()} függvényéből is látszik, hogy csak a Game\+Struct-\/ot kell létrehozni és a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()} függvényt meghívni. A többi függvény hívást és struktúra létrehozást a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()} végzi.
+\item A különböző if-\/ek a hibakezelés miatt vannak, hogy a program minél kevesebb memóriaszivárgással omoljon össze.
+\end{DoxyItemize}\hypertarget{game_8h_autotoc_md4}{}\doxysubsubsection{\texorpdfstring{Kapcsolódó kódfájlok\+:}{Kapcsolódó kódfájlok:}}\label{game_8h_autotoc_md4}
+
+\begin{DoxyItemize}
+\item \doxylink{game_8c}{game.\+c}
+\item \doxylink{game__struct_8c}{game\+\_\+struct.\+c}
+\item \doxylink{ev__vars_8c}{ev\+\_\+vars.\+c}
+\item \doxylink{wheel_8c}{wheel.\+c}
+\item \doxylink{animation_8c}{animation.\+c}
+\end{DoxyItemize}
+
+\begin{DoxyRefDesc}{Hiba}
+\item[\mbox{\hyperlink{bug__bug000001}{Hiba}}]A modul egy osdialog nevű modullal hoz létre rendszerfüggő dialógusablakokat. Ez a GTK2-\/re épül Linux alatt, ami memóriaszivárgást okoz. Windows alatt az Address Sanitizert nem teszteltem, ott nem tudom, hogy mi a helyzet. Egy lehetséges megoldás, hogy az osdialog-\/ot mással helyettesítjük, de emiatt a \doxylink{game_8c}{game.\+c}-\/ben változtatásokat kell hozni. \end{DoxyRefDesc}
+
+
+\doxysubsection{Adatszerkezetek dokumentációja}
+\index{GameStruct@{GameStruct}}\label{structGameStruct}
+\Hypertarget{game_8h_structGameStruct}
+\doxysubsubsection{struct Game\+Struct}
+A játékhoz szükséges struktúrákat fogja össze. 
+
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h} struktúráit tartalmazza. Könnyebb kezelhetőség a célja, hiszen mindhárom struktúrát létre kell hozni a megfelelő működés érdekében. \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{game_8h_af99c856f0e36b473b4c82797977e2f09}\label{game_8h_af99c856f0e36b473b4c82797977e2f09}} 
+\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}}&
+assets&
+\doxylink{SDL__local_8h_structAssets}{Assets} struktúra. \newline
+Az assets mappa tartalmát fogja össze. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a79decddd617fac9909c147b40c804e76}\label{game_8h_a79decddd617fac9909c147b40c804e76}} 
+\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}}&
+fonts&
+\doxylink{SDL__local_8h_structFonts}{Fonts} struktúra. \newline
+Az assets/fonts mappában található betűtípusokat tartalmazza. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a4f830fdba462145586a292be9a0e0eb1}\label{game_8h_a4f830fdba462145586a292be9a0e0eb1}} 
+\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}&
+window&
+\doxylink{SDL__local_8h_structWindow}{Window} struktúra. \newline
+Az ablakkal kapcsolatos változókat tartalmazza. \\
+\hline
+
+\end{DoxyFields}
+\index{EventloopVariables@{EventloopVariables}}\label{structEventloopVariables}
+\Hypertarget{game_8h_structEventloopVariables}
+\doxysubsubsection{struct Eventloop\+Variables}
+A játék eventloopjának a változóit fogja össze. 
+
+A \doxylink{game_8h_a93c862a10cd086d1667b0564f41cf7fd}{Game()} függvényben használt. \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{game_8h_a64c40acc8bab0269bf31f06b103a0505}\label{game_8h_a64c40acc8bab0269bf31f06b103a0505}} 
+bool&
+clicked&
+Kattintás állapota. \newline
+true, amíg nem érkezik SDL\+\_\+\+MOUSEBUTTONUP event. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_aa53a0fdfef43cb966fb74ab7eb824ecc}\label{game_8h_aa53a0fdfef43cb966fb74ab7eb824ecc}} 
+Uint64&
+currTime&
+Az SDL\+\_\+\+Get\+Performance\+Counter() függvény értéke. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_ab372882d169c65f7a4941929e51f864b}\label{game_8h_ab372882d169c65f7a4941929e51f864b}} 
+double&
+deltaT&
+A két idő közötti különbség az SDL\+\_\+\+Get\+Performance\+Frequency() értékével elosztva. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_ac93a6baf84a9cc8c8cb11ea710bb93ba}\label{game_8h_ac93a6baf84a9cc8c8cb11ea710bb93ba}} 
+SDL\_Event&
+event&
+A bejövő event. \newline
+Az SDL\+\_\+\+Poll\+Event() vagy SDL\+\_\+\+Wait\+Event() függvényeknek lehet átadni. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a08f346b3758ea97052f89cad6428c534}\label{game_8h_a08f346b3758ea97052f89cad6428c534}} 
+SDL\_Point&
+prevCursor&
+Az SDL\+\_\+\+MOUSEBUTTONDOWN event érkezésekor kimentett kurzorpozíció. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a204af24b1857f56a3781fb35df518639}\label{game_8h_a204af24b1857f56a3781fb35df518639}} 
+Uint64&
+prevTime&
+Az SDL\+\_\+\+Get\+Performance\+Counter() függvény előző értéke. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a91a830ecf8552467cfc3ded235f7c993}\label{game_8h_a91a830ecf8552467cfc3ded235f7c993}} 
+bool&
+running&
+A játék állapota. \newline
+Ha true, az eventloop fut, egyébként false. \\
+\hline
+
+\end{DoxyFields}
+\index{Wheel@{Wheel}}\label{structWheel}
+\Hypertarget{game_8h_structWheel}
+\doxysubsubsection{struct Wheel}
+A csap struktúrája. 
+
+A csap megjelenítéséhez és forgatásához szükséges változókat tartalmazza. \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{game_8h_abccd14c0207a403b2d004a66637c26de}\label{game_8h_abccd14c0207a403b2d004a66637c26de}} 
+\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}}&
+layer&
+A csap Layer-\/e. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a99cab1e48426f3feb7dbd4a93846406f}\label{game_8h_a99cab1e48426f3feb7dbd4a93846406f}} 
+double&
+szog&
+A csap forgatási szöge (fokban). \\
+\hline
+
+\end{DoxyFields}
+\index{AnimationQueue@{AnimationQueue}}\label{structAnimationQueue}
+\Hypertarget{game_8h_structAnimationQueue}
+\doxysubsubsection{struct Animation\+Queue}
+Az animációs sor struktúrája. 
+
+Az animációs sor maga egy strázsás láncolt lista. Kétféle animációhoz kezeléséhez tárol változókat \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{game_8h_a1a3508d36b2a70e11952c5145e960bd5}\label{game_8h_a1a3508d36b2a70e11952c5145e960bd5}} 
+bool&
+active&
+Az animáció állapota. \newline
+true, amíg az animáció nem ért véget. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a56a39622b3b2f9c4c8c5aa5030022652}\label{game_8h_a56a39622b3b2f9c4c8c5aa5030022652}} 
+double \texorpdfstring{$\ast$}{*}&
+angle&
+A forgatandó elem szögének pointere. (Csak Animation\+Type\+\_\+\+Rotate esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a55bfc1207a50fab024818dd5a86c8f96}\label{game_8h_a55bfc1207a50fab024818dd5a86c8f96}} 
+double&
+animation\_speed&
+Az animáció sebessége. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_aa06f0cc05ec87c890474676775a721a5}\label{game_8h_aa06f0cc05ec87c890474676775a721a5}} 
+\mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{AnimationDirection}}&
+direction&
+Az animáció iránya. (Csak Animation\+Type\+\_\+\+Fill esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a9d6a41af1d0c01567fa484811368015f}\label{game_8h_a9d6a41af1d0c01567fa484811368015f}} 
+SDL\_Texture \texorpdfstring{$\ast$}{*}&
+filled\_texture&
+A renderelendő textúra. (Csak Animation\+Type\+\_\+\+Fill esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a9b15362e73eb74b445a1928b20f017dc}\label{game_8h_a9b15362e73eb74b445a1928b20f017dc}} 
+bool&
+is\_pipe&
+Az animációt Pipe-\/on kell-\/e végrehajtani. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a4f251b739d15cb89ed891ecab2e60b37}\label{game_8h_a4f251b739d15cb89ed891ecab2e60b37}} 
+struct \mbox{\hyperlink{game_8h_structAnimationQueue}{AnimationQueue}} \texorpdfstring{$\ast$}{*}&
+next&
+A következő elem pointere. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a4e09e19ae290696e39a1a584592bdd78}\label{game_8h_a4e09e19ae290696e39a1a584592bdd78}} 
+\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}&
+pipe&
+A \doxylink{pipe_8h_structPipe}{Pipe} pointere. (Csak is\+\_\+pipe esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a4640e48528855266134be7de3b24c265}\label{game_8h_a4640e48528855266134be7de3b24c265}} 
+double&
+ratio&
+A render\+\_\+location és a texture\+\_\+location aránya. (Csak Animation\+Type\+\_\+\+Fill esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_ac8ad2da77177a711c84939ae0fc6b9aa}\label{game_8h_ac8ad2da77177a711c84939ae0fc6b9aa}} 
+SDL\_Rect&
+render\_location&
+Az elem Render\+Target-\/en belüli helye. (Csak Animation\+Type\+\_\+\+Fill esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a1cbf0b4d33d8773cc3f7b6857a19c28b}\label{game_8h_a1cbf0b4d33d8773cc3f7b6857a19c28b}} 
+double&
+rendered\_angle&
+A struktúra által megtett szög (fokban). (Csak Animation\+Type\+\_\+\+Rotate esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_ad4863bb080fb9cca7cfe6a282e368f11}\label{game_8h_ad4863bb080fb9cca7cfe6a282e368f11}} 
+double&
+target\_angle&
+Meghatározza a forgatás mértékét (fokban). (Csak Animation\+Type\+\_\+\+Rotate esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a9adfe6407bfb99b446a6148fc54b8a66}\label{game_8h_a9adfe6407bfb99b446a6148fc54b8a66}} 
+double&
+target\_coor&
+A cél koordináta. (Csak Animation\+Type\+\_\+\+Fill esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a23ee2298d2364eb6be2fc972c4d991d5}\label{game_8h_a23ee2298d2364eb6be2fc972c4d991d5}} 
+double&
+target\_length&
+A renderelendő hossz (pixelben). (Csak Animation\+Type\+\_\+\+Fill esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a9cc796f3b5d42a75d09a5f46bf8a6258}\label{game_8h_a9cc796f3b5d42a75d09a5f46bf8a6258}} 
+SDL\_Rect&
+texture\_location&
+A renderelendő textúra helye a filled\+\_\+texuter-\/n belül. (Csak Animation\+Type\+\_\+\+Fill esetén értelmes) \\
+\hline
+
+\mbox{\Hypertarget{game_8h_a09ec3a515e3900ef4e7983c571a69239}\label{game_8h_a09ec3a515e3900ef4e7983c571a69239}} 
+\mbox{\hyperlink{game_8h_affb455e5ea72d01e065758c70f810a95}{AnimationType}}&
+type&
+Az animáció típusa. \\
+\hline
+
+\mbox{\Hypertarget{game_8h_aaeeca0c77d4f541f20eb3405614bf906}\label{game_8h_aaeeca0c77d4f541f20eb3405614bf906}} 
+\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}&
+wheel&
+A \doxylink{game_8h_structWheel}{Wheel} pointere. (Csak !is\+\_\+pipe és Animation\+Type\+\_\+\+Rotate esetén értelmes) \\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Makródefiníciók dokumentációja}
+\Hypertarget{game_8h_a030ebc610fddb0a18d62829ab376bf85}\label{game_8h_a030ebc610fddb0a18d62829ab376bf85} 
+\index{game.h@{game.h}!DEFAULT\_WINDOW\_HEIGHT@{DEFAULT\_WINDOW\_HEIGHT}}
+\index{DEFAULT\_WINDOW\_HEIGHT@{DEFAULT\_WINDOW\_HEIGHT}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_WINDOW\_HEIGHT}{DEFAULT\_WINDOW\_HEIGHT}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+WINDOW\+\_\+\+HEIGHT~900}
+
+
+
+Alapértelmezett ablakmagasság. 
+
+Az ablak magasságát határozza meg. A \doxylink{game_8h_a387e11d6576bc1b42e1dae0eb31d8a81}{Game\+Struct\+\_\+\+Create()} függvény használja a \doxylink{SDL__local_8h_structWindow}{Window} struktúra létrehozásakor. \Hypertarget{game_8h_a6ca4df6b9e1495a80a2929a5187cb9b9}\label{game_8h_a6ca4df6b9e1495a80a2929a5187cb9b9} 
+\index{game.h@{game.h}!DEFAULT\_WINDOW\_WIDTH@{DEFAULT\_WINDOW\_WIDTH}}
+\index{DEFAULT\_WINDOW\_WIDTH@{DEFAULT\_WINDOW\_WIDTH}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_WINDOW\_WIDTH}{DEFAULT\_WINDOW\_WIDTH}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+WINDOW\+\_\+\+WIDTH~1600}
+
+
+
+Alapértelmezett ablakszélesség. 
+
+Az ablak szélességét határozza meg. A \doxylink{game_8h_a387e11d6576bc1b42e1dae0eb31d8a81}{Game\+Struct\+\_\+\+Create()} függvény használja a \doxylink{SDL__local_8h_structWindow}{Window} struktúra létrehozásakor. \Hypertarget{game_8h_a70ffdd55dbb29415bff839f0d460cce0}\label{game_8h_a70ffdd55dbb29415bff839f0d460cce0} 
+\index{game.h@{game.h}!LONG\_PIPE\_FILL\_SPEED@{LONG\_PIPE\_FILL\_SPEED}}
+\index{LONG\_PIPE\_FILL\_SPEED@{LONG\_PIPE\_FILL\_SPEED}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{LONG\_PIPE\_FILL\_SPEED}{LONG\_PIPE\_FILL\_SPEED}}
+{\footnotesize\ttfamily \#define LONG\+\_\+\+PIPE\+\_\+\+FILL\+\_\+\+SPEED~5}
+
+
+
+A pálya előtt lévő hosszú cső feltöltési animációjának a sebessége. 
+
+\Hypertarget{game_8h_a1ce30ff5253b94e8f3ba48694fbc207b}\label{game_8h_a1ce30ff5253b94e8f3ba48694fbc207b} 
+\index{game.h@{game.h}!MIN\_X\_SIZE@{MIN\_X\_SIZE}}
+\index{MIN\_X\_SIZE@{MIN\_X\_SIZE}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{MIN\_X\_SIZE}{MIN\_X\_SIZE}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+X\+\_\+\+SIZE~18}
+
+
+
+A játék pályáján szereplő, egy sorban lévő csövek minimális száma. 
+
+Egy sorban legalább ennyi cső szerepel. \Hypertarget{game_8h_a9400dfeda655f60302884300255f7115}\label{game_8h_a9400dfeda655f60302884300255f7115} 
+\index{game.h@{game.h}!MIN\_Y\_SIZE@{MIN\_Y\_SIZE}}
+\index{MIN\_Y\_SIZE@{MIN\_Y\_SIZE}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{MIN\_Y\_SIZE}{MIN\_Y\_SIZE}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+Y\+\_\+\+SIZE~14}
+
+
+
+A játék pályáján szereplő, egy oszlopban lévő csövek minimális száma. 
+
+Egy oszlopban legalább ennyi cső szerepel. \Hypertarget{game_8h_a845c556111e6f63f6b0d43351f467b8c}\label{game_8h_a845c556111e6f63f6b0d43351f467b8c} 
+\index{game.h@{game.h}!PIPE\_FILL\_SPEED@{PIPE\_FILL\_SPEED}}
+\index{PIPE\_FILL\_SPEED@{PIPE\_FILL\_SPEED}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{PIPE\_FILL\_SPEED}{PIPE\_FILL\_SPEED}}
+{\footnotesize\ttfamily \#define PIPE\+\_\+\+FILL\+\_\+\+SPEED~20}
+
+
+
+A pályán lévő csövek feltölési animációjának a sebessége. 
+
+\Hypertarget{game_8h_a6ac5cdf96de80051ae9ea707bbdb8579}\label{game_8h_a6ac5cdf96de80051ae9ea707bbdb8579} 
+\index{game.h@{game.h}!PIPE\_ROTATE\_SPEED@{PIPE\_ROTATE\_SPEED}}
+\index{PIPE\_ROTATE\_SPEED@{PIPE\_ROTATE\_SPEED}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{PIPE\_ROTATE\_SPEED}{PIPE\_ROTATE\_SPEED}}
+{\footnotesize\ttfamily \#define PIPE\+\_\+\+ROTATE\+\_\+\+SPEED~3}
+
+
+
+A csövek forgatási animációjának a sebessége. 
+
+\Hypertarget{game_8h_aab58dbd5f932cc031e945688c796e067}\label{game_8h_aab58dbd5f932cc031e945688c796e067} 
+\index{game.h@{game.h}!WHEEL\_ROTATE\_SPEED@{WHEEL\_ROTATE\_SPEED}}
+\index{WHEEL\_ROTATE\_SPEED@{WHEEL\_ROTATE\_SPEED}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{WHEEL\_ROTATE\_SPEED}{WHEEL\_ROTATE\_SPEED}}
+{\footnotesize\ttfamily \#define WHEEL\+\_\+\+ROTATE\+\_\+\+SPEED~2}
+
+
+
+A csap forgatási animációjának a sebessége. 
+
+Más animációja nincs a csapnak. \Hypertarget{game_8h_af901e4e1eb4b35b9bc69926222e151e3}\label{game_8h_af901e4e1eb4b35b9bc69926222e151e3} 
+\index{game.h@{game.h}!WHEEL\_SIZE\_MULTIPLIER@{WHEEL\_SIZE\_MULTIPLIER}}
+\index{WHEEL\_SIZE\_MULTIPLIER@{WHEEL\_SIZE\_MULTIPLIER}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{WHEEL\_SIZE\_MULTIPLIER}{WHEEL\_SIZE\_MULTIPLIER}}
+{\footnotesize\ttfamily \#define WHEEL\+\_\+\+SIZE\+\_\+\+MULTIPLIER~1.\+75}
+
+
+
+A csap csövekhez viszonyított mérete. 
+
+Ennyiszer nagyobb egy csőhöz képest. 
+
+\doxysubsection{Enumerációk dokumentációja}
+\Hypertarget{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}\label{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e} 
+\index{game.h@{game.h}!AnimationDirection@{AnimationDirection}}
+\index{AnimationDirection@{AnimationDirection}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{AnimationDirection}{AnimationDirection}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}}}
+
+
+
+Az Animation\+Queue-\/ban szereplő feltöltési animáció iránya. 
+
+Csak Animation\+Type\+\_\+\+Fill esetén értelmezett. \begin{DoxyEnumFields}{Enumeráció-értékek}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnimationDirection\_ToRight@{AnimationDirection\_ToRight}!game.h@{game.h}}\index{game.h@{game.h}!AnimationDirection\_ToRight@{AnimationDirection\_ToRight}}}\Hypertarget{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6eab473734b8a57b27821580eaa957b5cf4}\label{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6eab473734b8a57b27821580eaa957b5cf4} 
+Animation\+Direction\+\_\+\+To\+Right&Jobbra tölt. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnimationDirection\_ToLeft@{AnimationDirection\_ToLeft}!game.h@{game.h}}\index{game.h@{game.h}!AnimationDirection\_ToLeft@{AnimationDirection\_ToLeft}}}\Hypertarget{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6ea200fc98bbe8d080d2cd1e9dbac4985a7}\label{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6ea200fc98bbe8d080d2cd1e9dbac4985a7} 
+Animation\+Direction\+\_\+\+To\+Left&Balra tölt. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnimationDirection\_ToUp@{AnimationDirection\_ToUp}!game.h@{game.h}}\index{game.h@{game.h}!AnimationDirection\_ToUp@{AnimationDirection\_ToUp}}}\Hypertarget{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6eac7b32560c32469f0ace16cb8fedf2eee}\label{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6eac7b32560c32469f0ace16cb8fedf2eee} 
+Animation\+Direction\+\_\+\+To\+Up&Felfele tölt. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnimationDirection\_ToDown@{AnimationDirection\_ToDown}!game.h@{game.h}}\index{game.h@{game.h}!AnimationDirection\_ToDown@{AnimationDirection\_ToDown}}}\Hypertarget{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6ea8bc66bee51242218f1c6639ac825d28b}\label{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6ea8bc66bee51242218f1c6639ac825d28b} 
+Animation\+Direction\+\_\+\+To\+Down&Lefele tölt. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{game_8h_affb455e5ea72d01e065758c70f810a95}\label{game_8h_affb455e5ea72d01e065758c70f810a95} 
+\index{game.h@{game.h}!AnimationType@{AnimationType}}
+\index{AnimationType@{AnimationType}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{AnimationType}{AnimationType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{game_8h_affb455e5ea72d01e065758c70f810a95}{Animation\+Type}}}
+
+
+
+Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} egy elemének típusa. 
+
+Esetszétválasztásra szolgál. \begin{DoxyEnumFields}{Enumeráció-értékek}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnimationType\_None@{AnimationType\_None}!game.h@{game.h}}\index{game.h@{game.h}!AnimationType\_None@{AnimationType\_None}}}\Hypertarget{game_8h_affb455e5ea72d01e065758c70f810a95a92f982c1691919b7b36f507af9be5689}\label{game_8h_affb455e5ea72d01e065758c70f810a95a92f982c1691919b7b36f507af9be5689} 
+Animation\+Type\+\_\+\+None&Alapértelmezett érték. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnimationType\_Rotate@{AnimationType\_Rotate}!game.h@{game.h}}\index{game.h@{game.h}!AnimationType\_Rotate@{AnimationType\_Rotate}}}\Hypertarget{game_8h_affb455e5ea72d01e065758c70f810a95a1e216d7234d9281f917514aafa14abb9}\label{game_8h_affb455e5ea72d01e065758c70f810a95a1e216d7234d9281f917514aafa14abb9} 
+Animation\+Type\+\_\+\+Rotate&Forgatás. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnimationType\_Fill@{AnimationType\_Fill}!game.h@{game.h}}\index{game.h@{game.h}!AnimationType\_Fill@{AnimationType\_Fill}}}\Hypertarget{game_8h_affb455e5ea72d01e065758c70f810a95aaaf0ad94f9a9b7086f493133a852aacb}\label{game_8h_affb455e5ea72d01e065758c70f810a95aaaf0ad94f9a9b7086f493133a852aacb} 
+Animation\+Type\+\_\+\+Fill&Feltöltés. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{game_8h_a40bf3b078c6259575f2f12c6d48a5e7c}\label{game_8h_a40bf3b078c6259575f2f12c6d48a5e7c} 
+\index{game.h@{game.h}!AnimationQueue\_AppendLongFill@{AnimationQueue\_AppendLongFill}}
+\index{AnimationQueue\_AppendLongFill@{AnimationQueue\_AppendLongFill}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_AppendLongFill()}{AnimationQueue\_AppendLongFill()}}
+{\footnotesize\ttfamily bool Animation\+Queue\+\_\+\+Append\+Long\+Fill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{SDL\+\_\+\+Rect}]{render\+\_\+location,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{filled\+\_\+texture,  }\item[{double}]{animation\+\_\+speed,  }\item[{\mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}}}]{direction }\end{DoxyParamCaption})}
+
+
+
+Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy hosszú cső feltöltési animációját. 
+
+A szükséges változókat beállítja és hozzáfűzi az új elemet az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez. A hosszú cső lehet más SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} is, de a \doxylink{game_8c}{game.\+c}-\/ben csak ehhez van használva. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+{\em render\+\_\+location} & A renderelendő hosszú cső helye \\
+\hline
+{\em filled\+\_\+texture} & A hosszú cső textúrája \\
+\hline
+{\em animation\+\_\+speed} & Az animáció sebessége \\
+\hline
+{\em direction} & Az animáció iránya \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a148edd59900f9867f1832230fb0d9249}\label{game_8h_a148edd59900f9867f1832230fb0d9249} 
+\index{game.h@{game.h}!AnimationQueue\_AppendPipeFill@{AnimationQueue\_AppendPipeFill}}
+\index{AnimationQueue\_AppendPipeFill@{AnimationQueue\_AppendPipeFill}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_AppendPipeFill()}{AnimationQueue\_AppendPipeFill()}}
+{\footnotesize\ttfamily bool Animation\+Queue\+\_\+\+Append\+Pipe\+Fill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}}]{pipe,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{filled\+\_\+texture,  }\item[{double}]{animation\+\_\+speed,  }\item[{\mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}}}]{direction }\end{DoxyParamCaption})}
+
+
+
+Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{pipe_8h_structPipe}{Pipe} feltöltési animációját. 
+
+A szükséges változókat beállítja és hozzáfűzi az új elemet az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez. Hiba esetén megpróbálja a töltést kihagyni. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+{\em renderer} & Az ablak rendererje (csak hiba esetén használt) \\
+\hline
+{\em pipe} & A feltöltendő \doxylink{pipe_8h_structPipe}{Pipe} pointere \\
+\hline
+{\em filled\+\_\+texture} & A \doxylink{pipe_8h_structPipe}{Pipe} feltöltött textúrája \\
+\hline
+{\em animation\+\_\+speed} & Az animáció sebessége \\
+\hline
+{\em direction} & Az animáció iránya \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a8f715d8120fdee7afc72c866645f038a}\label{game_8h_a8f715d8120fdee7afc72c866645f038a} 
+\index{game.h@{game.h}!AnimationQueue\_AppendPipeRotate@{AnimationQueue\_AppendPipeRotate}}
+\index{AnimationQueue\_AppendPipeRotate@{AnimationQueue\_AppendPipeRotate}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_AppendPipeRotate()}{AnimationQueue\_AppendPipeRotate()}}
+{\footnotesize\ttfamily bool Animation\+Queue\+\_\+\+Append\+Pipe\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}}]{pipe,  }\item[{double}]{target\+\_\+angle,  }\item[{double}]{animation\+\_\+speed }\end{DoxyParamCaption})}
+
+
+
+Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{pipe_8h_structPipe}{Pipe} forgatási animációját. 
+
+A szükséges változókat beállítja és hozzáfűzi az új elemet az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+{\em wheel} & A forgatandó \doxylink{pipe_8h_structPipe}{Pipe} pointere \\
+\hline
+{\em target\+\_\+angle} & A forgatás mértéke (fokban) \\
+\hline
+{\em animation\+\_\+speed} & Az animáció sebessége \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a27569d72a725f934f39a1f2f4b3e2963}\label{game_8h_a27569d72a725f934f39a1f2f4b3e2963} 
+\index{game.h@{game.h}!AnimationQueue\_AppendWheelRotate@{AnimationQueue\_AppendWheelRotate}}
+\index{AnimationQueue\_AppendWheelRotate@{AnimationQueue\_AppendWheelRotate}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_AppendWheelRotate()}{AnimationQueue\_AppendWheelRotate()}}
+{\footnotesize\ttfamily bool Animation\+Queue\+\_\+\+Append\+Wheel\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}}]{wheel,  }\item[{double}]{target\+\_\+angle,  }\item[{double}]{animation\+\_\+speed }\end{DoxyParamCaption})}
+
+
+
+Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{game_8h_structWheel}{Wheel} forgatási animációját. 
+
+A szükséges változókat beállítja és hozzáfűzi az új elemet az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+{\em wheel} & A forgatandó \doxylink{game_8h_structWheel}{Wheel} pointere \\
+\hline
+{\em target\+\_\+angle} & A forgatás mértéke (fokban) \\
+\hline
+{\em animation\+\_\+speed} & Az animáció sebessége \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a3aefb16a32d6f8afe029607d664f0daf}\label{game_8h_a3aefb16a32d6f8afe029607d664f0daf} 
+\index{game.h@{game.h}!AnimationQueue\_Destroy@{AnimationQueue\_Destroy}}
+\index{AnimationQueue\_Destroy@{AnimationQueue\_Destroy}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_Destroy()}{AnimationQueue\_Destroy()}}
+{\footnotesize\ttfamily void Animation\+Queue\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} láncolt listát. 
+
+A strázsáját is felszabadítja. Használat után KELL használni. 
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game_8h_af62ed55fa7c360460eba62c9a69c0276}\label{game_8h_af62ed55fa7c360460eba62c9a69c0276} 
+\index{game.h@{game.h}!AnimationQueue\_Init@{AnimationQueue\_Init}}
+\index{AnimationQueue\_Init@{AnimationQueue\_Init}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_Init()}{AnimationQueue\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*} Animation\+Queue\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Létrehozza egy \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsáját. 
+
+malloc()-\/kal foglal egy \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} struktúrát és kinullázza. Ehhez a különböző Animation\+Queue\+\_\+\+Append függvényekkel lehet hozzáfűzni elemeket. \begin{DoxyPostcond}{Utófeltétel}
+Használat után a \doxylink{game_8h_a3aefb16a32d6f8afe029607d664f0daf}{Animation\+Queue\+\_\+\+Destroy()} függvénnyel fel kell szabadítani a struktúrát. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} struktúra 
+\end{DoxyReturn}
+\Hypertarget{game_8h_af170ca51a234abe456df7b78c85b5f09}\label{game_8h_af170ca51a234abe456df7b78c85b5f09} 
+\index{game.h@{game.h}!AnimationQueue\_RemoveElement@{AnimationQueue\_RemoveElement}}
+\index{AnimationQueue\_RemoveElement@{AnimationQueue\_RemoveElement}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_RemoveElement()}{AnimationQueue\_RemoveElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*} Animation\+Queue\+\_\+\+Remove\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{element }\end{DoxyParamCaption})}
+
+
+
+A megadott elemet kitörli az Aniamtion\+Queue-\/ból és visszaadja az előtte lévő pointerét. 
+
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS a strázsát átadni. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+{\em element} & A törlendő elem pointere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+A törlendő elem előtti elem pointere 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a9870d4c405121b6667c178f650896d1c}\label{game_8h_a9870d4c405121b6667c178f650896d1c} 
+\index{game.h@{game.h}!CursorInRect@{CursorInRect}}
+\index{CursorInRect@{CursorInRect}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{CursorInRect()}{CursorInRect()}}
+{\footnotesize\ttfamily bool Cursor\+In\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}}}]{ev\+\_\+vars,  }\item[{SDL\+\_\+\+Rect}]{bound }\end{DoxyParamCaption})}
+
+
+
+Megvizsgálja, hogy a kurzor a megadott SDL\+\_\+\+Rect-\/en belül van-\/e. 
+
+Egy elemre történő kattintás vizsgálatára alkalmas. Az SDL\+\_\+\+MOUSEBUTTONDOWN és az SDL\+\_\+\+MOUSEBUTTONUP közötti változást kiszűri, azaz csak akkor ad vissza true-\/t, ha a kurzor az SDL\+\_\+\+Rect-\/en belül volt mindkét eseménykor. 
+\begin{DoxyParams}{Paraméterek}
+{\em ev\+\_\+vars} & Egy \doxylink{game_8h_structEventloopVariables}{Eventloop\+Variables} struktúra. \\
+\hline
+{\em bound} & A megvizsgálandó SDL\+\_\+\+Rect. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, ha a kurzor az SDL\+\_\+\+Rect-\/en belül volt SDL\+\_\+\+MOUSEBUTTONDOWN és SDL\+\_\+\+MOUSEBUTTONUP-\/kor, egyébként false 
+\end{DoxyReturn}
+\Hypertarget{game_8h_ac10254960c5d6975f0d32e052f3f18b3}\label{game_8h_ac10254960c5d6975f0d32e052f3f18b3} 
+\index{game.h@{game.h}!Delta\_Update@{Delta\_Update}}
+\index{Delta\_Update@{Delta\_Update}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{Delta\_Update()}{Delta\_Update()}}
+{\footnotesize\ttfamily void Delta\+\_\+\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}} \texorpdfstring{$\ast$}{*}}]{ev\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Frissíti a deltaT elemének értékét. 
+
+Két hívás között eltelt időt számítja ki az SDL\+\_\+\+Get\+Performance\+Counter() és az SDL\+\_\+\+Get\+Performance\+Frequency() segítségével. Az animációk időzítésére szolgál. 
+\begin{DoxyParams}{Paraméterek}
+{\em ev\+\_\+vars} & A változtatandó \doxylink{game_8h_structEventloopVariables}{Eventloop\+Variables} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game_8h_a9b1acba58182e72d9c5bceadc3b69570}\label{game_8h_a9b1acba58182e72d9c5bceadc3b69570} 
+\index{game.h@{game.h}!EventloopVariables\_Init@{EventloopVariables\_Init}}
+\index{EventloopVariables\_Init@{EventloopVariables\_Init}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{EventloopVariables\_Init()}{EventloopVariables\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}} Eventloop\+Variables\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Az eventloop változóinak inicializálása (kinullázása) 
+
+Az visszaadot struktúra minden eleme 0 értéket kap. Mivel nincs dinamikusan foglalt változója, ezért nem kell felszabadítani. \begin{DoxyReturn}{Visszatérési érték}
+Egy \doxylink{game_8h_structEventloopVariables}{Eventloop\+Variables} struktúra 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a93c862a10cd086d1667b0564f41cf7fd}\label{game_8h_a93c862a10cd086d1667b0564f41cf7fd} 
+\index{game.h@{game.h}!Game@{Game}}
+\index{Game@{Game}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily bool Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}}}]{game\+\_\+struct,  }\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{betoltott,  }\item[{int}]{entry\+\_\+y,  }\item[{int}]{exit\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+A játék függvénye. 
+
+Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. \begin{DoxyNote}{Megjegyzés}
+A \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()} függvény már képes meghívni, magában ne hívjuk meg, mert nem garantált a működése. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em game\+\_\+struct} & A létrehozott \doxylink{game_8h_structGameStruct}{Game\+Struct}. \\
+\hline
+{\em betoltott} & Ha betöltés volt a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()}-\/ben választva, akkor a betöltött \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid}. \\
+\hline
+{\em entry\+\_\+y} & Ha betöltés volt a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()}-\/ben választva, akkor a betöltött \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} bejáratánk sora. \\
+\hline
+{\em exit\+\_\+y} & Ha betöltés volt a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()}-\/ben választva, akkor a betöltött \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} kijáratának sora. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, ha a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()}-\/be lépünk vissza, false, ha új játék kezdődik, kilépés történt, illetve néhány súlyosabb hiba esetén 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a387e11d6576bc1b42e1dae0eb31d8a81}\label{game_8h_a387e11d6576bc1b42e1dae0eb31d8a81} 
+\index{game.h@{game.h}!GameStruct\_Create@{GameStruct\_Create}}
+\index{GameStruct\_Create@{GameStruct\_Create}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{GameStruct\_Create()}{GameStruct\_Create()}}
+{\footnotesize\ttfamily bool Game\+Struct\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} \texorpdfstring{$\ast$}{*}}]{game\+\_\+struct }\end{DoxyParamCaption})}
+
+
+
+\doxylink{game_8h_structGameStruct}{Game\+Struct} létrehozása. 
+
+Meghívja a \doxylink{game_8h_structGameStruct}{Game\+Struct} elemeinek létrehozó függvényeit (lásd\+: \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}). A \doxylink{SDL__local_8h_structWindow}{Window} létrehozásához a DEFAULT\+\_\+\+WINDOW\+\_\+\+WIDTH és DEFAULT\+\_\+\+WINDOW\+\_\+\+HEIGHT konstansokat használja. Átadni egy \doxylink{game_8h_aa04da33e6daf2c7ed058efde2aea7246}{Game\+Struct\+\_\+\+Init()}-\/tel inicializált Game\+Struct-\/ot ajánlott. A hibákat a struktok létrehozó függvényei a konzolra kiírják, ennek csak a visszatérési értéke jelzi. Hiba esetén nem ajánlott a struktúra használata. \begin{DoxyPostcond}{Utófeltétel}
+Használat után a \doxylink{game_8h_a99fd927905eb43053a45dc0827478680}{Game\+Struct\+\_\+\+Destroy()} függvénnyel fel kell szabadítani a struktúrát. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy már létrehozott Game\+Struct-\/ot átadni. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em game\+\_\+struct} & Egy inicializált \doxylink{game_8h_structGameStruct}{Game\+Struct} pointere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a99fd927905eb43053a45dc0827478680}\label{game_8h_a99fd927905eb43053a45dc0827478680} 
+\index{game.h@{game.h}!GameStruct\_Destroy@{GameStruct\_Destroy}}
+\index{GameStruct\_Destroy@{GameStruct\_Destroy}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{GameStruct\_Destroy()}{GameStruct\_Destroy()}}
+{\footnotesize\ttfamily void Game\+Struct\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} \texorpdfstring{$\ast$}{*}}]{game\+\_\+struct }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy Game\+Struct-\/ot. 
+
+A \doxylink{game_8h_structGameStruct}{Game\+Struct} elemeit szabadítja fel a saját függvényeikkel. (lásd\+: \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}) 
+\begin{DoxyParams}{Paraméterek}
+{\em game\+\_\+struct} & A felszabadítandó \doxylink{game_8h_structGameStruct}{Game\+Struct} pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game_8h_aa04da33e6daf2c7ed058efde2aea7246}\label{game_8h_aa04da33e6daf2c7ed058efde2aea7246} 
+\index{game.h@{game.h}!GameStruct\_Init@{GameStruct\_Init}}
+\index{GameStruct\_Init@{GameStruct\_Init}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{GameStruct\_Init()}{GameStruct\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} Game\+Struct\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{game_8h_structGameStruct}{Game\+Struct} inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{game_8h_structGameStruct}{Game\+Struct} 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}\label{game_8h_a1b99b54c59508d3d3141e7b49f56ca64} 
+\index{game.h@{game.h}!Menu@{Menu}}
+\index{Menu@{Menu}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily bool Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}}}]{game\+\_\+struct }\end{DoxyParamCaption})}
+
+
+
+A játékmenü függvénye. 
+
+Az SDL és a \doxylink{game_8h_structGameStruct}{Game\+Struct} inicializálása/létrehozása után meg lehet hívni. Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. 
+\begin{DoxyParams}{Paraméterek}
+{\em game\+\_\+struct} & A létrehozott \doxylink{game_8h_structGameStruct}{Game\+Struct}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, súlyos hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a17fc09a1ba3479c30e3f8bdbbb38ec95}\label{game_8h_a17fc09a1ba3479c30e3f8bdbbb38ec95} 
+\index{game.h@{game.h}!Wheel\_Create@{Wheel\_Create}}
+\index{Wheel\_Create@{Wheel\_Create}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{Wheel\_Create()}{Wheel\_Create()}}
+{\footnotesize\ttfamily bool Wheel\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}}]{wheel,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{SDL\+\_\+\+Rect}]{location,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{wheel\+\_\+texture }\end{DoxyParamCaption})}
+
+
+
+\doxylink{game_8h_structWheel}{Wheel} struktúra létrehozása. 
+
+Véletlenszerűen felvesz egy szöget és lerendereli a Layer-\/re a csapot. A hibákat a struktok létrehozó függvényei a konzolra kiírják, ennek csak a visszatérési értéke jelzi. Hiba esetén nem ajánlott a struktúra használata. \begin{DoxyPostcond}{Utófeltétel}
+Használat után a \doxylink{game_8h_a1fc039eb035e3a5b55561e5b14184399}{Wheel\+\_\+\+Destroy()} függvénnyel fel kell szabadítani a struktúrát. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy már létrehozott \doxylink{game_8h_structWheel}{Wheel} struktúrát átadni. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em wheel} & Egy inicializált \doxylink{game_8h_structWheel}{Wheel} struktúra pointere. \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra. \\
+\hline
+{\em location} & A csap szülőjéhez relatív helye \\
+\hline
+{\em wheel\+\_\+texture} & A csap textúrája. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{game_8h_a1fc039eb035e3a5b55561e5b14184399}\label{game_8h_a1fc039eb035e3a5b55561e5b14184399} 
+\index{game.h@{game.h}!Wheel\_Destroy@{Wheel\_Destroy}}
+\index{Wheel\_Destroy@{Wheel\_Destroy}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{Wheel\_Destroy()}{Wheel\_Destroy()}}
+{\footnotesize\ttfamily void Wheel\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}}]{wheel }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{game_8h_structWheel}{Wheel} struktúrát. 
+
+A \doxylink{game_8h_structWheel}{Wheel} Layer-\/ét szabadítja fel a saját függvényével. (lásd\+: \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}) 
+\begin{DoxyParams}{Paraméterek}
+{\em wheel} & A felszabadítandó \doxylink{game_8h_structWheel}{Wheel} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game_8h_a87736d507ec807ee7d6860ae5ce0d5e0}\label{game_8h_a87736d507ec807ee7d6860ae5ce0d5e0} 
+\index{game.h@{game.h}!Wheel\_Init@{Wheel\_Init}}
+\index{Wheel\_Init@{Wheel\_Init}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{Wheel\_Init()}{Wheel\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_structWheel}{Wheel}} Wheel\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+A \doxylink{game_8h_structWheel}{Wheel} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{game_8h_structWheel}{Wheel} struktúra 
+\end{DoxyReturn}
+\Hypertarget{game_8h_aea2f6e7c50ea2fadc84493a0c101dede}\label{game_8h_aea2f6e7c50ea2fadc84493a0c101dede} 
+\index{game.h@{game.h}!Wheel\_Update@{Wheel\_Update}}
+\index{Wheel\_Update@{Wheel\_Update}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{Wheel\_Update()}{Wheel\_Update()}}
+{\footnotesize\ttfamily bool Wheel\+\_\+\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structWheel}{Wheel}}}]{wheel,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{wheel\+\_\+texture }\end{DoxyParamCaption})}
+
+
+
+Frissíti egy \doxylink{game_8h_structWheel}{Wheel} Layer-\/ét. 
+
+A \doxylink{game_8h_structWheel}{Wheel} Layer-\/ét frissíti (újrarendereli) az aktuális értékei szerint. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em wheel} & A frissítendő \doxylink{game_8h_structWheel}{Wheel} \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+{\em pipe\+\_\+texture} & A csöveket tartalmazó SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{game_8h_aa1b05c35e760e1a2a04bbf56bfa8222c}\label{game_8h_aa1b05c35e760e1a2a04bbf56bfa8222c} 
+\index{game.h@{game.h}!Win@{Win}}
+\index{Win@{Win}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{Win()}{Win()}}
+{\footnotesize\ttfamily bool Win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}}}]{game\+\_\+struct,  }\item[{\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}}}]{state,  }\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{copy,  }\item[{int}]{entry\+\_\+y,  }\item[{int}]{exit\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+A nyert kép függvénye. 
+
+Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. \begin{DoxyNote}{Megjegyzés}
+A \doxylink{game_8h_a93c862a10cd086d1667b0564f41cf7fd}{Game()} függvény már képes meghívni, magában ne hívjuk meg, mert nem garantált a működése. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em game\+\_\+struct} & A létrehozott \doxylink{game_8h_structGameStruct}{Game\+Struct}. \\
+\hline
+{\em state} & A \doxylink{game_8h_a93c862a10cd086d1667b0564f41cf7fd}{Game()} függvény aktuális renderelt képe. \\
+\hline
+{\em copy} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} pálya betöltéskori másolata. \\
+\hline
+{\em entry\+\_\+y} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} bejáratának sora. \\
+\hline
+{\em exit\+\_\+y} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} kijáratának sora. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, ha a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()}-\/be lépünk vissza, false, ha új játék kezdődik, kilépés történt, illetve néhány súlyosabb hiba esetén 
+\end{DoxyReturn}

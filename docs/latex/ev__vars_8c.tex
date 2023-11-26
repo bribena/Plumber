@@ -1,0 +1,74 @@
+\doxysection{lib/src/ev\+\_\+vars.c fájlreferencia}
+\hypertarget{ev__vars_8c}{}\label{ev__vars_8c}\index{lib/src/ev\_vars.c@{lib/src/ev\_vars.c}}
+
+
+A \doxylink{game_8h}{game.\+h}-\/ban deklarált \doxylink{game_8h_structEventloopVariables}{Eventloop\+Variables} struktúrához és az eventloophoz kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}} \mbox{\hyperlink{ev__vars_8c_a9b1acba58182e72d9c5bceadc3b69570}{Eventloop\+Variables\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Az eventloop változóinak inicializálása (kinullázása) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ev__vars_8c_ac10254960c5d6975f0d32e052f3f18b3}{Delta\+\_\+\+Update}} (\mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}} \texorpdfstring{$\ast$}{*}ev\+\_\+vars)
+\begin{DoxyCompactList}\small\item\em Frissíti a deltaT elemének értékét. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{ev__vars_8c_a9870d4c405121b6667c178f650896d1c}{Cursor\+In\+Rect}} (\mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}} ev\+\_\+vars, SDL\+\_\+\+Rect bound)
+\begin{DoxyCompactList}\small\item\em Megvizsgálja, hogy a kurzor a megadott SDL\+\_\+\+Rect-\/en belül van-\/e. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A \doxylink{game_8h}{game.\+h}-\/ban deklarált \doxylink{game_8h_structEventloopVariables}{Eventloop\+Variables} struktúrához és az eventloophoz kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{ev__vars_8c_a9870d4c405121b6667c178f650896d1c}\label{ev__vars_8c_a9870d4c405121b6667c178f650896d1c} 
+\index{ev\_vars.c@{ev\_vars.c}!CursorInRect@{CursorInRect}}
+\index{CursorInRect@{CursorInRect}!ev\_vars.c@{ev\_vars.c}}
+\doxysubsubsection{\texorpdfstring{CursorInRect()}{CursorInRect()}}
+{\footnotesize\ttfamily bool Cursor\+In\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}}}]{ev\+\_\+vars,  }\item[{SDL\+\_\+\+Rect}]{bound }\end{DoxyParamCaption})}
+
+
+
+Megvizsgálja, hogy a kurzor a megadott SDL\+\_\+\+Rect-\/en belül van-\/e. 
+
+Egy elemre történő kattintás vizsgálatára alkalmas. Az SDL\+\_\+\+MOUSEBUTTONDOWN és az SDL\+\_\+\+MOUSEBUTTONUP közötti változást kiszűri, azaz csak akkor ad vissza true-\/t, ha a kurzor az SDL\+\_\+\+Rect-\/en belül volt mindkét eseménykor. 
+\begin{DoxyParams}{Paraméterek}
+{\em ev\+\_\+vars} & Egy \doxylink{game_8h_structEventloopVariables}{Eventloop\+Variables} struktúra. \\
+\hline
+{\em bound} & A megvizsgálandó SDL\+\_\+\+Rect. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, ha a kurzor az SDL\+\_\+\+Rect-\/en belül volt SDL\+\_\+\+MOUSEBUTTONDOWN és SDL\+\_\+\+MOUSEBUTTONUP-\/kor, egyébként false 
+\end{DoxyReturn}
+\Hypertarget{ev__vars_8c_ac10254960c5d6975f0d32e052f3f18b3}\label{ev__vars_8c_ac10254960c5d6975f0d32e052f3f18b3} 
+\index{ev\_vars.c@{ev\_vars.c}!Delta\_Update@{Delta\_Update}}
+\index{Delta\_Update@{Delta\_Update}!ev\_vars.c@{ev\_vars.c}}
+\doxysubsubsection{\texorpdfstring{Delta\_Update()}{Delta\_Update()}}
+{\footnotesize\ttfamily void Delta\+\_\+\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}} \texorpdfstring{$\ast$}{*}}]{ev\+\_\+vars }\end{DoxyParamCaption})}
+
+
+
+Frissíti a deltaT elemének értékét. 
+
+Két hívás között eltelt időt számítja ki az SDL\+\_\+\+Get\+Performance\+Counter() és az SDL\+\_\+\+Get\+Performance\+Frequency() segítségével. Az animációk időzítésére szolgál. 
+\begin{DoxyParams}{Paraméterek}
+{\em ev\+\_\+vars} & A változtatandó \doxylink{game_8h_structEventloopVariables}{Eventloop\+Variables} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{ev__vars_8c_a9b1acba58182e72d9c5bceadc3b69570}\label{ev__vars_8c_a9b1acba58182e72d9c5bceadc3b69570} 
+\index{ev\_vars.c@{ev\_vars.c}!EventloopVariables\_Init@{EventloopVariables\_Init}}
+\index{EventloopVariables\_Init@{EventloopVariables\_Init}!ev\_vars.c@{ev\_vars.c}}
+\doxysubsubsection{\texorpdfstring{EventloopVariables\_Init()}{EventloopVariables\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_structEventloopVariables}{Eventloop\+Variables}} Eventloop\+Variables\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Az eventloop változóinak inicializálása (kinullázása) 
+
+Az visszaadot struktúra minden eleme 0 értéket kap. Mivel nincs dinamikusan foglalt változója, ezért nem kell felszabadítani. \begin{DoxyReturn}{Visszatérési érték}
+Egy \doxylink{game_8h_structEventloopVariables}{Eventloop\+Variables} struktúra 
+\end{DoxyReturn}

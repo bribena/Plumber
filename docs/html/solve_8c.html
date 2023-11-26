@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vízvezetékszerelő: lib/src/solve.c fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vízvezetékszerelő
+   </div>
+   <div id="projectbrief">Egy vízvezetékszerelő játék, C-ben írva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Keresés');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_a065c5f60305fee3569f887679366939.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Függvények</a>  </div>
+  <div class="headertitle"><div class="title">solve.c fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A <a class="el" href="pipe_8h.html" title="A játékban használt csövekhez kapcsolódó függvényeket és adatszerkezeteket tartalmazza a fájl.">pipe.h</a>-ban deklarált <a class="el" href="pipe_8h.html#structSolvedPipeGrid" title="Egy PipeGrid megoldását tároló láncolt lista.">SolvedPipeGrid</a> struktúrához és a <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> megoldásához kapcsolódó függvények kódjait tartalmazza a fájl.  
+<a href="#details">Részletek...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="pipe_8h_source.html">pipe.h</a>&quot;</code><br />
+<code>#include &quot;debugmalloc.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:a0ea6489ef8c5d5a47e52c0d3c8073423" id="r_a0ea6489ef8c5d5a47e52c0d3c8073423"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ea6489ef8c5d5a47e52c0d3c8073423">PipeGrid_Solve</a> (<a class="el" href="pipe_8h.html#structPipeGrid">PipeGrid</a> pipegrid, SDL_Point entry, SDL_Point exit)</td></tr>
+<tr class="memdesc:a0ea6489ef8c5d5a47e52c0d3c8073423"><td class="mdescLeft">&#160;</td><td class="mdescRight">Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza.  <br /></td></tr>
+<tr class="separator:a0ea6489ef8c5d5a47e52c0d3c8073423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29554057a457d47ee2015a6d5b9d9cef" id="r_a29554057a457d47ee2015a6d5b9d9cef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29554057a457d47ee2015a6d5b9d9cef">SolvedPipeGrid_RemoveFirst</a> (<a class="el" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> *start)</td></tr>
+<tr class="memdesc:a29554057a457d47ee2015a6d5b9d9cef"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="pipe_8h.html#structSolvedPipeGrid" title="Egy PipeGrid megoldását tároló láncolt lista.">SolvedPipeGrid</a> láncolt lista első elemét felszabadítja és visszaadja a következő elem pointerét.  <br /></td></tr>
+<tr class="separator:a29554057a457d47ee2015a6d5b9d9cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b9f26edab225f3523287fc05a1eedf7" id="r_a5b9f26edab225f3523287fc05a1eedf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b9f26edab225f3523287fc05a1eedf7">SolvedPipeGrid_Destroy</a> (<a class="el" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> *start)</td></tr>
+<tr class="memdesc:a5b9f26edab225f3523287fc05a1eedf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Felszabadít egy <a class="el" href="pipe_8h.html#structSolvedPipeGrid" title="Egy PipeGrid megoldását tároló láncolt lista.">SolvedPipeGrid</a> láncolt listát.  <br /></td></tr>
+<tr class="separator:a5b9f26edab225f3523287fc05a1eedf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p>A <a class="el" href="pipe_8h.html" title="A játékban használt csövekhez kapcsolódó függvényeket és adatszerkezeteket tartalmazza a fájl.">pipe.h</a>-ban deklarált <a class="el" href="pipe_8h.html#structSolvedPipeGrid" title="Egy PipeGrid megoldását tároló láncolt lista.">SolvedPipeGrid</a> struktúrához és a <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> megoldásához kapcsolódó függvények kódjait tartalmazza a fájl. </p>
+</div><h2 class="groupheader">Függvények dokumentációja</h2>
+<a id="a0ea6489ef8c5d5a47e52c0d3c8073423" name="a0ea6489ef8c5d5a47e52c0d3c8073423"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea6489ef8c5d5a47e52c0d3c8073423">&#9670;&#160;</a></span>PipeGrid_Solve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> * PipeGrid_Solve </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pipe_8h.html#structPipeGrid">PipeGrid</a>&#160;</td>
+          <td class="paramname"><em>pipegrid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Point&#160;</td>
+          <td class="paramname"><em>entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Point&#160;</td>
+          <td class="paramname"><em>exit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza. </p>
+<p>Át kell adni a <a class="el" href="pipe_8h.html#a4bcc09f533a5dbe43a9a24dc9e1a8d4d" title="Legenerál egy PipeGrid-et.">PipeGrid_GenerateGrid()</a>-ben használt belépési és kilépési pontokat, egyébként nem fogja jól megoldani. </p><dl class="section post"><dt>Utófeltétel</dt><dd>Mivel egy láncolt listát hoz létre a függvény, használat után a <a class="el" href="pipe_8h.html#a5b9f26edab225f3523287fc05a1eedf7" title="Felszabadít egy SolvedPipeGrid láncolt listát.">SolvedPipeGrid_Destroy()</a>-al kell felszabadítani. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pipegrid</td><td>A megoldandó <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> </td></tr>
+    <tr><td class="paramname">entry</td><td>A belépési pont (x: oszlopindex, y: sorindex) </td></tr>
+    <tr><td class="paramname">exit</td><td>A kilépési pont (x: oszlopindex, y: sorindex) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>A megoldás láncolt listájának első eleme, hiba vagy megoldás hiánya esetén NULL. </dd></dl>
+
+</div>
+</div>
+<a id="a5b9f26edab225f3523287fc05a1eedf7" name="a5b9f26edab225f3523287fc05a1eedf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b9f26edab225f3523287fc05a1eedf7">&#9670;&#160;</a></span>SolvedPipeGrid_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SolvedPipeGrid_Destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> *&#160;</td>
+          <td class="paramname"><em>start</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Felszabadít egy <a class="el" href="pipe_8h.html#structSolvedPipeGrid" title="Egy PipeGrid megoldását tároló láncolt lista.">SolvedPipeGrid</a> láncolt listát. </p>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>A láncolt lista első elemére mutató pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a29554057a457d47ee2015a6d5b9d9cef" name="a29554057a457d47ee2015a6d5b9d9cef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29554057a457d47ee2015a6d5b9d9cef">&#9670;&#160;</a></span>SolvedPipeGrid_RemoveFirst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> * SolvedPipeGrid_RemoveFirst </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> *&#160;</td>
+          <td class="paramname"><em>start</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A <a class="el" href="pipe_8h.html#structSolvedPipeGrid" title="Egy PipeGrid megoldását tároló láncolt lista.">SolvedPipeGrid</a> láncolt lista első elemét felszabadítja és visszaadja a következő elem pointerét. </p>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>A láncolt lista első elemére mutató pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>A következő elemre mutató pointer (NULL, ha nincs több elem) </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

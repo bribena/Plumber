@@ -1,0 +1,78 @@
+\doxysection{lib/src/fonts.c fájlreferencia}
+\hypertarget{fonts_8c}{}\label{fonts_8c}\index{lib/src/fonts.c@{lib/src/fonts.c}}
+
+
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban deklarált \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}SDL\+\_\+local.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} \mbox{\hyperlink{fonts_8c_a9e077512e4445cd21a6df83d166aa617}{Fonts\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{SDL__local_8h_structFonts}{Fonts} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{fonts_8c_a373aed1b9a2286a2760a6149623ab10c}{Fonts\+\_\+\+Load}} (\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} \texorpdfstring{$\ast$}{*}fonts)
+\begin{DoxyCompactList}\small\item\em Feltölt egy inicializált \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fonts_8c_a667bccf00d3c880cdcfcf9a940389b8d}{Fonts\+\_\+\+Destroy}} (\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} \texorpdfstring{$\ast$}{*}fonts)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban deklarált \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{fonts_8c_a667bccf00d3c880cdcfcf9a940389b8d}\label{fonts_8c_a667bccf00d3c880cdcfcf9a940389b8d} 
+\index{fonts.c@{fonts.c}!Fonts\_Destroy@{Fonts\_Destroy}}
+\index{Fonts\_Destroy@{Fonts\_Destroy}!fonts.c@{fonts.c}}
+\doxysubsubsection{\texorpdfstring{Fonts\_Destroy()}{Fonts\_Destroy()}}
+{\footnotesize\ttfamily void Fonts\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} \texorpdfstring{$\ast$}{*}}]{fonts }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát. 
+
+Az átadott \doxylink{SDL__local_8h_a373aed1b9a2286a2760a6149623ab10c}{Fonts\+\_\+\+Load()} által létrehozott struktúrát szabadítja fel. 
+\begin{DoxyParams}{Paraméterek}
+{\em fonts} & A felszabadítandó \doxylink{SDL__local_8h_structFonts}{Fonts} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{fonts_8c_a9e077512e4445cd21a6df83d166aa617}\label{fonts_8c_a9e077512e4445cd21a6df83d166aa617} 
+\index{fonts.c@{fonts.c}!Fonts\_Init@{Fonts\_Init}}
+\index{Fonts\_Init@{Fonts\_Init}!fonts.c@{fonts.c}}
+\doxysubsubsection{\texorpdfstring{Fonts\_Init()}{Fonts\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} Fonts\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{SDL__local_8h_structFonts}{Fonts} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{SDL__local_8h_structFonts}{Fonts} struktúra. 
+\end{DoxyReturn}
+\Hypertarget{fonts_8c_a373aed1b9a2286a2760a6149623ab10c}\label{fonts_8c_a373aed1b9a2286a2760a6149623ab10c} 
+\index{fonts.c@{fonts.c}!Fonts\_Load@{Fonts\_Load}}
+\index{Fonts\_Load@{Fonts\_Load}!fonts.c@{fonts.c}}
+\doxysubsubsection{\texorpdfstring{Fonts\_Load()}{Fonts\_Load()}}
+{\footnotesize\ttfamily bool Fonts\+\_\+\+Load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structFonts}{Fonts}} \texorpdfstring{$\ast$}{*}}]{fonts }\end{DoxyParamCaption})}
+
+
+
+Feltölt egy inicializált \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát. 
+
+Betölti a betűtípusokat az assets/fonts mappából a megfelelő változókba. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. A betöltött betűtípusokat a \doxylink{SDL__local_8h_aba03cebb4e558f46025ee6aa429c4da9}{Layer\+\_\+\+Render\+Font()} függvénnyel lehet használni. \begin{DoxyPostcond}{Utófeltétel}
+Az \doxylink{SDL__local_8h_a373aed1b9a2286a2760a6149623ab10c}{Fonts\+\_\+\+Load()} által létrehozott \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrákat használat után az \doxylink{SDL__local_8h_a667bccf00d3c880cdcfcf9a940389b8d}{Fonts\+\_\+\+Destroy()}-\/al kell felszabadítani. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+A \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát csak egyszer kell létrohozni, de ha valamiért mégegyszer kell az \doxylink{SDL__local_8h_a373aed1b9a2286a2760a6149623ab10c}{Fonts\+\_\+\+Load()}, TILOS egy, már létrehozott, \doxylink{SDL__local_8h_structFonts}{Fonts} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em fonts} & Egy inicializált \doxylink{SDL__local_8h_structFonts}{Fonts} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}

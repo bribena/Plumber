@@ -1,0 +1,84 @@
+\doxysection{lib/src/solve.c fájlreferencia}
+\hypertarget{solve_8c}{}\label{solve_8c}\index{lib/src/solve.c@{lib/src/solve.c}}
+
+
+A \doxylink{pipe_8h}{pipe.\+h}-\/ban deklarált \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid} struktúrához és a \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} megoldásához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}pipe.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{solve_8c_a0ea6489ef8c5d5a47e52c0d3c8073423}{Pipe\+Grid\+\_\+\+Solve}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} pipegrid, SDL\+\_\+\+Point entry, SDL\+\_\+\+Point exit)
+\begin{DoxyCompactList}\small\item\em Megold egy Pipe\+Grid-\/et és a megoldását egy Solved\+Pipe\+Grid-\/ben adja vissza. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{solve_8c_a29554057a457d47ee2015a6d5b9d9cef}{Solved\+Pipe\+Grid\+\_\+\+Remove\+First}} (\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*}start)
+\begin{DoxyCompactList}\small\item\em A \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid} láncolt lista első elemét felszabadítja és visszaadja a következő elem pointerét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{solve_8c_a5b9f26edab225f3523287fc05a1eedf7}{Solved\+Pipe\+Grid\+\_\+\+Destroy}} (\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*}start)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid} láncolt listát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A \doxylink{pipe_8h}{pipe.\+h}-\/ban deklarált \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid} struktúrához és a \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} megoldásához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{solve_8c_a0ea6489ef8c5d5a47e52c0d3c8073423}\label{solve_8c_a0ea6489ef8c5d5a47e52c0d3c8073423} 
+\index{solve.c@{solve.c}!PipeGrid\_Solve@{PipeGrid\_Solve}}
+\index{PipeGrid\_Solve@{PipeGrid\_Solve}!solve.c@{solve.c}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Solve()}{PipeGrid\_Solve()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*} Pipe\+Grid\+\_\+\+Solve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{pipegrid,  }\item[{SDL\+\_\+\+Point}]{entry,  }\item[{SDL\+\_\+\+Point}]{exit }\end{DoxyParamCaption})}
+
+
+
+Megold egy Pipe\+Grid-\/et és a megoldását egy Solved\+Pipe\+Grid-\/ben adja vissza. 
+
+Át kell adni a \doxylink{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}{Pipe\+Grid\+\_\+\+Generate\+Grid()}-\/ben használt belépési és kilépési pontokat, egyébként nem fogja jól megoldani. \begin{DoxyPostcond}{Utófeltétel}
+Mivel egy láncolt listát hoz létre a függvény, használat után a \doxylink{pipe_8h_a5b9f26edab225f3523287fc05a1eedf7}{Solved\+Pipe\+Grid\+\_\+\+Destroy()}-\/al kell felszabadítani. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & A megoldandó \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} \\
+\hline
+{\em entry} & A belépési pont (x\+: oszlopindex, y\+: sorindex) \\
+\hline
+{\em exit} & A kilépési pont (x\+: oszlopindex, y\+: sorindex) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+A megoldás láncolt listájának első eleme, hiba vagy megoldás hiánya esetén NULL. 
+\end{DoxyReturn}
+\Hypertarget{solve_8c_a5b9f26edab225f3523287fc05a1eedf7}\label{solve_8c_a5b9f26edab225f3523287fc05a1eedf7} 
+\index{solve.c@{solve.c}!SolvedPipeGrid\_Destroy@{SolvedPipeGrid\_Destroy}}
+\index{SolvedPipeGrid\_Destroy@{SolvedPipeGrid\_Destroy}!solve.c@{solve.c}}
+\doxysubsubsection{\texorpdfstring{SolvedPipeGrid\_Destroy()}{SolvedPipeGrid\_Destroy()}}
+{\footnotesize\ttfamily void Solved\+Pipe\+Grid\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{start }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid} láncolt listát. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em start} & A láncolt lista első elemére mutató pointer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{solve_8c_a29554057a457d47ee2015a6d5b9d9cef}\label{solve_8c_a29554057a457d47ee2015a6d5b9d9cef} 
+\index{solve.c@{solve.c}!SolvedPipeGrid\_RemoveFirst@{SolvedPipeGrid\_RemoveFirst}}
+\index{SolvedPipeGrid\_RemoveFirst@{SolvedPipeGrid\_RemoveFirst}!solve.c@{solve.c}}
+\doxysubsubsection{\texorpdfstring{SolvedPipeGrid\_RemoveFirst()}{SolvedPipeGrid\_RemoveFirst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*} Solved\+Pipe\+Grid\+\_\+\+Remove\+First (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{start }\end{DoxyParamCaption})}
+
+
+
+A \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid} láncolt lista első elemét felszabadítja és visszaadja a következő elem pointerét. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em start} & A láncolt lista első elemére mutató pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+A következő elemre mutató pointer (NULL, ha nincs több elem) 
+\end{DoxyReturn}

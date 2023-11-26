@@ -1,0 +1,200 @@
+\doxysection{lib/src/pipegrid.c fájlreferencia}
+\hypertarget{pipegrid_8c}{}\label{pipegrid_8c}\index{lib/src/pipegrid.c@{lib/src/pipegrid.c}}
+
+
+A \doxylink{pipe_8h}{pipe.\+h}-\/ban deklarált \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}pipe.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \mbox{\hyperlink{pipegrid_8c_a0d9859a40de0cd53258fcb88e8bbcaff}{Pipe\+Grid\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipegrid_8c_a374a382292ea4ef400156d3e1960b2d7}{Pipe\+Grid\+\_\+\+Create}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}pipegrid, int x, int y)
+\begin{DoxyCompactList}\small\item\em \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúra létrehozása. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipegrid_8c_aeaa7e81af912deb3e9782cb9523321b3}{Pipe\+Grid\+\_\+\+Destroy}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}pipegrid)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy Pipe\+Grid-\/et. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \mbox{\hyperlink{pipegrid_8c_a65ed505ed2d56a3aeda3aed0a46f02d1}{Pipe\+Grid\+\_\+\+Create\+Copy}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} source)
+\begin{DoxyCompactList}\small\item\em Lemásol egy Pipe\+Grid-\/et és visszaadja a másolatot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipegrid_8c_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}{Pipe\+Grid\+\_\+\+Generate\+Grid}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}pipegrid, SDL\+\_\+\+Point entry, SDL\+\_\+\+Point exit)
+\begin{DoxyCompactList}\small\item\em Legenerál egy Pipe\+Grid-\/et. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipegrid_8c_a1e4a8bc5269d22c3e6fec9acd8bf3e83}{Pipe\+Grid\+\_\+\+Shuffle}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} pipegrid)
+\begin{DoxyCompactList}\small\item\em Összekever egy Pipe\+Grid-\/et. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipegrid_8c_ab1aff8a4b7cc5465aede4b2e6bbc1463}{Pipe\+Grid\+\_\+\+Feldolgoz}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} pipegrid, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}pipe\+\_\+texture, SDL\+\_\+\+Rect base\+\_\+location)
+\begin{DoxyCompactList}\small\item\em Egy \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} Pipe-\/jainak hiányzó értékeit feltölti. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipegrid_8c_af129c9d4c21a5a3ceea790a85f5d2305}{Pipe\+Grid\+\_\+\+Render}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} pipegrid, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window)
+\begin{DoxyCompactList}\small\item\em Lerenderel egy feldolgozott Pipe\+Grid-\/et az aktuális Render\+Target-\/re. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A \doxylink{pipe_8h}{pipe.\+h}-\/ban deklarált \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{pipegrid_8c_a374a382292ea4ef400156d3e1960b2d7}\label{pipegrid_8c_a374a382292ea4ef400156d3e1960b2d7} 
+\index{pipegrid.c@{pipegrid.c}!PipeGrid\_Create@{PipeGrid\_Create}}
+\index{PipeGrid\_Create@{PipeGrid\_Create}!pipegrid.c@{pipegrid.c}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Create()}{PipeGrid\_Create()}}
+{\footnotesize\ttfamily bool Pipe\+Grid\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{pipegrid,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+\doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúra létrehozása. 
+
+Létrehoz egy Pipe\+Grid-\/et a megadott szélességgel és magassággal. A létrejövő mátrix elemeit a \doxylink{pipe_8h_af5c71e4298c33eeb1eff0a9d4b9df420}{Pipe\+\_\+\+Init()}-\/tel hozza létre. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. Hiba esetén a struktúra mátrixa NULL. \begin{DoxyPostcond}{Utófeltétel}
+Mivel létrehoz egy \doxylink{pipe_8h_structPipe}{Pipe} mátrixot, használat után a Pipe\+Grid-\/ot fel kell szabadítani a \doxylink{pipe_8h_aeaa7e81af912deb3e9782cb9523321b3}{Pipe\+Grid\+\_\+\+Destroy()} függvénnyel. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy, már létrehozott, \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & A létrehozandó \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} pointere \\
+\hline
+{\em x} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} szélessége \\
+\hline
+{\em y} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} magassága \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipegrid_8c_a65ed505ed2d56a3aeda3aed0a46f02d1}\label{pipegrid_8c_a65ed505ed2d56a3aeda3aed0a46f02d1} 
+\index{pipegrid.c@{pipegrid.c}!PipeGrid\_CreateCopy@{PipeGrid\_CreateCopy}}
+\index{PipeGrid\_CreateCopy@{PipeGrid\_CreateCopy}!pipegrid.c@{pipegrid.c}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_CreateCopy()}{PipeGrid\_CreateCopy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} Pipe\+Grid\+\_\+\+Create\+Copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{source }\end{DoxyParamCaption})}
+
+
+
+Lemásol egy Pipe\+Grid-\/et és visszaadja a másolatot. 
+
+Csak a Pipe-\/ok Elem-\/ét másolja le, ezért ha használni akarjuk a másolatot, akkor először fel kell dolgozni a \doxylink{pipe_8h_ab1aff8a4b7cc5465aede4b2e6bbc1463}{Pipe\+Grid\+\_\+\+Feldolgoz()} függvénnyel. \begin{DoxyPostcond}{Utófeltétel}
+A másolatot a \doxylink{pipe_8h_a374a382292ea4ef400156d3e1960b2d7}{Pipe\+Grid\+\_\+\+Create()}-\/tel hozza létre, így fel kell szabadítani használat után a \doxylink{pipe_8h_aeaa7e81af912deb3e9782cb9523321b3}{Pipe\+Grid\+\_\+\+Destroy()}-\/el. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Paraméterek}
+{\em source} & A forrás \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+Egy új \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid}, hiba esetén ennek a mátrixa NULL 
+\end{DoxyReturn}
+\Hypertarget{pipegrid_8c_aeaa7e81af912deb3e9782cb9523321b3}\label{pipegrid_8c_aeaa7e81af912deb3e9782cb9523321b3} 
+\index{pipegrid.c@{pipegrid.c}!PipeGrid\_Destroy@{PipeGrid\_Destroy}}
+\index{PipeGrid\_Destroy@{PipeGrid\_Destroy}!pipegrid.c@{pipegrid.c}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Destroy()}{PipeGrid\_Destroy()}}
+{\footnotesize\ttfamily void Pipe\+Grid\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{pipegrid }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy Pipe\+Grid-\/et. 
+
+A Pipe\+Grid-\/ben lévő Pipe-\/okat is felszabadítja. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & A felaszabadítandó \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} pointere \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipegrid_8c_ab1aff8a4b7cc5465aede4b2e6bbc1463}\label{pipegrid_8c_ab1aff8a4b7cc5465aede4b2e6bbc1463} 
+\index{pipegrid.c@{pipegrid.c}!PipeGrid\_Feldolgoz@{PipeGrid\_Feldolgoz}}
+\index{PipeGrid\_Feldolgoz@{PipeGrid\_Feldolgoz}!pipegrid.c@{pipegrid.c}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Feldolgoz()}{PipeGrid\_Feldolgoz()}}
+{\footnotesize\ttfamily bool Pipe\+Grid\+\_\+\+Feldolgoz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{pipegrid,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{pipe\+\_\+texture,  }\item[{SDL\+\_\+\+Rect}]{base\+\_\+location }\end{DoxyParamCaption})}
+
+
+
+Egy \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} Pipe-\/jainak hiányzó értékeit feltölti. 
+
+A Pipe\+Grid-\/ben található Pipe-\/ok Elem-\/ei alapján feltölti a Pipe-\/ok hiányzó értékeit a \doxylink{pipe_8h_a44323a670aaceb7645ad404cf8a8f783}{Pipe\+\_\+\+Create\+From\+Elem()}-\/el, azaz létrehozza a Layer-\/ét, beállítja a szülőjéhez relatív helyét, felvesz egy szöget és beállítja a Pipe\+Type-\/ot, illetve a textúrájának helyét. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott a struktúra használata. \begin{DoxyPrecond}{Előfeltétel}
+A Pipe-\/ok Elem-\/jeinek már be kell legyen állítva az értéke. Emiatt csak a "{}végleges"{} állapotban ajánlott használni, azaz a \doxylink{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}{Pipe\+Grid\+\_\+\+Generate\+Grid()} és a \doxylink{pipe_8h_a1e4a8bc5269d22c3e6fec9acd8bf3e83}{Pipe\+Grid\+\_\+\+Shuffle()} függvények után. 
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy, már feldolgozott, \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & A feldolgozandó \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+{\em pipe\+\_\+texture} & A csöveket tartalmazó SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} \\
+\hline
+{\em base\+\_\+location} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} megjelenítési helye \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipegrid_8c_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}\label{pipegrid_8c_a4bcc09f533a5dbe43a9a24dc9e1a8d4d} 
+\index{pipegrid.c@{pipegrid.c}!PipeGrid\_GenerateGrid@{PipeGrid\_GenerateGrid}}
+\index{PipeGrid\_GenerateGrid@{PipeGrid\_GenerateGrid}!pipegrid.c@{pipegrid.c}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_GenerateGrid()}{PipeGrid\_GenerateGrid()}}
+{\footnotesize\ttfamily void Pipe\+Grid\+\_\+\+Generate\+Grid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{pipegrid,  }\item[{SDL\+\_\+\+Point}]{entry,  }\item[{SDL\+\_\+\+Point}]{exit }\end{DoxyParamCaption})}
+
+
+
+Legenerál egy Pipe\+Grid-\/et. 
+
+A játékhoz az átadott Pipe\+Grid-\/ben generál egy pályát. Ez egy rekurzív labirintusgeneráló algoritmussal történik, aminek a segítségével egy véletlenszerű, megoldható pályát generál. Alapul az infoc-\/n található algoritmus szolgált (link\+: \href{https://infoc.eet.bme.hu/labirintus/}{\texttt{ https\+://infoc.\+eet.\+bme.\+hu/labirintus/}}), ami módosítva lett, hogy az általam használt adatszerkezetekkel működjön (Pipe-\/on belüli Elem). \begin{DoxyWarning}{Figyelmeztetés}
+A belépési és kilépési pontok szabadon megadhatóak, DE az entry lehetőleg az első oszlopban, az exit pedig az utolsóban legyen. Egyéb esetben nem garantált a helyes működés. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & A változtatandó \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} pointere \\
+\hline
+{\em entry} & A belépési pont (x\+: oszlopindex, y\+: sorindex) \\
+\hline
+{\em exit} & A kilépési pont (x\+: oszlopindex, y\+: sorindex) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipegrid_8c_a0d9859a40de0cd53258fcb88e8bbcaff}\label{pipegrid_8c_a0d9859a40de0cd53258fcb88e8bbcaff} 
+\index{pipegrid.c@{pipegrid.c}!PipeGrid\_Init@{PipeGrid\_Init}}
+\index{PipeGrid\_Init@{PipeGrid\_Init}!pipegrid.c@{pipegrid.c}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Init()}{PipeGrid\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} Pipe\+Grid\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúra 
+\end{DoxyReturn}
+\Hypertarget{pipegrid_8c_af129c9d4c21a5a3ceea790a85f5d2305}\label{pipegrid_8c_af129c9d4c21a5a3ceea790a85f5d2305} 
+\index{pipegrid.c@{pipegrid.c}!PipeGrid\_Render@{PipeGrid\_Render}}
+\index{PipeGrid\_Render@{PipeGrid\_Render}!pipegrid.c@{pipegrid.c}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Render()}{PipeGrid\_Render()}}
+{\footnotesize\ttfamily bool Pipe\+Grid\+\_\+\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{pipegrid,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window }\end{DoxyParamCaption})}
+
+
+
+Lerenderel egy feldolgozott Pipe\+Grid-\/et az aktuális Render\+Target-\/re. 
+
+Az előforduló hibákat a függvény kiírja a konzolra. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & Egy feldolgozott \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipegrid_8c_a1e4a8bc5269d22c3e6fec9acd8bf3e83}\label{pipegrid_8c_a1e4a8bc5269d22c3e6fec9acd8bf3e83} 
+\index{pipegrid.c@{pipegrid.c}!PipeGrid\_Shuffle@{PipeGrid\_Shuffle}}
+\index{PipeGrid\_Shuffle@{PipeGrid\_Shuffle}!pipegrid.c@{pipegrid.c}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Shuffle()}{PipeGrid\_Shuffle()}}
+{\footnotesize\ttfamily void Pipe\+Grid\+\_\+\+Shuffle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{pipegrid }\end{DoxyParamCaption})}
+
+
+
+Összekever egy Pipe\+Grid-\/et. 
+
+A Pipe\+Grid-\/en belül lévő Pipe-\/ok Elem-\/eit véletlenszerűen elforgatja. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & Az összekeverendő \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} \\
+\hline
+\end{DoxyParams}

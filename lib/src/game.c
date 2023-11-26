@@ -1,12 +1,15 @@
 /**
  * @file game.c
  * @brief A game.h-ban deklarált, a játék állapotához tartozó függvények kódjait tartalmazó fájl.
+ * 
+ * @bug Az osdialog modullal problémája van a debugmalloc.h-nak. Az osdialog dokumentációja tisztán leírja, hogy a visszaadott
+ * stringeit fel kell szabadítani használat után. Viszont, ha fel akarnám szabadítani ezt, a debugmalloc.h hibát ad vissza.
+ * Ezt úgy lehet kijavítani, hogy az osdialog.h-ban include-oljuk a debugmalloc.h-t vagy innen kivesszük a debugmalloc.h-t.
  */
 
 #include "game.h"
 #include <errno.h>
-/* A fájlbeolvasós müttymürütty miatt muszáj kivennem, mert beriaszt a jogos free-ekre */
-// #include "debugmalloc.h"
+#include "debugmalloc.h"
 
 
 static bool ButtonRender(SDL_Renderer * renderer, Layer layer, int padding, int rounding, SDL_Color color) {

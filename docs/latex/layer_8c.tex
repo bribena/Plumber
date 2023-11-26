@@ -1,0 +1,116 @@
+\doxysection{lib/src/layer.c fájlreferencia}
+\hypertarget{layer_8c}{}\label{layer_8c}\index{lib/src/layer.c@{lib/src/layer.c}}
+
+
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban deklarált \doxylink{SDL__local_8h_structLayer}{Layer} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}SDL\+\_\+local.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \mbox{\hyperlink{layer_8c_a70597b0011ea90ef5bffb9e9fa22d57b}{Layer\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{SDL__local_8h_structLayer}{Layer} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{layer_8c_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create}} (\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}layer, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, const SDL\+\_\+\+Rect \texorpdfstring{$\ast$}{*}location)
+\begin{DoxyCompactList}\small\item\em Feltölt egy inicializált \doxylink{SDL__local_8h_structLayer}{Layer} struktúrát. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{layer_8c_aba03cebb4e558f46025ee6aa429c4da9}{Layer\+\_\+\+Render\+Font}} (\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}layer, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*}font, const char \texorpdfstring{$\ast$}{*}text, SDL\+\_\+\+Color foreground)
+\begin{DoxyCompactList}\small\item\em Létrehoz egy szöveget tartalmazó Layer-\/t. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{layer_8c_a69d5ca53df6b8dbf438054fcdc2010cf}{Layer\+\_\+\+Destroy}} (\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}layer)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{SDL__local_8h_structLayer}{Layer} struktúrát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban deklarált \doxylink{SDL__local_8h_structLayer}{Layer} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{layer_8c_ae2efd55b51af1d6c9755e626045ac06d}\label{layer_8c_ae2efd55b51af1d6c9755e626045ac06d} 
+\index{layer.c@{layer.c}!Layer\_Create@{Layer\_Create}}
+\index{Layer\_Create@{Layer\_Create}!layer.c@{layer.c}}
+\doxysubsubsection{\texorpdfstring{Layer\_Create()}{Layer\_Create()}}
+{\footnotesize\ttfamily bool Layer\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}}]{layer,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{const SDL\+\_\+\+Rect \texorpdfstring{$\ast$}{*}}]{location }\end{DoxyParamCaption})}
+
+
+
+Feltölt egy inicializált \doxylink{SDL__local_8h_structLayer}{Layer} struktúrát. 
+
+Létrehoz egy SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}-\/t SDL\+\_\+\+TEXTUREACCESS\+\_\+\+TARGET-\/tel, majd a \doxylink{SDL__local_8h_structLayer}{Layer} struktúra layer elemében eltárolja ezt. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. \begin{DoxyPostcond}{Utófeltétel}
+A \doxylink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create()} által létrehozott \doxylink{SDL__local_8h_structLayer}{Layer} struktúrákat használat után a \doxylink{SDL__local_8h_a69d5ca53df6b8dbf438054fcdc2010cf}{Layer\+\_\+\+Destroy()}-\/al kell felszabadítani. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy, már létrehozott, \doxylink{SDL__local_8h_structLayer}{Layer} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em layer} & Egy inicializált \doxylink{SDL__local_8h_structLayer}{Layer} struktúra pointere. \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra. \\
+\hline
+{\em location} & A réteg helye és mérete a "{}szülőjéhez"{} relatívan. Ha NULL, akkor a \doxylink{SDL__local_8h_structWindow}{Window} méretét veszi fel! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{layer_8c_a69d5ca53df6b8dbf438054fcdc2010cf}\label{layer_8c_a69d5ca53df6b8dbf438054fcdc2010cf} 
+\index{layer.c@{layer.c}!Layer\_Destroy@{Layer\_Destroy}}
+\index{Layer\_Destroy@{Layer\_Destroy}!layer.c@{layer.c}}
+\doxysubsubsection{\texorpdfstring{Layer\_Destroy()}{Layer\_Destroy()}}
+{\footnotesize\ttfamily void Layer\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}}]{layer }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{SDL__local_8h_structLayer}{Layer} struktúrát. 
+
+Az átadott \doxylink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create()} által létrehozott struktúrát szabadítja fel. 
+\begin{DoxyParams}{Paraméterek}
+{\em layer} & A felszabadítandó \doxylink{SDL__local_8h_structLayer}{Layer} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{layer_8c_a70597b0011ea90ef5bffb9e9fa22d57b}\label{layer_8c_a70597b0011ea90ef5bffb9e9fa22d57b} 
+\index{layer.c@{layer.c}!Layer\_Init@{Layer\_Init}}
+\index{Layer\_Init@{Layer\_Init}!layer.c@{layer.c}}
+\doxysubsubsection{\texorpdfstring{Layer\_Init()}{Layer\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} Layer\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{SDL__local_8h_structLayer}{Layer} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{SDL__local_8h_structLayer}{Layer} struktúra. 
+\end{DoxyReturn}
+\Hypertarget{layer_8c_aba03cebb4e558f46025ee6aa429c4da9}\label{layer_8c_aba03cebb4e558f46025ee6aa429c4da9} 
+\index{layer.c@{layer.c}!Layer\_RenderFont@{Layer\_RenderFont}}
+\index{Layer\_RenderFont@{Layer\_RenderFont}!layer.c@{layer.c}}
+\doxysubsubsection{\texorpdfstring{Layer\_RenderFont()}{Layer\_RenderFont()}}
+{\footnotesize\ttfamily bool Layer\+\_\+\+Render\+Font (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} \texorpdfstring{$\ast$}{*}}]{layer,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*}}]{font,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{text,  }\item[{SDL\+\_\+\+Color}]{foreground }\end{DoxyParamCaption})}
+
+
+
+Létrehoz egy szöveget tartalmazó Layer-\/t. 
+
+Egy SDL\+\_\+\+Surface\texorpdfstring{$\ast$}{*}-\/en létrehoz egy szöveget, majd SDL\+\_\+\+Create\+Texture\+From\+Surface()-\/el átalakítja SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}-\/ré. Egy \doxylink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create()} által létrehozott Layer-\/t kell átadni, viszont valójában ebből csak a location kell. Emiatt technikailag bármilyen Layer-\/re lehet használni, de a \doxylink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create()}-\/el létrehozott Layer-\/eket célszerű használni. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. \begin{DoxyPostcond}{Utófeltétel}
+Használat után a \doxylink{SDL__local_8h_a69d5ca53df6b8dbf438054fcdc2010cf}{Layer\+\_\+\+Destroy()}-\/al kell felszabadítani a léterhozott struktúrát. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+A függvény nagyon egyszerű, ezért a szöveg szélességét nem számítja ki, ezért előre meg kell adni. Ebből adódik, hogy próbálgatással lehet csak viszonylag megfelelő arányokat beállítani. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em layer} & Egy \doxylink{SDL__local_8h_ae2efd55b51af1d6c9755e626045ac06d}{Layer\+\_\+\+Create()}-\/el létrehozott \doxylink{SDL__local_8h_structLayer}{Layer} struktúra pointere. \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra. \\
+\hline
+{\em font} & A használni kívánt betűtípus. \\
+\hline
+{\em text} & A renderelendő szöveg. \\
+\hline
+{\em foreground} & A betűk színe. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}

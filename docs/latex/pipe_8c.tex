@@ -1,0 +1,149 @@
+\doxysection{lib/src/pipe.c fájlreferencia}
+\hypertarget{pipe_8c}{}\label{pipe_8c}\index{lib/src/pipe.c@{lib/src/pipe.c}}
+
+
+A \doxylink{pipe_8h}{pipe.\+h}-\/ban deklarált \doxylink{pipe_8h_structPipe}{Pipe} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}pipe.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \mbox{\hyperlink{pipe_8c_af5c71e4298c33eeb1eff0a9d4b9df420}{Pipe\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{pipe_8h_structPipe}{Pipe} struktúra inicializálása (kinullázása/alapértelmezett értékek beállítása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipe_8c_aea445b7c3dac7be7a992430cb468236c}{Pipe\+\_\+\+Create\+From\+Elem}} (\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}pipe, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}pipe\+\_\+texture, SDL\+\_\+\+Rect location)
+\begin{DoxyCompactList}\small\item\em \doxylink{pipe_8h_structPipe}{Pipe} struktúra létrehozása a benne található Elem alapján. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8c_a216a3e3667f262ced88364393750fc0c}{Pipe\+\_\+\+Rotate}} (\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}pipe, int irany)
+\begin{DoxyCompactList}\small\item\em Elforgatja egy \doxylink{pipe_8h_structPipe}{Pipe} Elem-\/ét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8c_ad8e7c55fe9bad5b60e5c20b63f68cc5c}{Pipe\+\_\+\+Destroy}} (\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}pipe)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{pipe_8h_structPipe}{Pipe} struktúrát. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipe_8c_a89e9baf97ad38cbde0098fe638819fbe}{Pipe\+\_\+\+Render}} (\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} pipe, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window)
+\begin{DoxyCompactList}\small\item\em Renderel egy Pipe-\/ot a jelenlegi Render\+Target-\/re. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipe_8c_adc666f7a0c915b9ffbc07bf0ee99921b}{Pipe\+\_\+\+Update\+Layer}} (\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} pipe, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}pipe\+\_\+texture)
+\begin{DoxyCompactList}\small\item\em Frissíti egy \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ét. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A \doxylink{pipe_8h}{pipe.\+h}-\/ban deklarált \doxylink{pipe_8h_structPipe}{Pipe} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{pipe_8c_aea445b7c3dac7be7a992430cb468236c}\label{pipe_8c_aea445b7c3dac7be7a992430cb468236c} 
+\index{pipe.c@{pipe.c}!Pipe\_CreateFromElem@{Pipe\_CreateFromElem}}
+\index{Pipe\_CreateFromElem@{Pipe\_CreateFromElem}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{Pipe\_CreateFromElem()}{Pipe\_CreateFromElem()}}
+{\footnotesize\ttfamily bool Pipe\+\_\+\+Create\+From\+Elem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}}]{pipe,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{pipe\+\_\+texture,  }\item[{SDL\+\_\+\+Rect}]{base\+\_\+location }\end{DoxyParamCaption})}
+
+
+
+\doxylink{pipe_8h_structPipe}{Pipe} struktúra létrehozása a benne található Elem alapján. 
+
+A függvény létrehozza a \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ét, illetve beállítja a szülőjéhez relatív helyét (lásd\+: \doxylink{SDL__local_8h_structLayer}{Layer}), felvesz egy szöget és beállítja a Pipe\+Type-\/ot, illetve a textúrájának helyét. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. Hiba esetén nem ajánlott a létrejött struktúrát használni. \begin{DoxyPostcond}{Utófeltétel}
+Mivel létrehoz egy Layer-\/t, használat után a Pipe-\/ot fel kell szabadítani a \doxylink{pipe_8h_ad8e7c55fe9bad5b60e5c20b63f68cc5c}{Pipe\+\_\+\+Destroy()} függvénnyel. 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Megjegyzés}
+A projekten belül található Create függvényektől eltérően inkább feldolgoz, mintsem létrehoz. Emiatt is lehetőleg csak a \doxylink{pipe_8h_ab1aff8a4b7cc5465aede4b2e6bbc1463}{Pipe\+Grid\+\_\+\+Feldolgoz()} függvényen belül maradjon használva. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em pipe} & A feldolgozandó \doxylink{pipe_8h_structPipe}{Pipe} pointere \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+{\em pipe\+\_\+texture} & A csöveket tartalmazó SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} \\
+\hline
+{\em base\+\_\+location} & A \doxylink{pipe_8h_structPipe}{Pipe} relatív helye \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipe_8c_ad8e7c55fe9bad5b60e5c20b63f68cc5c}\label{pipe_8c_ad8e7c55fe9bad5b60e5c20b63f68cc5c} 
+\index{pipe.c@{pipe.c}!Pipe\_Destroy@{Pipe\_Destroy}}
+\index{Pipe\_Destroy@{Pipe\_Destroy}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{Pipe\_Destroy()}{Pipe\_Destroy()}}
+{\footnotesize\ttfamily void Pipe\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}}]{pipe }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{pipe_8h_structPipe}{Pipe} struktúrát. 
+
+Az átadott \doxylink{pipe_8h_a44323a670aaceb7645ad404cf8a8f783}{Pipe\+\_\+\+Create\+From\+Elem()} függvénnyel létrehozott Pipe-\/ot felszabadítja. Lényegében a struktúra Layer-\/ét szabadítja fel. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipe} & A felaszabadítandó \doxylink{pipe_8h_structPipe}{Pipe} struktúra \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8c_af5c71e4298c33eeb1eff0a9d4b9df420}\label{pipe_8c_af5c71e4298c33eeb1eff0a9d4b9df420} 
+\index{pipe.c@{pipe.c}!Pipe\_Init@{Pipe\_Init}}
+\index{Pipe\_Init@{Pipe\_Init}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{Pipe\_Init()}{Pipe\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} Pipe\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{pipe_8h_structPipe}{Pipe} struktúra inicializálása (kinullázása/alapértelmezett értékek beállítása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{pipe_8h_structPipe}{Pipe} struktúra 
+\end{DoxyReturn}
+\Hypertarget{pipe_8c_a89e9baf97ad38cbde0098fe638819fbe}\label{pipe_8c_a89e9baf97ad38cbde0098fe638819fbe} 
+\index{pipe.c@{pipe.c}!Pipe\_Render@{Pipe\_Render}}
+\index{Pipe\_Render@{Pipe\_Render}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{Pipe\_Render()}{Pipe\_Render()}}
+{\footnotesize\ttfamily bool Pipe\+\_\+\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}}]{pipe,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window }\end{DoxyParamCaption})}
+
+
+
+Renderel egy Pipe-\/ot a jelenlegi Render\+Target-\/re. 
+
+A \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ét rendereli a jelenlegi Render\+Target-\/re. Fontos, hogy a Render\+Target a "{}szülője"{} legyen, azaz az, amihez a \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ének helye relatív. Egyéb esetben nem garantált a helyes működés. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipe} & A renderelendő \doxylink{pipe_8h_structPipe}{Pipe} \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipe_8c_a216a3e3667f262ced88364393750fc0c}\label{pipe_8c_a216a3e3667f262ced88364393750fc0c} 
+\index{pipe.c@{pipe.c}!Pipe\_Rotate@{Pipe\_Rotate}}
+\index{Pipe\_Rotate@{Pipe\_Rotate}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{Pipe\_Rotate()}{Pipe\_Rotate()}}
+{\footnotesize\ttfamily void Pipe\+\_\+\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}}]{pipe,  }\item[{int}]{irany }\end{DoxyParamCaption})}
+
+
+
+Elforgatja egy \doxylink{pipe_8h_structPipe}{Pipe} Elem-\/ét. 
+
+Az iránynak megfelelően elforgatja a \doxylink{pipe_8h_structPipe}{Pipe} Elem-\/ét. Ha az irány 1, az óramutató járásával megegyező irányba, ha -\/1, akkor az óramutató járásával ellentétes irányba. Ha a \doxylink{pipe_8h_structPipe}{Pipe} típusa Pipe\+Type\+\_\+\+Crossing, akkor nem történik semmi. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipe} & A változtatandó \doxylink{pipe_8h_structPipe}{Pipe} \\
+\hline
+{\em irany} & A forgatás iránya (1\+: óramutató járásával megegyező, -\/1\+: óramutató járásával ellentétes) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8c_adc666f7a0c915b9ffbc07bf0ee99921b}\label{pipe_8c_adc666f7a0c915b9ffbc07bf0ee99921b} 
+\index{pipe.c@{pipe.c}!Pipe\_UpdateLayer@{Pipe\_UpdateLayer}}
+\index{Pipe\_UpdateLayer@{Pipe\_UpdateLayer}!pipe.c@{pipe.c}}
+\doxysubsubsection{\texorpdfstring{Pipe\_UpdateLayer()}{Pipe\_UpdateLayer()}}
+{\footnotesize\ttfamily bool Pipe\+\_\+\+Update\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}}]{pipe,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{pipe\+\_\+texture }\end{DoxyParamCaption})}
+
+
+
+Frissíti egy \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ét. 
+
+A \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ét frissíti (újrarendereli) az aktuális értékei szerint. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipe} & A frissítendő \doxylink{pipe_8h_structPipe}{Pipe} \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+{\em pipe\+\_\+texture} & A csöveket tartalmazó SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}

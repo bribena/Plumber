@@ -1,0 +1,78 @@
+\doxysection{lib/src/game\+\_\+struct.c fájlreferencia}
+\hypertarget{game__struct_8c}{}\label{game__struct_8c}\index{lib/src/game\_struct.c@{lib/src/game\_struct.c}}
+
+
+A \doxylink{game_8h}{game.\+h}-\/ban deklarált \doxylink{game_8h_structGameStruct}{Game\+Struct} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} \mbox{\hyperlink{game__struct_8c_aa04da33e6daf2c7ed058efde2aea7246}{Game\+Struct\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{game_8h_structGameStruct}{Game\+Struct} inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game__struct_8c_a387e11d6576bc1b42e1dae0eb31d8a81}{Game\+Struct\+\_\+\+Create}} (\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} \texorpdfstring{$\ast$}{*}game\+\_\+struct)
+\begin{DoxyCompactList}\small\item\em \doxylink{game_8h_structGameStruct}{Game\+Struct} létrehozása. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__struct_8c_a99fd927905eb43053a45dc0827478680}{Game\+Struct\+\_\+\+Destroy}} (\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} \texorpdfstring{$\ast$}{*}game\+\_\+struct)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy Game\+Struct-\/ot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A \doxylink{game_8h}{game.\+h}-\/ban deklarált \doxylink{game_8h_structGameStruct}{Game\+Struct} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{game__struct_8c_a387e11d6576bc1b42e1dae0eb31d8a81}\label{game__struct_8c_a387e11d6576bc1b42e1dae0eb31d8a81} 
+\index{game\_struct.c@{game\_struct.c}!GameStruct\_Create@{GameStruct\_Create}}
+\index{GameStruct\_Create@{GameStruct\_Create}!game\_struct.c@{game\_struct.c}}
+\doxysubsubsection{\texorpdfstring{GameStruct\_Create()}{GameStruct\_Create()}}
+{\footnotesize\ttfamily bool Game\+Struct\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} \texorpdfstring{$\ast$}{*}}]{game\+\_\+struct }\end{DoxyParamCaption})}
+
+
+
+\doxylink{game_8h_structGameStruct}{Game\+Struct} létrehozása. 
+
+Meghívja a \doxylink{game_8h_structGameStruct}{Game\+Struct} elemeinek létrehozó függvényeit (lásd\+: \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}). A \doxylink{SDL__local_8h_structWindow}{Window} létrehozásához a DEFAULT\+\_\+\+WINDOW\+\_\+\+WIDTH és DEFAULT\+\_\+\+WINDOW\+\_\+\+HEIGHT konstansokat használja. Átadni egy \doxylink{game_8h_aa04da33e6daf2c7ed058efde2aea7246}{Game\+Struct\+\_\+\+Init()}-\/tel inicializált Game\+Struct-\/ot ajánlott. A hibákat a struktok létrehozó függvényei a konzolra kiírják, ennek csak a visszatérési értéke jelzi. Hiba esetén nem ajánlott a struktúra használata. \begin{DoxyPostcond}{Utófeltétel}
+Használat után a \doxylink{game_8h_a99fd927905eb43053a45dc0827478680}{Game\+Struct\+\_\+\+Destroy()} függvénnyel fel kell szabadítani a struktúrát. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy már létrehozott Game\+Struct-\/ot átadni. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em game\+\_\+struct} & Egy inicializált \doxylink{game_8h_structGameStruct}{Game\+Struct} pointere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{game__struct_8c_a99fd927905eb43053a45dc0827478680}\label{game__struct_8c_a99fd927905eb43053a45dc0827478680} 
+\index{game\_struct.c@{game\_struct.c}!GameStruct\_Destroy@{GameStruct\_Destroy}}
+\index{GameStruct\_Destroy@{GameStruct\_Destroy}!game\_struct.c@{game\_struct.c}}
+\doxysubsubsection{\texorpdfstring{GameStruct\_Destroy()}{GameStruct\_Destroy()}}
+{\footnotesize\ttfamily void Game\+Struct\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} \texorpdfstring{$\ast$}{*}}]{game\+\_\+struct }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy Game\+Struct-\/ot. 
+
+A \doxylink{game_8h_structGameStruct}{Game\+Struct} elemeit szabadítja fel a saját függvényeikkel. (lásd\+: \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}) 
+\begin{DoxyParams}{Paraméterek}
+{\em game\+\_\+struct} & A felszabadítandó \doxylink{game_8h_structGameStruct}{Game\+Struct} pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__struct_8c_aa04da33e6daf2c7ed058efde2aea7246}\label{game__struct_8c_aa04da33e6daf2c7ed058efde2aea7246} 
+\index{game\_struct.c@{game\_struct.c}!GameStruct\_Init@{GameStruct\_Init}}
+\index{GameStruct\_Init@{GameStruct\_Init}!game\_struct.c@{game\_struct.c}}
+\doxysubsubsection{\texorpdfstring{GameStruct\_Init()}{GameStruct\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} Game\+Struct\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{game_8h_structGameStruct}{Game\+Struct} inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{game_8h_structGameStruct}{Game\+Struct} 
+\end{DoxyReturn}

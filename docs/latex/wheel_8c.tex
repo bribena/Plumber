@@ -1,0 +1,108 @@
+\doxysection{lib/src/wheel.c fájlreferencia}
+\hypertarget{wheel_8c}{}\label{wheel_8c}\index{lib/src/wheel.c@{lib/src/wheel.c}}
+
+
+A \doxylink{game_8h}{game.\+h}-\/ban deklarált \doxylink{game_8h_structWheel}{Wheel} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \mbox{\hyperlink{wheel_8c_a87736d507ec807ee7d6860ae5ce0d5e0}{Wheel\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em A \doxylink{game_8h_structWheel}{Wheel} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{wheel_8c_a17fc09a1ba3479c30e3f8bdbbb38ec95}{Wheel\+\_\+\+Create}} (\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}wheel, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, SDL\+\_\+\+Rect location, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}wheel\+\_\+texture)
+\begin{DoxyCompactList}\small\item\em \doxylink{game_8h_structWheel}{Wheel} struktúra létrehozása. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{wheel_8c_aea2f6e7c50ea2fadc84493a0c101dede}{Wheel\+\_\+\+Update}} (\mbox{\hyperlink{game_8h_structWheel}{Wheel}} wheel, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}wheel\+\_\+texture)
+\begin{DoxyCompactList}\small\item\em Frissíti egy \doxylink{game_8h_structWheel}{Wheel} Layer-\/ét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{wheel_8c_a1fc039eb035e3a5b55561e5b14184399}{Wheel\+\_\+\+Destroy}} (\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}wheel)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{game_8h_structWheel}{Wheel} struktúrát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A \doxylink{game_8h}{game.\+h}-\/ban deklarált \doxylink{game_8h_structWheel}{Wheel} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{wheel_8c_a17fc09a1ba3479c30e3f8bdbbb38ec95}\label{wheel_8c_a17fc09a1ba3479c30e3f8bdbbb38ec95} 
+\index{wheel.c@{wheel.c}!Wheel\_Create@{Wheel\_Create}}
+\index{Wheel\_Create@{Wheel\_Create}!wheel.c@{wheel.c}}
+\doxysubsubsection{\texorpdfstring{Wheel\_Create()}{Wheel\_Create()}}
+{\footnotesize\ttfamily bool Wheel\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}}]{wheel,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{SDL\+\_\+\+Rect}]{location,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{wheel\+\_\+texture }\end{DoxyParamCaption})}
+
+
+
+\doxylink{game_8h_structWheel}{Wheel} struktúra létrehozása. 
+
+Véletlenszerűen felvesz egy szöget és lerendereli a Layer-\/re a csapot. A hibákat a struktok létrehozó függvényei a konzolra kiírják, ennek csak a visszatérési értéke jelzi. Hiba esetén nem ajánlott a struktúra használata. \begin{DoxyPostcond}{Utófeltétel}
+Használat után a \doxylink{game_8h_a1fc039eb035e3a5b55561e5b14184399}{Wheel\+\_\+\+Destroy()} függvénnyel fel kell szabadítani a struktúrát. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy már létrehozott \doxylink{game_8h_structWheel}{Wheel} struktúrát átadni. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em wheel} & Egy inicializált \doxylink{game_8h_structWheel}{Wheel} struktúra pointere. \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra. \\
+\hline
+{\em location} & A csap szülőjéhez relatív helye \\
+\hline
+{\em wheel\+\_\+texture} & A csap textúrája. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{wheel_8c_a1fc039eb035e3a5b55561e5b14184399}\label{wheel_8c_a1fc039eb035e3a5b55561e5b14184399} 
+\index{wheel.c@{wheel.c}!Wheel\_Destroy@{Wheel\_Destroy}}
+\index{Wheel\_Destroy@{Wheel\_Destroy}!wheel.c@{wheel.c}}
+\doxysubsubsection{\texorpdfstring{Wheel\_Destroy()}{Wheel\_Destroy()}}
+{\footnotesize\ttfamily void Wheel\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}}]{wheel }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{game_8h_structWheel}{Wheel} struktúrát. 
+
+A \doxylink{game_8h_structWheel}{Wheel} Layer-\/ét szabadítja fel a saját függvényével. (lásd\+: \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}) 
+\begin{DoxyParams}{Paraméterek}
+{\em wheel} & A felszabadítandó \doxylink{game_8h_structWheel}{Wheel} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{wheel_8c_a87736d507ec807ee7d6860ae5ce0d5e0}\label{wheel_8c_a87736d507ec807ee7d6860ae5ce0d5e0} 
+\index{wheel.c@{wheel.c}!Wheel\_Init@{Wheel\_Init}}
+\index{Wheel\_Init@{Wheel\_Init}!wheel.c@{wheel.c}}
+\doxysubsubsection{\texorpdfstring{Wheel\_Init()}{Wheel\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_structWheel}{Wheel}} Wheel\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+A \doxylink{game_8h_structWheel}{Wheel} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{game_8h_structWheel}{Wheel} struktúra 
+\end{DoxyReturn}
+\Hypertarget{wheel_8c_aea2f6e7c50ea2fadc84493a0c101dede}\label{wheel_8c_aea2f6e7c50ea2fadc84493a0c101dede} 
+\index{wheel.c@{wheel.c}!Wheel\_Update@{Wheel\_Update}}
+\index{Wheel\_Update@{Wheel\_Update}!wheel.c@{wheel.c}}
+\doxysubsubsection{\texorpdfstring{Wheel\_Update()}{Wheel\_Update()}}
+{\footnotesize\ttfamily bool Wheel\+\_\+\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structWheel}{Wheel}}}]{wheel,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{wheel\+\_\+texture }\end{DoxyParamCaption})}
+
+
+
+Frissíti egy \doxylink{game_8h_structWheel}{Wheel} Layer-\/ét. 
+
+A \doxylink{game_8h_structWheel}{Wheel} Layer-\/ét frissíti (újrarendereli) az aktuális értékei szerint. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em wheel} & A frissítendő \doxylink{game_8h_structWheel}{Wheel} \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+{\em pipe\+\_\+texture} & A csöveket tartalmazó SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}

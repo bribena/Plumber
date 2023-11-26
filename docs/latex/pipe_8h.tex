@@ -1,0 +1,765 @@
+\doxysection{lib/include/pipe.h fájlreferencia}
+\hypertarget{pipe_8h}{}\label{pipe_8h}\index{lib/include/pipe.h@{lib/include/pipe.h}}
+
+
+A játékban használt csövekhez kapcsolódó függvényeket és adatszerkezeteket tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}SDL\+\_\+local.\+h"{}}\newline
+\doxysubsubsection*{Adatszerkezetek}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}
+\begin{DoxyCompactList}\small\item\em Egy cső adatainak tárolására szolgáló struktúra.  \mbox{\hyperlink{pipe_8h_structPipe}{Részletek...}}\end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}
+\begin{DoxyCompactList}\small\item\em A Pipe-\/ok mátrixát tároló struktúra.  \mbox{\hyperlink{pipe_8h_structPipeGrid}{Részletek...}}\end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}}
+\begin{DoxyCompactList}\small\item\em Egy \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} megoldását tároló láncolt lista.  \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Részletek...}}\end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Makródefiníciók}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pipe_8h_ac5e7e1125193d2b2d3418b44c5d8d8a5}{DEFAULT\+\_\+\+PIPE\+\_\+\+SIZE}}~50
+\begin{DoxyCompactList}\small\item\em A csövek alapértelmezett magassága és szélessége (pixelben) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Típusdefiníciók}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232c}{Elemi\+Resz}} \mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}
+\begin{DoxyCompactList}\small\item\em Egy Elem-\/et reprezentáló 3x3-\/as mátrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerációk}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232c}{Elemi\+Resz}} \{ \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc}{Levego}} = \textquotesingle{}X\textquotesingle{}
+, \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23}{Cso}} = \textquotesingle{}O\textquotesingle{}
+, \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9}{Ismeretlen}} = \textquotesingle{}?\textquotesingle{}
+, \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc}{Rossz}} = \textquotesingle{}.\textquotesingle{}
+, \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0}{Jo}} = \textquotesingle{}\texorpdfstring{$\ast$}{*}\textquotesingle{}
+ \}
+\begin{DoxyCompactList}\small\item\em Egy-\/egy Elem részeinek lehetséges állapotai. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69}{Pipe\+Type}} \{ \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5}{Pipe\+Type\+\_\+\+None}}
+, \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123}{Pipe\+Type\+\_\+\+Straight}}
+, \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe}{Pipe\+Type\+\_\+\+Curved}}
+, \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b}{Pipe\+Type\+\_\+\+Tshaped}}
+, \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006}{Pipe\+Type\+\_\+\+Crossing}}
+ \}
+\begin{DoxyCompactList}\small\item\em A \doxylink{pipe_8h_structPipe}{Pipe} típusának enumja. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pipe_8h_a9b4194b89ec44334514b17b0309deca8}{Elem\+\_\+\+Init}} (\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} elem)
+\begin{DoxyCompactList}\small\item\em Egy üres (csupa Levego-\/s) Elem-\/et álltít elő. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8h_a93b6bc573aa97700d92155c1872aa636}{Elem\+\_\+\+Copy}} (\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} hova, \mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} honnan)
+\begin{DoxyCompactList}\small\item\em Átmásol egy Elem tartalmát egy másikba. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8h_a2b0d66c6555de1641ccba86e3b2bbfb1}{Elem\+\_\+\+Rotate\+Pos}} (\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} elem)
+\begin{DoxyCompactList}\small\item\em Elforgat egy Elem-\/et az óramutató járásával megegyező irányba. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8h_aab552e10b0d8bd8f6b2cd96bc38edc96}{Elem\+\_\+\+Rotate\+Neg}} (\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} elem)
+\begin{DoxyCompactList}\small\item\em Elforgat egy Elem-\/et az óramutató járásával ellentétes irányba. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \mbox{\hyperlink{pipe_8h_af5c71e4298c33eeb1eff0a9d4b9df420}{Pipe\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{pipe_8h_structPipe}{Pipe} struktúra inicializálása (kinullázása/alapértelmezett értékek beállítása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipe_8h_a44323a670aaceb7645ad404cf8a8f783}{Pipe\+\_\+\+Create\+From\+Elem}} (\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}pipe, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}pipe\+\_\+texture, SDL\+\_\+\+Rect base\+\_\+location)
+\begin{DoxyCompactList}\small\item\em \doxylink{pipe_8h_structPipe}{Pipe} struktúra létrehozása a benne található Elem alapján. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8h_a216a3e3667f262ced88364393750fc0c}{Pipe\+\_\+\+Rotate}} (\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}pipe, int irany)
+\begin{DoxyCompactList}\small\item\em Elforgatja egy \doxylink{pipe_8h_structPipe}{Pipe} Elem-\/ét. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipe_8h_a89e9baf97ad38cbde0098fe638819fbe}{Pipe\+\_\+\+Render}} (\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} pipe, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window)
+\begin{DoxyCompactList}\small\item\em Renderel egy Pipe-\/ot a jelenlegi Render\+Target-\/re. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipe_8h_adc666f7a0c915b9ffbc07bf0ee99921b}{Pipe\+\_\+\+Update\+Layer}} (\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} pipe, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}pipe\+\_\+texture)
+\begin{DoxyCompactList}\small\item\em Frissíti egy \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8h_ad8e7c55fe9bad5b60e5c20b63f68cc5c}{Pipe\+\_\+\+Destroy}} (\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}pipe)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{pipe_8h_structPipe}{Pipe} struktúrát. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \mbox{\hyperlink{pipe_8h_a0d9859a40de0cd53258fcb88e8bbcaff}{Pipe\+Grid\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipe_8h_a374a382292ea4ef400156d3e1960b2d7}{Pipe\+Grid\+\_\+\+Create}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}pipegrid, int x, int y)
+\begin{DoxyCompactList}\small\item\em \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúra létrehozása. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \mbox{\hyperlink{pipe_8h_a65ed505ed2d56a3aeda3aed0a46f02d1}{Pipe\+Grid\+\_\+\+Create\+Copy}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} source)
+\begin{DoxyCompactList}\small\item\em Lemásol egy Pipe\+Grid-\/et és visszaadja a másolatot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}{Pipe\+Grid\+\_\+\+Generate\+Grid}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}pipegrid, SDL\+\_\+\+Point entry, SDL\+\_\+\+Point exit)
+\begin{DoxyCompactList}\small\item\em Legenerál egy Pipe\+Grid-\/et. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8h_a1e4a8bc5269d22c3e6fec9acd8bf3e83}{Pipe\+Grid\+\_\+\+Shuffle}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} pipegrid)
+\begin{DoxyCompactList}\small\item\em Összekever egy Pipe\+Grid-\/et. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipe_8h_ab1aff8a4b7cc5465aede4b2e6bbc1463}{Pipe\+Grid\+\_\+\+Feldolgoz}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} pipegrid, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}pipe\+\_\+texture, SDL\+\_\+\+Rect base\+\_\+location)
+\begin{DoxyCompactList}\small\item\em Egy \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} Pipe-\/jainak hiányzó értékeit feltölti. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{pipe_8h_af129c9d4c21a5a3ceea790a85f5d2305}{Pipe\+Grid\+\_\+\+Render}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} pipegrid, \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} window)
+\begin{DoxyCompactList}\small\item\em Lerenderel egy feldolgozott Pipe\+Grid-\/et az aktuális Render\+Target-\/re. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8h_aeaa7e81af912deb3e9782cb9523321b3}{Pipe\+Grid\+\_\+\+Destroy}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}pipegrid)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy Pipe\+Grid-\/et. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423}{Pipe\+Grid\+\_\+\+Solve}} (\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} pipegrid, SDL\+\_\+\+Point entry, SDL\+\_\+\+Point exit)
+\begin{DoxyCompactList}\small\item\em Megold egy Pipe\+Grid-\/et és a megoldását egy Solved\+Pipe\+Grid-\/ben adja vissza. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pipe_8h_a29554057a457d47ee2015a6d5b9d9cef}{Solved\+Pipe\+Grid\+\_\+\+Remove\+First}} (\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*}start)
+\begin{DoxyCompactList}\small\item\em A \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid} láncolt lista első elemét felszabadítja és visszaadja a következő elem pointerét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pipe_8h_a5b9f26edab225f3523287fc05a1eedf7}{Solved\+Pipe\+Grid\+\_\+\+Destroy}} (\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*}start)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid} láncolt listát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A játékban használt csövekhez kapcsolódó függvényeket és adatszerkezeteket tartalmazza a fájl. 
+
+\begin{DoxyPrecond}{Előfeltétel}
+Mivel az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/t használja, az SDL inicializálása szükséges a modul megfelelő működéséhez.
+\end{DoxyPrecond}
+\hypertarget{pipe_8h_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{Struktúrák, enumok\+:}{Struktúrák, enumok:}}\label{pipe_8h_autotoc_md5}
+3 fő struktúrát tartalmaz a fájl\+:
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{pipe_8h_structPipe}{Pipe}}\+: Egy cső adatait tartalmazza.
+\item {\ttfamily \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid}}\+: Csövek mátrixát és a mátrix szélességét és magasságát tartalmazza.
+\item {\ttfamily \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}}\+: Egy \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} megoldását tartalmazza. A megfelelő csöveket és indexeiket strázsa nélküli láncolt listában tartalmazza.
+\end{DoxyItemize}
+
+A struktúrák használata többnyire az alábbi módon történik\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Struktúra\ név\ =\ Struktúra\_Init();\ \textcolor{comment}{//\ Az\ init\ egy\ üres\ elemet\ ad\ vissza,\ nem\ foglal\ magának\ memóriát}}
+\DoxyCodeLine{Struktúra\_LétrehozóFüggvény(\&struktúra,\ paraméterek);\ \textcolor{comment}{//\ Lásd\ lentebb}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Használat}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Struktúra\_Destroy(\&struktúra);\ \textcolor{comment}{//\ A\ struktúrákat,\ amik\ tartalmaznak\ dinamikusan\ foglalt\ elemeket,\ fel\ kell\ szabadítani}}
+
+\end{DoxyCode}
+ Ez alól van kivétel, lásd lentebb.
+
+Maga a cső az {\ttfamily \doxylink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}} típusú 3x3-\/as mátrixban van leképezve, ami {\ttfamily \doxylink{pipe_8h_a0e06b722097db3b4be182a777b22232c}{Elemi\+Resz}} enumokból épül fel. Ebben van nyilvántartva maga a cső és a megoldás során az "{}áramlás"{} útvonalanák helyessége.
+
+Ezen kívül a {\ttfamily \doxylink{pipe_8h_a66f0d6eb7162b131ee64066734931c69}{Pipe\+Type}} enum egy \doxylink{pipe_8h_structPipe}{Pipe} típusát határozza meg.\hypertarget{pipe_8h_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{Függvények\+:}{Függvények:}}\label{pipe_8h_autotoc_md6}
+A modul a struktúrákhoz kapcsolódó függvényeket tartalmazza.\hypertarget{pipe_8h_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Példakód\+:}{Példakód:}}\label{pipe_8h_autotoc_md7}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SDL__local_8h}{SDL\_local.h}}"{}}\ \textcolor{comment}{//\ Explicit\ include}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pipe_8h}{pipe.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *\ argv[])\ \{}
+\DoxyCodeLine{\ \ \ \ (void)argc,\ (\textcolor{keywordtype}{void})argv;\ \textcolor{comment}{//\ Warning\ elkerülése}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_ac123123dd113ec5077bfd1af17d2f459}{InitializeSDL}}();\ \textcolor{comment}{//\ SDL\ inicializálása}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{pipe_8h_structPipeGrid}{PipeGrid}}\ pipegrid\ =\ \mbox{\hyperlink{pipe_8h_a0d9859a40de0cd53258fcb88e8bbcaff}{PipeGrid\_Init}}();\ \textcolor{comment}{//\ PipeGrid\ inicializálása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{pipe_8h_a374a382292ea4ef400156d3e1960b2d7}{PipeGrid\_Create}}(\&pipegrid,\ 10,\ 10);\ \textcolor{comment}{//\ 10x10-\/es\ PipeGrid\ létrehozása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}{PipeGrid\_GenerateGrid}}(\&pipegrid,\ (SDL\_Point)\{0,\ 0\},\ (SDL\_Point)\{9,\ 9\});\ \textcolor{comment}{//\ PipeGrid\ feltöltése}}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{SolvedPipeGrid}}\ *\ solved\ =\ \mbox{\hyperlink{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423}{PipeGrid\_Solve}}(pipegrid,\ (SDL\_Point)\{0,\ 0\},\ (SDL\_Point)\{9,\ 9\});\ \textcolor{comment}{//\ PipeGrid\ megoldása}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Megoldás\ koordinátáinak\ kiírása}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{SolvedPipeGrid}}\ *\ i\ =\ solved;\ i\ !=\ NULL;\ i\ =\ i-\/>\mbox{\hyperlink{pipe_8h_a83f19165c0b7ea6eda8e271be1cd3b25}{next}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d,\ \%d\(\backslash\)n"{}},\ i-\/>x,\ i-\/>y);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{pipe_8h_a5b9f26edab225f3523287fc05a1eedf7}{SolvedPipeGrid\_Destroy}}(solved);\ \textcolor{comment}{//\ SolvedPipeGrid\ felszabadítása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{pipe_8h_aeaa7e81af912deb3e9782cb9523321b3}{PipeGrid\_Destroy}}(\&pipegrid);\ \textcolor{comment}{//\ PipeGrid\ felszabadítása}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}{QuitSDL}}();\ \textcolor{comment}{//\ SDL\ leállítása}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+A fenti példakód létrehoz egy 10x10-\/es Pipe\+Grid-\/et, majd generál ebből egy pályát. Ezután megoldja a pályát, majd kiírja stdout-\/on a megfelelő csövek koordinátáit (indexeit).\hypertarget{pipe_8h_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{Megjegyzések\+:}{Megjegyzések:}}\label{pipe_8h_autotoc_md8}
+
+\begin{DoxyItemize}
+\item Minden innen származó struktúrának a "{}legtetejét"{} kell felszabadítani. Ezalatt azt kell érteni, hogy például a \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} tartalmazza a szintén dinamikusan foglalt Pipe-\/ot, de a \doxylink{pipe_8h_aeaa7e81af912deb3e9782cb9523321b3}{Pipe\+Grid\+\_\+\+Destroy()} a tárolt Pipe-\/ot is felszabadítja. Erről bővebben az adott függvény dokumentációja ír.
+\end{DoxyItemize}\hypertarget{pipe_8h_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Kapcsolódó kódfájlok\+:}{Kapcsolódó kódfájlok:}}\label{pipe_8h_autotoc_md9}
+
+\begin{DoxyItemize}
+\item \doxylink{elem_8c}{elem.\+c}
+\item \doxylink{pipe_8c}{pipe.\+c}
+\item \doxylink{pipegrid_8c}{pipegrid.\+c}
+\item \doxylink{solve_8c}{solve.\+c} 
+\end{DoxyItemize}
+
+\doxysubsection{Adatszerkezetek dokumentációja}
+\index{Pipe@{Pipe}}\label{structPipe}
+\Hypertarget{pipe_8h_structPipe}
+\doxysubsubsection{struct Pipe}
+Egy cső adatainak tárolására szolgáló struktúra. 
+
+Egy cső feldolgozásához, illetve egy cső rendereléséhez szükséges összes adatot tárolja. \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{pipe_8h_a8428eb27e8d47fb0d2eb3f930e893620}\label{pipe_8h_a8428eb27e8d47fb0d2eb3f930e893620}} 
+\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}}&
+rendered&
+A cső rétege. Azért kell, hogy csakis egyetlen csőt meg lehessen változtatni. \\
+\hline
+
+\mbox{\Hypertarget{pipe_8h_a5f3c609ac8d5da6e2e9f62bdf27e5b9e}\label{pipe_8h_a5f3c609ac8d5da6e2e9f62bdf27e5b9e}} 
+double&
+szog&
+A cső szöge (fokban). Rendereléskor (animáláskor) használt. \\
+\hline
+
+\mbox{\Hypertarget{pipe_8h_a06e78e7416e3963c14e56e2fafb4ce91}\label{pipe_8h_a06e78e7416e3963c14e56e2fafb4ce91}} 
+\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}&
+tenyleges&
+A cső \doxylink{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}{Pipe\+Grid\+\_\+\+Generate\+Grid()}-\/ben és \doxylink{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423}{Pipe\+Grid\+\_\+\+Solve()}-\/ban használt alakja. \\
+\hline
+
+\mbox{\Hypertarget{pipe_8h_ad4b22d52ae07689fcb1fcbf1d13f2ffc}\label{pipe_8h_ad4b22d52ae07689fcb1fcbf1d13f2ffc}} 
+SDL\_Rect&
+texture\_loc&
+A cső textúrájának helye az assets/img/sprites\+\_\+empty.\+png-\/n belül (ez az \doxylink{SDL__local_8h_structAssets}{Assets} struktúra pipes\+\_\+empty eleme). \\
+\hline
+
+\mbox{\Hypertarget{pipe_8h_a3130316ff5b964915a98f7cd0b4984db}\label{pipe_8h_a3130316ff5b964915a98f7cd0b4984db}} 
+\mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69}{PipeType}}&
+type&
+A cső típusa. \\
+\hline
+
+\end{DoxyFields}
+\index{PipeGrid@{PipeGrid}}\label{structPipeGrid}
+\Hypertarget{pipe_8h_structPipeGrid}
+\doxysubsubsection{struct Pipe\+Grid}
+A Pipe-\/ok mátrixát tároló struktúra. 
+
+Egy y\texorpdfstring{$\ast$}{*}x-\/es mátrix, amiben Pipe-\/ok vannak. Indexeléskor oda kell figyelni, hogy először a sor (y), majd az oszlop (x) indexét kell megadni. \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{pipe_8h_a521bb018b625dbd0815df275eb2c55e2}\label{pipe_8h_a521bb018b625dbd0815df275eb2c55e2}} 
+\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}&
+matrix&
+A \doxylink{pipe_8h_structPipe}{Pipe} mátrix. \\
+\hline
+
+\mbox{\Hypertarget{pipe_8h_ad36fc50d016d25e6d5a774c824c336e4}\label{pipe_8h_ad36fc50d016d25e6d5a774c824c336e4}} 
+int&
+x&
+Sorszélesség ("{}x tengely"{}) \\
+\hline
+
+\mbox{\Hypertarget{pipe_8h_a3591dfe4b7ab3fbb84cb0ded955ff1af}\label{pipe_8h_a3591dfe4b7ab3fbb84cb0ded955ff1af}} 
+int&
+y&
+Oszlopmagasság ("{}y tengely"{}) \\
+\hline
+
+\end{DoxyFields}
+\index{SolvedPipeGrid@{SolvedPipeGrid}}\label{structSolvedPipeGrid}
+\Hypertarget{pipe_8h_structSolvedPipeGrid}
+\doxysubsubsection{struct Solved\+Pipe\+Grid}
+Egy \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} megoldását tároló láncolt lista. 
+
+Egy \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} megoldását tárolja. A megfelelő Pipe-\/okat és indexeiket strázsa nélküli láncolt listában tárolja. Nincsen Init() függvénye, helyette egy Pipe\+Grid-\/ből hozzza létre magát. \begin{DoxyFields}{Adatmezők}
+\mbox{\Hypertarget{pipe_8h_a83f19165c0b7ea6eda8e271be1cd3b25}\label{pipe_8h_a83f19165c0b7ea6eda8e271be1cd3b25}} 
+struct \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{SolvedPipeGrid}} \texorpdfstring{$\ast$}{*}&
+next&
+A láncolt lista következő elemére mutató pointer. \\
+\hline
+
+\mbox{\Hypertarget{pipe_8h_aecfa1d22c70a35b254f4c0fb5eff0d5b}\label{pipe_8h_aecfa1d22c70a35b254f4c0fb5eff0d5b}} 
+\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}&
+pipe&
+Egy \doxylink{pipe_8h_structPipe}{Pipe} pointere (a Pipe\+Grid-\/ben). \\
+\hline
+
+\mbox{\Hypertarget{pipe_8h_a948ed5bfec27326e16786ae8a867fd94}\label{pipe_8h_a948ed5bfec27326e16786ae8a867fd94}} 
+int&
+x&
+A \doxylink{pipe_8h_structPipe}{Pipe} oszlop (x) indexe a Pipe\+Grid-\/ben. \\
+\hline
+
+\mbox{\Hypertarget{pipe_8h_adfee3b344c149b0bd329a5d6fc8b6f00}\label{pipe_8h_adfee3b344c149b0bd329a5d6fc8b6f00}} 
+int&
+y&
+A \doxylink{pipe_8h_structPipe}{Pipe} sor (y) indexe a Pipe\+Grid-\/ben. \\
+\hline
+
+\end{DoxyFields}
+
+
+\doxysubsection{Makródefiníciók dokumentációja}
+\Hypertarget{pipe_8h_ac5e7e1125193d2b2d3418b44c5d8d8a5}\label{pipe_8h_ac5e7e1125193d2b2d3418b44c5d8d8a5} 
+\index{pipe.h@{pipe.h}!DEFAULT\_PIPE\_SIZE@{DEFAULT\_PIPE\_SIZE}}
+\index{DEFAULT\_PIPE\_SIZE@{DEFAULT\_PIPE\_SIZE}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_PIPE\_SIZE}{DEFAULT\_PIPE\_SIZE}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+PIPE\+\_\+\+SIZE~50}
+
+
+
+A csövek alapértelmezett magassága és szélessége (pixelben) 
+
+
+
+\doxysubsection{Típusdefiníciók dokumentációja}
+\Hypertarget{pipe_8h_a2aaf339bd900c828726996d11a07e570}\label{pipe_8h_a2aaf339bd900c828726996d11a07e570} 
+\index{pipe.h@{pipe.h}!Elem@{Elem}}
+\index{Elem@{Elem}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Elem}{Elem}}
+{\footnotesize\ttfamily Elem}
+
+
+
+Egy Elem-\/et reprezentáló 3x3-\/as mátrix. 
+
+Egy-\/egy \doxylink{pipe_8h_structPipe}{Pipe} egyszerűbb alakja. A \doxylink{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}{Pipe\+Grid\+\_\+\+Generate\+Grid()} és a \doxylink{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423}{Pipe\+Grid\+\_\+\+Solve()} függvények egyszerűbb működéséhez szükséges. 
+
+\doxysubsection{Enumerációk dokumentációja}
+\Hypertarget{pipe_8h_a0e06b722097db3b4be182a777b22232c}\label{pipe_8h_a0e06b722097db3b4be182a777b22232c} 
+\index{pipe.h@{pipe.h}!ElemiResz@{ElemiResz}}
+\index{ElemiResz@{ElemiResz}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{ElemiResz}{ElemiResz}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pipe_8h_a0e06b722097db3b4be182a777b22232c}{Elemi\+Resz}}}
+
+
+
+Egy-\/egy Elem részeinek lehetséges állapotai. 
+
+Egy Elem generálás után Levego és Cso Elemi\+Resz-\/ekből áll. A másik három állapot a \doxylink{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423}{Pipe\+Grid\+\_\+\+Solve()} függvénynél jön elő. \begin{DoxyEnumFields}{Enumeráció-értékek}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Levego@{Levego}!pipe.h@{pipe.h}}\index{pipe.h@{pipe.h}!Levego@{Levego}}}\Hypertarget{pipe_8h_a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc}\label{pipe_8h_a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc} 
+Levego&Egy Elem-\/en belül a levegőt jelöli (azaz nem Cso). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cso@{Cso}!pipe.h@{pipe.h}}\index{pipe.h@{pipe.h}!Cso@{Cso}}}\Hypertarget{pipe_8h_a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23}\label{pipe_8h_a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23} 
+Cso&Egy Elem-\/en belül a csövet jelöli. Ebben mehet a víz. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ismeretlen@{Ismeretlen}!pipe.h@{pipe.h}}\index{pipe.h@{pipe.h}!Ismeretlen@{Ismeretlen}}}\Hypertarget{pipe_8h_a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9}\label{pipe_8h_a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9} 
+Ismeretlen&A \doxylink{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423}{Pipe\+Grid\+\_\+\+Solve()} során egy eldöntetlen útvonalnál használt. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rossz@{Rossz}!pipe.h@{pipe.h}}\index{pipe.h@{pipe.h}!Rossz@{Rossz}}}\Hypertarget{pipe_8h_a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc}\label{pipe_8h_a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc} 
+Rossz&A \doxylink{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423}{Pipe\+Grid\+\_\+\+Solve()} során egy rossz útvonalnál használt. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Jo@{Jo}!pipe.h@{pipe.h}}\index{pipe.h@{pipe.h}!Jo@{Jo}}}\Hypertarget{pipe_8h_a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0}\label{pipe_8h_a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0} 
+Jo&A \doxylink{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423}{Pipe\+Grid\+\_\+\+Solve()} során egy jó útvonalnál használt. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{pipe_8h_a66f0d6eb7162b131ee64066734931c69}\label{pipe_8h_a66f0d6eb7162b131ee64066734931c69} 
+\index{pipe.h@{pipe.h}!PipeType@{PipeType}}
+\index{PipeType@{PipeType}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{PipeType}{PipeType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pipe_8h_a66f0d6eb7162b131ee64066734931c69}{Pipe\+Type}}}
+
+
+
+A \doxylink{pipe_8h_structPipe}{Pipe} típusának enumja. 
+
+Nincs túl sok helyen használva, viszont hasznos információt mond el egy Pipe-\/ról. Emellett ezek a lehetséges típusok. \begin{DoxyEnumFields}{Enumeráció-értékek}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PipeType\_None@{PipeType\_None}!pipe.h@{pipe.h}}\index{pipe.h@{pipe.h}!PipeType\_None@{PipeType\_None}}}\Hypertarget{pipe_8h_a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5}\label{pipe_8h_a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5} 
+Pipe\+Type\+\_\+\+None&Az feldolgozás előtti alapértelmezett érték. Egyébként nem lehetséges. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PipeType\_Straight@{PipeType\_Straight}!pipe.h@{pipe.h}}\index{pipe.h@{pipe.h}!PipeType\_Straight@{PipeType\_Straight}}}\Hypertarget{pipe_8h_a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123}\label{pipe_8h_a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123} 
+Pipe\+Type\+\_\+\+Straight&Egyenes cső. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PipeType\_Curved@{PipeType\_Curved}!pipe.h@{pipe.h}}\index{pipe.h@{pipe.h}!PipeType\_Curved@{PipeType\_Curved}}}\Hypertarget{pipe_8h_a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe}\label{pipe_8h_a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe} 
+Pipe\+Type\+\_\+\+Curved&Kanyarodó cső. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PipeType\_Tshaped@{PipeType\_Tshaped}!pipe.h@{pipe.h}}\index{pipe.h@{pipe.h}!PipeType\_Tshaped@{PipeType\_Tshaped}}}\Hypertarget{pipe_8h_a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b}\label{pipe_8h_a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b} 
+Pipe\+Type\+\_\+\+Tshaped&T alakú cső. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PipeType\_Crossing@{PipeType\_Crossing}!pipe.h@{pipe.h}}\index{pipe.h@{pipe.h}!PipeType\_Crossing@{PipeType\_Crossing}}}\Hypertarget{pipe_8h_a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006}\label{pipe_8h_a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006} 
+Pipe\+Type\+\_\+\+Crossing&Kereszteződő/\+Egymáson átmenő cső. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{pipe_8h_a93b6bc573aa97700d92155c1872aa636}\label{pipe_8h_a93b6bc573aa97700d92155c1872aa636} 
+\index{pipe.h@{pipe.h}!Elem\_Copy@{Elem\_Copy}}
+\index{Elem\_Copy@{Elem\_Copy}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Elem\_Copy()}{Elem\_Copy()}}
+{\footnotesize\ttfamily void Elem\+\_\+\+Copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}}]{hova,  }\item[{\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}}]{honnan }\end{DoxyParamCaption})}
+
+
+
+Átmásol egy Elem tartalmát egy másikba. 
+
+A honnan Elem tartalmát másolja át a hova Elem-\/be. A hova Elem tartalmát felülírja. A honnan elem tartalmát nem változtatja, viszont a fordító warningot ad, ha const a paraméter. \begin{DoxyNote}{Megjegyzés}
+Ne használd. Csak azért van a header-\/ben, mert máshol van definiálva, mint ahol használva. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em hova} & A cél Elem \\
+\hline
+{\em honnan} & A forrás Elem \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8h_a9b4194b89ec44334514b17b0309deca8}\label{pipe_8h_a9b4194b89ec44334514b17b0309deca8} 
+\index{pipe.h@{pipe.h}!Elem\_Init@{Elem\_Init}}
+\index{Elem\_Init@{Elem\_Init}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Elem\_Init()}{Elem\_Init()}}
+{\footnotesize\ttfamily void Elem\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}}]{elem }\end{DoxyParamCaption})}
+
+
+
+Egy üres (csupa Levego-\/s) Elem-\/et álltít elő. 
+
+Az átadott Elem-\/et feltölti Levego-\/vel. A C nyelv sajátossága miatt tér el a többi Init függvénytől. \begin{DoxyNote}{Megjegyzés}
+Ne használd. Csak azért van a header-\/ben, mert máshol van definiálva, mint ahol használva. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em elem} & Az inicializálandó Elem \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8h_aab552e10b0d8bd8f6b2cd96bc38edc96}\label{pipe_8h_aab552e10b0d8bd8f6b2cd96bc38edc96} 
+\index{pipe.h@{pipe.h}!Elem\_RotateNeg@{Elem\_RotateNeg}}
+\index{Elem\_RotateNeg@{Elem\_RotateNeg}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Elem\_RotateNeg()}{Elem\_RotateNeg()}}
+{\footnotesize\ttfamily void Elem\+\_\+\+Rotate\+Neg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}}]{elem }\end{DoxyParamCaption})}
+
+
+
+Elforgat egy Elem-\/et az óramutató járásával ellentétes irányba. 
+
+\begin{DoxyNote}{Megjegyzés}
+Ne használd. Csak azért van a header-\/ben, mert máshol van definiálva, mint ahol használva. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em elem} & A változtatandó Elem \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8h_a2b0d66c6555de1641ccba86e3b2bbfb1}\label{pipe_8h_a2b0d66c6555de1641ccba86e3b2bbfb1} 
+\index{pipe.h@{pipe.h}!Elem\_RotatePos@{Elem\_RotatePos}}
+\index{Elem\_RotatePos@{Elem\_RotatePos}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Elem\_RotatePos()}{Elem\_RotatePos()}}
+{\footnotesize\ttfamily void Elem\+\_\+\+Rotate\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_a2aaf339bd900c828726996d11a07e570}{Elem}}}]{elem }\end{DoxyParamCaption})}
+
+
+
+Elforgat egy Elem-\/et az óramutató járásával megegyező irányba. 
+
+\begin{DoxyNote}{Megjegyzés}
+Ne használd. Csak azért van a header-\/ben, mert máshol van definiálva, mint ahol használva. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em elem} & A változtatandó Elem \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8h_a44323a670aaceb7645ad404cf8a8f783}\label{pipe_8h_a44323a670aaceb7645ad404cf8a8f783} 
+\index{pipe.h@{pipe.h}!Pipe\_CreateFromElem@{Pipe\_CreateFromElem}}
+\index{Pipe\_CreateFromElem@{Pipe\_CreateFromElem}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Pipe\_CreateFromElem()}{Pipe\_CreateFromElem()}}
+{\footnotesize\ttfamily bool Pipe\+\_\+\+Create\+From\+Elem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}}]{pipe,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{pipe\+\_\+texture,  }\item[{SDL\+\_\+\+Rect}]{base\+\_\+location }\end{DoxyParamCaption})}
+
+
+
+\doxylink{pipe_8h_structPipe}{Pipe} struktúra létrehozása a benne található Elem alapján. 
+
+A függvény létrehozza a \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ét, illetve beállítja a szülőjéhez relatív helyét (lásd\+: \doxylink{SDL__local_8h_structLayer}{Layer}), felvesz egy szöget és beállítja a Pipe\+Type-\/ot, illetve a textúrájának helyét. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. Hiba esetén nem ajánlott a létrejött struktúrát használni. \begin{DoxyPostcond}{Utófeltétel}
+Mivel létrehoz egy Layer-\/t, használat után a Pipe-\/ot fel kell szabadítani a \doxylink{pipe_8h_ad8e7c55fe9bad5b60e5c20b63f68cc5c}{Pipe\+\_\+\+Destroy()} függvénnyel. 
+\end{DoxyPostcond}
+\begin{DoxyNote}{Megjegyzés}
+A projekten belül található Create függvényektől eltérően inkább feldolgoz, mintsem létrehoz. Emiatt is lehetőleg csak a \doxylink{pipe_8h_ab1aff8a4b7cc5465aede4b2e6bbc1463}{Pipe\+Grid\+\_\+\+Feldolgoz()} függvényen belül maradjon használva. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em pipe} & A feldolgozandó \doxylink{pipe_8h_structPipe}{Pipe} pointere \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+{\em pipe\+\_\+texture} & A csöveket tartalmazó SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} \\
+\hline
+{\em base\+\_\+location} & A \doxylink{pipe_8h_structPipe}{Pipe} relatív helye \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipe_8h_ad8e7c55fe9bad5b60e5c20b63f68cc5c}\label{pipe_8h_ad8e7c55fe9bad5b60e5c20b63f68cc5c} 
+\index{pipe.h@{pipe.h}!Pipe\_Destroy@{Pipe\_Destroy}}
+\index{Pipe\_Destroy@{Pipe\_Destroy}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Pipe\_Destroy()}{Pipe\_Destroy()}}
+{\footnotesize\ttfamily void Pipe\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}}]{pipe }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{pipe_8h_structPipe}{Pipe} struktúrát. 
+
+Az átadott \doxylink{pipe_8h_a44323a670aaceb7645ad404cf8a8f783}{Pipe\+\_\+\+Create\+From\+Elem()} függvénnyel létrehozott Pipe-\/ot felszabadítja. Lényegében a struktúra Layer-\/ét szabadítja fel. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipe} & A felaszabadítandó \doxylink{pipe_8h_structPipe}{Pipe} struktúra \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8h_af5c71e4298c33eeb1eff0a9d4b9df420}\label{pipe_8h_af5c71e4298c33eeb1eff0a9d4b9df420} 
+\index{pipe.h@{pipe.h}!Pipe\_Init@{Pipe\_Init}}
+\index{Pipe\_Init@{Pipe\_Init}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Pipe\_Init()}{Pipe\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} Pipe\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{pipe_8h_structPipe}{Pipe} struktúra inicializálása (kinullázása/alapértelmezett értékek beállítása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{pipe_8h_structPipe}{Pipe} struktúra 
+\end{DoxyReturn}
+\Hypertarget{pipe_8h_a89e9baf97ad38cbde0098fe638819fbe}\label{pipe_8h_a89e9baf97ad38cbde0098fe638819fbe} 
+\index{pipe.h@{pipe.h}!Pipe\_Render@{Pipe\_Render}}
+\index{Pipe\_Render@{Pipe\_Render}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Pipe\_Render()}{Pipe\_Render()}}
+{\footnotesize\ttfamily bool Pipe\+\_\+\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}}]{pipe,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window }\end{DoxyParamCaption})}
+
+
+
+Renderel egy Pipe-\/ot a jelenlegi Render\+Target-\/re. 
+
+A \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ét rendereli a jelenlegi Render\+Target-\/re. Fontos, hogy a Render\+Target a "{}szülője"{} legyen, azaz az, amihez a \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ének helye relatív. Egyéb esetben nem garantált a helyes működés. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipe} & A renderelendő \doxylink{pipe_8h_structPipe}{Pipe} \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipe_8h_a216a3e3667f262ced88364393750fc0c}\label{pipe_8h_a216a3e3667f262ced88364393750fc0c} 
+\index{pipe.h@{pipe.h}!Pipe\_Rotate@{Pipe\_Rotate}}
+\index{Pipe\_Rotate@{Pipe\_Rotate}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Pipe\_Rotate()}{Pipe\_Rotate()}}
+{\footnotesize\ttfamily void Pipe\+\_\+\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}}]{pipe,  }\item[{int}]{irany }\end{DoxyParamCaption})}
+
+
+
+Elforgatja egy \doxylink{pipe_8h_structPipe}{Pipe} Elem-\/ét. 
+
+Az iránynak megfelelően elforgatja a \doxylink{pipe_8h_structPipe}{Pipe} Elem-\/ét. Ha az irány 1, az óramutató járásával megegyező irányba, ha -\/1, akkor az óramutató járásával ellentétes irányba. Ha a \doxylink{pipe_8h_structPipe}{Pipe} típusa Pipe\+Type\+\_\+\+Crossing, akkor nem történik semmi. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipe} & A változtatandó \doxylink{pipe_8h_structPipe}{Pipe} \\
+\hline
+{\em irany} & A forgatás iránya (1\+: óramutató járásával megegyező, -\/1\+: óramutató járásával ellentétes) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8h_adc666f7a0c915b9ffbc07bf0ee99921b}\label{pipe_8h_adc666f7a0c915b9ffbc07bf0ee99921b} 
+\index{pipe.h@{pipe.h}!Pipe\_UpdateLayer@{Pipe\_UpdateLayer}}
+\index{Pipe\_UpdateLayer@{Pipe\_UpdateLayer}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{Pipe\_UpdateLayer()}{Pipe\_UpdateLayer()}}
+{\footnotesize\ttfamily bool Pipe\+\_\+\+Update\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}}}]{pipe,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{pipe\+\_\+texture }\end{DoxyParamCaption})}
+
+
+
+Frissíti egy \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ét. 
+
+A \doxylink{pipe_8h_structPipe}{Pipe} Layer-\/ét frissíti (újrarendereli) az aktuális értékei szerint. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipe} & A frissítendő \doxylink{pipe_8h_structPipe}{Pipe} \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+{\em pipe\+\_\+texture} & A csöveket tartalmazó SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipe_8h_a374a382292ea4ef400156d3e1960b2d7}\label{pipe_8h_a374a382292ea4ef400156d3e1960b2d7} 
+\index{pipe.h@{pipe.h}!PipeGrid\_Create@{PipeGrid\_Create}}
+\index{PipeGrid\_Create@{PipeGrid\_Create}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Create()}{PipeGrid\_Create()}}
+{\footnotesize\ttfamily bool Pipe\+Grid\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{pipegrid,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+\doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúra létrehozása. 
+
+Létrehoz egy Pipe\+Grid-\/et a megadott szélességgel és magassággal. A létrejövő mátrix elemeit a \doxylink{pipe_8h_af5c71e4298c33eeb1eff0a9d4b9df420}{Pipe\+\_\+\+Init()}-\/tel hozza létre. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. Hiba esetén a struktúra mátrixa NULL. \begin{DoxyPostcond}{Utófeltétel}
+Mivel létrehoz egy \doxylink{pipe_8h_structPipe}{Pipe} mátrixot, használat után a Pipe\+Grid-\/ot fel kell szabadítani a \doxylink{pipe_8h_aeaa7e81af912deb3e9782cb9523321b3}{Pipe\+Grid\+\_\+\+Destroy()} függvénnyel. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy, már létrehozott, \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & A létrehozandó \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} pointere \\
+\hline
+{\em x} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} szélessége \\
+\hline
+{\em y} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} magassága \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipe_8h_a65ed505ed2d56a3aeda3aed0a46f02d1}\label{pipe_8h_a65ed505ed2d56a3aeda3aed0a46f02d1} 
+\index{pipe.h@{pipe.h}!PipeGrid\_CreateCopy@{PipeGrid\_CreateCopy}}
+\index{PipeGrid\_CreateCopy@{PipeGrid\_CreateCopy}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_CreateCopy()}{PipeGrid\_CreateCopy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} Pipe\+Grid\+\_\+\+Create\+Copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{source }\end{DoxyParamCaption})}
+
+
+
+Lemásol egy Pipe\+Grid-\/et és visszaadja a másolatot. 
+
+Csak a Pipe-\/ok Elem-\/ét másolja le, ezért ha használni akarjuk a másolatot, akkor először fel kell dolgozni a \doxylink{pipe_8h_ab1aff8a4b7cc5465aede4b2e6bbc1463}{Pipe\+Grid\+\_\+\+Feldolgoz()} függvénnyel. \begin{DoxyPostcond}{Utófeltétel}
+A másolatot a \doxylink{pipe_8h_a374a382292ea4ef400156d3e1960b2d7}{Pipe\+Grid\+\_\+\+Create()}-\/tel hozza létre, így fel kell szabadítani használat után a \doxylink{pipe_8h_aeaa7e81af912deb3e9782cb9523321b3}{Pipe\+Grid\+\_\+\+Destroy()}-\/el. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Paraméterek}
+{\em source} & A forrás \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+Egy új \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid}, hiba esetén ennek a mátrixa NULL 
+\end{DoxyReturn}
+\Hypertarget{pipe_8h_aeaa7e81af912deb3e9782cb9523321b3}\label{pipe_8h_aeaa7e81af912deb3e9782cb9523321b3} 
+\index{pipe.h@{pipe.h}!PipeGrid\_Destroy@{PipeGrid\_Destroy}}
+\index{PipeGrid\_Destroy@{PipeGrid\_Destroy}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Destroy()}{PipeGrid\_Destroy()}}
+{\footnotesize\ttfamily void Pipe\+Grid\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{pipegrid }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy Pipe\+Grid-\/et. 
+
+A Pipe\+Grid-\/ben lévő Pipe-\/okat is felszabadítja. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & A felaszabadítandó \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} pointere \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8h_ab1aff8a4b7cc5465aede4b2e6bbc1463}\label{pipe_8h_ab1aff8a4b7cc5465aede4b2e6bbc1463} 
+\index{pipe.h@{pipe.h}!PipeGrid\_Feldolgoz@{PipeGrid\_Feldolgoz}}
+\index{PipeGrid\_Feldolgoz@{PipeGrid\_Feldolgoz}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Feldolgoz()}{PipeGrid\_Feldolgoz()}}
+{\footnotesize\ttfamily bool Pipe\+Grid\+\_\+\+Feldolgoz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{pipegrid,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{pipe\+\_\+texture,  }\item[{SDL\+\_\+\+Rect}]{base\+\_\+location }\end{DoxyParamCaption})}
+
+
+
+Egy \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} Pipe-\/jainak hiányzó értékeit feltölti. 
+
+A Pipe\+Grid-\/ben található Pipe-\/ok Elem-\/ei alapján feltölti a Pipe-\/ok hiányzó értékeit a \doxylink{pipe_8h_a44323a670aaceb7645ad404cf8a8f783}{Pipe\+\_\+\+Create\+From\+Elem()}-\/el, azaz létrehozza a Layer-\/ét, beállítja a szülőjéhez relatív helyét, felvesz egy szöget és beállítja a Pipe\+Type-\/ot, illetve a textúrájának helyét. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott a struktúra használata. \begin{DoxyPrecond}{Előfeltétel}
+A Pipe-\/ok Elem-\/jeinek már be kell legyen állítva az értéke. Emiatt csak a "{}végleges"{} állapotban ajánlott használni, azaz a \doxylink{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}{Pipe\+Grid\+\_\+\+Generate\+Grid()} és a \doxylink{pipe_8h_a1e4a8bc5269d22c3e6fec9acd8bf3e83}{Pipe\+Grid\+\_\+\+Shuffle()} függvények után. 
+\end{DoxyPrecond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy, már feldolgozott, \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & A feldolgozandó \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+{\em pipe\+\_\+texture} & A csöveket tartalmazó SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} \\
+\hline
+{\em base\+\_\+location} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} megjelenítési helye \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}\label{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d} 
+\index{pipe.h@{pipe.h}!PipeGrid\_GenerateGrid@{PipeGrid\_GenerateGrid}}
+\index{PipeGrid\_GenerateGrid@{PipeGrid\_GenerateGrid}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_GenerateGrid()}{PipeGrid\_GenerateGrid()}}
+{\footnotesize\ttfamily void Pipe\+Grid\+\_\+\+Generate\+Grid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{pipegrid,  }\item[{SDL\+\_\+\+Point}]{entry,  }\item[{SDL\+\_\+\+Point}]{exit }\end{DoxyParamCaption})}
+
+
+
+Legenerál egy Pipe\+Grid-\/et. 
+
+A játékhoz az átadott Pipe\+Grid-\/ben generál egy pályát. Ez egy rekurzív labirintusgeneráló algoritmussal történik, aminek a segítségével egy véletlenszerű, megoldható pályát generál. Alapul az infoc-\/n található algoritmus szolgált (link\+: \href{https://infoc.eet.bme.hu/labirintus/}{\texttt{ https\+://infoc.\+eet.\+bme.\+hu/labirintus/}}), ami módosítva lett, hogy az általam használt adatszerkezetekkel működjön (Pipe-\/on belüli Elem). \begin{DoxyWarning}{Figyelmeztetés}
+A belépési és kilépési pontok szabadon megadhatóak, DE az entry lehetőleg az első oszlopban, az exit pedig az utolsóban legyen. Egyéb esetben nem garantált a helyes működés. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & A változtatandó \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} pointere \\
+\hline
+{\em entry} & A belépési pont (x\+: oszlopindex, y\+: sorindex) \\
+\hline
+{\em exit} & A kilépési pont (x\+: oszlopindex, y\+: sorindex) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8h_a0d9859a40de0cd53258fcb88e8bbcaff}\label{pipe_8h_a0d9859a40de0cd53258fcb88e8bbcaff} 
+\index{pipe.h@{pipe.h}!PipeGrid\_Init@{PipeGrid\_Init}}
+\index{PipeGrid\_Init@{PipeGrid\_Init}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Init()}{PipeGrid\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} Pipe\+Grid\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} struktúra 
+\end{DoxyReturn}
+\Hypertarget{pipe_8h_af129c9d4c21a5a3ceea790a85f5d2305}\label{pipe_8h_af129c9d4c21a5a3ceea790a85f5d2305} 
+\index{pipe.h@{pipe.h}!PipeGrid\_Render@{PipeGrid\_Render}}
+\index{PipeGrid\_Render@{PipeGrid\_Render}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Render()}{PipeGrid\_Render()}}
+{\footnotesize\ttfamily bool Pipe\+Grid\+\_\+\+Render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{pipegrid,  }\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}}}]{window }\end{DoxyParamCaption})}
+
+
+
+Lerenderel egy feldolgozott Pipe\+Grid-\/et az aktuális Render\+Target-\/re. 
+
+Az előforduló hibákat a függvény kiírja a konzolra. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & Egy feldolgozott \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} \\
+\hline
+{\em window} & A renderert tartalmazó \doxylink{SDL__local_8h_structWindow}{Window} struktúra \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{pipe_8h_a1e4a8bc5269d22c3e6fec9acd8bf3e83}\label{pipe_8h_a1e4a8bc5269d22c3e6fec9acd8bf3e83} 
+\index{pipe.h@{pipe.h}!PipeGrid\_Shuffle@{PipeGrid\_Shuffle}}
+\index{PipeGrid\_Shuffle@{PipeGrid\_Shuffle}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Shuffle()}{PipeGrid\_Shuffle()}}
+{\footnotesize\ttfamily void Pipe\+Grid\+\_\+\+Shuffle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{pipegrid }\end{DoxyParamCaption})}
+
+
+
+Összekever egy Pipe\+Grid-\/et. 
+
+A Pipe\+Grid-\/en belül lévő Pipe-\/ok Elem-\/eit véletlenszerűen elforgatja. 
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & Az összekeverendő \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423}\label{pipe_8h_a0ea6489ef8c5d5a47e52c0d3c8073423} 
+\index{pipe.h@{pipe.h}!PipeGrid\_Solve@{PipeGrid\_Solve}}
+\index{PipeGrid\_Solve@{PipeGrid\_Solve}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{PipeGrid\_Solve()}{PipeGrid\_Solve()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*} Pipe\+Grid\+\_\+\+Solve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{pipegrid,  }\item[{SDL\+\_\+\+Point}]{entry,  }\item[{SDL\+\_\+\+Point}]{exit }\end{DoxyParamCaption})}
+
+
+
+Megold egy Pipe\+Grid-\/et és a megoldását egy Solved\+Pipe\+Grid-\/ben adja vissza. 
+
+Át kell adni a \doxylink{pipe_8h_a4bcc09f533a5dbe43a9a24dc9e1a8d4d}{Pipe\+Grid\+\_\+\+Generate\+Grid()}-\/ben használt belépési és kilépési pontokat, egyébként nem fogja jól megoldani. \begin{DoxyPostcond}{Utófeltétel}
+Mivel egy láncolt listát hoz létre a függvény, használat után a \doxylink{pipe_8h_a5b9f26edab225f3523287fc05a1eedf7}{Solved\+Pipe\+Grid\+\_\+\+Destroy()}-\/al kell felszabadítani. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Paraméterek}
+{\em pipegrid} & A megoldandó \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} \\
+\hline
+{\em entry} & A belépési pont (x\+: oszlopindex, y\+: sorindex) \\
+\hline
+{\em exit} & A kilépési pont (x\+: oszlopindex, y\+: sorindex) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+A megoldás láncolt listájának első eleme, hiba vagy megoldás hiánya esetén NULL. 
+\end{DoxyReturn}
+\Hypertarget{pipe_8h_a5b9f26edab225f3523287fc05a1eedf7}\label{pipe_8h_a5b9f26edab225f3523287fc05a1eedf7} 
+\index{pipe.h@{pipe.h}!SolvedPipeGrid\_Destroy@{SolvedPipeGrid\_Destroy}}
+\index{SolvedPipeGrid\_Destroy@{SolvedPipeGrid\_Destroy}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{SolvedPipeGrid\_Destroy()}{SolvedPipeGrid\_Destroy()}}
+{\footnotesize\ttfamily void Solved\+Pipe\+Grid\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{start }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid} láncolt listát. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em start} & A láncolt lista első elemére mutató pointer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pipe_8h_a29554057a457d47ee2015a6d5b9d9cef}\label{pipe_8h_a29554057a457d47ee2015a6d5b9d9cef} 
+\index{pipe.h@{pipe.h}!SolvedPipeGrid\_RemoveFirst@{SolvedPipeGrid\_RemoveFirst}}
+\index{SolvedPipeGrid\_RemoveFirst@{SolvedPipeGrid\_RemoveFirst}!pipe.h@{pipe.h}}
+\doxysubsubsection{\texorpdfstring{SolvedPipeGrid\_RemoveFirst()}{SolvedPipeGrid\_RemoveFirst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*} Solved\+Pipe\+Grid\+\_\+\+Remove\+First (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{start }\end{DoxyParamCaption})}
+
+
+
+A \doxylink{pipe_8h_structSolvedPipeGrid}{Solved\+Pipe\+Grid} láncolt lista első elemét felszabadítja és visszaadja a következő elem pointerét. 
+
+
+\begin{DoxyParams}{Paraméterek}
+{\em start} & A láncolt lista első elemére mutató pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+A következő elemre mutató pointer (NULL, ha nincs több elem) 
+\end{DoxyReturn}

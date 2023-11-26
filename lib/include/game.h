@@ -46,7 +46,6 @@
  * @bug A modul egy osdialog nevű modullal hoz létre rendszerfüggő dialógusablakokat. Ez a GTK2-re épül Linux alatt, ami
  * memóriaszivárgást okoz. Windows alatt az Address Sanitizert nem teszteltem, ott nem tudom, hogy mi a helyzet.
  * Egy lehetséges megoldás, hogy az osdialog-ot mással helyettesítjük, de emiatt a game.c-ben változtatásokat kell hozni.
- * 
  */
 
 /* game.h eleje */
@@ -97,7 +96,7 @@
 /**
  * @brief A pálya előtt lévő hosszú cső feltöltési animációjának a sebessége.
  */
-#define LONG_PIPE_FILL_SPEED 10
+#define LONG_PIPE_FILL_SPEED 5
 /**
  * @brief A pályán lévő csövek feltölési animációjának a sebessége.
  */

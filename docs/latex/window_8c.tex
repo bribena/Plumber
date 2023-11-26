@@ -1,0 +1,84 @@
+\doxysection{lib/src/window.c fájlreferencia}
+\hypertarget{window_8c}{}\label{window_8c}\index{lib/src/window.c@{lib/src/window.c}}
+
+
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban deklarált \doxylink{SDL__local_8h_structWindow}{Window} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}SDL\+\_\+local.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} \mbox{\hyperlink{window_8c_a4f9d6211ac0d42ba33776668c0f511a0}{Window\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em \doxylink{SDL__local_8h_structWindow}{Window} struktúra inicializálása (kinullázása) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{window_8c_ae31e99f90eae8c04eeaeaea96d7fe83c}{Window\+\_\+\+Create}} (\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} \texorpdfstring{$\ast$}{*}window, const char \texorpdfstring{$\ast$}{*}title, int width, int height)
+\begin{DoxyCompactList}\small\item\em Feltölt egy inicializált \doxylink{SDL__local_8h_structWindow}{Window} struktúrát. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{window_8c_a57f2d4c1cc5eb035f40f99128358b997}{Window\+\_\+\+Destroy}} (\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{SDL__local_8h_structWindow}{Window} struktúrát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban deklarált \doxylink{SDL__local_8h_structWindow}{Window} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{window_8c_ae31e99f90eae8c04eeaeaea96d7fe83c}\label{window_8c_ae31e99f90eae8c04eeaeaea96d7fe83c} 
+\index{window.c@{window.c}!Window\_Create@{Window\_Create}}
+\index{Window\_Create@{Window\_Create}!window.c@{window.c}}
+\doxysubsubsection{\texorpdfstring{Window\_Create()}{Window\_Create()}}
+{\footnotesize\ttfamily bool Window\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{title,  }\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Feltölt egy inicializált \doxylink{SDL__local_8h_structWindow}{Window} struktúrát. 
+
+Létrehoz egy SDL\+\_\+\+Window\texorpdfstring{$\ast$}{*}-\/ot és egy SDL\+\_\+\+Renderer\texorpdfstring{$\ast$}{*}-\/t, majd a window paraméterben eltárolja ezeket. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. \begin{DoxyPostcond}{Utófeltétel}
+A \doxylink{SDL__local_8h_ae31e99f90eae8c04eeaeaea96d7fe83c}{Window\+\_\+\+Create()} által létrehozott \doxylink{SDL__local_8h_structWindow}{Window} struktúrákat használat után a \doxylink{SDL__local_8h_a57f2d4c1cc5eb035f40f99128358b997}{Window\+\_\+\+Destroy()}-\/al kell felszabadítani. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS egy, már létrehozott, \doxylink{SDL__local_8h_structWindow}{Window} struktúrát átadni, mert memóriaszivárgás lehet belőle. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em window} & Egy inicializált \doxylink{SDL__local_8h_structWindow}{Window} struktúra pointere. \\
+\hline
+{\em title} & Az ablak neve \\
+\hline
+{\em width} & Az ablak szélessége (pixelben) \\
+\hline
+{\em height} & Az ablak magassága (pixelben) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{window_8c_a57f2d4c1cc5eb035f40f99128358b997}\label{window_8c_a57f2d4c1cc5eb035f40f99128358b997} 
+\index{window.c@{window.c}!Window\_Destroy@{Window\_Destroy}}
+\index{Window\_Destroy@{Window\_Destroy}!window.c@{window.c}}
+\doxysubsubsection{\texorpdfstring{Window\_Destroy()}{Window\_Destroy()}}
+{\footnotesize\ttfamily void Window\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} \texorpdfstring{$\ast$}{*}}]{window }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{SDL__local_8h_structWindow}{Window} struktúrát. 
+
+Az átadott \doxylink{SDL__local_8h_ae31e99f90eae8c04eeaeaea96d7fe83c}{Window\+\_\+\+Create()} által létrehozott struktúrát szabadítja fel. 
+\begin{DoxyParams}{Paraméterek}
+{\em window} & A felszabadítandó \doxylink{SDL__local_8h_structWindow}{Window} struktúra pointere. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{window_8c_a4f9d6211ac0d42ba33776668c0f511a0}\label{window_8c_a4f9d6211ac0d42ba33776668c0f511a0} 
+\index{window.c@{window.c}!Window\_Init@{Window\_Init}}
+\index{Window\_Init@{Window\_Init}!window.c@{window.c}}
+\doxysubsubsection{\texorpdfstring{Window\_Init()}{Window\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{SDL__local_8h_structWindow}{Window}} Window\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{SDL__local_8h_structWindow}{Window} struktúra inicializálása (kinullázása) 
+
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{SDL__local_8h_structWindow}{Window} struktúra. 
+\end{DoxyReturn}

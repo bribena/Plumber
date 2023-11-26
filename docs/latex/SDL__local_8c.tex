@@ -1,0 +1,73 @@
+\doxysection{lib/src/\+SDL\+\_\+local.c fájlreferencia}
+\hypertarget{SDL__local_8c}{}\label{SDL__local_8c}\index{lib/src/SDL\_local.c@{lib/src/SDL\_local.c}}
+
+
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban deklarált, struktúrákhoz nem köthető függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}SDL\+\_\+local.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{SDL__local_8c_ac123123dd113ec5077bfd1af17d2f459}{Initialize\+SDL}} (void)
+\begin{DoxyCompactList}\small\item\em Az SDL inicializáló függvénye. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SDL__local_8c_a9920ee88c07373643b2dbb45eadf54bb}{Start\+Music}} (\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}} assets)
+\begin{DoxyCompactList}\small\item\em Elindítja a háttérzenét és végtelenül ismétli. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SDL__local_8c_a5105dab6519a26f47f91e5f2051f2ac5}{Quit\+SDL}} (void)
+\begin{DoxyCompactList}\small\item\em Leállítja az SDL-\/lel kapcsolatos modulokat. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+Az \doxylink{SDL__local_8h}{SDL\+\_\+local.\+h}-\/ban deklarált, struktúrákhoz nem köthető függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{SDL__local_8c_ac123123dd113ec5077bfd1af17d2f459}\label{SDL__local_8c_ac123123dd113ec5077bfd1af17d2f459} 
+\index{SDL\_local.c@{SDL\_local.c}!InitializeSDL@{InitializeSDL}}
+\index{InitializeSDL@{InitializeSDL}!SDL\_local.c@{SDL\_local.c}}
+\doxysubsubsection{\texorpdfstring{InitializeSDL()}{InitializeSDL()}}
+{\footnotesize\ttfamily bool Initialize\+SDL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Az SDL inicializáló függvénye. 
+
+Az SDL-\/t és a hozzá kapcsolódó modulokat inicializálja. Ha használni akarjuk az SDL-\/t, akkor ezt a függvényt meg kell hívni. Az előforduló hibákat a függvény kiírja a konzolra. \begin{DoxyPostcond}{Utófeltétel}
+A használat után a \doxylink{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}{Quit\+SDL()} függvényt kell meghívni, hogy leállítsuk a különböző modulokat. 
+\end{DoxyPostcond}
+\begin{DoxyWarning}{Figyelmeztetés}
+Többszöri hívás kilépés nélkül összeomlást okozhat. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{SDL__local_8c_a5105dab6519a26f47f91e5f2051f2ac5}\label{SDL__local_8c_a5105dab6519a26f47f91e5f2051f2ac5} 
+\index{SDL\_local.c@{SDL\_local.c}!QuitSDL@{QuitSDL}}
+\index{QuitSDL@{QuitSDL}!SDL\_local.c@{SDL\_local.c}}
+\doxysubsubsection{\texorpdfstring{QuitSDL()}{QuitSDL()}}
+{\footnotesize\ttfamily void Quit\+SDL (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Leállítja az SDL-\/lel kapcsolatos modulokat. 
+
+Ha az \doxylink{SDL__local_8h_ac123123dd113ec5077bfd1af17d2f459}{Initialize\+SDL()} meg volt hívva, ezt is meg kell hívni a kilépés előtt. \Hypertarget{SDL__local_8c_a9920ee88c07373643b2dbb45eadf54bb}\label{SDL__local_8c_a9920ee88c07373643b2dbb45eadf54bb} 
+\index{SDL\_local.c@{SDL\_local.c}!StartMusic@{StartMusic}}
+\index{StartMusic@{StartMusic}!SDL\_local.c@{SDL\_local.c}}
+\doxysubsubsection{\texorpdfstring{StartMusic()}{StartMusic()}}
+{\footnotesize\ttfamily void Start\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{SDL__local_8h_structAssets}{Assets}}}]{assets }\end{DoxyParamCaption})}
+
+
+
+Elindítja a háttérzenét és végtelenül ismétli. 
+
+SDL\+\_\+mixer függvényekkel indítja el a háttérzenét. Ezután az SDL\+\_\+mixer függvényekkel kezelhető az \doxylink{SDL__local_8h_structAssets}{Assets} bgm eleme. Az előforduló hibákat a függvény kiírja a konzolra. \begin{DoxyPostcond}{Utófeltétel}
+Bár a \doxylink{SDL__local_8h_a5105dab6519a26f47f91e5f2051f2ac5}{Quit\+SDL()} leállítja a zenét, mégis érdemes manuálisan leállítani, kilépés előtt. 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Paraméterek}
+{\em assets} & Az assets mappa tartalmát tároló struktúra. A bgm eleme kell. \\
+\hline
+\end{DoxyParams}

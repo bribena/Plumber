@@ -1,0 +1,103 @@
+\doxysection{lib/src/game.c fájlreferencia}
+\hypertarget{game_8c}{}\label{game_8c}\index{lib/src/game.c@{lib/src/game.c}}
+
+
+A \doxylink{game_8h}{game.\+h}-\/ban deklarált, a játék állapotához tartozó függvények kódjait tartalmazó fájl.  
+
+
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{game_8c_a1b99b54c59508d3d3141e7b49f56ca64}{Menu}} (\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} game\+\_\+struct)
+\begin{DoxyCompactList}\small\item\em A játékmenü függvénye. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8c_a93c862a10cd086d1667b0564f41cf7fd}{Game}} (\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} game\+\_\+struct, \mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}betoltott, int entry\+\_\+y, int exit\+\_\+y)
+\begin{DoxyCompactList}\small\item\em A játék függvénye. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8c_aa1b05c35e760e1a2a04bbf56bfa8222c}{Win}} (\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}} game\+\_\+struct, \mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}} state, \mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} copy, int entry\+\_\+y, int exit\+\_\+y)
+\begin{DoxyCompactList}\small\item\em A nyert kép függvénye. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A \doxylink{game_8h}{game.\+h}-\/ban deklarált, a játék állapotához tartozó függvények kódjait tartalmazó fájl. 
+
+\begin{DoxyRefDesc}{Hiba}
+\item[\mbox{\hyperlink{bug__bug000004}{Hiba}}]Az osdialog modullal problémája van a debugmalloc.\+h-\/nak. Az osdialog dokumentációja tisztán leírja, hogy a visszaadott stringeit fel kell szabadítani használat után. Viszont, ha fel akarnám szabadítani ezt, a debugmalloc.\+h hibát ad vissza. Ezt úgy lehet kijavítani, hogy az osdialog.\+h-\/ban include-\/oljuk a debugmalloc.\+h-\/t vagy innen kivesszük a debugmalloc.\+h-\/t. \end{DoxyRefDesc}
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{game_8c_a93c862a10cd086d1667b0564f41cf7fd}\label{game_8c_a93c862a10cd086d1667b0564f41cf7fd} 
+\index{game.c@{game.c}!Game@{Game}}
+\index{Game@{Game}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily bool Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}}}]{game\+\_\+struct,  }\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}} \texorpdfstring{$\ast$}{*}}]{betoltott,  }\item[{int}]{entry\+\_\+y,  }\item[{int}]{exit\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+A játék függvénye. 
+
+Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. \begin{DoxyNote}{Megjegyzés}
+A \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()} függvény már képes meghívni, magában ne hívjuk meg, mert nem garantált a működése. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em game\+\_\+struct} & A létrehozott \doxylink{game_8h_structGameStruct}{Game\+Struct}. \\
+\hline
+{\em betoltott} & Ha betöltés volt a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()}-\/ben választva, akkor a betöltött \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid}. \\
+\hline
+{\em entry\+\_\+y} & Ha betöltés volt a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()}-\/ben választva, akkor a betöltött \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} bejáratánk sora. \\
+\hline
+{\em exit\+\_\+y} & Ha betöltés volt a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()}-\/ben választva, akkor a betöltött \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} kijáratának sora. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, ha a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()}-\/be lépünk vissza, false, ha új játék kezdődik, kilépés történt, illetve néhány súlyosabb hiba esetén 
+\end{DoxyReturn}
+\Hypertarget{game_8c_a1b99b54c59508d3d3141e7b49f56ca64}\label{game_8c_a1b99b54c59508d3d3141e7b49f56ca64} 
+\index{game.c@{game.c}!Menu@{Menu}}
+\index{Menu@{Menu}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+{\footnotesize\ttfamily bool Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}}}]{game\+\_\+struct }\end{DoxyParamCaption})}
+
+
+
+A játékmenü függvénye. 
+
+Az SDL és a \doxylink{game_8h_structGameStruct}{Game\+Struct} inicializálása/létrehozása után meg lehet hívni. Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. 
+\begin{DoxyParams}{Paraméterek}
+{\em game\+\_\+struct} & A létrehozott \doxylink{game_8h_structGameStruct}{Game\+Struct}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, súlyos hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{game_8c_aa1b05c35e760e1a2a04bbf56bfa8222c}\label{game_8c_aa1b05c35e760e1a2a04bbf56bfa8222c} 
+\index{game.c@{game.c}!Win@{Win}}
+\index{Win@{Win}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{Win()}{Win()}}
+{\footnotesize\ttfamily bool Win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structGameStruct}{Game\+Struct}}}]{game\+\_\+struct,  }\item[{\mbox{\hyperlink{SDL__local_8h_structLayer}{Layer}}}]{state,  }\item[{\mbox{\hyperlink{pipe_8h_structPipeGrid}{Pipe\+Grid}}}]{copy,  }\item[{int}]{entry\+\_\+y,  }\item[{int}]{exit\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+A nyert kép függvénye. 
+
+Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. \begin{DoxyNote}{Megjegyzés}
+A \doxylink{game_8h_a93c862a10cd086d1667b0564f41cf7fd}{Game()} függvény már képes meghívni, magában ne hívjuk meg, mert nem garantált a működése. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Paraméterek}
+{\em game\+\_\+struct} & A létrehozott \doxylink{game_8h_structGameStruct}{Game\+Struct}. \\
+\hline
+{\em state} & A \doxylink{game_8h_a93c862a10cd086d1667b0564f41cf7fd}{Game()} függvény aktuális renderelt képe. \\
+\hline
+{\em copy} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} pálya betöltéskori másolata. \\
+\hline
+{\em entry\+\_\+y} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} bejáratának sora. \\
+\hline
+{\em exit\+\_\+y} & A \doxylink{pipe_8h_structPipeGrid}{Pipe\+Grid} kijáratának sora. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, ha a \doxylink{game_8h_a1b99b54c59508d3d3141e7b49f56ca64}{Menu()}-\/be lépünk vissza, false, ha új játék kezdődik, kilépés történt, illetve néhány súlyosabb hiba esetén 
+\end{DoxyReturn}

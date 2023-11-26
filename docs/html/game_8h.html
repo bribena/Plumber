@@ -1,0 +1,1544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vízvezetékszerelő: lib/include/game.h fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vízvezetékszerelő
+   </div>
+   <div id="projectbrief">Egy vízvezetékszerelő játék, C-ben írva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Keresés');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_5a30104352ef4255dc24354b02eb2d20.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Adatszerkezetek</a> &#124;
+<a href="#define-members">Makródefiníciók</a> &#124;
+<a href="#enum-members">Enumerációk</a> &#124;
+<a href="#func-members">Függvények</a>  </div>
+  <div class="headertitle"><div class="title">game.h fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A játék headerje.  
+<a href="#details">Részletek...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="SDL__local_8h_source.html">SDL_local.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pipe_8h_source.html">pipe.h</a>&quot;</code><br />
+<code>#include &quot;osdialog.h&quot;</code><br />
+</div>
+<p><a href="game_8h_source.html">Ugrás a fájl forráskódjához.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Adatszerkezetek</h2></td></tr>
+<tr class="memitem:structGameStruct" id="r_structGameStruct"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structGameStruct">GameStruct</a></td></tr>
+<tr class="memdesc:structGameStruct"><td class="mdescLeft">&#160;</td><td class="mdescRight">A játékhoz szükséges struktúrákat fogja össze.  <a href="#structGameStruct">Részletek...</a><br /></td></tr>
+<tr class="separator:structGameStruct"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structEventloopVariables" id="r_structEventloopVariables"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structEventloopVariables">EventloopVariables</a></td></tr>
+<tr class="memdesc:structEventloopVariables"><td class="mdescLeft">&#160;</td><td class="mdescRight">A játék eventloopjának a változóit fogja össze.  <a href="#structEventloopVariables">Részletek...</a><br /></td></tr>
+<tr class="separator:structEventloopVariables"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structWheel" id="r_structWheel"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structWheel">Wheel</a></td></tr>
+<tr class="memdesc:structWheel"><td class="mdescLeft">&#160;</td><td class="mdescRight">A csap struktúrája.  <a href="#structWheel">Részletek...</a><br /></td></tr>
+<tr class="separator:structWheel"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structAnimationQueue" id="r_structAnimationQueue"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structAnimationQueue">AnimationQueue</a></td></tr>
+<tr class="memdesc:structAnimationQueue"><td class="mdescLeft">&#160;</td><td class="mdescRight">Az animációs sor struktúrája.  <a href="#structAnimationQueue">Részletek...</a><br /></td></tr>
+<tr class="separator:structAnimationQueue"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Makródefiníciók</h2></td></tr>
+<tr class="memitem:a6ca4df6b9e1495a80a2929a5187cb9b9" id="r_a6ca4df6b9e1495a80a2929a5187cb9b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ca4df6b9e1495a80a2929a5187cb9b9">DEFAULT_WINDOW_WIDTH</a>&#160;&#160;&#160;1600</td></tr>
+<tr class="memdesc:a6ca4df6b9e1495a80a2929a5187cb9b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alapértelmezett ablakszélesség.  <br /></td></tr>
+<tr class="separator:a6ca4df6b9e1495a80a2929a5187cb9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a030ebc610fddb0a18d62829ab376bf85" id="r_a030ebc610fddb0a18d62829ab376bf85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a030ebc610fddb0a18d62829ab376bf85">DEFAULT_WINDOW_HEIGHT</a>&#160;&#160;&#160;900</td></tr>
+<tr class="memdesc:a030ebc610fddb0a18d62829ab376bf85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alapértelmezett ablakmagasság.  <br /></td></tr>
+<tr class="separator:a030ebc610fddb0a18d62829ab376bf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ce30ff5253b94e8f3ba48694fbc207b" id="r_a1ce30ff5253b94e8f3ba48694fbc207b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ce30ff5253b94e8f3ba48694fbc207b">MIN_X_SIZE</a>&#160;&#160;&#160;18</td></tr>
+<tr class="memdesc:a1ce30ff5253b94e8f3ba48694fbc207b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A játék pályáján szereplő, egy sorban lévő csövek minimális száma.  <br /></td></tr>
+<tr class="separator:a1ce30ff5253b94e8f3ba48694fbc207b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9400dfeda655f60302884300255f7115" id="r_a9400dfeda655f60302884300255f7115"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9400dfeda655f60302884300255f7115">MIN_Y_SIZE</a>&#160;&#160;&#160;14</td></tr>
+<tr class="memdesc:a9400dfeda655f60302884300255f7115"><td class="mdescLeft">&#160;</td><td class="mdescRight">A játék pályáján szereplő, egy oszlopban lévő csövek minimális száma.  <br /></td></tr>
+<tr class="separator:a9400dfeda655f60302884300255f7115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af901e4e1eb4b35b9bc69926222e151e3" id="r_af901e4e1eb4b35b9bc69926222e151e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af901e4e1eb4b35b9bc69926222e151e3">WHEEL_SIZE_MULTIPLIER</a>&#160;&#160;&#160;1.75</td></tr>
+<tr class="memdesc:af901e4e1eb4b35b9bc69926222e151e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A csap csövekhez viszonyított mérete.  <br /></td></tr>
+<tr class="separator:af901e4e1eb4b35b9bc69926222e151e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab58dbd5f932cc031e945688c796e067" id="r_aab58dbd5f932cc031e945688c796e067"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab58dbd5f932cc031e945688c796e067">WHEEL_ROTATE_SPEED</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:aab58dbd5f932cc031e945688c796e067"><td class="mdescLeft">&#160;</td><td class="mdescRight">A csap forgatási animációjának a sebessége.  <br /></td></tr>
+<tr class="separator:aab58dbd5f932cc031e945688c796e067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ac5cdf96de80051ae9ea707bbdb8579" id="r_a6ac5cdf96de80051ae9ea707bbdb8579"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ac5cdf96de80051ae9ea707bbdb8579">PIPE_ROTATE_SPEED</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a6ac5cdf96de80051ae9ea707bbdb8579"><td class="mdescLeft">&#160;</td><td class="mdescRight">A csövek forgatási animációjának a sebessége.  <br /></td></tr>
+<tr class="separator:a6ac5cdf96de80051ae9ea707bbdb8579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70ffdd55dbb29415bff839f0d460cce0" id="r_a70ffdd55dbb29415bff839f0d460cce0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70ffdd55dbb29415bff839f0d460cce0">LONG_PIPE_FILL_SPEED</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:a70ffdd55dbb29415bff839f0d460cce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pálya előtt lévő hosszú cső feltöltési animációjának a sebessége.  <br /></td></tr>
+<tr class="separator:a70ffdd55dbb29415bff839f0d460cce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a845c556111e6f63f6b0d43351f467b8c" id="r_a845c556111e6f63f6b0d43351f467b8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a845c556111e6f63f6b0d43351f467b8c">PIPE_FILL_SPEED</a>&#160;&#160;&#160;20</td></tr>
+<tr class="memdesc:a845c556111e6f63f6b0d43351f467b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pályán lévő csövek feltölési animációjának a sebessége.  <br /></td></tr>
+<tr class="separator:a845c556111e6f63f6b0d43351f467b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerációk</h2></td></tr>
+<tr class="memitem:affb455e5ea72d01e065758c70f810a95" id="r_affb455e5ea72d01e065758c70f810a95"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affb455e5ea72d01e065758c70f810a95">AnimationType</a> { <a class="el" href="#affb455e5ea72d01e065758c70f810a95a92f982c1691919b7b36f507af9be5689">AnimationType_None</a>
+, <a class="el" href="#affb455e5ea72d01e065758c70f810a95a1e216d7234d9281f917514aafa14abb9">AnimationType_Rotate</a>
+, <a class="el" href="#affb455e5ea72d01e065758c70f810a95aaaf0ad94f9a9b7086f493133a852aacb">AnimationType_Fill</a>
+ }</td></tr>
+<tr class="memdesc:affb455e5ea72d01e065758c70f810a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> egy elemének típusa.  <a href="#affb455e5ea72d01e065758c70f810a95">Részletek...</a><br /></td></tr>
+<tr class="separator:affb455e5ea72d01e065758c70f810a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70cf3f4f0d1e741d0cb63aff969dfc6e" id="r_a70cf3f4f0d1e741d0cb63aff969dfc6e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6e">AnimationDirection</a> { <a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6eab473734b8a57b27821580eaa957b5cf4">AnimationDirection_ToRight</a>
+, <a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6ea200fc98bbe8d080d2cd1e9dbac4985a7">AnimationDirection_ToLeft</a>
+, <a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6eac7b32560c32469f0ace16cb8fedf2eee">AnimationDirection_ToUp</a>
+, <a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6ea8bc66bee51242218f1c6639ac825d28b">AnimationDirection_ToDown</a>
+ }</td></tr>
+<tr class="memdesc:a70cf3f4f0d1e741d0cb63aff969dfc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Az AnimationQueue-ban szereplő feltöltési animáció iránya.  <a href="#a70cf3f4f0d1e741d0cb63aff969dfc6e">Részletek...</a><br /></td></tr>
+<tr class="separator:a70cf3f4f0d1e741d0cb63aff969dfc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:aa04da33e6daf2c7ed058efde2aea7246" id="r_aa04da33e6daf2c7ed058efde2aea7246"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structGameStruct">GameStruct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa04da33e6daf2c7ed058efde2aea7246">GameStruct_Init</a> (void)</td></tr>
+<tr class="memdesc:aa04da33e6daf2c7ed058efde2aea7246"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> inicializálása (kinullázása)  <br /></td></tr>
+<tr class="separator:aa04da33e6daf2c7ed058efde2aea7246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387e11d6576bc1b42e1dae0eb31d8a81" id="r_a387e11d6576bc1b42e1dae0eb31d8a81"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a387e11d6576bc1b42e1dae0eb31d8a81">GameStruct_Create</a> (<a class="el" href="#structGameStruct">GameStruct</a> *game_struct)</td></tr>
+<tr class="memdesc:a387e11d6576bc1b42e1dae0eb31d8a81"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> létrehozása.  <br /></td></tr>
+<tr class="separator:a387e11d6576bc1b42e1dae0eb31d8a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99fd927905eb43053a45dc0827478680" id="r_a99fd927905eb43053a45dc0827478680"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99fd927905eb43053a45dc0827478680">GameStruct_Destroy</a> (<a class="el" href="#structGameStruct">GameStruct</a> *game_struct)</td></tr>
+<tr class="memdesc:a99fd927905eb43053a45dc0827478680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Felszabadít egy GameStruct-ot.  <br /></td></tr>
+<tr class="separator:a99fd927905eb43053a45dc0827478680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b1acba58182e72d9c5bceadc3b69570" id="r_a9b1acba58182e72d9c5bceadc3b69570"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structEventloopVariables">EventloopVariables</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b1acba58182e72d9c5bceadc3b69570">EventloopVariables_Init</a> (void)</td></tr>
+<tr class="memdesc:a9b1acba58182e72d9c5bceadc3b69570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Az eventloop változóinak inicializálása (kinullázása)  <br /></td></tr>
+<tr class="separator:a9b1acba58182e72d9c5bceadc3b69570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac10254960c5d6975f0d32e052f3f18b3" id="r_ac10254960c5d6975f0d32e052f3f18b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac10254960c5d6975f0d32e052f3f18b3">Delta_Update</a> (<a class="el" href="#structEventloopVariables">EventloopVariables</a> *ev_vars)</td></tr>
+<tr class="memdesc:ac10254960c5d6975f0d32e052f3f18b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frissíti a deltaT elemének értékét.  <br /></td></tr>
+<tr class="separator:ac10254960c5d6975f0d32e052f3f18b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9870d4c405121b6667c178f650896d1c" id="r_a9870d4c405121b6667c178f650896d1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9870d4c405121b6667c178f650896d1c">CursorInRect</a> (<a class="el" href="#structEventloopVariables">EventloopVariables</a> ev_vars, SDL_Rect bound)</td></tr>
+<tr class="memdesc:a9870d4c405121b6667c178f650896d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Megvizsgálja, hogy a kurzor a megadott SDL_Rect-en belül van-e.  <br /></td></tr>
+<tr class="separator:a9870d4c405121b6667c178f650896d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87736d507ec807ee7d6860ae5ce0d5e0" id="r_a87736d507ec807ee7d6860ae5ce0d5e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structWheel">Wheel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87736d507ec807ee7d6860ae5ce0d5e0">Wheel_Init</a> (void)</td></tr>
+<tr class="memdesc:a87736d507ec807ee7d6860ae5ce0d5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> struktúra inicializálása (kinullázása)  <br /></td></tr>
+<tr class="separator:a87736d507ec807ee7d6860ae5ce0d5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17fc09a1ba3479c30e3f8bdbbb38ec95" id="r_a17fc09a1ba3479c30e3f8bdbbb38ec95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17fc09a1ba3479c30e3f8bdbbb38ec95">Wheel_Create</a> (<a class="el" href="#structWheel">Wheel</a> *wheel, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window, SDL_Rect location, SDL_Texture *wheel_texture)</td></tr>
+<tr class="memdesc:a17fc09a1ba3479c30e3f8bdbbb38ec95"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> struktúra létrehozása.  <br /></td></tr>
+<tr class="separator:a17fc09a1ba3479c30e3f8bdbbb38ec95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2f6e7c50ea2fadc84493a0c101dede" id="r_aea2f6e7c50ea2fadc84493a0c101dede"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea2f6e7c50ea2fadc84493a0c101dede">Wheel_Update</a> (<a class="el" href="#structWheel">Wheel</a> wheel, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window, SDL_Texture *wheel_texture)</td></tr>
+<tr class="memdesc:aea2f6e7c50ea2fadc84493a0c101dede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frissíti egy <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> Layer-ét.  <br /></td></tr>
+<tr class="separator:aea2f6e7c50ea2fadc84493a0c101dede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fc039eb035e3a5b55561e5b14184399" id="r_a1fc039eb035e3a5b55561e5b14184399"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fc039eb035e3a5b55561e5b14184399">Wheel_Destroy</a> (<a class="el" href="#structWheel">Wheel</a> *wheel)</td></tr>
+<tr class="memdesc:a1fc039eb035e3a5b55561e5b14184399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Felszabadít egy <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> struktúrát.  <br /></td></tr>
+<tr class="separator:a1fc039eb035e3a5b55561e5b14184399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af62ed55fa7c360460eba62c9a69c0276" id="r_af62ed55fa7c360460eba62c9a69c0276"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structAnimationQueue">AnimationQueue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af62ed55fa7c360460eba62c9a69c0276">AnimationQueue_Init</a> (void)</td></tr>
+<tr class="memdesc:af62ed55fa7c360460eba62c9a69c0276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Létrehozza egy <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> strázsáját.  <br /></td></tr>
+<tr class="separator:af62ed55fa7c360460eba62c9a69c0276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27569d72a725f934f39a1f2f4b3e2963" id="r_a27569d72a725f934f39a1f2f4b3e2963"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27569d72a725f934f39a1f2f4b3e2963">AnimationQueue_AppendWheelRotate</a> (<a class="el" href="#structAnimationQueue">AnimationQueue</a> *start, <a class="el" href="#structWheel">Wheel</a> *wheel, double target_angle, double animation_speed)</td></tr>
+<tr class="memdesc:a27569d72a725f934f39a1f2f4b3e2963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hozzáfűz az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez egy <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> forgatási animációját.  <br /></td></tr>
+<tr class="separator:a27569d72a725f934f39a1f2f4b3e2963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f715d8120fdee7afc72c866645f038a" id="r_a8f715d8120fdee7afc72c866645f038a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f715d8120fdee7afc72c866645f038a">AnimationQueue_AppendPipeRotate</a> (<a class="el" href="#structAnimationQueue">AnimationQueue</a> *start, <a class="el" href="pipe_8h.html#structPipe">Pipe</a> *pipe, double target_angle, double animation_speed)</td></tr>
+<tr class="memdesc:a8f715d8120fdee7afc72c866645f038a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hozzáfűz az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez egy <a class="el" href="pipe_8h.html#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> forgatási animációját.  <br /></td></tr>
+<tr class="separator:a8f715d8120fdee7afc72c866645f038a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40bf3b078c6259575f2f12c6d48a5e7c" id="r_a40bf3b078c6259575f2f12c6d48a5e7c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40bf3b078c6259575f2f12c6d48a5e7c">AnimationQueue_AppendLongFill</a> (<a class="el" href="#structAnimationQueue">AnimationQueue</a> *start, SDL_Rect render_location, SDL_Texture *filled_texture, double animation_speed, <a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6e">AnimationDirection</a> direction)</td></tr>
+<tr class="memdesc:a40bf3b078c6259575f2f12c6d48a5e7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hozzáfűz az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez egy hosszú cső feltöltési animációját.  <br /></td></tr>
+<tr class="separator:a40bf3b078c6259575f2f12c6d48a5e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a148edd59900f9867f1832230fb0d9249" id="r_a148edd59900f9867f1832230fb0d9249"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a148edd59900f9867f1832230fb0d9249">AnimationQueue_AppendPipeFill</a> (<a class="el" href="#structAnimationQueue">AnimationQueue</a> *start, SDL_Renderer *renderer, <a class="el" href="pipe_8h.html#structPipe">Pipe</a> *pipe, SDL_Texture *filled_texture, double animation_speed, <a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6e">AnimationDirection</a> direction)</td></tr>
+<tr class="memdesc:a148edd59900f9867f1832230fb0d9249"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hozzáfűz az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez egy <a class="el" href="pipe_8h.html#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> feltöltési animációját.  <br /></td></tr>
+<tr class="separator:a148edd59900f9867f1832230fb0d9249"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af170ca51a234abe456df7b78c85b5f09" id="r_af170ca51a234abe456df7b78c85b5f09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structAnimationQueue">AnimationQueue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af170ca51a234abe456df7b78c85b5f09">AnimationQueue_RemoveElement</a> (<a class="el" href="#structAnimationQueue">AnimationQueue</a> *start, <a class="el" href="#structAnimationQueue">AnimationQueue</a> *element)</td></tr>
+<tr class="memdesc:af170ca51a234abe456df7b78c85b5f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">A megadott elemet kitörli az AniamtionQueue-ból és visszaadja az előtte lévő pointerét.  <br /></td></tr>
+<tr class="separator:af170ca51a234abe456df7b78c85b5f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aefb16a32d6f8afe029607d664f0daf" id="r_a3aefb16a32d6f8afe029607d664f0daf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3aefb16a32d6f8afe029607d664f0daf">AnimationQueue_Destroy</a> (<a class="el" href="#structAnimationQueue">AnimationQueue</a> *start)</td></tr>
+<tr class="memdesc:a3aefb16a32d6f8afe029607d664f0daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Felszabadít egy <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> láncolt listát.  <br /></td></tr>
+<tr class="separator:a3aefb16a32d6f8afe029607d664f0daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b99b54c59508d3d3141e7b49f56ca64" id="r_a1b99b54c59508d3d3141e7b49f56ca64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b99b54c59508d3d3141e7b49f56ca64">Menu</a> (<a class="el" href="#structGameStruct">GameStruct</a> game_struct)</td></tr>
+<tr class="memdesc:a1b99b54c59508d3d3141e7b49f56ca64"><td class="mdescLeft">&#160;</td><td class="mdescRight">A játékmenü függvénye.  <br /></td></tr>
+<tr class="separator:a1b99b54c59508d3d3141e7b49f56ca64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c862a10cd086d1667b0564f41cf7fd" id="r_a93c862a10cd086d1667b0564f41cf7fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93c862a10cd086d1667b0564f41cf7fd">Game</a> (<a class="el" href="#structGameStruct">GameStruct</a> game_struct, <a class="el" href="pipe_8h.html#structPipeGrid">PipeGrid</a> *betoltott, int entry_y, int exit_y)</td></tr>
+<tr class="memdesc:a93c862a10cd086d1667b0564f41cf7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">A játék függvénye.  <br /></td></tr>
+<tr class="separator:a93c862a10cd086d1667b0564f41cf7fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b05c35e760e1a2a04bbf56bfa8222c" id="r_aa1b05c35e760e1a2a04bbf56bfa8222c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1b05c35e760e1a2a04bbf56bfa8222c">Win</a> (<a class="el" href="#structGameStruct">GameStruct</a> game_struct, <a class="el" href="SDL__local_8h.html#structLayer">Layer</a> state, <a class="el" href="pipe_8h.html#structPipeGrid">PipeGrid</a> copy, int entry_y, int exit_y)</td></tr>
+<tr class="memdesc:aa1b05c35e760e1a2a04bbf56bfa8222c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A nyert kép függvénye.  <br /></td></tr>
+<tr class="separator:aa1b05c35e760e1a2a04bbf56bfa8222c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p>A játék headerje. </p>
+<p>A játtékkal kapcsolatban mindent tartalmaz. Innen már csak a <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="A main függvény.">main()</a>-ben kell meghívogatni néhány függvényt. A header tartalmának nagy része csak a sok forrásfájl miatt szerepel itt.</p>
+<dl class="section pre"><dt>Előfeltétel</dt><dd>Mivel az <a class="el" href="SDL__local_8h.html" title="Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.">SDL_local.h</a>-t használja, az SDL inicializálása szükséges a modul megfelelő működéséhez.</dd></dl>
+<h2><a class="anchor" id="autotoc_md0"></a>
+Struktúrák, enumok:</h2>
+<ul>
+<li><code><a class="el" href="#structGameStruct">GameStruct</a></code>: Az <a class="el" href="SDL__local_8h.html" title="Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.">SDL_local.h</a>-ban szereplő struktúrákat fogja össze.</li>
+<li><code><a class="el" href="#structEventloopVariables">EventloopVariables</a></code>: A <a class="el" href="#a93c862a10cd086d1667b0564f41cf7fd" title="A játék függvénye.">Game()</a> függvény/kép eventloopjának a változóit fogja össze.</li>
+<li><code><a class="el" href="#structWheel">Wheel</a></code>: A csaphoz tartozó változókat fogja össze.</li>
+<li><code><a class="el" href="#structAnimationQueue">AnimationQueue</a></code>: Az felhasználó által indított animációkhoz egy strázsás láncolt lista.</li>
+</ul>
+<p>Emellett az animáláshoz 2 enumot is tartalmaz a header:</p><ul>
+<li><code><a class="el" href="#affb455e5ea72d01e065758c70f810a95">AnimationType</a></code>: Az animáció típusa.</li>
+<li><code><a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6e">AnimationDirection</a></code>: Az animáció iránya.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md1"></a>
+Függvények:</h2>
+<p>Az itt szereplő függvények vagy a játékmenethez kapcsolódnak vagy a nevükben szereplő struktúrákhoz. A játék 3 állapota (menü, játék, nyerés kép) a saját függvényeikbe vannak szervezve.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Példakód:</h2>
+<div class="fragment"><div class="line"> </div>
+<div class="line"><span class="comment">// Ha Windows-on fordítjuk</span></div>
+<div class="line"><span class="preprocessor">#ifdef _WIN32 </span></div>
+<div class="line"><span class="preprocessor">#include &lt;windows.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;time.h&gt;</span> <span class="comment">// rand() seed-jéhez</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="game_8h.html">game.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;debugmalloc.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Ha Windows-on fordítjuk, az ablak ezt a main függvényt hívja meg</span></div>
+<div class="line"><span class="preprocessor">#ifdef WIN32</span></div>
+<div class="line"><span class="keywordtype">int</span> WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE FreeProcInstance, PWSTR pCmdLine, <span class="keywordtype">int</span> nCmdShow) {</div>
+<div class="line">    (void)hInstance, (<span class="keywordtype">void</span>)FreeProcInstance, (void)pCmdLine, (<span class="keywordtype">void</span>)nCmdShow;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(0, NULL);</div>
+<div class="line">}</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// A main függvény</span></div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[]) {</div>
+<div class="line">    (void)argc, (<span class="keywordtype">void</span>)argv; <span class="comment">// Warning elkerülése</span></div>
+<div class="line">    srand(time(0)); <span class="comment">// Random seed</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_function" href="SDL__local_8h.html#ac123123dd113ec5077bfd1af17d2f459">InitializeSDL</a>()) <span class="keywordflow">return</span> 1; <span class="comment">// SDL inicializálása</span></div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_struct" href="#structGameStruct">GameStruct</a> game_struct = <a class="code hl_function" href="#aa04da33e6daf2c7ed058efde2aea7246">GameStruct_Init</a>(); <span class="comment">// SDL_local.h változóinak inicializálása</span></div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a387e11d6576bc1b42e1dae0eb31d8a81">GameStruct_Create</a>(&amp;game_struct)) { <span class="comment">// SDL_local.h változóinak létrehozása</span></div>
+<div class="line">        <a class="code hl_function" href="SDL__local_8h.html#a5105dab6519a26f47f91e5f2051f2ac5">QuitSDL</a>(); <span class="comment">// Hiba esetén kilépés</span></div>
+<div class="line">        <span class="keywordflow">return</span> 2;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="SDL__local_8h.html#a9920ee88c07373643b2dbb45eadf54bb">StartMusic</a>(game_struct.<a class="code hl_variable" href="#af99c856f0e36b473b4c82797977e2f09">assets</a>); <span class="comment">// Zene indítása</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">int</span> ret = 0;</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a1b99b54c59508d3d3141e7b49f56ca64">Menu</a>(game_struct)) <span class="comment">// Menübe lépés</span></div>
+<div class="line">        ret = 3;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Kilépés előtti felszabadítás</span></div>
+<div class="line">    Mix_FadeOutMusic(500);</div>
+<div class="line">    <a class="code hl_function" href="#a99fd927905eb43053a45dc0827478680">GameStruct_Destroy</a>(&amp;game_struct);</div>
+<div class="line">    <a class="code hl_function" href="SDL__local_8h.html#a5105dab6519a26f47f91e5f2051f2ac5">QuitSDL</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> ret;</div>
+<div class="line">}</div>
+<div class="ttc" id="aSDL__local_8h_html_a5105dab6519a26f47f91e5f2051f2ac5"><div class="ttname"><a href="SDL__local_8h.html#a5105dab6519a26f47f91e5f2051f2ac5">QuitSDL</a></div><div class="ttdeci">void QuitSDL(void)</div><div class="ttdoc">Leállítja az SDL-lel kapcsolatos modulokat.</div><div class="ttdef"><b>Definition</b> SDL_local.c:42</div></div>
+<div class="ttc" id="aSDL__local_8h_html_a9920ee88c07373643b2dbb45eadf54bb"><div class="ttname"><a href="SDL__local_8h.html#a9920ee88c07373643b2dbb45eadf54bb">StartMusic</a></div><div class="ttdeci">void StartMusic(Assets assets)</div><div class="ttdoc">Elindítja a háttérzenét és végtelenül ismétli.</div><div class="ttdef"><b>Definition</b> SDL_local.c:35</div></div>
+<div class="ttc" id="aSDL__local_8h_html_ac123123dd113ec5077bfd1af17d2f459"><div class="ttname"><a href="SDL__local_8h.html#ac123123dd113ec5077bfd1af17d2f459">InitializeSDL</a></div><div class="ttdeci">bool InitializeSDL(void)</div><div class="ttdoc">Az SDL inicializáló függvénye.</div><div class="ttdef"><b>Definition</b> SDL_local.c:9</div></div>
+<div class="ttc" id="agame_8h_html"><div class="ttname"><a href="game_8h.html">game.h</a></div><div class="ttdoc">A játék headerje.</div></div>
+<div class="ttc" id="agame_8h_html_a1b99b54c59508d3d3141e7b49f56ca64"><div class="ttname"><a href="#a1b99b54c59508d3d3141e7b49f56ca64">Menu</a></div><div class="ttdeci">bool Menu(GameStruct game_struct)</div><div class="ttdoc">A játékmenü függvénye.</div><div class="ttdef"><b>Definition</b> game.c:137</div></div>
+<div class="ttc" id="agame_8h_html_a387e11d6576bc1b42e1dae0eb31d8a81"><div class="ttname"><a href="#a387e11d6576bc1b42e1dae0eb31d8a81">GameStruct_Create</a></div><div class="ttdeci">bool GameStruct_Create(GameStruct *game_struct)</div><div class="ttdoc">GameStruct létrehozása.</div><div class="ttdef"><b>Definition</b> game_struct.c:13</div></div>
+<div class="ttc" id="agame_8h_html_a99fd927905eb43053a45dc0827478680"><div class="ttname"><a href="#a99fd927905eb43053a45dc0827478680">GameStruct_Destroy</a></div><div class="ttdeci">void GameStruct_Destroy(GameStruct *game_struct)</div><div class="ttdoc">Felszabadít egy GameStruct-ot.</div><div class="ttdef"><b>Definition</b> game_struct.c:29</div></div>
+<div class="ttc" id="agame_8h_html_aa04da33e6daf2c7ed058efde2aea7246"><div class="ttname"><a href="#aa04da33e6daf2c7ed058efde2aea7246">GameStruct_Init</a></div><div class="ttdeci">GameStruct GameStruct_Init(void)</div><div class="ttdoc">GameStruct inicializálása (kinullázása)</div><div class="ttdef"><b>Definition</b> game_struct.c:9</div></div>
+<div class="ttc" id="agame_8h_html_af99c856f0e36b473b4c82797977e2f09"><div class="ttname"><a href="#af99c856f0e36b473b4c82797977e2f09">GameStruct::assets</a></div><div class="ttdeci">Assets assets</div><div class="ttdoc">Assets struktúra.</div><div class="ttdef"><b>Definition</b> game.h:165</div></div>
+<div class="ttc" id="agame_8h_html_structGameStruct"><div class="ttname"><a href="#structGameStruct">GameStruct</a></div><div class="ttdoc">A játékhoz szükséges struktúrákat fogja össze.</div><div class="ttdef"><b>Definition</b> game.h:155</div></div>
+<div class="ttc" id="amain_8c_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdoc">A main függvény.</div><div class="ttdef"><b>Definition</b> main.c:35</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+Megjegyzések:</h2>
+<ul>
+<li>A projekt <a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="A main függvény.">main()</a> függvényéből is látszik, hogy csak a GameStruct-ot kell létrehozni és a <a class="el" href="#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a> függvényt meghívni. A többi függvény hívást és struktúra létrehozást a <a class="el" href="#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a> végzi.</li>
+<li>A különböző if-ek a hibakezelés miatt vannak, hogy a program minél kevesebb memóriaszivárgással omoljon össze.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Kapcsolódó kódfájlok:</h2>
+<ul>
+<li><a class="el" href="game_8c.html" title="A game.h-ban deklarált, a játék állapotához tartozó függvények kódjait tartalmazó fájl.">game.c</a></li>
+<li><a class="el" href="game__struct_8c.html" title="A game.h-ban deklarált GameStruct struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.">game_struct.c</a></li>
+<li><a class="el" href="ev__vars_8c.html" title="A game.h-ban deklarált EventloopVariables struktúrához és az eventloophoz kapcsolódó függvények kódja...">ev_vars.c</a></li>
+<li><a class="el" href="wheel_8c.html" title="A game.h-ban deklarált Wheel struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.">wheel.c</a></li>
+<li><a class="el" href="animation_8c.html" title="A game.h-ban deklarált AnimationQueue struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.">animation.c</a></li>
+</ul>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000001">Hiba</a></b></dt><dd>A modul egy osdialog nevű modullal hoz létre rendszerfüggő dialógusablakokat. Ez a GTK2-re épül Linux alatt, ami memóriaszivárgást okoz. Windows alatt az Address Sanitizert nem teszteltem, ott nem tudom, hogy mi a helyzet. Egy lehetséges megoldás, hogy az osdialog-ot mással helyettesítjük, de emiatt a <a class="el" href="game_8c.html" title="A game.h-ban deklarált, a játék állapotához tartozó függvények kódjait tartalmazó fájl.">game.c</a>-ben változtatásokat kell hozni. </dd></dl>
+</div><hr/><h2 class="groupheader">Adatszerkezetek dokumentációja</h2>
+<a name="structGameStruct" id="structGameStruct"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structGameStruct">&#9670;&#160;</a></span>GameStruct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct GameStruct</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A játékhoz szükséges struktúrákat fogja össze. </p>
+<p>Az <a class="el" href="SDL__local_8h.html" title="Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.">SDL_local.h</a> struktúráit tartalmazza. Könnyebb kezelhetőség a célja, hiszen mindhárom struktúrát létre kell hozni a megfelelő működés érdekében. </p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Adatmezők</th></tr>
+<tr><td class="fieldtype">
+<a id="af99c856f0e36b473b4c82797977e2f09" name="af99c856f0e36b473b4c82797977e2f09"></a><a class="el" href="SDL__local_8h.html#structAssets">Assets</a></td>
+<td class="fieldname">
+assets</td>
+<td class="fielddoc">
+<a class="el" href="SDL__local_8h.html#structAssets" title="Assets mappa fájlaihoz struktúra.">Assets</a> struktúra. <p>Az assets mappa tartalmát fogja össze. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a79decddd617fac9909c147b40c804e76" name="a79decddd617fac9909c147b40c804e76"></a><a class="el" href="SDL__local_8h.html#structFonts">Fonts</a></td>
+<td class="fieldname">
+fonts</td>
+<td class="fielddoc">
+<a class="el" href="SDL__local_8h.html#structFonts" title="Betűtípusokhoz struktúra.">Fonts</a> struktúra. <p>Az assets/fonts mappában található betűtípusokat tartalmazza. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a4f830fdba462145586a292be9a0e0eb1" name="a4f830fdba462145586a292be9a0e0eb1"></a><a class="el" href="SDL__local_8h.html#structWindow">Window</a></td>
+<td class="fieldname">
+window</td>
+<td class="fielddoc">
+<a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra. <p>Az ablakkal kapcsolatos változókat tartalmazza. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structEventloopVariables" id="structEventloopVariables"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structEventloopVariables">&#9670;&#160;</a></span>EventloopVariables</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct EventloopVariables</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A játék eventloopjának a változóit fogja össze. </p>
+<p>A <a class="el" href="#a93c862a10cd086d1667b0564f41cf7fd" title="A játék függvénye.">Game()</a> függvényben használt. </p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Adatmezők</th></tr>
+<tr><td class="fieldtype">
+<a id="a64c40acc8bab0269bf31f06b103a0505" name="a64c40acc8bab0269bf31f06b103a0505"></a>bool</td>
+<td class="fieldname">
+clicked</td>
+<td class="fielddoc">
+Kattintás állapota. <p>true, amíg nem érkezik SDL_MOUSEBUTTONUP event. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aa53a0fdfef43cb966fb74ab7eb824ecc" name="aa53a0fdfef43cb966fb74ab7eb824ecc"></a>Uint64</td>
+<td class="fieldname">
+currTime</td>
+<td class="fielddoc">
+Az SDL_GetPerformanceCounter() függvény értéke. </td></tr>
+<tr><td class="fieldtype">
+<a id="ab372882d169c65f7a4941929e51f864b" name="ab372882d169c65f7a4941929e51f864b"></a>double</td>
+<td class="fieldname">
+deltaT</td>
+<td class="fielddoc">
+A két idő közötti különbség az SDL_GetPerformanceFrequency() értékével elosztva. </td></tr>
+<tr><td class="fieldtype">
+<a id="ac93a6baf84a9cc8c8cb11ea710bb93ba" name="ac93a6baf84a9cc8c8cb11ea710bb93ba"></a>SDL_Event</td>
+<td class="fieldname">
+event</td>
+<td class="fielddoc">
+A bejövő event. <p>Az SDL_PollEvent() vagy SDL_WaitEvent() függvényeknek lehet átadni. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a08f346b3758ea97052f89cad6428c534" name="a08f346b3758ea97052f89cad6428c534"></a>SDL_Point</td>
+<td class="fieldname">
+prevCursor</td>
+<td class="fielddoc">
+Az SDL_MOUSEBUTTONDOWN event érkezésekor kimentett kurzorpozíció. </td></tr>
+<tr><td class="fieldtype">
+<a id="a204af24b1857f56a3781fb35df518639" name="a204af24b1857f56a3781fb35df518639"></a>Uint64</td>
+<td class="fieldname">
+prevTime</td>
+<td class="fielddoc">
+Az SDL_GetPerformanceCounter() függvény előző értéke. </td></tr>
+<tr><td class="fieldtype">
+<a id="a91a830ecf8552467cfc3ded235f7c993" name="a91a830ecf8552467cfc3ded235f7c993"></a>bool</td>
+<td class="fieldname">
+running</td>
+<td class="fielddoc">
+A játék állapota. <p>Ha true, az eventloop fut, egyébként false. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a name="structWheel" id="structWheel"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structWheel">&#9670;&#160;</a></span>Wheel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct Wheel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>A csap struktúrája. </p>
+<p>A csap megjelenítéséhez és forgatásához szükséges változókat tartalmazza. </p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Adatmezők</th></tr>
+<tr><td class="fieldtype">
+<a id="abccd14c0207a403b2d004a66637c26de" name="abccd14c0207a403b2d004a66637c26de"></a><a class="el" href="SDL__local_8h.html#structLayer">Layer</a></td>
+<td class="fieldname">
+layer</td>
+<td class="fielddoc">
+A csap Layer-e. </td></tr>
+<tr><td class="fieldtype">
+<a id="a99cab1e48426f3feb7dbd4a93846406f" name="a99cab1e48426f3feb7dbd4a93846406f"></a>double</td>
+<td class="fieldname">
+szog</td>
+<td class="fielddoc">
+A csap forgatási szöge (fokban). </td></tr>
+</table>
+
+</div>
+</div>
+<a name="structAnimationQueue" id="structAnimationQueue"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structAnimationQueue">&#9670;&#160;</a></span>AnimationQueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct AnimationQueue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><p>Az animációs sor struktúrája. </p>
+<p>Az animációs sor maga egy strázsás láncolt lista. Kétféle animációhoz kezeléséhez tárol változókat </p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Adatmezők</th></tr>
+<tr><td class="fieldtype">
+<a id="a1a3508d36b2a70e11952c5145e960bd5" name="a1a3508d36b2a70e11952c5145e960bd5"></a>bool</td>
+<td class="fieldname">
+active</td>
+<td class="fielddoc">
+Az animáció állapota. <p>true, amíg az animáció nem ért véget. </p>
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a56a39622b3b2f9c4c8c5aa5030022652" name="a56a39622b3b2f9c4c8c5aa5030022652"></a>double *</td>
+<td class="fieldname">
+angle</td>
+<td class="fielddoc">
+A forgatandó elem szögének pointere. (Csak AnimationType_Rotate esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="a55bfc1207a50fab024818dd5a86c8f96" name="a55bfc1207a50fab024818dd5a86c8f96"></a>double</td>
+<td class="fieldname">
+animation_speed</td>
+<td class="fielddoc">
+Az animáció sebessége. </td></tr>
+<tr><td class="fieldtype">
+<a id="aa06f0cc05ec87c890474676775a721a5" name="aa06f0cc05ec87c890474676775a721a5"></a><a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6e">AnimationDirection</a></td>
+<td class="fieldname">
+direction</td>
+<td class="fielddoc">
+Az animáció iránya. (Csak AnimationType_Fill esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="a9d6a41af1d0c01567fa484811368015f" name="a9d6a41af1d0c01567fa484811368015f"></a>SDL_Texture *</td>
+<td class="fieldname">
+filled_texture</td>
+<td class="fielddoc">
+A renderelendő textúra. (Csak AnimationType_Fill esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="a9b15362e73eb74b445a1928b20f017dc" name="a9b15362e73eb74b445a1928b20f017dc"></a>bool</td>
+<td class="fieldname">
+is_pipe</td>
+<td class="fielddoc">
+Az animációt Pipe-on kell-e végrehajtani. </td></tr>
+<tr><td class="fieldtype">
+<a id="a4f251b739d15cb89ed891ecab2e60b37" name="a4f251b739d15cb89ed891ecab2e60b37"></a>struct <a class="el" href="#structAnimationQueue">AnimationQueue</a> *</td>
+<td class="fieldname">
+next</td>
+<td class="fielddoc">
+A következő elem pointere. </td></tr>
+<tr><td class="fieldtype">
+<a id="a4e09e19ae290696e39a1a584592bdd78" name="a4e09e19ae290696e39a1a584592bdd78"></a><a class="el" href="pipe_8h.html#structPipe">Pipe</a> *</td>
+<td class="fieldname">
+pipe</td>
+<td class="fielddoc">
+A <a class="el" href="pipe_8h.html#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> pointere. (Csak is_pipe esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="a4640e48528855266134be7de3b24c265" name="a4640e48528855266134be7de3b24c265"></a>double</td>
+<td class="fieldname">
+ratio</td>
+<td class="fielddoc">
+A render_location és a texture_location aránya. (Csak AnimationType_Fill esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="ac8ad2da77177a711c84939ae0fc6b9aa" name="ac8ad2da77177a711c84939ae0fc6b9aa"></a>SDL_Rect</td>
+<td class="fieldname">
+render_location</td>
+<td class="fielddoc">
+Az elem RenderTarget-en belüli helye. (Csak AnimationType_Fill esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="a1cbf0b4d33d8773cc3f7b6857a19c28b" name="a1cbf0b4d33d8773cc3f7b6857a19c28b"></a>double</td>
+<td class="fieldname">
+rendered_angle</td>
+<td class="fielddoc">
+A struktúra által megtett szög (fokban). (Csak AnimationType_Rotate esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="ad4863bb080fb9cca7cfe6a282e368f11" name="ad4863bb080fb9cca7cfe6a282e368f11"></a>double</td>
+<td class="fieldname">
+target_angle</td>
+<td class="fielddoc">
+Meghatározza a forgatás mértékét (fokban). (Csak AnimationType_Rotate esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="a9adfe6407bfb99b446a6148fc54b8a66" name="a9adfe6407bfb99b446a6148fc54b8a66"></a>double</td>
+<td class="fieldname">
+target_coor</td>
+<td class="fielddoc">
+A cél koordináta. (Csak AnimationType_Fill esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="a23ee2298d2364eb6be2fc972c4d991d5" name="a23ee2298d2364eb6be2fc972c4d991d5"></a>double</td>
+<td class="fieldname">
+target_length</td>
+<td class="fielddoc">
+A renderelendő hossz (pixelben). (Csak AnimationType_Fill esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="a9cc796f3b5d42a75d09a5f46bf8a6258" name="a9cc796f3b5d42a75d09a5f46bf8a6258"></a>SDL_Rect</td>
+<td class="fieldname">
+texture_location</td>
+<td class="fielddoc">
+A renderelendő textúra helye a filled_texuter-n belül. (Csak AnimationType_Fill esetén értelmes) </td></tr>
+<tr><td class="fieldtype">
+<a id="a09ec3a515e3900ef4e7983c571a69239" name="a09ec3a515e3900ef4e7983c571a69239"></a><a class="el" href="#affb455e5ea72d01e065758c70f810a95">AnimationType</a></td>
+<td class="fieldname">
+type</td>
+<td class="fielddoc">
+Az animáció típusa. </td></tr>
+<tr><td class="fieldtype">
+<a id="aaeeca0c77d4f541f20eb3405614bf906" name="aaeeca0c77d4f541f20eb3405614bf906"></a><a class="el" href="#structWheel">Wheel</a> *</td>
+<td class="fieldname">
+wheel</td>
+<td class="fielddoc">
+A <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> pointere. (Csak !is_pipe és AnimationType_Rotate esetén értelmes) </td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Makródefiníciók dokumentációja</h2>
+<a id="a030ebc610fddb0a18d62829ab376bf85" name="a030ebc610fddb0a18d62829ab376bf85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a030ebc610fddb0a18d62829ab376bf85">&#9670;&#160;</a></span>DEFAULT_WINDOW_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEFAULT_WINDOW_HEIGHT&#160;&#160;&#160;900</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alapértelmezett ablakmagasság. </p>
+<p>Az ablak magasságát határozza meg. A <a class="el" href="#a387e11d6576bc1b42e1dae0eb31d8a81" title="GameStruct létrehozása.">GameStruct_Create()</a> függvény használja a <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra létrehozásakor. </p>
+
+</div>
+</div>
+<a id="a6ca4df6b9e1495a80a2929a5187cb9b9" name="a6ca4df6b9e1495a80a2929a5187cb9b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ca4df6b9e1495a80a2929a5187cb9b9">&#9670;&#160;</a></span>DEFAULT_WINDOW_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEFAULT_WINDOW_WIDTH&#160;&#160;&#160;1600</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Alapértelmezett ablakszélesség. </p>
+<p>Az ablak szélességét határozza meg. A <a class="el" href="#a387e11d6576bc1b42e1dae0eb31d8a81" title="GameStruct létrehozása.">GameStruct_Create()</a> függvény használja a <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra létrehozásakor. </p>
+
+</div>
+</div>
+<a id="a70ffdd55dbb29415bff839f0d460cce0" name="a70ffdd55dbb29415bff839f0d460cce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70ffdd55dbb29415bff839f0d460cce0">&#9670;&#160;</a></span>LONG_PIPE_FILL_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LONG_PIPE_FILL_SPEED&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A pálya előtt lévő hosszú cső feltöltési animációjának a sebessége. </p>
+
+</div>
+</div>
+<a id="a1ce30ff5253b94e8f3ba48694fbc207b" name="a1ce30ff5253b94e8f3ba48694fbc207b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce30ff5253b94e8f3ba48694fbc207b">&#9670;&#160;</a></span>MIN_X_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_X_SIZE&#160;&#160;&#160;18</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A játék pályáján szereplő, egy sorban lévő csövek minimális száma. </p>
+<p>Egy sorban legalább ennyi cső szerepel. </p>
+
+</div>
+</div>
+<a id="a9400dfeda655f60302884300255f7115" name="a9400dfeda655f60302884300255f7115"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9400dfeda655f60302884300255f7115">&#9670;&#160;</a></span>MIN_Y_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MIN_Y_SIZE&#160;&#160;&#160;14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A játék pályáján szereplő, egy oszlopban lévő csövek minimális száma. </p>
+<p>Egy oszlopban legalább ennyi cső szerepel. </p>
+
+</div>
+</div>
+<a id="a845c556111e6f63f6b0d43351f467b8c" name="a845c556111e6f63f6b0d43351f467b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a845c556111e6f63f6b0d43351f467b8c">&#9670;&#160;</a></span>PIPE_FILL_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PIPE_FILL_SPEED&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A pályán lévő csövek feltölési animációjának a sebessége. </p>
+
+</div>
+</div>
+<a id="a6ac5cdf96de80051ae9ea707bbdb8579" name="a6ac5cdf96de80051ae9ea707bbdb8579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ac5cdf96de80051ae9ea707bbdb8579">&#9670;&#160;</a></span>PIPE_ROTATE_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PIPE_ROTATE_SPEED&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A csövek forgatási animációjának a sebessége. </p>
+
+</div>
+</div>
+<a id="aab58dbd5f932cc031e945688c796e067" name="aab58dbd5f932cc031e945688c796e067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab58dbd5f932cc031e945688c796e067">&#9670;&#160;</a></span>WHEEL_ROTATE_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WHEEL_ROTATE_SPEED&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A csap forgatási animációjának a sebessége. </p>
+<p>Más animációja nincs a csapnak. </p>
+
+</div>
+</div>
+<a id="af901e4e1eb4b35b9bc69926222e151e3" name="af901e4e1eb4b35b9bc69926222e151e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af901e4e1eb4b35b9bc69926222e151e3">&#9670;&#160;</a></span>WHEEL_SIZE_MULTIPLIER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WHEEL_SIZE_MULTIPLIER&#160;&#160;&#160;1.75</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A csap csövekhez viszonyított mérete. </p>
+<p>Ennyiszer nagyobb egy csőhöz képest. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumerációk dokumentációja</h2>
+<a id="a70cf3f4f0d1e741d0cb63aff969dfc6e" name="a70cf3f4f0d1e741d0cb63aff969dfc6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70cf3f4f0d1e741d0cb63aff969dfc6e">&#9670;&#160;</a></span>AnimationDirection</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6e">AnimationDirection</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Az AnimationQueue-ban szereplő feltöltési animáció iránya. </p>
+<p>Csak AnimationType_Fill esetén értelmezett. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeráció-értékek</th></tr><tr><td class="fieldname"><a id="a70cf3f4f0d1e741d0cb63aff969dfc6eab473734b8a57b27821580eaa957b5cf4" name="a70cf3f4f0d1e741d0cb63aff969dfc6eab473734b8a57b27821580eaa957b5cf4"></a>AnimationDirection_ToRight&#160;</td><td class="fielddoc"><p>Jobbra tölt. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a70cf3f4f0d1e741d0cb63aff969dfc6ea200fc98bbe8d080d2cd1e9dbac4985a7" name="a70cf3f4f0d1e741d0cb63aff969dfc6ea200fc98bbe8d080d2cd1e9dbac4985a7"></a>AnimationDirection_ToLeft&#160;</td><td class="fielddoc"><p>Balra tölt. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a70cf3f4f0d1e741d0cb63aff969dfc6eac7b32560c32469f0ace16cb8fedf2eee" name="a70cf3f4f0d1e741d0cb63aff969dfc6eac7b32560c32469f0ace16cb8fedf2eee"></a>AnimationDirection_ToUp&#160;</td><td class="fielddoc"><p>Felfele tölt. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a70cf3f4f0d1e741d0cb63aff969dfc6ea8bc66bee51242218f1c6639ac825d28b" name="a70cf3f4f0d1e741d0cb63aff969dfc6ea8bc66bee51242218f1c6639ac825d28b"></a>AnimationDirection_ToDown&#160;</td><td class="fielddoc"><p>Lefele tölt. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="affb455e5ea72d01e065758c70f810a95" name="affb455e5ea72d01e065758c70f810a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affb455e5ea72d01e065758c70f810a95">&#9670;&#160;</a></span>AnimationType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#affb455e5ea72d01e065758c70f810a95">AnimationType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> egy elemének típusa. </p>
+<p>Esetszétválasztásra szolgál. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumeráció-értékek</th></tr><tr><td class="fieldname"><a id="affb455e5ea72d01e065758c70f810a95a92f982c1691919b7b36f507af9be5689" name="affb455e5ea72d01e065758c70f810a95a92f982c1691919b7b36f507af9be5689"></a>AnimationType_None&#160;</td><td class="fielddoc"><p>Alapértelmezett érték. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="affb455e5ea72d01e065758c70f810a95a1e216d7234d9281f917514aafa14abb9" name="affb455e5ea72d01e065758c70f810a95a1e216d7234d9281f917514aafa14abb9"></a>AnimationType_Rotate&#160;</td><td class="fielddoc"><p>Forgatás. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="affb455e5ea72d01e065758c70f810a95aaaf0ad94f9a9b7086f493133a852aacb" name="affb455e5ea72d01e065758c70f810a95aaaf0ad94f9a9b7086f493133a852aacb"></a>AnimationType_Fill&#160;</td><td class="fielddoc"><p>Feltöltés. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Függvények dokumentációja</h2>
+<a id="a40bf3b078c6259575f2f12c6d48a5e7c" name="a40bf3b078c6259575f2f12c6d48a5e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40bf3b078c6259575f2f12c6d48a5e7c">&#9670;&#160;</a></span>AnimationQueue_AppendLongFill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnimationQueue_AppendLongFill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structAnimationQueue">AnimationQueue</a> *&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>render_location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>filled_texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>animation_speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6e">AnimationDirection</a>&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hozzáfűz az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez egy hosszú cső feltöltési animációját. </p>
+<p>A szükséges változókat beállítja és hozzáfűzi az új elemet az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez. A hosszú cső lehet más SDL_Texture* is, de a <a class="el" href="game_8c.html" title="A game.h-ban deklarált, a játék állapotához tartozó függvények kódjait tartalmazó fájl.">game.c</a>-ben csak ehhez van használva. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> strázsájának pointere </td></tr>
+    <tr><td class="paramname">render_location</td><td>A renderelendő hosszú cső helye </td></tr>
+    <tr><td class="paramname">filled_texture</td><td>A hosszú cső textúrája </td></tr>
+    <tr><td class="paramname">animation_speed</td><td>Az animáció sebessége </td></tr>
+    <tr><td class="paramname">direction</td><td>Az animáció iránya </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a148edd59900f9867f1832230fb0d9249" name="a148edd59900f9867f1832230fb0d9249"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a148edd59900f9867f1832230fb0d9249">&#9670;&#160;</a></span>AnimationQueue_AppendPipeFill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnimationQueue_AppendPipeFill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structAnimationQueue">AnimationQueue</a> *&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pipe_8h.html#structPipe">Pipe</a> *&#160;</td>
+          <td class="paramname"><em>pipe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>filled_texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>animation_speed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a70cf3f4f0d1e741d0cb63aff969dfc6e">AnimationDirection</a>&#160;</td>
+          <td class="paramname"><em>direction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hozzáfűz az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez egy <a class="el" href="pipe_8h.html#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> feltöltési animációját. </p>
+<p>A szükséges változókat beállítja és hozzáfűzi az új elemet az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez. Hiba esetén megpróbálja a töltést kihagyni. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> strázsájának pointere </td></tr>
+    <tr><td class="paramname">renderer</td><td>Az ablak rendererje (csak hiba esetén használt) </td></tr>
+    <tr><td class="paramname">pipe</td><td>A feltöltendő <a class="el" href="pipe_8h.html#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> pointere </td></tr>
+    <tr><td class="paramname">filled_texture</td><td>A <a class="el" href="pipe_8h.html#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> feltöltött textúrája </td></tr>
+    <tr><td class="paramname">animation_speed</td><td>Az animáció sebessége </td></tr>
+    <tr><td class="paramname">direction</td><td>Az animáció iránya </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a8f715d8120fdee7afc72c866645f038a" name="a8f715d8120fdee7afc72c866645f038a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f715d8120fdee7afc72c866645f038a">&#9670;&#160;</a></span>AnimationQueue_AppendPipeRotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnimationQueue_AppendPipeRotate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structAnimationQueue">AnimationQueue</a> *&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pipe_8h.html#structPipe">Pipe</a> *&#160;</td>
+          <td class="paramname"><em>pipe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>target_angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>animation_speed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hozzáfűz az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez egy <a class="el" href="pipe_8h.html#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> forgatási animációját. </p>
+<p>A szükséges változókat beállítja és hozzáfűzi az új elemet az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> strázsájának pointere </td></tr>
+    <tr><td class="paramname">wheel</td><td>A forgatandó <a class="el" href="pipe_8h.html#structPipe" title="Egy cső adatainak tárolására szolgáló struktúra.">Pipe</a> pointere </td></tr>
+    <tr><td class="paramname">target_angle</td><td>A forgatás mértéke (fokban) </td></tr>
+    <tr><td class="paramname">animation_speed</td><td>Az animáció sebessége </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a27569d72a725f934f39a1f2f4b3e2963" name="a27569d72a725f934f39a1f2f4b3e2963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27569d72a725f934f39a1f2f4b3e2963">&#9670;&#160;</a></span>AnimationQueue_AppendWheelRotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool AnimationQueue_AppendWheelRotate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structAnimationQueue">AnimationQueue</a> *&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#structWheel">Wheel</a> *&#160;</td>
+          <td class="paramname"><em>wheel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>target_angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>animation_speed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hozzáfűz az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez egy <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> forgatási animációját. </p>
+<p>A szükséges változókat beállítja és hozzáfűzi az új elemet az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> végéhez. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> strázsájának pointere </td></tr>
+    <tr><td class="paramname">wheel</td><td>A forgatandó <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> pointere </td></tr>
+    <tr><td class="paramname">target_angle</td><td>A forgatás mértéke (fokban) </td></tr>
+    <tr><td class="paramname">animation_speed</td><td>Az animáció sebessége </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a3aefb16a32d6f8afe029607d664f0daf" name="a3aefb16a32d6f8afe029607d664f0daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aefb16a32d6f8afe029607d664f0daf">&#9670;&#160;</a></span>AnimationQueue_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AnimationQueue_Destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structAnimationQueue">AnimationQueue</a> *&#160;</td>
+          <td class="paramname"><em>start</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Felszabadít egy <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> láncolt listát. </p>
+<p>A strázsáját is felszabadítja. Használat után KELL használni. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> strázsájának pointere </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af62ed55fa7c360460eba62c9a69c0276" name="af62ed55fa7c360460eba62c9a69c0276"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af62ed55fa7c360460eba62c9a69c0276">&#9670;&#160;</a></span>AnimationQueue_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structAnimationQueue">AnimationQueue</a> * AnimationQueue_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Létrehozza egy <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> strázsáját. </p>
+<p>malloc()-kal foglal egy <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> struktúrát és kinullázza. Ehhez a különböző AnimationQueue_Append függvényekkel lehet hozzáfűzni elemeket. </p><dl class="section post"><dt>Utófeltétel</dt><dd>Használat után a <a class="el" href="#a3aefb16a32d6f8afe029607d664f0daf" title="Felszabadít egy AnimationQueue láncolt listát.">AnimationQueue_Destroy()</a> függvénnyel fel kell szabadítani a struktúrát. </dd></dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>Egy üres <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> struktúra </dd></dl>
+
+</div>
+</div>
+<a id="af170ca51a234abe456df7b78c85b5f09" name="af170ca51a234abe456df7b78c85b5f09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af170ca51a234abe456df7b78c85b5f09">&#9670;&#160;</a></span>AnimationQueue_RemoveElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structAnimationQueue">AnimationQueue</a> * AnimationQueue_RemoveElement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structAnimationQueue">AnimationQueue</a> *&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#structAnimationQueue">AnimationQueue</a> *&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A megadott elemet kitörli az AniamtionQueue-ból és visszaadja az előtte lévő pointerét. </p>
+<dl class="section warning"><dt>Figyelmeztetés</dt><dd>TILOS a strázsát átadni. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Az <a class="el" href="#structAnimationQueue" title="Az animációs sor struktúrája.">AnimationQueue</a> strázsájának pointere </td></tr>
+    <tr><td class="paramname">element</td><td>A törlendő elem pointere </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>A törlendő elem előtti elem pointere </dd></dl>
+
+</div>
+</div>
+<a id="a9870d4c405121b6667c178f650896d1c" name="a9870d4c405121b6667c178f650896d1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9870d4c405121b6667c178f650896d1c">&#9670;&#160;</a></span>CursorInRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CursorInRect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structEventloopVariables">EventloopVariables</a>&#160;</td>
+          <td class="paramname"><em>ev_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>bound</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Megvizsgálja, hogy a kurzor a megadott SDL_Rect-en belül van-e. </p>
+<p>Egy elemre történő kattintás vizsgálatára alkalmas. Az SDL_MOUSEBUTTONDOWN és az SDL_MOUSEBUTTONUP közötti változást kiszűri, azaz csak akkor ad vissza true-t, ha a kurzor az SDL_Rect-en belül volt mindkét eseménykor. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev_vars</td><td>Egy <a class="el" href="#structEventloopVariables" title="A játék eventloopjának a változóit fogja össze.">EventloopVariables</a> struktúra. </td></tr>
+    <tr><td class="paramname">bound</td><td>A megvizsgálandó SDL_Rect. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, ha a kurzor az SDL_Rect-en belül volt SDL_MOUSEBUTTONDOWN és SDL_MOUSEBUTTONUP-kor, egyébként false </dd></dl>
+
+</div>
+</div>
+<a id="ac10254960c5d6975f0d32e052f3f18b3" name="ac10254960c5d6975f0d32e052f3f18b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac10254960c5d6975f0d32e052f3f18b3">&#9670;&#160;</a></span>Delta_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Delta_Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structEventloopVariables">EventloopVariables</a> *&#160;</td>
+          <td class="paramname"><em>ev_vars</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frissíti a deltaT elemének értékét. </p>
+<p>Két hívás között eltelt időt számítja ki az SDL_GetPerformanceCounter() és az SDL_GetPerformanceFrequency() segítségével. Az animációk időzítésére szolgál. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ev_vars</td><td>A változtatandó <a class="el" href="#structEventloopVariables" title="A játék eventloopjának a változóit fogja össze.">EventloopVariables</a> struktúra pointere. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9b1acba58182e72d9c5bceadc3b69570" name="a9b1acba58182e72d9c5bceadc3b69570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b1acba58182e72d9c5bceadc3b69570">&#9670;&#160;</a></span>EventloopVariables_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structEventloopVariables">EventloopVariables</a> EventloopVariables_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Az eventloop változóinak inicializálása (kinullázása) </p>
+<p>Az visszaadot struktúra minden eleme 0 értéket kap. Mivel nincs dinamikusan foglalt változója, ezért nem kell felszabadítani. </p><dl class="section return"><dt>Visszatérési érték</dt><dd>Egy <a class="el" href="#structEventloopVariables" title="A játék eventloopjának a változóit fogja össze.">EventloopVariables</a> struktúra </dd></dl>
+
+</div>
+</div>
+<a id="a93c862a10cd086d1667b0564f41cf7fd" name="a93c862a10cd086d1667b0564f41cf7fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c862a10cd086d1667b0564f41cf7fd">&#9670;&#160;</a></span>Game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structGameStruct">GameStruct</a>&#160;</td>
+          <td class="paramname"><em>game_struct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pipe_8h.html#structPipeGrid">PipeGrid</a> *&#160;</td>
+          <td class="paramname"><em>betoltott</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>entry_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>exit_y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A játék függvénye. </p>
+<p>Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. </p><dl class="section note"><dt>Megjegyzés</dt><dd>A <a class="el" href="#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a> függvény már képes meghívni, magában ne hívjuk meg, mert nem garantált a működése. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game_struct</td><td>A létrehozott <a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a>. </td></tr>
+    <tr><td class="paramname">betoltott</td><td>Ha betöltés volt a <a class="el" href="#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a>-ben választva, akkor a betöltött <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a>. </td></tr>
+    <tr><td class="paramname">entry_y</td><td>Ha betöltés volt a <a class="el" href="#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a>-ben választva, akkor a betöltött <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> bejáratánk sora. </td></tr>
+    <tr><td class="paramname">exit_y</td><td>Ha betöltés volt a <a class="el" href="#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a>-ben választva, akkor a betöltött <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> kijáratának sora. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, ha a <a class="el" href="#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a>-be lépünk vissza, false, ha új játék kezdődik, kilépés történt, illetve néhány súlyosabb hiba esetén </dd></dl>
+
+</div>
+</div>
+<a id="a387e11d6576bc1b42e1dae0eb31d8a81" name="a387e11d6576bc1b42e1dae0eb31d8a81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387e11d6576bc1b42e1dae0eb31d8a81">&#9670;&#160;</a></span>GameStruct_Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GameStruct_Create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structGameStruct">GameStruct</a> *&#160;</td>
+          <td class="paramname"><em>game_struct</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> létrehozása. </p>
+<p>Meghívja a <a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> elemeinek létrehozó függvényeit (lásd: <a class="el" href="SDL__local_8h.html" title="Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.">SDL_local.h</a>). A <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> létrehozásához a DEFAULT_WINDOW_WIDTH és DEFAULT_WINDOW_HEIGHT konstansokat használja. Átadni egy <a class="el" href="#aa04da33e6daf2c7ed058efde2aea7246" title="GameStruct inicializálása (kinullázása)">GameStruct_Init()</a>-tel inicializált GameStruct-ot ajánlott. A hibákat a struktok létrehozó függvényei a konzolra kiírják, ennek csak a visszatérési értéke jelzi. Hiba esetén nem ajánlott a struktúra használata. </p><dl class="section post"><dt>Utófeltétel</dt><dd>Használat után a <a class="el" href="#a99fd927905eb43053a45dc0827478680" title="Felszabadít egy GameStruct-ot.">GameStruct_Destroy()</a> függvénnyel fel kell szabadítani a struktúrát. </dd></dl>
+<dl class="section warning"><dt>Figyelmeztetés</dt><dd>TILOS egy már létrehozott GameStruct-ot átadni. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game_struct</td><td>Egy inicializált <a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> pointere. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a99fd927905eb43053a45dc0827478680" name="a99fd927905eb43053a45dc0827478680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99fd927905eb43053a45dc0827478680">&#9670;&#160;</a></span>GameStruct_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameStruct_Destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structGameStruct">GameStruct</a> *&#160;</td>
+          <td class="paramname"><em>game_struct</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Felszabadít egy GameStruct-ot. </p>
+<p>A <a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> elemeit szabadítja fel a saját függvényeikkel. (lásd: <a class="el" href="SDL__local_8h.html" title="Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.">SDL_local.h</a>) </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game_struct</td><td>A felszabadítandó <a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> pointere. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa04da33e6daf2c7ed058efde2aea7246" name="aa04da33e6daf2c7ed058efde2aea7246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04da33e6daf2c7ed058efde2aea7246">&#9670;&#160;</a></span>GameStruct_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structGameStruct">GameStruct</a> GameStruct_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> inicializálása (kinullázása) </p>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>Egy üres <a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1b99b54c59508d3d3141e7b49f56ca64" name="a1b99b54c59508d3d3141e7b49f56ca64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b99b54c59508d3d3141e7b49f56ca64">&#9670;&#160;</a></span>Menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Menu </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structGameStruct">GameStruct</a>&#160;</td>
+          <td class="paramname"><em>game_struct</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A játékmenü függvénye. </p>
+<p>Az SDL és a <a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a> inicializálása/létrehozása után meg lehet hívni. Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game_struct</td><td>A létrehozott <a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, súlyos hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a17fc09a1ba3479c30e3f8bdbbb38ec95" name="a17fc09a1ba3479c30e3f8bdbbb38ec95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17fc09a1ba3479c30e3f8bdbbb38ec95">&#9670;&#160;</a></span>Wheel_Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Wheel_Create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structWheel">Wheel</a> *&#160;</td>
+          <td class="paramname"><em>wheel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Rect&#160;</td>
+          <td class="paramname"><em>location</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>wheel_texture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> struktúra létrehozása. </p>
+<p>Véletlenszerűen felvesz egy szöget és lerendereli a Layer-re a csapot. A hibákat a struktok létrehozó függvényei a konzolra kiírják, ennek csak a visszatérési értéke jelzi. Hiba esetén nem ajánlott a struktúra használata. </p><dl class="section post"><dt>Utófeltétel</dt><dd>Használat után a <a class="el" href="#a1fc039eb035e3a5b55561e5b14184399" title="Felszabadít egy Wheel struktúrát.">Wheel_Destroy()</a> függvénnyel fel kell szabadítani a struktúrát. </dd></dl>
+<dl class="section warning"><dt>Figyelmeztetés</dt><dd>TILOS egy már létrehozott <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> struktúrát átadni. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wheel</td><td>Egy inicializált <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> struktúra pointere. </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra. </td></tr>
+    <tr><td class="paramname">location</td><td>A csap szülőjéhez relatív helye </td></tr>
+    <tr><td class="paramname">wheel_texture</td><td>A csap textúrája. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a1fc039eb035e3a5b55561e5b14184399" name="a1fc039eb035e3a5b55561e5b14184399"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fc039eb035e3a5b55561e5b14184399">&#9670;&#160;</a></span>Wheel_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Wheel_Destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structWheel">Wheel</a> *&#160;</td>
+          <td class="paramname"><em>wheel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Felszabadít egy <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> struktúrát. </p>
+<p>A <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> Layer-ét szabadítja fel a saját függvényével. (lásd: <a class="el" href="SDL__local_8h.html" title="Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.">SDL_local.h</a>) </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wheel</td><td>A felszabadítandó <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> struktúra pointere. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a87736d507ec807ee7d6860ae5ce0d5e0" name="a87736d507ec807ee7d6860ae5ce0d5e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87736d507ec807ee7d6860ae5ce0d5e0">&#9670;&#160;</a></span>Wheel_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structWheel">Wheel</a> Wheel_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> struktúra inicializálása (kinullázása) </p>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>Egy üres <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> struktúra </dd></dl>
+
+</div>
+</div>
+<a id="aea2f6e7c50ea2fadc84493a0c101dede" name="aea2f6e7c50ea2fadc84493a0c101dede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2f6e7c50ea2fadc84493a0c101dede">&#9670;&#160;</a></span>Wheel_Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Wheel_Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structWheel">Wheel</a>&#160;</td>
+          <td class="paramname"><em>wheel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Texture *&#160;</td>
+          <td class="paramname"><em>wheel_texture</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frissíti egy <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> Layer-ét. </p>
+<p>A <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> Layer-ét frissíti (újrarendereli) az aktuális értékei szerint. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wheel</td><td>A frissítendő <a class="el" href="#structWheel" title="A csap struktúrája.">Wheel</a> </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra </td></tr>
+    <tr><td class="paramname">pipe_texture</td><td>A csöveket tartalmazó SDL_Texture* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="aa1b05c35e760e1a2a04bbf56bfa8222c" name="aa1b05c35e760e1a2a04bbf56bfa8222c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1b05c35e760e1a2a04bbf56bfa8222c">&#9670;&#160;</a></span>Win()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Win </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#structGameStruct">GameStruct</a>&#160;</td>
+          <td class="paramname"><em>game_struct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structLayer">Layer</a>&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="pipe_8h.html#structPipeGrid">PipeGrid</a>&#160;</td>
+          <td class="paramname"><em>copy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>entry_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>exit_y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A nyert kép függvénye. </p>
+<p>Az előforduló hibákat a függvény kiírja a konzolra. Súlyosabb hiba esetén a függvény false értékkel leáll. </p><dl class="section note"><dt>Megjegyzés</dt><dd>A <a class="el" href="#a93c862a10cd086d1667b0564f41cf7fd" title="A játék függvénye.">Game()</a> függvény már képes meghívni, magában ne hívjuk meg, mert nem garantált a működése. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game_struct</td><td>A létrehozott <a class="el" href="#structGameStruct" title="A játékhoz szükséges struktúrákat fogja össze.">GameStruct</a>. </td></tr>
+    <tr><td class="paramname">state</td><td>A <a class="el" href="#a93c862a10cd086d1667b0564f41cf7fd" title="A játék függvénye.">Game()</a> függvény aktuális renderelt képe. </td></tr>
+    <tr><td class="paramname">copy</td><td>A <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> pálya betöltéskori másolata. </td></tr>
+    <tr><td class="paramname">entry_y</td><td>A <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> bejáratának sora. </td></tr>
+    <tr><td class="paramname">exit_y</td><td>A <a class="el" href="pipe_8h.html#structPipeGrid" title="A Pipe-ok mátrixát tároló struktúra.">PipeGrid</a> kijáratának sora. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, ha a <a class="el" href="#a1b99b54c59508d3d3141e7b49f56ca64" title="A játékmenü függvénye.">Menu()</a>-be lépünk vissza, false, ha új játék kezdődik, kilépés történt, illetve néhány súlyosabb hiba esetén </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

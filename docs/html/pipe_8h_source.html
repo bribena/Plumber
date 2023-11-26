@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vízvezetékszerelő: lib/include/pipe.h Forrásfájl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vízvezetékszerelő
+   </div>
+   <div id="projectbrief">Egy vízvezetékszerelő játék, C-ben írva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Keresés');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_5a30104352ef4255dc24354b02eb2d20.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">pipe.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="pipe_8h.html">Ugrás a fájl dokumentációjához.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">/* pipe.h eleje */</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#ifndef PIPE_H</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#define PIPE_H</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#include &quot;<a class="code" href="SDL__local_8h.html">SDL_local.h</a>&quot;</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="pipe_8h.html#ac5e7e1125193d2b2d3418b44c5d8d8a5">   90</a></span><span class="preprocessor">#define DEFAULT_PIPE_SIZE 50</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="};">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232c">   98</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232c">ElemiResz</a> {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc">  102</a></span>    <a class="code hl_enumvalue" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc">Levego</a> = <span class="charliteral">&#39;X&#39;</span>,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23">  106</a></span>    <a class="code hl_enumvalue" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23">Cso</a> = <span class="charliteral">&#39;O&#39;</span>,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9">  110</a></span>    <a class="code hl_enumvalue" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9">Ismeretlen</a> = <span class="charliteral">&#39;?&#39;</span>,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc">  114</a></span>    <a class="code hl_enumvalue" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc">Rossz</a> = <span class="charliteral">&#39;.&#39;</span>,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_enumvalue" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0">Jo</a> = <span class="charliteral">&#39;*&#39;</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0">  119</a></span>} <a class="code hl_enumeration" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232c">ElemiResz</a>;</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="};">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69">  126</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code hl_enumeration" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69">PipeType</a> {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5">  130</a></span>    <a class="code hl_enumvalue" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5">PipeType_None</a>,</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123">  134</a></span>    <a class="code hl_enumvalue" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123">PipeType_Straight</a>,</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe">  138</a></span>    <a class="code hl_enumvalue" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe">PipeType_Curved</a>,</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b">  142</a></span>    <a class="code hl_enumvalue" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b">PipeType_Tshaped</a>,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <a class="code hl_enumvalue" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006">PipeType_Crossing</a></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006">  147</a></span>} <a class="code hl_enumeration" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69">PipeType</a>;</div>
+</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="pipe_8h.html#a2aaf339bd900c828726996d11a07e570">  155</a></span><span class="keyword">typedef</span> <a class="code hl_enumeration" href="pipe_8h.html#a0e06b722097db3b4be182a777b22232c">ElemiResz</a> <a class="code hl_typedef" href="pipe_8h.html#a2aaf339bd900c828726996d11a07e570">Elem</a>[3][3];</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="};">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="pipe_8h.html">  162</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="pipe_8h.html#structPipe">Pipe</a> {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="pipe_8h.html#a06e78e7416e3963c14e56e2fafb4ce91">  166</a></span>    <a class="code hl_typedef" href="pipe_8h.html#a2aaf339bd900c828726996d11a07e570">Elem</a> <a class="code hl_variable" href="pipe_8h.html#a06e78e7416e3963c14e56e2fafb4ce91">tenyleges</a>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="pipe_8h.html#ad4b22d52ae07689fcb1fcbf1d13f2ffc">  170</a></span>    SDL_Rect <a class="code hl_variable" href="pipe_8h.html#ad4b22d52ae07689fcb1fcbf1d13f2ffc">texture_loc</a>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="pipe_8h.html#a8428eb27e8d47fb0d2eb3f930e893620">  174</a></span>    <a class="code hl_struct" href="SDL__local_8h.html#structLayer">Layer</a> <a class="code hl_variable" href="pipe_8h.html#a8428eb27e8d47fb0d2eb3f930e893620">rendered</a>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="pipe_8h.html#a3130316ff5b964915a98f7cd0b4984db">  178</a></span>    <a class="code hl_enumeration" href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69">PipeType</a> <a class="code hl_variable" href="pipe_8h.html#a3130316ff5b964915a98f7cd0b4984db">type</a>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="pipe_8h.html#a5f3c609ac8d5da6e2e9f62bdf27e5b9e">  182</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="pipe_8h.html#a5f3c609ac8d5da6e2e9f62bdf27e5b9e">szog</a>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>} <a class="code hl_struct" href="pipe_8h.html#structPipe">Pipe</a>;</div>
+</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="foldopen" id="foldopen00191" data-start="{" data-end="};">
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="pipe_8h.html">  191</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="pipe_8h.html#a521bb018b625dbd0815df275eb2c55e2">  195</a></span>    <a class="code hl_struct" href="pipe_8h.html#structPipe">Pipe</a> **<a class="code hl_variable" href="pipe_8h.html#a521bb018b625dbd0815df275eb2c55e2">matrix</a>;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="pipe_8h.html#ad36fc50d016d25e6d5a774c824c336e4">  204</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="pipe_8h.html#ad36fc50d016d25e6d5a774c824c336e4">x</a>, <a class="code hl_variable" href="pipe_8h.html#a3591dfe4b7ab3fbb84cb0ded955ff1af">y</a>;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>} <a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a>;</div>
+</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="};">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="pipe_8h.html">  213</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="pipe_8h.html#aecfa1d22c70a35b254f4c0fb5eff0d5b">  217</a></span>    <a class="code hl_struct" href="pipe_8h.html#structPipe">Pipe</a> * <a class="code hl_variable" href="pipe_8h.html#aecfa1d22c70a35b254f4c0fb5eff0d5b">pipe</a>;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="pipe_8h.html#a948ed5bfec27326e16786ae8a867fd94">  226</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="pipe_8h.html#a948ed5bfec27326e16786ae8a867fd94">x</a>, <a class="code hl_variable" href="pipe_8h.html#adfee3b344c149b0bd329a5d6fc8b6f00">y</a>;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="pipe_8h.html#a83f19165c0b7ea6eda8e271be1cd3b25">  230</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> * <a class="code hl_variable" href="pipe_8h.html#a83f19165c0b7ea6eda8e271be1cd3b25">next</a>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>} <a class="code hl_struct" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a>;</div>
+</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="keywordtype">void</span> <a class="code hl_function" href="pipe_8h.html#a9b4194b89ec44334514b17b0309deca8">Elem_Init</a>(<a class="code hl_typedef" href="pipe_8h.html#a2aaf339bd900c828726996d11a07e570">Elem</a> elem);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="keywordtype">void</span> <a class="code hl_function" href="pipe_8h.html#a93b6bc573aa97700d92155c1872aa636">Elem_Copy</a>(<a class="code hl_typedef" href="pipe_8h.html#a2aaf339bd900c828726996d11a07e570">Elem</a> hova, <a class="code hl_typedef" href="pipe_8h.html#a2aaf339bd900c828726996d11a07e570">Elem</a> honnan);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="keywordtype">void</span> <a class="code hl_function" href="pipe_8h.html#a2b0d66c6555de1641ccba86e3b2bbfb1">Elem_RotatePos</a>(<a class="code hl_typedef" href="pipe_8h.html#a2aaf339bd900c828726996d11a07e570">Elem</a> elem);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="keywordtype">void</span> <a class="code hl_function" href="pipe_8h.html#aab552e10b0d8bd8f6b2cd96bc38edc96">Elem_RotateNeg</a>(<a class="code hl_typedef" href="pipe_8h.html#a2aaf339bd900c828726996d11a07e570">Elem</a> elem);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><a class="code hl_struct" href="pipe_8h.html#structPipe">Pipe</a> <a class="code hl_function" href="pipe_8h.html#af5c71e4298c33eeb1eff0a9d4b9df420">Pipe_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="keywordtype">bool</span> <a class="code hl_function" href="pipe_8h.html#a44323a670aaceb7645ad404cf8a8f783">Pipe_CreateFromElem</a>(<a class="code hl_struct" href="pipe_8h.html#structPipe">Pipe</a> * <a class="code hl_variable" href="pipe_8h.html#aecfa1d22c70a35b254f4c0fb5eff0d5b">pipe</a>, <a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> window, SDL_Texture * pipe_texture, SDL_Rect base_location);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="keywordtype">void</span> <a class="code hl_function" href="pipe_8h.html#a216a3e3667f262ced88364393750fc0c">Pipe_Rotate</a>(<a class="code hl_struct" href="pipe_8h.html#structPipe">Pipe</a> * <a class="code hl_variable" href="pipe_8h.html#aecfa1d22c70a35b254f4c0fb5eff0d5b">pipe</a>, <span class="keywordtype">int</span> irany);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="keywordtype">bool</span> <a class="code hl_function" href="pipe_8h.html#a89e9baf97ad38cbde0098fe638819fbe">Pipe_Render</a>(<a class="code hl_struct" href="pipe_8h.html#structPipe">Pipe</a> <a class="code hl_variable" href="pipe_8h.html#aecfa1d22c70a35b254f4c0fb5eff0d5b">pipe</a>, <a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> window);</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="keywordtype">bool</span> <a class="code hl_function" href="pipe_8h.html#adc666f7a0c915b9ffbc07bf0ee99921b">Pipe_UpdateLayer</a>(<a class="code hl_struct" href="pipe_8h.html#structPipe">Pipe</a> <a class="code hl_variable" href="pipe_8h.html#aecfa1d22c70a35b254f4c0fb5eff0d5b">pipe</a>, <a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> window, SDL_Texture * pipe_texture);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="keywordtype">void</span> <a class="code hl_function" href="pipe_8h.html#ad8e7c55fe9bad5b60e5c20b63f68cc5c">Pipe_Destroy</a>(<a class="code hl_struct" href="pipe_8h.html#structPipe">Pipe</a> * <a class="code hl_variable" href="pipe_8h.html#aecfa1d22c70a35b254f4c0fb5eff0d5b">pipe</a>);</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> <a class="code hl_function" href="pipe_8h.html#a0d9859a40de0cd53258fcb88e8bbcaff">PipeGrid_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="keywordtype">bool</span> <a class="code hl_function" href="pipe_8h.html#a374a382292ea4ef400156d3e1960b2d7">PipeGrid_Create</a>(<a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> * pipegrid, <span class="keywordtype">int</span> <a class="code hl_variable" href="pipe_8h.html#a948ed5bfec27326e16786ae8a867fd94">x</a>, <span class="keywordtype">int</span> <a class="code hl_variable" href="pipe_8h.html#adfee3b344c149b0bd329a5d6fc8b6f00">y</a>);</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> <a class="code hl_function" href="pipe_8h.html#a65ed505ed2d56a3aeda3aed0a46f02d1">PipeGrid_CreateCopy</a>(<a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> source);</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span><span class="keywordtype">void</span> <a class="code hl_function" href="pipe_8h.html#a4bcc09f533a5dbe43a9a24dc9e1a8d4d">PipeGrid_GenerateGrid</a>(<a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> * pipegrid, SDL_Point entry, SDL_Point exit);</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="keywordtype">void</span> <a class="code hl_function" href="pipe_8h.html#a1e4a8bc5269d22c3e6fec9acd8bf3e83">PipeGrid_Shuffle</a>(<a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> pipegrid);</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span><span class="keywordtype">bool</span> <a class="code hl_function" href="pipe_8h.html#ab1aff8a4b7cc5465aede4b2e6bbc1463">PipeGrid_Feldolgoz</a>(<a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> pipegrid, <a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> window, SDL_Texture * pipe_texture, SDL_Rect base_location);</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span><span class="keywordtype">bool</span> <a class="code hl_function" href="pipe_8h.html#af129c9d4c21a5a3ceea790a85f5d2305">PipeGrid_Render</a>(<a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> pipegrid, <a class="code hl_struct" href="SDL__local_8h.html#structWindow">Window</a> window);</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span><span class="keywordtype">void</span> <a class="code hl_function" href="pipe_8h.html#aeaa7e81af912deb3e9782cb9523321b3">PipeGrid_Destroy</a>(<a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> * pipegrid);</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span><a class="code hl_struct" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> * <a class="code hl_function" href="pipe_8h.html#a0ea6489ef8c5d5a47e52c0d3c8073423">PipeGrid_Solve</a>(<a class="code hl_struct" href="pipe_8h.html#structPipeGrid">PipeGrid</a> pipegrid, SDL_Point entry, SDL_Point exit);</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span><a class="code hl_struct" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> * <a class="code hl_function" href="pipe_8h.html#a29554057a457d47ee2015a6d5b9d9cef">SolvedPipeGrid_RemoveFirst</a>(<a class="code hl_struct" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> * start);</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span><span class="keywordtype">void</span> <a class="code hl_function" href="pipe_8h.html#a5b9f26edab225f3523287fc05a1eedf7">SolvedPipeGrid_Destroy</a>(<a class="code hl_struct" href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a> * start);</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span><span class="comment">/* pipe.h vége */</span></div>
+<div class="ttc" id="aSDL__local_8h_html"><div class="ttname"><a href="SDL__local_8h.html">SDL_local.h</a></div><div class="ttdoc">Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.</div></div>
+<div class="ttc" id="aSDL__local_8h_html_structLayer"><div class="ttname"><a href="SDL__local_8h.html#structLayer">Layer</a></div><div class="ttdoc">Réteg struktúra.</div><div class="ttdef"><b>Definition</b> SDL_local.h:218</div></div>
+<div class="ttc" id="aSDL__local_8h_html_structWindow"><div class="ttname"><a href="SDL__local_8h.html#structWindow">Window</a></div><div class="ttdoc">Window struktúra.</div><div class="ttdef"><b>Definition</b> SDL_local.h:136</div></div>
+<div class="ttc" id="apipe_8h_html_a06e78e7416e3963c14e56e2fafb4ce91"><div class="ttname"><a href="pipe_8h.html#a06e78e7416e3963c14e56e2fafb4ce91">Pipe::tenyleges</a></div><div class="ttdeci">Elem tenyleges</div><div class="ttdef"><b>Definition</b> pipe.h:166</div></div>
+<div class="ttc" id="apipe_8h_html_a0d9859a40de0cd53258fcb88e8bbcaff"><div class="ttname"><a href="pipe_8h.html#a0d9859a40de0cd53258fcb88e8bbcaff">PipeGrid_Init</a></div><div class="ttdeci">PipeGrid PipeGrid_Init(void)</div><div class="ttdoc">PipeGrid struktúra inicializálása (kinullázása)</div><div class="ttdef"><b>Definition</b> pipegrid.c:10</div></div>
+<div class="ttc" id="apipe_8h_html_a0e06b722097db3b4be182a777b22232c"><div class="ttname"><a href="pipe_8h.html#a0e06b722097db3b4be182a777b22232c">ElemiResz</a></div><div class="ttdeci">ElemiResz</div><div class="ttdoc">Egy-egy Elem részeinek lehetséges állapotai.</div><div class="ttdef"><b>Definition</b> pipe.h:98</div></div>
+<div class="ttc" id="apipe_8h_html_a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0"><div class="ttname"><a href="pipe_8h.html#a0e06b722097db3b4be182a777b22232ca159a435e31ac323603e4768f71a0d2b0">Jo</a></div><div class="ttdeci">@ Jo</div><div class="ttdef"><b>Definition</b> pipe.h:118</div></div>
+<div class="ttc" id="apipe_8h_html_a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23"><div class="ttname"><a href="pipe_8h.html#a0e06b722097db3b4be182a777b22232ca302bbd5fbda441f90f17ff10d409cd23">Cso</a></div><div class="ttdeci">@ Cso</div><div class="ttdef"><b>Definition</b> pipe.h:106</div></div>
+<div class="ttc" id="apipe_8h_html_a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc"><div class="ttname"><a href="pipe_8h.html#a0e06b722097db3b4be182a777b22232ca6ef158ffc9efbfb06fa1982f11ef19dc">Rossz</a></div><div class="ttdeci">@ Rossz</div><div class="ttdef"><b>Definition</b> pipe.h:114</div></div>
+<div class="ttc" id="apipe_8h_html_a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9"><div class="ttname"><a href="pipe_8h.html#a0e06b722097db3b4be182a777b22232cac31c351c82a3645fe82cd8f7cb5241c9">Ismeretlen</a></div><div class="ttdeci">@ Ismeretlen</div><div class="ttdef"><b>Definition</b> pipe.h:110</div></div>
+<div class="ttc" id="apipe_8h_html_a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc"><div class="ttname"><a href="pipe_8h.html#a0e06b722097db3b4be182a777b22232cae6a720133736878f708e2b9e4d4928cc">Levego</a></div><div class="ttdeci">@ Levego</div><div class="ttdef"><b>Definition</b> pipe.h:102</div></div>
+<div class="ttc" id="apipe_8h_html_a0ea6489ef8c5d5a47e52c0d3c8073423"><div class="ttname"><a href="pipe_8h.html#a0ea6489ef8c5d5a47e52c0d3c8073423">PipeGrid_Solve</a></div><div class="ttdeci">SolvedPipeGrid * PipeGrid_Solve(PipeGrid pipegrid, SDL_Point entry, SDL_Point exit)</div><div class="ttdoc">Megold egy PipeGrid-et és a megoldását egy SolvedPipeGrid-ben adja vissza.</div><div class="ttdef"><b>Definition</b> solve.c:175</div></div>
+<div class="ttc" id="apipe_8h_html_a1e4a8bc5269d22c3e6fec9acd8bf3e83"><div class="ttname"><a href="pipe_8h.html#a1e4a8bc5269d22c3e6fec9acd8bf3e83">PipeGrid_Shuffle</a></div><div class="ttdeci">void PipeGrid_Shuffle(PipeGrid pipegrid)</div><div class="ttdoc">Összekever egy PipeGrid-et.</div><div class="ttdef"><b>Definition</b> pipegrid.c:191</div></div>
+<div class="ttc" id="apipe_8h_html_a216a3e3667f262ced88364393750fc0c"><div class="ttname"><a href="pipe_8h.html#a216a3e3667f262ced88364393750fc0c">Pipe_Rotate</a></div><div class="ttdeci">void Pipe_Rotate(Pipe *pipe, int irany)</div><div class="ttdoc">Elforgatja egy Pipe Elem-ét.</div><div class="ttdef"><b>Definition</b> pipe.c:80</div></div>
+<div class="ttc" id="apipe_8h_html_a29554057a457d47ee2015a6d5b9d9cef"><div class="ttname"><a href="pipe_8h.html#a29554057a457d47ee2015a6d5b9d9cef">SolvedPipeGrid_RemoveFirst</a></div><div class="ttdeci">SolvedPipeGrid * SolvedPipeGrid_RemoveFirst(SolvedPipeGrid *start)</div><div class="ttdoc">A SolvedPipeGrid láncolt lista első elemét felszabadítja és visszaadja a következő elem pointerét.</div><div class="ttdef"><b>Definition</b> solve.c:262</div></div>
+<div class="ttc" id="apipe_8h_html_a2aaf339bd900c828726996d11a07e570"><div class="ttname"><a href="pipe_8h.html#a2aaf339bd900c828726996d11a07e570">Elem</a></div><div class="ttdeci">ElemiResz Elem[3][3]</div><div class="ttdoc">Egy Elem-et reprezentáló 3x3-as mátrix.</div><div class="ttdef"><b>Definition</b> pipe.h:155</div></div>
+<div class="ttc" id="apipe_8h_html_a2b0d66c6555de1641ccba86e3b2bbfb1"><div class="ttname"><a href="pipe_8h.html#a2b0d66c6555de1641ccba86e3b2bbfb1">Elem_RotatePos</a></div><div class="ttdeci">void Elem_RotatePos(Elem elem)</div><div class="ttdoc">Elforgat egy Elem-et az óramutató járásával megegyező irányba.</div><div class="ttdef"><b>Definition</b> elem.c:21</div></div>
+<div class="ttc" id="apipe_8h_html_a3130316ff5b964915a98f7cd0b4984db"><div class="ttname"><a href="pipe_8h.html#a3130316ff5b964915a98f7cd0b4984db">Pipe::type</a></div><div class="ttdeci">PipeType type</div><div class="ttdef"><b>Definition</b> pipe.h:178</div></div>
+<div class="ttc" id="apipe_8h_html_a3591dfe4b7ab3fbb84cb0ded955ff1af"><div class="ttname"><a href="pipe_8h.html#a3591dfe4b7ab3fbb84cb0ded955ff1af">PipeGrid::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> pipe.h:204</div></div>
+<div class="ttc" id="apipe_8h_html_a374a382292ea4ef400156d3e1960b2d7"><div class="ttname"><a href="pipe_8h.html#a374a382292ea4ef400156d3e1960b2d7">PipeGrid_Create</a></div><div class="ttdeci">bool PipeGrid_Create(PipeGrid *pipegrid, int x, int y)</div><div class="ttdoc">PipeGrid struktúra létrehozása.</div><div class="ttdef"><b>Definition</b> pipegrid.c:14</div></div>
+<div class="ttc" id="apipe_8h_html_a44323a670aaceb7645ad404cf8a8f783"><div class="ttname"><a href="pipe_8h.html#a44323a670aaceb7645ad404cf8a8f783">Pipe_CreateFromElem</a></div><div class="ttdeci">bool Pipe_CreateFromElem(Pipe *pipe, Window window, SDL_Texture *pipe_texture, SDL_Rect base_location)</div><div class="ttdoc">Pipe struktúra létrehozása a benne található Elem alapján.</div><div class="ttdef"><b>Definition</b> pipe.c:19</div></div>
+<div class="ttc" id="apipe_8h_html_a4bcc09f533a5dbe43a9a24dc9e1a8d4d"><div class="ttname"><a href="pipe_8h.html#a4bcc09f533a5dbe43a9a24dc9e1a8d4d">PipeGrid_GenerateGrid</a></div><div class="ttdeci">void PipeGrid_GenerateGrid(PipeGrid *pipegrid, SDL_Point entry, SDL_Point exit)</div><div class="ttdoc">Legenerál egy PipeGrid-et.</div><div class="ttdef"><b>Definition</b> pipegrid.c:183</div></div>
+<div class="ttc" id="apipe_8h_html_a521bb018b625dbd0815df275eb2c55e2"><div class="ttname"><a href="pipe_8h.html#a521bb018b625dbd0815df275eb2c55e2">PipeGrid::matrix</a></div><div class="ttdeci">Pipe ** matrix</div><div class="ttdef"><b>Definition</b> pipe.h:195</div></div>
+<div class="ttc" id="apipe_8h_html_a5b9f26edab225f3523287fc05a1eedf7"><div class="ttname"><a href="pipe_8h.html#a5b9f26edab225f3523287fc05a1eedf7">SolvedPipeGrid_Destroy</a></div><div class="ttdeci">void SolvedPipeGrid_Destroy(SolvedPipeGrid *start)</div><div class="ttdoc">Felszabadít egy SolvedPipeGrid láncolt listát.</div><div class="ttdef"><b>Definition</b> solve.c:269</div></div>
+<div class="ttc" id="apipe_8h_html_a5f3c609ac8d5da6e2e9f62bdf27e5b9e"><div class="ttname"><a href="pipe_8h.html#a5f3c609ac8d5da6e2e9f62bdf27e5b9e">Pipe::szog</a></div><div class="ttdeci">double szog</div><div class="ttdef"><b>Definition</b> pipe.h:182</div></div>
+<div class="ttc" id="apipe_8h_html_a65ed505ed2d56a3aeda3aed0a46f02d1"><div class="ttname"><a href="pipe_8h.html#a65ed505ed2d56a3aeda3aed0a46f02d1">PipeGrid_CreateCopy</a></div><div class="ttdeci">PipeGrid PipeGrid_CreateCopy(PipeGrid source)</div><div class="ttdoc">Lemásol egy PipeGrid-et és visszaadja a másolatot.</div><div class="ttdef"><b>Definition</b> pipegrid.c:46</div></div>
+<div class="ttc" id="apipe_8h_html_a66f0d6eb7162b131ee64066734931c69"><div class="ttname"><a href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69">PipeType</a></div><div class="ttdeci">PipeType</div><div class="ttdoc">A Pipe típusának enumja.</div><div class="ttdef"><b>Definition</b> pipe.h:126</div></div>
+<div class="ttc" id="apipe_8h_html_a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123"><div class="ttname"><a href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69a1e26bb9ba4ac908257440fd798130123">PipeType_Straight</a></div><div class="ttdeci">@ PipeType_Straight</div><div class="ttdef"><b>Definition</b> pipe.h:134</div></div>
+<div class="ttc" id="apipe_8h_html_a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5"><div class="ttname"><a href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69a975d1c119ca9f1134b3d967d81f34dc5">PipeType_None</a></div><div class="ttdeci">@ PipeType_None</div><div class="ttdef"><b>Definition</b> pipe.h:130</div></div>
+<div class="ttc" id="apipe_8h_html_a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe"><div class="ttname"><a href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69a9c6d7f3b094e7a82e65894dce2006efe">PipeType_Curved</a></div><div class="ttdeci">@ PipeType_Curved</div><div class="ttdef"><b>Definition</b> pipe.h:138</div></div>
+<div class="ttc" id="apipe_8h_html_a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b"><div class="ttname"><a href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69af093dae901f7a5b76177866671b9587b">PipeType_Tshaped</a></div><div class="ttdeci">@ PipeType_Tshaped</div><div class="ttdef"><b>Definition</b> pipe.h:142</div></div>
+<div class="ttc" id="apipe_8h_html_a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006"><div class="ttname"><a href="pipe_8h.html#a66f0d6eb7162b131ee64066734931c69afb1ca430a8ddec0258ac8d1359f22006">PipeType_Crossing</a></div><div class="ttdeci">@ PipeType_Crossing</div><div class="ttdef"><b>Definition</b> pipe.h:146</div></div>
+<div class="ttc" id="apipe_8h_html_a83f19165c0b7ea6eda8e271be1cd3b25"><div class="ttname"><a href="pipe_8h.html#a83f19165c0b7ea6eda8e271be1cd3b25">SolvedPipeGrid::next</a></div><div class="ttdeci">struct SolvedPipeGrid * next</div><div class="ttdef"><b>Definition</b> pipe.h:230</div></div>
+<div class="ttc" id="apipe_8h_html_a8428eb27e8d47fb0d2eb3f930e893620"><div class="ttname"><a href="pipe_8h.html#a8428eb27e8d47fb0d2eb3f930e893620">Pipe::rendered</a></div><div class="ttdeci">Layer rendered</div><div class="ttdef"><b>Definition</b> pipe.h:174</div></div>
+<div class="ttc" id="apipe_8h_html_a89e9baf97ad38cbde0098fe638819fbe"><div class="ttname"><a href="pipe_8h.html#a89e9baf97ad38cbde0098fe638819fbe">Pipe_Render</a></div><div class="ttdeci">bool Pipe_Render(Pipe pipe, Window window)</div><div class="ttdoc">Renderel egy Pipe-ot a jelenlegi RenderTarget-re.</div><div class="ttdef"><b>Definition</b> pipe.c:92</div></div>
+<div class="ttc" id="apipe_8h_html_a93b6bc573aa97700d92155c1872aa636"><div class="ttname"><a href="pipe_8h.html#a93b6bc573aa97700d92155c1872aa636">Elem_Copy</a></div><div class="ttdeci">void Elem_Copy(Elem hova, Elem honnan)</div><div class="ttdoc">Átmásol egy Elem tartalmát egy másikba.</div><div class="ttdef"><b>Definition</b> elem.c:15</div></div>
+<div class="ttc" id="apipe_8h_html_a948ed5bfec27326e16786ae8a867fd94"><div class="ttname"><a href="pipe_8h.html#a948ed5bfec27326e16786ae8a867fd94">SolvedPipeGrid::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> pipe.h:226</div></div>
+<div class="ttc" id="apipe_8h_html_a9b4194b89ec44334514b17b0309deca8"><div class="ttname"><a href="pipe_8h.html#a9b4194b89ec44334514b17b0309deca8">Elem_Init</a></div><div class="ttdeci">void Elem_Init(Elem elem)</div><div class="ttdoc">Egy üres (csupa Levego-s) Elem-et álltít elő.</div><div class="ttdef"><b>Definition</b> elem.c:9</div></div>
+<div class="ttc" id="apipe_8h_html_aab552e10b0d8bd8f6b2cd96bc38edc96"><div class="ttname"><a href="pipe_8h.html#aab552e10b0d8bd8f6b2cd96bc38edc96">Elem_RotateNeg</a></div><div class="ttdeci">void Elem_RotateNeg(Elem elem)</div><div class="ttdoc">Elforgat egy Elem-et az óramutató járásával ellentétes irányba.</div><div class="ttdef"><b>Definition</b> elem.c:32</div></div>
+<div class="ttc" id="apipe_8h_html_ab1aff8a4b7cc5465aede4b2e6bbc1463"><div class="ttname"><a href="pipe_8h.html#ab1aff8a4b7cc5465aede4b2e6bbc1463">PipeGrid_Feldolgoz</a></div><div class="ttdeci">bool PipeGrid_Feldolgoz(PipeGrid pipegrid, Window window, SDL_Texture *pipe_texture, SDL_Rect base_location)</div><div class="ttdoc">Egy PipeGrid Pipe-jainak hiányzó értékeit feltölti.</div><div class="ttdef"><b>Definition</b> pipegrid.c:198</div></div>
+<div class="ttc" id="apipe_8h_html_ad36fc50d016d25e6d5a774c824c336e4"><div class="ttname"><a href="pipe_8h.html#ad36fc50d016d25e6d5a774c824c336e4">PipeGrid::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition</b> pipe.h:204</div></div>
+<div class="ttc" id="apipe_8h_html_ad4b22d52ae07689fcb1fcbf1d13f2ffc"><div class="ttname"><a href="pipe_8h.html#ad4b22d52ae07689fcb1fcbf1d13f2ffc">Pipe::texture_loc</a></div><div class="ttdeci">SDL_Rect texture_loc</div><div class="ttdef"><b>Definition</b> pipe.h:170</div></div>
+<div class="ttc" id="apipe_8h_html_ad8e7c55fe9bad5b60e5c20b63f68cc5c"><div class="ttname"><a href="pipe_8h.html#ad8e7c55fe9bad5b60e5c20b63f68cc5c">Pipe_Destroy</a></div><div class="ttdeci">void Pipe_Destroy(Pipe *pipe)</div><div class="ttdoc">Felszabadít egy Pipe struktúrát.</div><div class="ttdef"><b>Definition</b> pipe.c:87</div></div>
+<div class="ttc" id="apipe_8h_html_adc666f7a0c915b9ffbc07bf0ee99921b"><div class="ttname"><a href="pipe_8h.html#adc666f7a0c915b9ffbc07bf0ee99921b">Pipe_UpdateLayer</a></div><div class="ttdeci">bool Pipe_UpdateLayer(Pipe pipe, Window window, SDL_Texture *pipe_texture)</div><div class="ttdoc">Frissíti egy Pipe Layer-ét.</div><div class="ttdef"><b>Definition</b> pipe.c:96</div></div>
+<div class="ttc" id="apipe_8h_html_adfee3b344c149b0bd329a5d6fc8b6f00"><div class="ttname"><a href="pipe_8h.html#adfee3b344c149b0bd329a5d6fc8b6f00">SolvedPipeGrid::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition</b> pipe.h:226</div></div>
+<div class="ttc" id="apipe_8h_html_aeaa7e81af912deb3e9782cb9523321b3"><div class="ttname"><a href="pipe_8h.html#aeaa7e81af912deb3e9782cb9523321b3">PipeGrid_Destroy</a></div><div class="ttdeci">void PipeGrid_Destroy(PipeGrid *pipegrid)</div><div class="ttdoc">Felszabadít egy PipeGrid-et.</div><div class="ttdef"><b>Definition</b> pipegrid.c:37</div></div>
+<div class="ttc" id="apipe_8h_html_aecfa1d22c70a35b254f4c0fb5eff0d5b"><div class="ttname"><a href="pipe_8h.html#aecfa1d22c70a35b254f4c0fb5eff0d5b">SolvedPipeGrid::pipe</a></div><div class="ttdeci">Pipe * pipe</div><div class="ttdef"><b>Definition</b> pipe.h:217</div></div>
+<div class="ttc" id="apipe_8h_html_af129c9d4c21a5a3ceea790a85f5d2305"><div class="ttname"><a href="pipe_8h.html#af129c9d4c21a5a3ceea790a85f5d2305">PipeGrid_Render</a></div><div class="ttdeci">bool PipeGrid_Render(PipeGrid pipegrid, Window window)</div><div class="ttdoc">Lerenderel egy feldolgozott PipeGrid-et az aktuális RenderTarget-re.</div><div class="ttdef"><b>Definition</b> pipegrid.c:211</div></div>
+<div class="ttc" id="apipe_8h_html_af5c71e4298c33eeb1eff0a9d4b9df420"><div class="ttname"><a href="pipe_8h.html#af5c71e4298c33eeb1eff0a9d4b9df420">Pipe_Init</a></div><div class="ttdeci">Pipe Pipe_Init(void)</div><div class="ttdoc">Pipe struktúra inicializálása (kinullázása/alapértelmezett értékek beállítása)</div><div class="ttdef"><b>Definition</b> pipe.c:9</div></div>
+<div class="ttc" id="apipe_8h_html_structPipe"><div class="ttname"><a href="pipe_8h.html#structPipe">Pipe</a></div><div class="ttdoc">Egy cső adatainak tárolására szolgáló struktúra.</div><div class="ttdef"><b>Definition</b> pipe.h:162</div></div>
+<div class="ttc" id="apipe_8h_html_structPipeGrid"><div class="ttname"><a href="pipe_8h.html#structPipeGrid">PipeGrid</a></div><div class="ttdoc">A Pipe-ok mátrixát tároló struktúra.</div><div class="ttdef"><b>Definition</b> pipe.h:191</div></div>
+<div class="ttc" id="apipe_8h_html_structSolvedPipeGrid"><div class="ttname"><a href="pipe_8h.html#structSolvedPipeGrid">SolvedPipeGrid</a></div><div class="ttdoc">Egy PipeGrid megoldását tároló láncolt lista.</div><div class="ttdef"><b>Definition</b> pipe.h:213</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

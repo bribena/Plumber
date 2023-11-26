@@ -1,0 +1,190 @@
+\doxysection{lib/src/animation.c fájlreferencia}
+\hypertarget{animation_8c}{}\label{animation_8c}\index{lib/src/animation.c@{lib/src/animation.c}}
+
+
+A \doxylink{game_8h}{game.\+h}-\/ban deklarált \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+
+
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include "{}debugmalloc.\+h"{}}\newline
+\doxysubsubsection*{Függvények}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{animation_8c_af62ed55fa7c360460eba62c9a69c0276}{Animation\+Queue\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Létrehozza egy \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsáját. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{animation_8c_a27569d72a725f934f39a1f2f4b3e2963}{Animation\+Queue\+\_\+\+Append\+Wheel\+Rotate}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start, \mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}wheel, double target\+\_\+angle, double animation\+\_\+speed)
+\begin{DoxyCompactList}\small\item\em Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{game_8h_structWheel}{Wheel} forgatási animációját. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{animation_8c_a8f715d8120fdee7afc72c866645f038a}{Animation\+Queue\+\_\+\+Append\+Pipe\+Rotate}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start, \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}pipe, double target\+\_\+angle, double animation\+\_\+speed)
+\begin{DoxyCompactList}\small\item\em Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{pipe_8h_structPipe}{Pipe} forgatási animációját. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{animation_8c_a40bf3b078c6259575f2f12c6d48a5e7c}{Animation\+Queue\+\_\+\+Append\+Long\+Fill}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start, SDL\+\_\+\+Rect render\+\_\+location, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}filled\+\_\+texture, double animation\+\_\+speed, \mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}} direction)
+\begin{DoxyCompactList}\small\item\em Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy hosszú cső feltöltési animációját. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{animation_8c_a148edd59900f9867f1832230fb0d9249}{Animation\+Queue\+\_\+\+Append\+Pipe\+Fill}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start, SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}renderer, \mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}pipe, SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}filled\+\_\+texture, double animation\+\_\+speed, \mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}} direction)
+\begin{DoxyCompactList}\small\item\em Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{pipe_8h_structPipe}{Pipe} feltöltési animációját. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{animation_8c_af170ca51a234abe456df7b78c85b5f09}{Animation\+Queue\+\_\+\+Remove\+Element}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start, \mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}element)
+\begin{DoxyCompactList}\small\item\em A megadott elemet kitörli az Aniamtion\+Queue-\/ból és visszaadja az előtte lévő pointerét. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{animation_8c_a3aefb16a32d6f8afe029607d664f0daf}{Animation\+Queue\+\_\+\+Destroy}} (\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}start)
+\begin{DoxyCompactList}\small\item\em Felszabadít egy \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} láncolt listát. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Részletes leírás}
+A \doxylink{game_8h}{game.\+h}-\/ban deklarált \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. 
+
+
+
+\doxysubsection{Függvények dokumentációja}
+\Hypertarget{animation_8c_a40bf3b078c6259575f2f12c6d48a5e7c}\label{animation_8c_a40bf3b078c6259575f2f12c6d48a5e7c} 
+\index{animation.c@{animation.c}!AnimationQueue\_AppendLongFill@{AnimationQueue\_AppendLongFill}}
+\index{AnimationQueue\_AppendLongFill@{AnimationQueue\_AppendLongFill}!animation.c@{animation.c}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_AppendLongFill()}{AnimationQueue\_AppendLongFill()}}
+{\footnotesize\ttfamily bool Animation\+Queue\+\_\+\+Append\+Long\+Fill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{SDL\+\_\+\+Rect}]{render\+\_\+location,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{filled\+\_\+texture,  }\item[{double}]{animation\+\_\+speed,  }\item[{\mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}}}]{direction }\end{DoxyParamCaption})}
+
+
+
+Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy hosszú cső feltöltési animációját. 
+
+A szükséges változókat beállítja és hozzáfűzi az új elemet az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez. A hosszú cső lehet más SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} is, de a \doxylink{game_8c}{game.\+c}-\/ben csak ehhez van használva. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+{\em render\+\_\+location} & A renderelendő hosszú cső helye \\
+\hline
+{\em filled\+\_\+texture} & A hosszú cső textúrája \\
+\hline
+{\em animation\+\_\+speed} & Az animáció sebessége \\
+\hline
+{\em direction} & Az animáció iránya \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{animation_8c_a148edd59900f9867f1832230fb0d9249}\label{animation_8c_a148edd59900f9867f1832230fb0d9249} 
+\index{animation.c@{animation.c}!AnimationQueue\_AppendPipeFill@{AnimationQueue\_AppendPipeFill}}
+\index{AnimationQueue\_AppendPipeFill@{AnimationQueue\_AppendPipeFill}!animation.c@{animation.c}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_AppendPipeFill()}{AnimationQueue\_AppendPipeFill()}}
+{\footnotesize\ttfamily bool Animation\+Queue\+\_\+\+Append\+Pipe\+Fill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*}}]{renderer,  }\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}}]{pipe,  }\item[{SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*}}]{filled\+\_\+texture,  }\item[{double}]{animation\+\_\+speed,  }\item[{\mbox{\hyperlink{game_8h_a70cf3f4f0d1e741d0cb63aff969dfc6e}{Animation\+Direction}}}]{direction }\end{DoxyParamCaption})}
+
+
+
+Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{pipe_8h_structPipe}{Pipe} feltöltési animációját. 
+
+A szükséges változókat beállítja és hozzáfűzi az új elemet az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez. Hiba esetén megpróbálja a töltést kihagyni. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+{\em renderer} & Az ablak rendererje (csak hiba esetén használt) \\
+\hline
+{\em pipe} & A feltöltendő \doxylink{pipe_8h_structPipe}{Pipe} pointere \\
+\hline
+{\em filled\+\_\+texture} & A \doxylink{pipe_8h_structPipe}{Pipe} feltöltött textúrája \\
+\hline
+{\em animation\+\_\+speed} & Az animáció sebessége \\
+\hline
+{\em direction} & Az animáció iránya \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{animation_8c_a8f715d8120fdee7afc72c866645f038a}\label{animation_8c_a8f715d8120fdee7afc72c866645f038a} 
+\index{animation.c@{animation.c}!AnimationQueue\_AppendPipeRotate@{AnimationQueue\_AppendPipeRotate}}
+\index{AnimationQueue\_AppendPipeRotate@{AnimationQueue\_AppendPipeRotate}!animation.c@{animation.c}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_AppendPipeRotate()}{AnimationQueue\_AppendPipeRotate()}}
+{\footnotesize\ttfamily bool Animation\+Queue\+\_\+\+Append\+Pipe\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{\mbox{\hyperlink{pipe_8h_structPipe}{Pipe}} \texorpdfstring{$\ast$}{*}}]{pipe,  }\item[{double}]{target\+\_\+angle,  }\item[{double}]{animation\+\_\+speed }\end{DoxyParamCaption})}
+
+
+
+Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{pipe_8h_structPipe}{Pipe} forgatási animációját. 
+
+A szükséges változókat beállítja és hozzáfűzi az új elemet az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+{\em wheel} & A forgatandó \doxylink{pipe_8h_structPipe}{Pipe} pointere \\
+\hline
+{\em target\+\_\+angle} & A forgatás mértéke (fokban) \\
+\hline
+{\em animation\+\_\+speed} & Az animáció sebessége \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{animation_8c_a27569d72a725f934f39a1f2f4b3e2963}\label{animation_8c_a27569d72a725f934f39a1f2f4b3e2963} 
+\index{animation.c@{animation.c}!AnimationQueue\_AppendWheelRotate@{AnimationQueue\_AppendWheelRotate}}
+\index{AnimationQueue\_AppendWheelRotate@{AnimationQueue\_AppendWheelRotate}!animation.c@{animation.c}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_AppendWheelRotate()}{AnimationQueue\_AppendWheelRotate()}}
+{\footnotesize\ttfamily bool Animation\+Queue\+\_\+\+Append\+Wheel\+Rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{\mbox{\hyperlink{game_8h_structWheel}{Wheel}} \texorpdfstring{$\ast$}{*}}]{wheel,  }\item[{double}]{target\+\_\+angle,  }\item[{double}]{animation\+\_\+speed }\end{DoxyParamCaption})}
+
+
+
+Hozzáfűz az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez egy \doxylink{game_8h_structWheel}{Wheel} forgatási animációját. 
+
+A szükséges változókat beállítja és hozzáfűzi az új elemet az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} végéhez. Az előforduló hibákat a függvény nem írja ki a konzolra, viszont a visszatérési értéke jelzi. 
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+{\em wheel} & A forgatandó \doxylink{game_8h_structWheel}{Wheel} pointere \\
+\hline
+{\em target\+\_\+angle} & A forgatás mértéke (fokban) \\
+\hline
+{\em animation\+\_\+speed} & Az animáció sebessége \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+true, hiba esetén false 
+\end{DoxyReturn}
+\Hypertarget{animation_8c_a3aefb16a32d6f8afe029607d664f0daf}\label{animation_8c_a3aefb16a32d6f8afe029607d664f0daf} 
+\index{animation.c@{animation.c}!AnimationQueue\_Destroy@{AnimationQueue\_Destroy}}
+\index{AnimationQueue\_Destroy@{AnimationQueue\_Destroy}!animation.c@{animation.c}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_Destroy()}{AnimationQueue\_Destroy()}}
+{\footnotesize\ttfamily void Animation\+Queue\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start }\end{DoxyParamCaption})}
+
+
+
+Felszabadít egy \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} láncolt listát. 
+
+A strázsáját is felszabadítja. Használat után KELL használni. 
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+\end{DoxyParams}
+\Hypertarget{animation_8c_af62ed55fa7c360460eba62c9a69c0276}\label{animation_8c_af62ed55fa7c360460eba62c9a69c0276} 
+\index{animation.c@{animation.c}!AnimationQueue\_Init@{AnimationQueue\_Init}}
+\index{AnimationQueue\_Init@{AnimationQueue\_Init}!animation.c@{animation.c}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_Init()}{AnimationQueue\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*} Animation\+Queue\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Létrehozza egy \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsáját. 
+
+malloc()-\/kal foglal egy \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} struktúrát és kinullázza. Ehhez a különböző Animation\+Queue\+\_\+\+Append függvényekkel lehet hozzáfűzni elemeket. \begin{DoxyPostcond}{Utófeltétel}
+Használat után a \doxylink{game_8h_a3aefb16a32d6f8afe029607d664f0daf}{Animation\+Queue\+\_\+\+Destroy()} függvénnyel fel kell szabadítani a struktúrát. 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Visszatérési érték}
+Egy üres \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} struktúra 
+\end{DoxyReturn}
+\Hypertarget{animation_8c_af170ca51a234abe456df7b78c85b5f09}\label{animation_8c_af170ca51a234abe456df7b78c85b5f09} 
+\index{animation.c@{animation.c}!AnimationQueue\_RemoveElement@{AnimationQueue\_RemoveElement}}
+\index{AnimationQueue\_RemoveElement@{AnimationQueue\_RemoveElement}!animation.c@{animation.c}}
+\doxysubsubsection{\texorpdfstring{AnimationQueue\_RemoveElement()}{AnimationQueue\_RemoveElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*} Animation\+Queue\+\_\+\+Remove\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{start,  }\item[{\mbox{\hyperlink{game_8h_structAnimationQueue}{Animation\+Queue}} \texorpdfstring{$\ast$}{*}}]{element }\end{DoxyParamCaption})}
+
+
+
+A megadott elemet kitörli az Aniamtion\+Queue-\/ból és visszaadja az előtte lévő pointerét. 
+
+\begin{DoxyWarning}{Figyelmeztetés}
+TILOS a strázsát átadni. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Paraméterek}
+{\em start} & Az \doxylink{game_8h_structAnimationQueue}{Animation\+Queue} strázsájának pointere \\
+\hline
+{\em element} & A törlendő elem pointere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Visszatérési érték}
+A törlendő elem előtti elem pointere 
+\end{DoxyReturn}

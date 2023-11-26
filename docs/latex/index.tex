@@ -1,0 +1,96 @@
+\chapter{Vízvezetékszerelő/\+Plumber}
+\hypertarget{index}{}\label{index}\index{Vízvezetékszerelő/Plumber@{Vízvezetékszerelő/Plumber}}
+\label{index_md_readme}%
+\Hypertarget{index_md_readme}%
+A vízvezetékszerelő egy játék, amit a Programozás alapjai 1 tárgy nagy házijához készítettem.
+
+Git\+Hubon itt található meg\+: \href{https://github.com/bribena/Plumber}{\texttt{ https\+://github.\+com/bribena/\+Plumber}}\hypertarget{index_autotoc_md16}{}\doxysection{\texorpdfstring{Telepítés}{Telepítés}}\label{index_autotoc_md16}
+Először klónozza a repositoryt\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/bribena/Plumber.git}
+
+\end{DoxyCode}
+
+
+A program az SDL, az SDL\+\_\+image, az SDL\+\_\+mixer, az SDL\+\_\+ttf, az SDL\+\_\+gfx\+Primitives, az osdialog és a C moduljaira épül.
+
+Linuxon a GCC, Windowson a Min\+GW segítségével fordítható a program.\hypertarget{index_autotoc_md17}{}\doxysubsection{\texorpdfstring{SDL telepítése}{SDL telepítése}}\label{index_autotoc_md17}
+A különböző SDL modulok forrásainak linkjei\+:
+\begin{DoxyItemize}
+\item SDL\+: \href{https://github.com/libsdl-org/SDL/releases/tag/release-2.28.5}{\texttt{ https\+://github.\+com/libsdl-\/org/\+SDL/releases/tag/release-\/2.\+28.\+5}}
+\item SDL\+\_\+image\+: \href{https://github.com/libsdl-org/SDL_image/releases}{\texttt{ https\+://github.\+com/libsdl-\/org/\+SDL\+\_\+image/releases}}
+\item SDL\+\_\+ttf\+: \href{https://github.com/libsdl-org/SDL_ttf/releases}{\texttt{ https\+://github.\+com/libsdl-\/org/\+SDL\+\_\+ttf/releases}}
+\item SDL\+\_\+mixer\+: \href{https://github.com/libsdl-org/SDL_mixer/releases}{\texttt{ https\+://github.\+com/libsdl-\/org/\+SDL\+\_\+mixer/releases}}
+\item SDL\+\_\+gfx\+Primitives\+: \href{https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/}{\texttt{ https\+://www.\+ferzkopp.\+net/wordpress/2016/01/02/sdl\+\_\+gfx-\/sdl2\+\_\+gfx/}}
+\end{DoxyItemize}
+
+Az SDL telepítési lépései\+: \href{https://wiki.libsdl.org/SDL2/Installation}{\texttt{ https\+://wiki.\+libsdl.\+org/\+SDL2/\+Installation}}\hypertarget{index_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{Linux}{Linux}}\label{index_autotoc_md18}
+Lehetőleg a disztribúció csomagkezelőjével szerezze be ezeket az SDL modulokat. Ha ott nem elérhető, akkor a megfelelő repository telepítési utasításait kövesse.\hypertarget{index_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{Windows}{Windows}}\label{index_autotoc_md19}
+Windowshoz a megadott oldalakon találhatóak előre buildelt fájlok. Ezeket töltse le (mindegyiknél a Min\+GW-\/vel kompatibilis zipfájlt). A zipfájlokat az alábbi módon csomagolja ki\+:
+
+
+\begin{DoxyItemize}
+\item A dll fájlok (bin mappa tartalma, kivétel SDL\+\_\+gfx\+Primitives) kerüljenek a projekt gyökérmappájába
+\item A header fájlok (include mappa tartalma, kivétel SDL\+\_\+gfx\+Primitives) kerüljenek a projekt lib/include mappájába
+\item A lib mappa pedig mappástul a projekt lib mappájába
+\end{DoxyItemize}
+
+Az SDL\+\_\+gfx\+Primitives esetén a megfelelő fájlok (.dll, .h, .a/.o) megtalálhatóak a zipjében. Ezeket a fentiek szerint helyezze el a projekt megfelelő mappáiban.\hypertarget{index_autotoc_md20}{}\doxysubsection{\texorpdfstring{osdialog telepítése}{osdialog telepítése}}\label{index_autotoc_md20}
+Git\+Hub\+: \href{https://github.com/AndrewBelt/osdialog}{\texttt{ https\+://github.\+com/\+Andrew\+Belt/osdialog}}
+
+Mindkét rendszeren a repositoryt klónozza a projekt lib mappájába.
+
+Linuxon az osdialog a GTK 2.\+0-\/t használja, ezt is szerezze be a disztribúciójának a csomagkezelőjével.
+
+Megjegyzés\+: az osdialog a debugmalloc miatt hibát dobhat. Erre két javítás van\+:
+
+
+\begin{DoxyEnumerate}
+\item Az osdialog.\+h-\/ban az include-\/ok alá írja be, hogy {\ttfamily \#include "{}debugmalloc.\+h"{}}
+\item A projekt fájlaiból ki kell venni az {\ttfamily \#include "{}debugmalloc.\+h"{}} sorokat.
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md21}{}\doxysection{\texorpdfstring{Fordítás}{Fordítás}}\label{index_autotoc_md21}
+\hypertarget{index_autotoc_md22}{}\doxysubsection{\texorpdfstring{Linux}{Linux}}\label{index_autotoc_md22}
+A {\ttfamily build.\+sh} futtatásával létrejön a {\ttfamily plumber} bináris fájl, amennyiben az SDL modulok rendszerszinten elérhetőek. Egyéb esetben manuálisan kell fordítani a programot a megfelelő helyek megadásával.
+
+A {\ttfamily build.\+sh} gcc-\/vel fordítja le a kódot.\hypertarget{index_autotoc_md23}{}\doxysubsection{\texorpdfstring{Windows}{Windows}}\label{index_autotoc_md23}
+A {\ttfamily build.\+bat} futtatásával létrejön a {\ttfamily plumber.\+exe} bináris fájl, amennyiben megfelelően vannak elhelyezve a külső modulok fájlai. Egyéb esetben manuálisan kell fordítani a programot a megfelelő helyek megadásával.
+
+A {\ttfamily build.\+bat} x86\+\_\+64-\/w64-\/mingw32-\/gcc-\/vel fordítja a kódot.\hypertarget{index_autotoc_md24}{}\doxysection{\texorpdfstring{A játék menete}{A játék menete}}\label{index_autotoc_md24}
+A játék induláskor a főmenübe dobja a játékost. Innen 3 opció tárul elé\+:
+
+
+\begin{DoxyItemize}
+\item Játék\+: Létrehoz egy véletlenszerű pályát, amit ki lehet játszani.
+\item Pálya betöltése\+: Egy, a program által generált .plm fájlt tölt be. Néhány mintafájl található a projekt testfiles mappájában. Ezután elindítja a játékot.
+\item Kilépés
+\end{DoxyItemize}
+
+A pályán belül 1-\/1 csőre kattintva el lehet forgatni azt (bal kattintással az óra haladási irányával megegegyezően, jobb kattintással pedig ellentétesen). A játék célja, hogy a bemenettől (hosszú cső a bal oldalon) a kimenetig (hosszú cső a jobb oldalon) a pályán levő csövekkel a játékos elvezesse a vizet. A vizet elindítani csak helyes megoldás esetén lehet a bemeneten található csappal, bal kattintással. Helyes megoldásnak egy a bemenettől a kimenetig vezető csőpálya számít. Az egyes csövekből nincsen "{}kifolyás"{}, azaz ha már egy irányba tudja tovább tölteni a vizet, akkor a megoldás szempontjából megfelelő.
+
+Egy különleges elem van, az "{}egymáson átmenő"{}, ami két különböző irányba menő egyenesnek felel meg.
+
+A játék közben bármikor kimenthető a pálya {\itshape aktuális} állapota.
+
+Győzelemkor a pálya {\itshape kezdésekor előforduló} állapota menthető ki. Azaz, ha a Pálya betöltésével lett elkezdve a játék, akkor a betöltött állapotot lehet kimenteni, játék esetén pedig a legenerált pályát.
+
+A kimentett fájl nevében ne legyen szóköz, ékezet és speciális karakter.
+
+Futás után visszaadott kódok\+: 0\+: Nem történt hiba 1\+: Nem sikerült az SDL inicializálása 2\+: Nem sikerült az ablakot létrehozni/a fájlokat betölteni 3\+: A játék futása során hiba történt\hypertarget{index_autotoc_md25}{}\doxysubsection{\texorpdfstring{A generált fájlok struktúrája (.\+plm)}{A generált fájlok struktúrája (.plm)}}\label{index_autotoc_md25}
+A fájl első sora 4 adatot tartalmaz, ebben a sorrendben\+:
+
+
+\begin{DoxyItemize}
+\item Az egy sorban található csövek számát
+\item Az egy oszlopban található csövek számát
+\item A pálya bemenetének sora
+\item A pálya kimenetének sora
+\end{DoxyItemize}
+
+Ezután 3x3-\/as blokkokban tartalmazza a pályán szereplő csöveket szöveges formátumban.
+
+Bármilyen fájl, ami ennek a struktúrának nem felel meg, hibás fájlnak számít.\hypertarget{index_autotoc_md26}{}\doxysection{\texorpdfstring{Hibák}{Hibák}}\label{index_autotoc_md26}
+A programmal kapcsolatos hibák a programozói dokumentációban megtalálhatóak (a projekt docs mappájában). Ezeken kívül a hibák nagy részét kiírja a konzolra a program, ha előfordulnak. Ekkor vagy összeomlik a program, vagy az adott funkció nélküll fut tovább.
+
+Készítette\+: Bihari Bence 

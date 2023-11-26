@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Vízvezetékszerelő: lib/src/layer.c fájlreferencia</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Vízvezetékszerelő
+   </div>
+   <div id="projectbrief">Egy vízvezetékszerelő játék, C-ben írva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Készítette Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Keresés');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Betöltés...</div>
+<div class="SRStatus" id="Searching">Keresés...</div>
+<div class="SRStatus" id="NoMatches">Nincs egyezés</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_a065c5f60305fee3569f887679366939.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Függvények</a>  </div>
+  <div class="headertitle"><div class="title">layer.c fájlreferencia</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Az <a class="el" href="SDL__local_8h.html" title="Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.">SDL_local.h</a>-ban deklarált <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.  
+<a href="#details">Részletek...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="SDL__local_8h_source.html">SDL_local.h</a>&quot;</code><br />
+<code>#include &quot;debugmalloc.h&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Függvények</h2></td></tr>
+<tr class="memitem:a70597b0011ea90ef5bffb9e9fa22d57b" id="r_a70597b0011ea90ef5bffb9e9fa22d57b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="SDL__local_8h.html#structLayer">Layer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70597b0011ea90ef5bffb9e9fa22d57b">Layer_Init</a> (void)</td></tr>
+<tr class="memdesc:a70597b0011ea90ef5bffb9e9fa22d57b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúra inicializálása (kinullázása)  <br /></td></tr>
+<tr class="separator:a70597b0011ea90ef5bffb9e9fa22d57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2efd55b51af1d6c9755e626045ac06d" id="r_ae2efd55b51af1d6c9755e626045ac06d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2efd55b51af1d6c9755e626045ac06d">Layer_Create</a> (<a class="el" href="SDL__local_8h.html#structLayer">Layer</a> *layer, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window, const SDL_Rect *location)</td></tr>
+<tr class="memdesc:ae2efd55b51af1d6c9755e626045ac06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Feltölt egy inicializált <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúrát.  <br /></td></tr>
+<tr class="separator:ae2efd55b51af1d6c9755e626045ac06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba03cebb4e558f46025ee6aa429c4da9" id="r_aba03cebb4e558f46025ee6aa429c4da9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba03cebb4e558f46025ee6aa429c4da9">Layer_RenderFont</a> (<a class="el" href="SDL__local_8h.html#structLayer">Layer</a> *layer, <a class="el" href="SDL__local_8h.html#structWindow">Window</a> window, TTF_Font *font, const char *text, SDL_Color foreground)</td></tr>
+<tr class="memdesc:aba03cebb4e558f46025ee6aa429c4da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Létrehoz egy szöveget tartalmazó Layer-t.  <br /></td></tr>
+<tr class="separator:aba03cebb4e558f46025ee6aa429c4da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d5ca53df6b8dbf438054fcdc2010cf" id="r_a69d5ca53df6b8dbf438054fcdc2010cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69d5ca53df6b8dbf438054fcdc2010cf">Layer_Destroy</a> (<a class="el" href="SDL__local_8h.html#structLayer">Layer</a> *layer)</td></tr>
+<tr class="memdesc:a69d5ca53df6b8dbf438054fcdc2010cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Felszabadít egy <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúrát.  <br /></td></tr>
+<tr class="separator:a69d5ca53df6b8dbf438054fcdc2010cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Részletes leírás</h2>
+<div class="textblock"><p>Az <a class="el" href="SDL__local_8h.html" title="Ez a modul tartalmazza az SDL-lel kapcsolatos függvényeket, és a hozzájuk tartozó adatszerkezeteket.">SDL_local.h</a>-ban deklarált <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúrához kapcsolódó függvények kódjait tartalmazza a fájl. </p>
+</div><h2 class="groupheader">Függvények dokumentációja</h2>
+<a id="ae2efd55b51af1d6c9755e626045ac06d" name="ae2efd55b51af1d6c9755e626045ac06d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2efd55b51af1d6c9755e626045ac06d">&#9670;&#160;</a></span>Layer_Create()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Layer_Create </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structLayer">Layer</a> *&#160;</td>
+          <td class="paramname"><em>layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SDL_Rect *&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Feltölt egy inicializált <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúrát. </p>
+<p>Létrehoz egy SDL_Texture*-t SDL_TEXTUREACCESS_TARGET-tel, majd a <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúra layer elemében eltárolja ezt. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. </p><dl class="section post"><dt>Utófeltétel</dt><dd>A <a class="el" href="SDL__local_8h.html#ae2efd55b51af1d6c9755e626045ac06d" title="Feltölt egy inicializált Layer struktúrát.">Layer_Create()</a> által létrehozott <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúrákat használat után a <a class="el" href="SDL__local_8h.html#a69d5ca53df6b8dbf438054fcdc2010cf" title="Felszabadít egy Layer struktúrát.">Layer_Destroy()</a>-al kell felszabadítani. </dd></dl>
+<dl class="section warning"><dt>Figyelmeztetés</dt><dd>TILOS egy, már létrehozott, <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúrát átadni, mert memóriaszivárgás lehet belőle. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layer</td><td>Egy inicializált <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúra pointere. </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra. </td></tr>
+    <tr><td class="paramname">location</td><td>A réteg helye és mérete a "szülőjéhez" relatívan. Ha NULL, akkor a <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> méretét veszi fel! </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+<a id="a69d5ca53df6b8dbf438054fcdc2010cf" name="a69d5ca53df6b8dbf438054fcdc2010cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d5ca53df6b8dbf438054fcdc2010cf">&#9670;&#160;</a></span>Layer_Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Layer_Destroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structLayer">Layer</a> *&#160;</td>
+          <td class="paramname"><em>layer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Felszabadít egy <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúrát. </p>
+<p>Az átadott <a class="el" href="SDL__local_8h.html#ae2efd55b51af1d6c9755e626045ac06d" title="Feltölt egy inicializált Layer struktúrát.">Layer_Create()</a> által létrehozott struktúrát szabadítja fel. </p><dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layer</td><td>A felszabadítandó <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúra pointere. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a70597b0011ea90ef5bffb9e9fa22d57b" name="a70597b0011ea90ef5bffb9e9fa22d57b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70597b0011ea90ef5bffb9e9fa22d57b">&#9670;&#160;</a></span>Layer_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="SDL__local_8h.html#structLayer">Layer</a> Layer_Init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúra inicializálása (kinullázása) </p>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>Egy üres <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúra. </dd></dl>
+
+</div>
+</div>
+<a id="aba03cebb4e558f46025ee6aa429c4da9" name="aba03cebb4e558f46025ee6aa429c4da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba03cebb4e558f46025ee6aa429c4da9">&#9670;&#160;</a></span>Layer_RenderFont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Layer_RenderFont </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structLayer">Layer</a> *&#160;</td>
+          <td class="paramname"><em>layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="SDL__local_8h.html#structWindow">Window</a>&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TTF_Font *&#160;</td>
+          <td class="paramname"><em>font</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Color&#160;</td>
+          <td class="paramname"><em>foreground</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Létrehoz egy szöveget tartalmazó Layer-t. </p>
+<p>Egy SDL_Surface*-en létrehoz egy szöveget, majd SDL_CreateTextureFromSurface()-el átalakítja SDL_Texture*-ré. Egy <a class="el" href="SDL__local_8h.html#ae2efd55b51af1d6c9755e626045ac06d" title="Feltölt egy inicializált Layer struktúrát.">Layer_Create()</a> által létrehozott Layer-t kell átadni, viszont valójában ebből csak a location kell. Emiatt technikailag bármilyen Layer-re lehet használni, de a <a class="el" href="SDL__local_8h.html#ae2efd55b51af1d6c9755e626045ac06d" title="Feltölt egy inicializált Layer struktúrát.">Layer_Create()</a>-el létrehozott Layer-eket célszerű használni. Az előforduló hibákat a függvény kiírja a konzolra. Hiba esetén nem ajánlott használni a struktúrát. </p><dl class="section post"><dt>Utófeltétel</dt><dd>Használat után a <a class="el" href="SDL__local_8h.html#a69d5ca53df6b8dbf438054fcdc2010cf" title="Felszabadít egy Layer struktúrát.">Layer_Destroy()</a>-al kell felszabadítani a léterhozott struktúrát. </dd></dl>
+<dl class="section warning"><dt>Figyelmeztetés</dt><dd>A függvény nagyon egyszerű, ezért a szöveg szélességét nem számítja ki, ezért előre meg kell adni. Ebből adódik, hogy próbálgatással lehet csak viszonylag megfelelő arányokat beállítani. </dd></dl>
+<dl class="params"><dt>Paraméterek</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layer</td><td>Egy <a class="el" href="SDL__local_8h.html#ae2efd55b51af1d6c9755e626045ac06d" title="Feltölt egy inicializált Layer struktúrát.">Layer_Create()</a>-el létrehozott <a class="el" href="SDL__local_8h.html#structLayer" title="Réteg struktúra.">Layer</a> struktúra pointere. </td></tr>
+    <tr><td class="paramname">window</td><td>A renderert tartalmazó <a class="el" href="SDL__local_8h.html#structWindow" title="Window struktúra.">Window</a> struktúra. </td></tr>
+    <tr><td class="paramname">font</td><td>A használni kívánt betűtípus. </td></tr>
+    <tr><td class="paramname">text</td><td>A renderelendő szöveg. </td></tr>
+    <tr><td class="paramname">foreground</td><td>A betűk színe. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Visszatérési érték</dt><dd>true, hiba esetén false </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Készítette&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>
