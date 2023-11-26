@@ -1,10 +1,15 @@
+/**
+ * @file game.c
+ * @brief A game.h-ban deklarált, a játék állapotához tartozó függvények kódjait tartalmazó fájl.
+ */
+
 #include "game.h"
 #include <errno.h>
 /* A fájlbeolvasós müttymürütty miatt muszáj kivennem, mert beriaszt a jogos free-ekre */
 // #include "debugmalloc.h"
 
 
-bool ButtonRender(SDL_Renderer * renderer, Layer layer, int padding, int rounding, SDL_Color color) {
+static bool ButtonRender(SDL_Renderer * renderer, Layer layer, int padding, int rounding, SDL_Color color) {
     bool success =
         roundedBoxRGBA(renderer, layer.location.x-padding, layer.location.y-padding, layer.location.x + layer.location.w+padding, layer.location.y + layer.location.h+padding, rounding, color.r, color.g, color.b, color.a) == 0 &&
         roundedRectangleRGBA(renderer, layer.location.x-padding, layer.location.y-padding, layer.location.x + layer.location.w+padding, layer.location.y + layer.location.h+padding, rounding, 0, 0, 0, 255) == 0 &&
@@ -12,14 +17,14 @@ bool ButtonRender(SDL_Renderer * renderer, Layer layer, int padding, int roundin
     return success;
 }
 
-char * BetoltoAblak(void) {
+static char * BetoltoAblak(void) {
     osdialog_filters * filter = osdialog_filters_parse("Pálya fájl:plm");
     char * path = osdialog_file(OSDIALOG_OPEN, ".", NULL, filter);
     osdialog_filters_free(filter);
     return path;
 }
 
-char * MentoAblak(void) {
+static char * MentoAblak(void) {
     osdialog_filters * filter = osdialog_filters_parse("Pálya fájl (*.plm):plm");
     char * path = osdialog_file(OSDIALOG_SAVE, ".", NULL, filter);
     osdialog_filters_free(filter);
@@ -38,7 +43,7 @@ char * MentoAblak(void) {
     return path;
 }
 
-bool PipeGrid_Save(PipeGrid pipegrid, int entry_y, int exit_y, const char * path) {
+static bool PipeGrid_Save(PipeGrid pipegrid, int entry_y, int exit_y, const char * path) {
     FILE * file = fopen(path, "w");
     if (file == NULL) {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Nem sikerült a fájl megnyitása: %s", strerror(errno));
@@ -76,7 +81,7 @@ bool PipeGrid_Save(PipeGrid pipegrid, int entry_y, int exit_y, const char * path
     return true;
 } 
 
-bool PipeGrid_Load(const char * path, PipeGrid * pipegrid, int * entry_y, int * exit_y) {
+static bool PipeGrid_Load(const char * path, PipeGrid * pipegrid, int * entry_y, int * exit_y) {
     int x, y;
     FILE * file = fopen(path, "r");
     if (file == NULL) {
@@ -267,7 +272,7 @@ bool Menu(GameStruct game_struct) {
 }
 
 
-void RotateAngle(AnimationQueue * element, double deltaT) {
+static void RotateAngle(AnimationQueue * element, double deltaT) {
     double deltaAngle = element->target_angle * deltaT * element->animation_speed;
     if (SDL_fabs(deltaAngle + element->rendered_angle) > SDL_fabs(element->target_angle)) deltaAngle = element->target_angle - element->rendered_angle;
 
@@ -283,7 +288,7 @@ void RotateAngle(AnimationQueue * element, double deltaT) {
         *element->angle += 360;
 }
 
-void Fill(AnimationQueue * element, double deltaT) {
+static void Fill(AnimationQueue * element, double deltaT) {
     double texture_delta = SDL_floor(element->target_length * deltaT * element->animation_speed);
 
     switch (element->direction) {
@@ -594,7 +599,7 @@ bool Game(GameStruct game_struct, PipeGrid * betoltott, int entry_y, int exit_y)
                         if (dir != 0) {
                             Pipe_Rotate(&pipegrid.matrix[idx_y][idx_x], dir);
                             if (!animation_error)
-                                animation_error = !AnimationQueue_AppendPipeRotate(aq, &pipegrid.matrix[idx_y][idx_x], dir * 90, PIPE_ANIMATION_SPEED);
+                                animation_error = !AnimationQueue_AppendPipeRotate(aq, &pipegrid.matrix[idx_y][idx_x], dir * 90, PIPE_ROTATE_SPEED);
                             if (animation_error && aq != NULL) {
                                 SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION, "Animációs hiba történt: %s", SDL_GetError());
                                 SDL_Log("Animációk letiltva.");
@@ -643,10 +648,10 @@ bool Game(GameStruct game_struct, PipeGrid * betoltott, int entry_y, int exit_y)
                     int dir = ev_vars.event.button.button == SDL_BUTTON_LEFT ? 1 : ev_vars.event.button.button == SDL_BUTTON_RIGHT ? -1 : 0;
                     if (dir != 0) {
                         if (!animation_error)
-                            animation_error = !AnimationQueue_AppendWheelRotate(aq, &wheel, dir * 90, WHEEL_ANIMATION_SPEED);
+                            animation_error = !AnimationQueue_AppendWheelRotate(aq, &wheel, dir * 90, WHEEL_ROTATE_SPEED);
                         if (dir == 1) {
                             if (!animation_error) {
-                                animation_error = !AnimationQueue_AppendLongFill(aq, filled_long_pipe.location, filled_long_pipe.layer, LONG_PIPE_ANIMATION_SPEED, AnimationDirection_ToRight);
+                                animation_error = !AnimationQueue_AppendLongFill(aq, filled_long_pipe.location, filled_long_pipe.layer, LONG_PIPE_FILL_SPEED, AnimationDirection_ToRight);
                                 freeze = true;
                             }
                             
@@ -753,10 +758,10 @@ bool Game(GameStruct game_struct, PipeGrid * betoltott, int entry_y, int exit_y)
                                 else 
                                     direction = AnimationDirection_ToUp;
 
-                                animation_error = !AnimationQueue_AppendPipeFill(aq, game_struct.window.renderer, solved_grid->pipe, game_struct.assets.pipes_full, PIPE_FILL_ANIMATION_SPEED, direction);
+                                animation_error = !AnimationQueue_AppendPipeFill(aq, game_struct.window.renderer, solved_grid->pipe, game_struct.assets.pipes_full, PIPE_FILL_SPEED, direction);
                             }
                             else {
-                                animation_error = !AnimationQueue_AppendLongFill(aq, lp_loc, filled_long_pipe.layer, LONG_PIPE_ANIMATION_SPEED, AnimationDirection_ToRight);
+                                animation_error = !AnimationQueue_AppendLongFill(aq, lp_loc, filled_long_pipe.layer, LONG_PIPE_FILL_SPEED, AnimationDirection_ToRight);
                             }
                             if (animation_error) {
                                 SDL_LogWarn(SDL_LOG_CATEGORY_APPLICATION, "Animációs hiba történt: %s", SDL_GetError());
@@ -774,11 +779,11 @@ bool Game(GameStruct game_struct, PipeGrid * betoltott, int entry_y, int exit_y)
                             SDL_SetRenderTarget(game_struct.window.renderer, background.layer) < 0 ||
                             SDL_RenderCopy(game_struct.window.renderer, current->filled_texture, &current->texture_location, &current->render_location) < 0;
                         if (!current->active && !solved && current->direction == AnimationDirection_ToRight) {
-                            animation_error = !AnimationQueue_AppendLongFill(aq, long_pipe.location, long_pipe.layer, LONG_PIPE_ANIMATION_SPEED, AnimationDirection_ToLeft);
+                            animation_error = !AnimationQueue_AppendLongFill(aq, long_pipe.location, long_pipe.layer, LONG_PIPE_FILL_SPEED, AnimationDirection_ToLeft);
                         }
                         else if (!current->active && !solved && current->direction == AnimationDirection_ToLeft) freeze = false;
                         else if (!current->active && solved_grid != NULL) {
-                            animation_error = !AnimationQueue_AppendPipeFill(aq, game_struct.window.renderer, solved_grid->pipe, game_struct.assets.pipes_full, PIPE_FILL_ANIMATION_SPEED, AnimationDirection_ToRight);
+                            animation_error = !AnimationQueue_AppendPipeFill(aq, game_struct.window.renderer, solved_grid->pipe, game_struct.assets.pipes_full, PIPE_FILL_SPEED, AnimationDirection_ToRight);
                         }
 
                         if (animation_error) {

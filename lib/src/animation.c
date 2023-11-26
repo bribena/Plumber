@@ -1,6 +1,7 @@
 /**
- * 
-*/
+ * @file animation.c
+ * @brief A game.h-ban deklarált AnimationQueue struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.
+ */
 
 #include "game.h"
 #include "debugmalloc.h"
@@ -16,7 +17,7 @@ AnimationQueue * AnimationQueue_Init(void) {
     return new;
 }
 
-AnimationQueue * AnimationQueue_NewRotate(double * angle, double target_angle, double animation_speed) {
+static AnimationQueue * AnimationQueue_NewRotate(double * angle, double target_angle, double animation_speed) {
     AnimationQueue * new = AnimationQueue_Init();
     if (new == NULL) return NULL;
     new->active = true;

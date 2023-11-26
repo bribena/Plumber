@@ -1,3 +1,8 @@
+/**
+ * @file game_struct.c
+ * @brief A game.h-ban deklarált GameStruct struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.
+ */
+
 #include "game.h"
 #include "debugmalloc.h"
 

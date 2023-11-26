@@ -7,10 +7,10 @@
  * Struktúrák:
  * -----------
  * 4 struktúra szerepel benne:
- * - Window: Az ablakot és a renderert tartalmazza, valamint betöltéskor a méreteket is eltárolja.
- * - Assets: Az assets mappa tartalmát tárolja. (Csak erre a projektre működik, egyébként meg kell változtatni)
- * - Fonts: A betűtípusokat tárolja. (Jelenleg csak a bold van használatban)
- * - Layer: Egy renderelési réteg. A renderelt kép tartalmának csoportosítására szolgál, 
+ * - {@link Window}: Az ablakot és a renderert tartalmazza, valamint betöltéskor a méreteket is eltárolja.
+ * - {@link Assets}: Az assets mappa tartalmát tárolja. (Csak erre a projektre működik, egyébként meg kell változtatni)
+ * - {@link Fonts}: A betűtípusokat tárolja. (Jelenleg csak a bold van használatban)
+ * - {@link Layer}: Egy renderelési réteg. A renderelt kép tartalmának csoportosítására szolgál, 
  *          hogy ne kelljen mindent külön-külön kirajzolni.
  * 
  * A struktúrák használata többnyire az alábbi módon történik:
@@ -229,6 +229,7 @@ typedef struct Layer {
  * meg kell hívni.
  * Az előforduló hibákat a függvény kiírja a konzolra.
  * @post A használat után a QuitSDL() függvényt kell meghívni, hogy leállítsuk a különböző modulokat.
+ * @warning Többszöri hívás kilépés nélkül összeomlást okozhat.
  * @return true, hiba esetén false
  */
 bool InitializeSDL(void);
@@ -259,7 +260,7 @@ Window Window_Init(void);
  * Hiba esetén nem ajánlott használni a struktúrát.
  * @post A Window_Create() által létrehozott Window struktúrákat használat után a Window_Destroy()-al kell felszabadítani.
  * @warning TILOS egy, már létrehozott, Window struktúrát átadni, mert memóriaszivárgás lehet belőle.
- * @param window Egy inicializált Window struktúra.
+ * @param window Egy inicializált Window struktúra pointere.
  * @param title Az ablak neve
  * @param width Az ablak szélessége (pixelben)
  * @param height Az ablak magassága (pixelben)
@@ -269,7 +270,7 @@ bool Window_Create(Window * window, const char * title, int width, int height);
 /**
  * @brief Felszabadít egy Window struktúrát
  * @details Az átadott Window_Create() által létrehozott struktúrát szabadítja fel.
- * @param window A felszabadítandó Window struktúra.
+ * @param window A felszabadítandó Window struktúra pointere.
  */
 void Window_Destroy(Window * window);
 
@@ -286,7 +287,7 @@ Assets Assets_Init(void);
  * @post Az Assets_Load() által létrehozott Assets struktúrákat használat után az Assets_Destroy()-al kell felszabadítani.
  * @warning Az Assets struktúrát csak egyszer kell létrehozni, de ha valamiért mégegyszer kell az Assets_Load(), TILOS egy,
  * már létrehozott, Assets struktúrát átadni, mert memóriaszivárgás lehet belőle.
- * @param assets Egy inicializált Assets struktúra.
+ * @param assets Egy inicializált Assets struktúra pointere.
  * @param window Az renderert tartalmazó Window struktúra.
  * @return true, hiba esetén false
  */
@@ -294,7 +295,7 @@ bool Assets_Load(Assets * assets, Window window);
 /**
  * @brief Felszabadít egy Assets struktúrát
  * @details Az átadott Assets_Load() által létrehozott struktúrát szabadítja fel.
- * @param assets A felszabadítandó Assets struktúra.
+ * @param assets A felszabadítandó Assets struktúra pointere.
  */
 void Assets_Destroy(Assets * assets);
 
@@ -312,14 +313,14 @@ Fonts Fonts_Init(void);
  * @post Az Fonts_Load() által létrehozott Fonts struktúrákat használat után az Fonts_Destroy()-al kell felszabadítani.
  * @warning A Fonts struktúrát csak egyszer kell létrohozni, de ha valamiért mégegyszer kell az Fonts_Load(), TILOS egy,
  * már létrehozott, Fonts struktúrát átadni, mert memóriaszivárgás lehet belőle.
- * @param fonts Egy inicializált Fonts struktúra.
+ * @param fonts Egy inicializált Fonts struktúra pointere.
  * @return true, hiba esetén false
  */
 bool Fonts_Load(Fonts * fonts);
 /**
  * @brief Felszabadít egy Fonts struktúrát
  * @details Az átadott Fonts_Load() által létrehozott struktúrát szabadítja fel.
- * @param fonts A felszabadítandó Fonts struktúra.
+ * @param fonts A felszabadítandó Fonts struktúra pointere.
  */
 void Fonts_Destroy(Fonts * fonts);
 
@@ -335,7 +336,7 @@ Layer Layer_Init(void);
  * Hiba esetén nem ajánlott használni a struktúrát.
  * @post A Layer_Create() által létrehozott Layer struktúrákat használat után a Layer_Destroy()-al kell felszabadítani.
  * @warning TILOS egy, már létrehozott, Layer struktúrát átadni, mert memóriaszivárgás lehet belőle.
- * @param layer Egy inicializált Layer struktúra.
+ * @param layer Egy inicializált Layer struktúra pointere.
  * @param window A renderert tartalmazó Window struktúra.
  * @param location A réteg helye és mérete a "szülőjéhez" relatívan. Ha NULL, akkor a Window méretét veszi fel! 
  * @return true, hiba esetén false
@@ -351,7 +352,7 @@ bool Layer_Create(Layer * layer, Window window, const SDL_Rect * location);
  * @post Használat után a Layer_Destroy()-al kell felszabadítani a léterhozott struktúrát.
  * @warning A függvény nagyon egyszerű, ezért a szöveg szélességét nem számítja ki, ezért előre meg kell adni. Ebből adódik,
  * hogy próbálgatással lehet csak viszonylag megfelelő arányokat beállítani.
- * @param layer Egy Layer_Create()-el létrehozott Layer struktúra.
+ * @param layer Egy Layer_Create()-el létrehozott Layer struktúra pointere.
  * @param window A renderert tartalmazó Window struktúra.
  * @param font A használni kívánt betűtípus.
  * @param text A renderelendő szöveg.
@@ -362,7 +363,7 @@ bool Layer_RenderFont(Layer * layer, Window window, TTF_Font * font, const char 
 /**
  * @brief Felszabadít egy Layer struktúrát
  * @details Az átadott Layer_Create() által létrehozott struktúrát szabadítja fel.
- * @param layer A felszabadítandó Layer struktúra.
+ * @param layer A felszabadítandó Layer struktúra pointere.
  */
 void Layer_Destroy(Layer * layer);
 

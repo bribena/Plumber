@@ -1,3 +1,8 @@
+/**
+ * @file wheel.c
+ * @brief A game.h-ban deklarált Wheel struktúrához kapcsolódó függvények kódjait tartalmazza a fájl.
+ */
+
 #include "game.h"
 #include "debugmalloc.h"
 

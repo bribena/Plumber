@@ -1,3 +1,9 @@
+/**
+ * @file ev_vars.c
+ * @brief A game.h-ban deklarált EventloopVariables struktúrához és az eventloophoz kapcsolódó függvények kódjait
+ * tartalmazza a fájl.
+ */
+
 #include "game.h"
 #include "debugmalloc.h"
 

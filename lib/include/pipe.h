@@ -9,9 +9,9 @@
  * Struktúrák, enumok:
  * -------------------
  * 3 fő struktúrát tartalmaz a fájl:
- *  - Pipe: Egy cső adatait tartalmazza.
- *  - PipeGrid: Csövek mátrixát és a mátrix szélességét és magasságát tartalmazza.
- *  - SolvedPipeGrid: Egy PipeGrid megoldását tartalmazza. A megfelelő csöveket és indexeiket
+ *  - {@link Pipe}: Egy cső adatait tartalmazza.
+ *  - {@link PipeGrid}: Csövek mátrixát és a mátrix szélességét és magasságát tartalmazza.
+ *  - {@link SolvedPipeGrid}: Egy PipeGrid megoldását tartalmazza. A megfelelő csöveket és indexeiket
  *    strázsa nélküli láncolt listában tartalmazza.
  * 
  * A struktúrák használata többnyire az alábbi módon történik:
@@ -25,10 +25,10 @@
  * @endcode
  * Ez alól van kivétel, lásd lentebb.
  * 
- * Maga a cső az Elem típusú 3x3-as mátrixban van leképezve, ami ElemiResz enumokból épül fel. Ebben van nyilvántartva maga a cső
+ * Maga a cső az {@link Elem} típusú 3x3-as mátrixban van leképezve, ami {@link ElemiResz} enumokból épül fel. Ebben van nyilvántartva maga a cső
  * és a megoldás során az "áramlás" útvonalanák helyessége.
  * 
- * Ezen kívül a PipeType enum egy Pipe típusát határozza meg.
+ * Ezen kívül a {@link PipeType} enum egy Pipe típusát határozza meg.
  * 
  * Függvények:
  * -----------
@@ -177,7 +177,7 @@ typedef struct Pipe {
      */
     PipeType type;
     /**
-     * @details A cső szöge. Rendereléskor (animáláskor) használt.
+     * @details A cső szöge (fokban). Rendereléskor (animáláskor) használt.
      */
     double szog;
 } Pipe;
@@ -329,7 +329,7 @@ PipeGrid PipeGrid_Init(void);
  * Hiba esetén a struktúra mátrixa NULL.
  * @post Mivel létrehoz egy Pipe mátrixot, használat után a PipeGrid-ot fel kell szabadítani a PipeGrid_Destroy() függvénnyel.
  * @warning TILOS egy, már létrehozott, PipeGrid struktúrát átadni, mert memóriaszivárgás lehet belőle.
- * @param pipegrid A létrehozandó PipeGrid
+ * @param pipegrid A létrehozandó PipeGrid pointere
  * @param x A PipeGrid szélessége
  * @param y A PipeGrid magassága
  * @return true, hiba esetén false
@@ -352,7 +352,7 @@ PipeGrid PipeGrid_CreateCopy(PipeGrid source);
  * általam használt adatszerkezetekkel működjön (Pipe-on belüli Elem).
  * @warning A belépési és kilépési pontok szabadon megadhatóak, DE az entry lehetőleg az első oszlopban, az exit pedig az utolsóban
  * legyen. Egyéb esetben nem garantált a helyes működés.
- * @param pipegrid A változtatandó PipeGrid
+ * @param pipegrid A változtatandó PipeGrid pointere
  * @param entry A belépési pont (x: oszlopindex, y: sorindex)
  * @param exit A kilépési pont (x: oszlopindex, y: sorindex)
  */
@@ -391,7 +391,7 @@ bool PipeGrid_Render(PipeGrid pipegrid, Window window);
 /**
  * @brief Felszabadít egy PipeGrid-et
  * @details A PipeGrid-ben lévő Pipe-okat is felszabadítja.
- * @param pipegrid A felaszabadítandó PipeGrid
+ * @param pipegrid A felaszabadítandó PipeGrid pointere
  */
 void PipeGrid_Destroy(PipeGrid * pipegrid);
 
