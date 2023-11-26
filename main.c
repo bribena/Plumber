@@ -9,6 +9,16 @@
 #include "debugmalloc.h"
 
 
+/**
+ * @brief A main függvény.
+ * @param argc Parancssori argumentumok száma (nem használt)
+ * @param argv Parancsori argumentumok (nem használt)
+ * @return
+ *  - 0: Ha sikeresen lefutott a program
+ *  - 1: Ha nem sikerült inicializálni az SDL-t
+ *  - 2: Ha nem sikerült létrehozni a játékhoz szükséges változókat
+ *  - 3: Ha a játék futása során történt hiba
+ */
 int main(int argc, char *argv[]) {
     (void)argc, (void)argv; // Warning elkerülése
     srand(time(0)); // Random seed
