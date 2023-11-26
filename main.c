@@ -3,11 +3,23 @@
  * @brief A main függvényt tartalmazó fájl.
  */
 
+// Ha Windows-on fordítjuk
+#ifdef _WIN32 
+#include <windows.h>
+#endif
+
 #include <time.h> // rand() seed-jéhez
 
 #include "game.h"
 #include "debugmalloc.h"
 
+// Ha Windows-on fordítjuk, az ablak ezt a main függvényt hívja meg
+#ifdef WIN32
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE FreeProcInstance, PWSTR pCmdLine, int nCmdShow) {
+    (void)hInstance, (void)FreeProcInstance, (void)pCmdLine, (void)nCmdShow;
+	return main(0, NULL);
+}
+#endif
 
 /**
  * @brief A main függvény.
@@ -19,6 +31,7 @@
  *  - 2: Ha nem sikerült létrehozni a játékhoz szükséges változókat
  *  - 3: Ha a játék futása során történt hiba
  */
+// A main függvény
 int main(int argc, char *argv[]) {
     (void)argc, (void)argv; // Warning elkerülése
     srand(time(0)); // Random seed
